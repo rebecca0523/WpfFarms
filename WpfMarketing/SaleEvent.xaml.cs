@@ -24,26 +24,36 @@ namespace WpfMarketing
             InitializeComponent();
         }
 
+        int loginSupplierID = 1;
+        farmsDBEntities db = new farmsDBEntities();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            farmsDBEntities db = new farmsDBEntities();
+          
             dtgTemp.ItemsSource = db.SaleEvents.ToArray();
-            txtSEContent.Text= (from t in db.SaleEvents
-                               where t.SaleEventID == 3
-                               select t.SaleEventContent).FirstOrDefault();
-            txtSaleEventTitle.Text = (from t in db.SaleEvents
-                                      where t.SaleEventID == 3
-                                      select t.SaleEventTitle).FirstOrDefault();
-            dtpSaleEventStar.SelectedDate= (from t in db.SaleEvents
-                                            where t.SaleEventID == 3
-                                            select t.SaleEventStart).FirstOrDefault();
-            dtpSaleEventEnd.SelectedDate= (from t in db.SaleEvents
-                                           where t.SaleEventID == 3
-                                           select t.SaleEventEnd).FirstOrDefault();
+         
+
+            //listbox加入登入賣家的特賣會
+            var q = from d in db.SaleEvents
+                    where d.SupplierID == loginSupplierID
+                    select new { SaleEventTitle =d.SaleEventTitle, SaleEventStar =d.SaleEventStart, SaleEventEnd =d.SaleEventEnd};
+            lstSaleEvent.ItemsSource = q.ToList();
+
+            //
+        }
 
 
+     
+        private void lstSaleEvent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //選取的index
+            int n = int.Parse(lstSaleEvent.SelectedIndex.ToString());
 
-
+            //listbox選取改變時 改變特賣會內容
+            var q = (from t in db.SaleEvents
+                    where t.SupplierID == loginSupplierID
+                    select t.SaleEventContent).OrderBy(s=>SaleEventID).Skip(n).FirstOrDefault();
+                     txtSEContent.Text = q+"           "+n;
+            
         }
     }
 }

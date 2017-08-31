@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3fb619d5eb834de3ae3f4444772563a9" Name="Diagram1">
         <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3.625" PointY="1.125" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
