@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfMarketing.SaleEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMarketing"
+        mc:Ignorable="d"
+        Title="SaleEvent" Height="600" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="SEDataTemplate">
+
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Canvas Margin="0">
+            <StackPanel Height="549" Canvas.Left="10" Canvas.Top="10" Width="320" Background="#FFFFE1E1">
+                <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
+                <ListBox x:Name="SETitleListBox" VerticalContentAlignment="Top" Height="490">
+                    <WrapPanel>
+                        <TextBox x:Name="txtSaleEventTitle" Text="{Binding SaleEventTitle}"/>
+                        <DatePicker x:Name="dpSaleEventStar" Text="{Binding SaleEventStar}"/>
+                        <DatePicker x:Name="dpSaleEventEnd" Text="{Binding SaleEventEnd}"/>
+
+                    </WrapPanel>
+                </ListBox>
+
+            </StackPanel>
+            <WrapPanel Height="381" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
+                <TextBlock TextWrapping="Wrap" Text="滿額折扣" Width="159"/>
+            </WrapPanel>
+            <WrapPanel Height="381" Canvas.Left="490" Canvas.Top="178" Width="152" Background="#FFD0FBBF">
+                <TextBlock TextWrapping="Wrap" Text="單品折扣" Width="165"/>
+            </WrapPanel>
+            <WrapPanel Height="381" Canvas.Left="647" Canvas.Top="178" Width="135" Background="#FFC1F6FB">
+                <TextBlock TextWrapping="Wrap" Text="組合折扣" Width="160"/>
+            </WrapPanel>
+
+
+        </Canvas>
+    </Grid>
+</Window>
