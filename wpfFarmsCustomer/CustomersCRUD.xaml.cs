@@ -29,7 +29,7 @@ namespace wpfFarmsCustomer
             InitializeComponent();
         }
 
-        private void txtlog_Click(object sender, RoutedEventArgs e)
+        private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
                 string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
                 string strsql = "login";
@@ -58,6 +58,11 @@ namespace wpfFarmsCustomer
                 }
                 conn.Close();
                 conn.Dispose();
+        }
+
+        private void btnregistered_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

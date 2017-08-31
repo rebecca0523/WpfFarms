@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfFarmsActivity
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// ActivityManagement.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ActivityManagement : Window
     {
-        public MainWindow()
+        public ActivityManagement()
         {
             InitializeComponent();
-        }
-        
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-           
-            
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            ActivityManagement A = new ActivityManagement();
-            A.Show();
         }
     }
 }

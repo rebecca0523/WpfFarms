@@ -16,7 +16,7 @@
             </MenuItem>
             <MenuItem Header="商品"/>
             <MenuItem Header="行銷"/>
-            <MenuItem Header="活動"/>
+            <MenuItem Header="活動" Click="MenuItem_Click"/>
         </Menu>
 
     </Grid>
