@@ -34,7 +34,13 @@ namespace WpfFarmsProducts
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            CreateProduct createProduct = new CreateProduct();
+            createProduct.ShowDialog();
+        }
 
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
