@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SaleEvent">
           <Key>
             <PropertyRef Name="SaleEventID" />
@@ -17,11 +17,36 @@
           <Property Name="SaleEventEnd" Type="datetime" />
           <Property Name="EdditTime" Type="datetime" />
         </EntityType>
+        <EntityType Name="SaleEventQuota">
+          <Key>
+            <PropertyRef Name="SaleEventQuotaID" />
+          </Key>
+          <Property Name="SaleEventQuotaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaleEventID" Type="int" />
+          <Property Name="Quota" Type="money" />
+          <Property Name="Discount" Type="real" />
+        </EntityType>
+        <Association Name="FK_SaleEventQuota_SaleEvent">
+          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+          <End Role="SaleEventQuota" Type="Self.SaleEventQuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventQuota">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="farmsDBModelStoreContainer">
           <EntitySet Name="SaleEvent" EntityType="Self.SaleEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleEventQuota" EntityType="Self.SaleEventQuota" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="Self.FK_SaleEventQuota_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvent" />
+            <End Role="SaleEventQuota" EntitySet="SaleEventQuota" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -36,10 +61,38 @@
           <Property Name="SaleEventStart" Type="DateTime" Precision="3" />
           <Property Name="SaleEventEnd" Type="DateTime" Precision="3" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SaleEventQuotas" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
         </EntityType>
         <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
+          <EntitySet Name="SaleEventQuotas" EntityType="farmsDBModel.SaleEventQuota" />
+          <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="farmsDBModel.FK_SaleEventQuota_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+            <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="SaleEventQuota">
+          <Key>
+            <PropertyRef Name="SaleEventQuotaID" />
+          </Key>
+          <Property Name="SaleEventQuotaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleEventID" Type="Int32" />
+          <Property Name="Quota" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Discount" Type="Single" />
+          <NavigationProperty Name="SaleEvent" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEventQuota" ToRole="SaleEvent" />
+        </EntityType>
+        <Association Name="FK_SaleEventQuota_SaleEvent">
+          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="0..1" />
+          <End Type="farmsDBModel.SaleEventQuota" Role="SaleEventQuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventQuota">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -56,6 +109,16 @@
                 <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
                 <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
                 <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEventQuotas">
+            <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
+              <MappingFragment StoreEntitySet="SaleEventQuota">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

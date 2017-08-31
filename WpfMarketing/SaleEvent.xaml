@@ -9,6 +9,13 @@
 
     <Window.Resources>
         <DataTemplate x:Key="SEDataTemplate">
+            <DockPanel>
+
+                <TextBox Text="{Binding SaleEventTitle,Mode=OneWay}" DockPanel.Dock="Left" Margin="20,0,0,0" HorizontalContentAlignment="Left" Width="100" />
+                <DatePicker SelectedDate="{Binding SaleEventStar,Mode=OneWay}" DockPanel.Dock="Left" HorizontalContentAlignment="Left"/>
+                <DatePicker SelectedDate="{Binding SaleEventEnd,Mode=OneWay}" DockPanel.Dock="Left" HorizontalContentAlignment="Left" />
+
+            </DockPanel>
 
         </DataTemplate>
 
@@ -18,27 +25,24 @@
         <Canvas Margin="0">
             <StackPanel Height="549" Canvas.Left="10" Canvas.Top="10" Width="320" Background="#FFFFE1E1">
                 <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
-                <ListBox x:Name="SETitleListBox" VerticalContentAlignment="Top" Height="490">
-                    <WrapPanel>
-                        <TextBox x:Name="txtSaleEventTitle" />
-                        <DatePicker x:Name="dtpSaleEventStar"/>
-                        <DatePicker x:Name="dtpSaleEventEnd" />
-
-                    </WrapPanel>
-                </ListBox>
-
+                <ListBox x:Name="lstSaleEvent" VerticalContentAlignment="Top" Height="490" ItemTemplate="{DynamicResource SEDataTemplate}" SelectionChanged="lstSaleEvent_SelectionChanged"/>
             </StackPanel>
-            <WrapPanel Height="381" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
-                <TextBlock TextWrapping="Wrap" Text="滿額折扣" Width="159"/>
-            </WrapPanel>
-            <WrapPanel Height="381" Canvas.Left="490" Canvas.Top="178" Width="152" Background="#FFD0FBBF">
-                <TextBlock TextWrapping="Wrap" Text="單品折扣" Width="165"/>
-            </WrapPanel>
-            <WrapPanel Height="381" Canvas.Left="647" Canvas.Top="178" Width="135" Background="#FFC1F6FB">
-                <TextBlock TextWrapping="Wrap" Text="組合折扣" Width="160"/>
-            </WrapPanel>
+            
+            <UniformGrid Columns="3" Canvas.Left="330" Canvas.Top="187">
+            <StackPanel Height="339" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
+                <TextBlock TextWrapping="Wrap" Text="滿額折扣" Margin="0,0,10,0"/>
+                <ListBox x:Name="lstSaleEventQuota" />
+            </StackPanel>
+                <StackPanel Height="339" Canvas.Left="490" Canvas.Top="178" Background="#FFD0FBBF">
+                    <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0,0,10,0"/>
+                </StackPanel>
+                <StackPanel Height="339" Background="#FFC1F6FB">
+                    <TextBlock TextWrapping="Wrap" Text="組合折扣" Margin="0,0,10,0"/>
+                </StackPanel>
+            </UniformGrid>
             <DataGrid x:Name="dtgTemp" Height="152" Canvas.Left="623" Canvas.Top="21" Width="159" RenderTransformOrigin="0.51,-0.09"/>
-            <TextBox x:Name="txtSEContent" Height="152" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="21" Width="281"/>
+            <TextBox x:Name="txtSEContent" Height="152" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="21" Width="281" Background="#FFF5DAB9"/>
+            <Button Content="儲存" Canvas.Left="656" Canvas.Top="531" Width="126" Height="28" Background="#FFF0D5F1"/>
 
 
         </Canvas>

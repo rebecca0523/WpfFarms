@@ -14,6 +14,12 @@ namespace WpfMarketing
     
     public partial class SaleEvent
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SaleEvent()
+        {
+            this.SaleEventQuotas = new HashSet<SaleEventQuota>();
+        }
+    
         public Nullable<int> SupplierID { get; set; }
         public int SaleEventID { get; set; }
         public string SaleEventTitle { get; set; }
@@ -21,5 +27,8 @@ namespace WpfMarketing
         public Nullable<System.DateTime> SaleEventStart { get; set; }
         public Nullable<System.DateTime> SaleEventEnd { get; set; }
         public Nullable<System.DateTime> EdditTime { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SaleEventQuota> SaleEventQuotas { get; set; }
     }
 }

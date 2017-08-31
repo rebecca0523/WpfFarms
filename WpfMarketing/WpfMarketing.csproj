@@ -103,6 +103,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SaleEventQuota.cs">
+      <DependentUpon>farmdb.tt</DependentUpon>
+    </Compile>
     <Page Include="SaleEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
