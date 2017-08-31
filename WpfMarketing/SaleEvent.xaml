@@ -20,9 +20,9 @@
                 <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
                 <ListBox x:Name="SETitleListBox" VerticalContentAlignment="Top" Height="490">
                     <WrapPanel>
-                        <TextBox x:Name="txtSaleEventTitle" Text="{Binding SaleEventTitle}"/>
-                        <DatePicker x:Name="dpSaleEventStar" Text="{Binding SaleEventStar}"/>
-                        <DatePicker x:Name="dpSaleEventEnd" Text="{Binding SaleEventEnd}"/>
+                        <TextBox x:Name="txtSaleEventTitle" />
+                        <DatePicker x:Name="dtpSaleEventStar"/>
+                        <DatePicker x:Name="dtpSaleEventEnd" />
 
                     </WrapPanel>
                 </ListBox>
@@ -37,6 +37,8 @@
             <WrapPanel Height="381" Canvas.Left="647" Canvas.Top="178" Width="135" Background="#FFC1F6FB">
                 <TextBlock TextWrapping="Wrap" Text="組合折扣" Width="160"/>
             </WrapPanel>
+            <DataGrid x:Name="dtgTemp" Height="152" Canvas.Left="623" Canvas.Top="21" Width="159" RenderTransformOrigin="0.51,-0.09"/>
+            <TextBox x:Name="txtSEContent" Height="152" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="21" Width="281"/>
 
 
         </Canvas>
