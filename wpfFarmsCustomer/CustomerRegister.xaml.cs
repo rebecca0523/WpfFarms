@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -19,17 +18,20 @@ using System.Data;
 namespace wpfFarmsCustomer
 {
     /// <summary>
-    /// CustomersRegister.xaml 的互動邏輯
+    /// CustomerRegister.xaml 的互動邏輯
     /// </summary>
-    public partial class CustomersRegister : Page
+    public partial class CustomerRegister : Window
     {
-        public CustomersRegister()
+        public CustomerRegister()
         {
             InitializeComponent();
+            
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
+            CustomerRegister customerRegister = new CustomerRegister();
+
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
             string strSql = "Insert";
 
@@ -51,6 +53,19 @@ namespace wpfFarmsCustomer
             pName.Value = txtName.Text;
             cmd.Parameters.Add(pName);
 
+            SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
+            pPassword.Direction = ParameterDirection.Input;
+            pPassword.Value = txtPassword.Text;
+            cmd.Parameters.Add(pPassword);
+
+            if(txtGender.Text=="男")
+            {
+                txtGender.Text = 1.ToString();
+            }
+            else if(txtGender.Text=="女")
+            {
+                txtGender.Text = 2.ToString();
+            }
             SqlParameter pGender = new SqlParameter("@Gender", SqlDbType.Int);
             pGender.Direction = ParameterDirection.Input;
             pGender.Value = txtGender.Text;
@@ -73,12 +88,12 @@ namespace wpfFarmsCustomer
 
             SqlParameter pCreationDate = new SqlParameter("@CreationDate", SqlDbType.DateTime);
             pCreationDate.Direction = ParameterDirection.Input;
-            pAddress.Value = DateTime.Now.ToString();
+            pCreationDate.Value = DateTime.Now;
             cmd.Parameters.Add(pCreationDate);
 
             SqlParameter pLastUpdate = new SqlParameter("@LastUpdate", SqlDbType.DateTime);
             pLastUpdate.Direction = ParameterDirection.Input;
-            pLastUpdate.Value = DateTime.Now.ToString();
+            pLastUpdate.Value = DateTime.Now;
             cmd.Parameters.Add(pLastUpdate);
 
             SqlParameter pEvaluation = new SqlParameter("@Evaluation", SqlDbType.Int);
@@ -86,13 +101,21 @@ namespace wpfFarmsCustomer
             pEvaluation.Value = 0;
             cmd.Parameters.Add(pEvaluation);
 
+            SqlParameter pUseridentity = new SqlParameter("@Useridentity", SqlDbType.Int);
+            pUseridentity.Direction = ParameterDirection.Input;
+            pUseridentity.Value = 0;
+            cmd.Parameters.Add(pUseridentity);
+
             conn.Open();
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("註冊成功！");
 
-            cmd.Clone();
+            cmd.Dispose();
+            conn.Close();
             conn.Dispose();
+
+            customerRegister.Close();
         }
     }
 }

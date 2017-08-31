@@ -17,7 +17,7 @@ namespace WpfMarketing
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SaleEvent()
         {
-            this.SaleEventQuotas = new HashSet<SaleEventQuota>();
+            this.SaleEventQuota = new HashSet<SaleEventQuota>();
         }
     
         public Nullable<int> SupplierID { get; set; }
@@ -29,6 +29,6 @@ namespace WpfMarketing
         public Nullable<System.DateTime> EdditTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleEventQuota> SaleEventQuotas { get; set; }
+        public virtual ICollection<SaleEventQuota> SaleEventQuota { get; set; }
     }
 }

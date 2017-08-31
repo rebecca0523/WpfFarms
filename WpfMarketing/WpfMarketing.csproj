@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>WpfMarketing</RootNamespace>
     <AssemblyName>WpfMarketing</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -28,6 +28,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,35 +79,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="farmdb.Context.cs">
+    <Compile Include="farmDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmdb.Context.tt</DependentUpon>
+      <DependentUpon>farmDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="farmdb.cs">
+    <Compile Include="farmDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmdb.tt</DependentUpon>
+      <DependentUpon>farmDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="farmdb.Designer.cs">
+    <Compile Include="farmDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmdb.edmx</DependentUpon>
+      <DependentUpon>farmDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="SaleEvent.cs">
-      <DependentUpon>farmdb.tt</DependentUpon>
+      <DependentUpon>farmDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="SaleEvent.xaml.cs">
-      <DependentUpon>SaleEvent.xaml</DependentUpon>
+    <Compile Include="SaleEventQuota.cs">
+      <DependentUpon>farmDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSalEvent.xaml.cs">
+      <DependentUpon>WindowSalEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SaleEventQuota.cs">
-      <DependentUpon>farmdb.tt</DependentUpon>
-    </Compile>
-    <Page Include="SaleEvent.xaml">
+    <Page Include="WindowSalEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,12 +130,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="farmdb.edmx">
+    <EntityDeploy Include="farmDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>farmdb.Designer.cs</LastGenOutput>
+      <LastGenOutput>farmDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="farmdb.edmx.diagram">
-      <DependentUpon>farmdb.edmx</DependentUpon>
+    <None Include="farmDB.edmx.diagram">
+      <DependentUpon>farmDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,18 +150,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="farmdb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>farmdb.edmx</DependentUpon>
-      <LastGenOutput>farmdb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="farmdb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>farmdb.edmx</DependentUpon>
-      <LastGenOutput>farmdb.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
@@ -171,6 +160,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="farmDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>farmDB.edmx</DependentUpon>
+      <LastGenOutput>farmDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="farmDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>farmDB.edmx</DependentUpon>
+      <LastGenOutput>farmDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,12 +1,11 @@
-﻿<Window x:Class="WpfMarketing.SaleEvent"
+﻿<Window x:Class="WpfMarketing.WindowSalEvent"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMarketing"
         mc:Ignorable="d"
-        Title="SaleEvent" Height="600" Width="800" Loaded="Window_Loaded">
-
+        Title="WindowSalEvent" Height="600" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <DataTemplate x:Key="SEDataTemplate">
             <DockPanel>
@@ -20,19 +19,18 @@
         </DataTemplate>
 
     </Window.Resources>
-
     <Grid>
         <Canvas Margin="0">
             <StackPanel Height="549" Canvas.Left="10" Canvas.Top="10" Width="320" Background="#FFFFE1E1">
                 <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
                 <ListBox x:Name="lstSaleEvent" VerticalContentAlignment="Top" Height="490" ItemTemplate="{DynamicResource SEDataTemplate}" SelectionChanged="lstSaleEvent_SelectionChanged"/>
             </StackPanel>
-            
+
             <UniformGrid Columns="3" Canvas.Left="330" Canvas.Top="187">
-            <StackPanel Height="339" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
-                <TextBlock TextWrapping="Wrap" Text="滿額折扣" Margin="0,0,10,0"/>
-                <ListBox x:Name="lstSaleEventQuota" />
-            </StackPanel>
+                <StackPanel Height="339" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
+                    <TextBlock TextWrapping="Wrap" Text="滿額折扣" Margin="0,0,10,0"/>
+                    <ListBox x:Name="lstSaleEventQuota" />
+                </StackPanel>
                 <StackPanel Height="339" Canvas.Left="490" Canvas.Top="178" Background="#FFD0FBBF">
                     <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0,0,10,0"/>
                 </StackPanel>
@@ -46,5 +44,6 @@
 
 
         </Canvas>
+
     </Grid>
 </Window>
