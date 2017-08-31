@@ -8,8 +8,13 @@
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Bottom" Margin="0,50,0,0"/>
-        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="74,18,0,0" VerticalAlignment="Top" Width="75"/>
+        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <ToolBar Height="50" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Width="272">
+                <Button Content="新增" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20"/>
+                <Button Content="刪除" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20"/>
+                <Button Content="存檔" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20"/>
+            </ToolBar>
+        </ToolBarTray>
 
 
     </Grid>
