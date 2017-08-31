@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfFarmsProducts
+namespace WpfFarmsActivity
 {
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
@@ -23,17 +22,7 @@ namespace WpfFarmsProducts
     {
         public MainWindow()
         {
-            InitializeComponent();            
-        }
-
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            var q = from n in farmsDBEntities.Products
-                    select n;
-            //this.ProductsDataGrid.ItemsSource = this.farmsDBEntities.Products.ToList();
-            this.ProductsDataGrid.ItemsSource = q.ToList();
+            InitializeComponent();
         }
     }
 }
