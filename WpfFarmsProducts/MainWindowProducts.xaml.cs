@@ -31,5 +31,10 @@ namespace WpfFarmsProducts
         {
             this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
         }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

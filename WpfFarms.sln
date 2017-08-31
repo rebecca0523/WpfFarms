@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsSupplier", "WpfFarm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsProducts", "WpfFarmsProducts\WpfFarmsProducts.csproj", "{1678D205-7BB2-4C52-9DBF-9ED61EBAC5F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfFarmsCustomer", "wpfFarmsCustomer\wpfFarmsCustomer.csproj", "{B09C11C1-ED84-430F-85A1-8D3AA6DC2417}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsCustomer", "wpfFarmsCustomer\WpfFarmsCustomer.csproj", "{B09C11C1-ED84-430F-85A1-8D3AA6DC2417}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

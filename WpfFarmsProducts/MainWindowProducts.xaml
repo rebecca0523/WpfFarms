@@ -7,9 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Bottom" Margin="0,50,0,0"/>
-        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="74,18,0,0" VerticalAlignment="Top" Width="75"/>
+        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <ToolBar VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left">
+                <Button x:Name="CreateButton" Content="新增" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Click="CreateButton_Click" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
+                <Button Content="刪除" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
+                <Button Content="存檔" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
+            </ToolBar>
+        </ToolBarTray>
+        <DockPanel LastChildFill="True" Margin="0,50,0,0">
+            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" />
+        </DockPanel>
 
 
     </Grid>
