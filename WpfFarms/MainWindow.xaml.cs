@@ -43,5 +43,10 @@ namespace WpfFarms
             SuppliersCRUD.ShowDialog();
 
         }
+
+        private void miCustomersCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
