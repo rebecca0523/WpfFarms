@@ -5,11 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsProducts"
         mc:Ignorable="d"
-        Title="CreateProduct" Height="300" Width="300">
+        Title="CreateProduct" Height="478.55" Width="520.241">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="33,22,0,0" TextWrapping="Wrap" Text="產品名稱" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtProductName" HorizontalAlignment="Left" Height="25.4" Margin="139,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="20"/>
-        <Button x:Name="CreateDataButton" Content="Button" HorizontalAlignment="Left" Margin="164,231,0,0" VerticalAlignment="Top" Width="75" Click="CreateDataButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="13,62,0,0" TextWrapping="Wrap" Text="開始銷售日" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="13,102,0,0" TextWrapping="Wrap" Text="結束銷售日" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,142,0,0" TextWrapping="Wrap" Text="市場售價" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,182,0,0" TextWrapping="Wrap" Text="預計售價" VerticalAlignment="Top" FontSize="20"/>
+
+        <TextBox x:Name="txtProductName" HorizontalAlignment="Left" Height="25" Margin="139,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtMarkPrice" HorizontalAlignment="Left" Height="25" Margin="139,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtUnitPrice" HorizontalAlignment="Left" Height="25" Margin="139,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+
+        <Button x:Name="cmdCreateProduct" Content="新增產品" HorizontalAlignment="Left" Margin="159,384,0,0" VerticalAlignment="Top" Width="75" Click="CreateDataButton_Click"/>
+        <Button x:Name="cmdCancel" Content="取消" HorizontalAlignment="Left" Margin="266,384,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <DatePicker x:Name="dtpkSellStartDate" HorizontalAlignment="Left" Margin="139,62,0,0" VerticalAlignment="Top" Width="240"/>
+        <DatePicker x:Name="dtpkSellEndDate" HorizontalAlignment="Left" Margin="139,102,0,0" VerticalAlignment="Top" Width="240"/>
 
     </Grid>
 </Window>
