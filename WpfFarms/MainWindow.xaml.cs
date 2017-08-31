@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfFarmsSupplier;
 
 namespace WpfFarms
 {
@@ -39,7 +40,6 @@ namespace WpfFarms
         private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
         {
             SuppliersCRUD SuppliersCRUD = new SuppliersCRUD();
-
             SuppliersCRUD.ShowDialog();
 
         }
