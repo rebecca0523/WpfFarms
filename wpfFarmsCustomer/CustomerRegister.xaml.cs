@@ -110,7 +110,6 @@ namespace wpfFarmsCustomer
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("註冊成功！");
-
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
