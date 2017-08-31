@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:WpfFarms"
         mc:Ignorable="d"
         Title="SuppliersCRUD" Height="557" Width="674">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="45,55,0,0" VerticalAlignment="Top" Width="75"/>
+    <StackPanel>
+     
 
-    </Grid>
+    </StackPanel>
+
 </Window>
