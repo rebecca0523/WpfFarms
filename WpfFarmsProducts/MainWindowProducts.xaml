@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="264" Margin="27,28,0,0" VerticalAlignment="Top" Width="462"/>
-
-        <DataGrid x:Name="ProductsDataGrid" HorizontalAlignment="Left" Height="264" Margin="45,28,0,0" VerticalAlignment="Top" Width="462"/>
+        <DockPanel LastChildFill="False" Margin="0">
+            <DataGrid x:Name="ProductsDataGrid" Height="264" VerticalAlignment="Top" DockPanel.Dock="Bottom"/>
+            <ToolBarTray Height="55" VerticalAlignment="Top" DockPanel.Dock="Top">
+                <ToolBar HorizontalAlignment="Left" Width="206" Margin="0,0,-182,-55"/>
+            </ToolBarTray>
+        </DockPanel>
 
     </Grid>
 </Window>
