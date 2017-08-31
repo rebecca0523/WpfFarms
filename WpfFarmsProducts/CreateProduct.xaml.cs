@@ -33,9 +33,10 @@ namespace WpfFarmsProducts
                 ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,
                 ProductName = this.txtProductName.Text,
                 SellStartDate = this.dtpkSellStartDate.DisplayDate,
-                SellEndDate=this.dtpkSellEndDate.DisplayDate,
-                MarkPrice=decimal.Parse( this.txtMarkPrice.Text),
-                UnitPrice=decimal.Parse(this.txtUnitPrice.Text),
+                SellEndDate = this.dtpkSellEndDate.DisplayDate,
+                MarkPrice = decimal.Parse(this.txtMarkPrice.Text),
+                UnitPrice = decimal.Parse(this.txtUnitPrice.Text),
+                PreOrder = this.chkPreOrder.IsChecked,
                 CreatedDate = DateTime.Now
             };
             this.farmsDBEntities.Products.Add(product);
