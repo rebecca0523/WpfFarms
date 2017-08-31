@@ -9,6 +9,7 @@
     <Grid>
         <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Bottom" Margin="0,50,0,0"/>
         <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="74,18,0,0" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>
