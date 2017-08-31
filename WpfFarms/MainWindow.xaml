@@ -11,7 +11,9 @@
         <Menu HorizontalAlignment="Left" Height="25" Margin="35,50,0,0" VerticalAlignment="Top" Width="435">
             <MenuItem Header="系統基本資料"/>
             <MenuItem Header="客戶"/>
-            <MenuItem Header="供應商"/>
+            <MenuItem Header="小農">
+                <MenuItem Header="小農基本資料檔"/>
+            </MenuItem>
             <MenuItem Header="商品"/>
             <MenuItem Header="行銷"/>
             <MenuItem Header="活動"/>
