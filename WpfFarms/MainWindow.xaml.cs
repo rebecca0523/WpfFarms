@@ -29,5 +29,10 @@ namespace WpfFarms
         {
 
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

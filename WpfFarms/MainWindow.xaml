@@ -12,7 +12,7 @@
             <MenuItem Header="系統基本資料"/>
             <MenuItem Header="客戶"/>
             <MenuItem Header="小農">
-                <MenuItem Header="小農基本資料檔"/>
+                <MenuItem Header="小農基本資料檔" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="商品"/>
             <MenuItem Header="行銷"/>
