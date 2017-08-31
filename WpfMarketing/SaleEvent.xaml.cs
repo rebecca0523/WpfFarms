@@ -26,11 +26,23 @@ namespace WpfMarketing
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-          
+            farmsDBEntities db = new farmsDBEntities();
+            dtgTemp.ItemsSource = db.SaleEvents.ToArray();
+            txtSEContent.Text= (from t in db.SaleEvents
+                               where t.SaleEventID == 3
+                               select t.SaleEventContent).FirstOrDefault();
+            txtSaleEventTitle.Text = (from t in db.SaleEvents
+                                      where t.SaleEventID == 3
+                                      select t.SaleEventTitle).FirstOrDefault();
+            dtpSaleEventStar.SelectedDate= (from t in db.SaleEvents
+                                            where t.SaleEventID == 3
+                                            select t.SaleEventStart).FirstOrDefault();
+            dtpSaleEventEnd.SelectedDate= (from t in db.SaleEvents
+                                           where t.SaleEventID == 3
+                                           select t.SaleEventEnd).FirstOrDefault();
 
-            //var q = from SE in fd.SaleEvent
-            //        select new { SaleEventTitle = SE.SaleEventTitle, SaleEventStart = SE.SaleEventStart, SaleEventEnd = SE.SaleEventEnd };
-            //SETitleListBox.ItemsSource = q.ToList();
+
+
 
         }
     }
