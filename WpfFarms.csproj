@@ -56,9 +56,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SuppliersCRUD.xaml.cs">
-      <DependentUpon>SuppliersCRUD.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +96,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <ProjectReference Include="..\WpfFarmsActivity\WpfFarmsActivity.csproj">
+      <Project>{28e180f5-5062-4bd2-acd2-0b60cb919eaa}</Project>
+      <Name>WpfFarmsActivity</Name>
+=======
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +115,7 @@
     <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
       <Project>{71acd86f-34f5-419d-9954-ff7222789579}</Project>
       <Name>WpfFarmsSupplier</Name>
+>>>>>>> 6d32003d8bb037d003ff2a8d5af91ae15f638156
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

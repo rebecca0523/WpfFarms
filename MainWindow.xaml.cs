@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfFarmsSupplier;
+
 
 namespace WpfFarms
 {
@@ -32,6 +34,10 @@ namespace WpfFarms
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
+            WpfFarmsActivity.MainWindow m = new WpfFarmsActivity.MainWindow();
+            m.Show();
+=======
 
         }
 
@@ -39,7 +45,6 @@ namespace WpfFarms
         private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
         {
             SuppliersCRUD SuppliersCRUD = new SuppliersCRUD();
-
             SuppliersCRUD.ShowDialog();
 
         }
@@ -47,6 +52,7 @@ namespace WpfFarms
         private void miCustomersCRUD_Click(object sender, RoutedEventArgs e)
         {
             
+>>>>>>> 6d32003d8bb037d003ff2a8d5af91ae15f638156
         }
     }
 }
