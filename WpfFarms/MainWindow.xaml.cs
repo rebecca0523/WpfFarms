@@ -29,5 +29,19 @@ namespace WpfFarms
         {
 
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
+        private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersCRUD SuppliersCRUD = new SuppliersCRUD();
+
+            SuppliersCRUD.ShowDialog();
+
+        }
     }
 }

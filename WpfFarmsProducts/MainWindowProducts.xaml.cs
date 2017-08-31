@@ -25,9 +25,11 @@ namespace WpfFarmsProducts
             InitializeComponent();            
         }
 
+        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
         }
     }
 }
