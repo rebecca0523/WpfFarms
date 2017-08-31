@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:WpfFarmsProducts"
              StartupUri="MainWindowProducts.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ShinyBlueDictionary.xaml"/>
+                <ResourceDictionary Source="TwilightBlueDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
