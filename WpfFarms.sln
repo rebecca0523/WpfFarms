@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarms", "WpfFarms\WpfFarms.csproj", "{269D72D1-6085-45F6-A9E8-3772E0041355}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsSupplier", "WpfFarmsSupplier\WpfFarmsSupplier.csproj", "{71ACD86F-34F5-419D-9954-FF7222789579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsActivity", "WpfFarmsActivity\WpfFarmsActivity.csproj", "{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{71ACD86F-34F5-419D-9954-FF7222789579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71ACD86F-34F5-419D-9954-FF7222789579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71ACD86F-34F5-419D-9954-FF7222789579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

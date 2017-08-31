@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace WpfFarms
+namespace WpfFarmsActivity
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// ActivityManagement.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ActivityManagement : Window
     {
-        public MainWindow()
+        public ActivityManagement()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            WpfFarmsActivity.MainWindow m = new WpfFarmsActivity.MainWindow();
-            m.Show();
         }
     }
 }
