@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarms"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="552" Width="1004">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" TextWrapping="Wrap" Text="小農蔬果交易系統" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Menu HorizontalAlignment="Left" Height="25" Margin="35,50,0,0" VerticalAlignment="Top" Width="435">
             <MenuItem Header="系統基本資料"/>
             <MenuItem Header="客戶"/>
             <MenuItem Header="小農">
-                <MenuItem Header="小農基本資料檔" Click="MenuItem_Click"/>
+                <MenuItem Name="miSuppliersCRUD" Header="小農基本資料檔"  Click="miSuppliersCRUD_Click"/>
             </MenuItem>
             <MenuItem Header="商品"/>
             <MenuItem Header="行銷"/>
