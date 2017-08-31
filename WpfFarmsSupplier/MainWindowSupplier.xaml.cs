@@ -13,35 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfFarms
+namespace WpfFarmsSupplier
 {
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowSupplier : Window
     {
-        public MainWindow()
+        public MainWindowSupplier()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
-        private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
-        {
-            SuppliersCRUD SuppliersCRUD = new SuppliersCRUD();
-
-            SuppliersCRUD.ShowDialog();
-
         }
     }
 }

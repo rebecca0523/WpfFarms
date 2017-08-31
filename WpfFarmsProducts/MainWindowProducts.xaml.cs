@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfFarms
+namespace WpfFarmsProducts
 {
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
@@ -22,26 +22,14 @@ namespace WpfFarms
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
-        private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
-        {
-            SuppliersCRUD SuppliersCRUD = new SuppliersCRUD();
-
-            SuppliersCRUD.ShowDialog();
-
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
         }
     }
 }

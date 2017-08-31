@@ -1,8 +1,8 @@
-﻿<Application x:Class="WpfFarmsSupplier.App"
+﻿<Application x:Class="WpfFarmsProducts.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfFarmsSupplier"
-             StartupUri="MainWindowSupplier.xaml">
+             xmlns:local="clr-namespace:WpfFarmsProducts"
+             StartupUri="MainWindowProducts.xaml">
     <Application.Resources>
          
     </Application.Resources>
