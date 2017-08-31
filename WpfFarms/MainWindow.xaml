@@ -10,7 +10,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" TextWrapping="Wrap" Text="小農蔬果交易系統" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Menu HorizontalAlignment="Left" Height="25" Margin="35,50,0,0" VerticalAlignment="Top" Width="435">
             <MenuItem Header="系統基本資料"/>
-            <MenuItem Header="客戶"/>
+            <MenuItem x:Name="miCustomersCRUD" Header="客戶" Click="miCustomersCRUD_Click"/>
             <MenuItem Header="小農">
                 <MenuItem Name="miSuppliersCRUD" Header="小農基本資料檔"  Click="miSuppliersCRUD_Click"/>
             </MenuItem>
