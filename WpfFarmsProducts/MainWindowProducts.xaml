@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="264" Margin="27,28,0,0" VerticalAlignment="Top" Width="462"/>
+        <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Bottom" Margin="0,50,0,0"/>
+        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="74,18,0,0" VerticalAlignment="Top" Width="75"/>
+
 
     </Grid>
 </Window>
