@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfFarmsSupplier
+namespace WpfFarmsActivity
 {
     /// <summary>
-    /// SuppliersCRUD.xaml 的互動邏輯
+    /// ActivityManagement.xaml 的互動邏輯
     /// </summary>
-    public partial class SuppliersCRUD : Window
+    public partial class ActivityManagement : Window
     {
-        public SuppliersCRUD()
+        public ActivityManagement()
         {
             InitializeComponent();
         }

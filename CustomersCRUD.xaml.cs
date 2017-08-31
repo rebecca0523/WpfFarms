@@ -16,21 +16,21 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 
-
-namespace wpfFarmsCustomer
+namespace WpfFarms
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// CustomersCRUD.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CustomersCRUD : Page
     {
-        public MainWindow()
+        public CustomersCRUD()
         {
             InitializeComponent();
         }
 
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
+        private void txtlog_Click(object sender, RoutedEventArgs e)
         {
+
                 string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
                 string strsql = "login";
 
@@ -58,11 +58,6 @@ namespace wpfFarmsCustomer
                 }
                 conn.Close();
                 conn.Dispose();
-        }
-
-        private void btnregistered_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

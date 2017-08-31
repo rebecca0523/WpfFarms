@@ -1,0 +1,19 @@
+﻿<Page x:Class="WpfFarms.CustomersCRUD"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfFarms"
+      mc:Ignorable="d" 
+      d:DesignHeight="325" d:DesignWidth="600"
+      Title="CustomersCRUD">
+
+    <Grid>
+        <Button x:Name="txtlog" Content="登入" HorizontalAlignment="Left" Margin="260,216,0,0" VerticalAlignment="Top" Width="75" Click="txtlog_Click"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="232,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="232,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <Label Content="電子郵件" HorizontalAlignment="Left" Margin="170,101,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="密碼" HorizontalAlignment="Left" Margin="185,150,0,0" VerticalAlignment="Top" Width="32"/>
+
+    </Grid>
+</Page>
