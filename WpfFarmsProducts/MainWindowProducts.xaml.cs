@@ -25,11 +25,15 @@ namespace WpfFarmsProducts
             InitializeComponent();            
         }
 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        //farmsDBEntities farmsDBEntities = new farmsDBEntities();
+
+        farmsEntitiesHome farmsEntitiesHome = new farmsEntitiesHome();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
+            //this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
+
+            this.ProductsDataGrid.ItemsSource = farmsEntitiesHome.Products.ToList();
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
