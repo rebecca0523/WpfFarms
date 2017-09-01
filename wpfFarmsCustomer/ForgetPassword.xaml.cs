@@ -56,5 +56,10 @@ namespace wpfFarmsCustomer
                 MessageBox.Show("電子郵件或姓名錯誤！");
             }
         }
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
