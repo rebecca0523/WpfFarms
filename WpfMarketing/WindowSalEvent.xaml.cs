@@ -74,13 +74,19 @@ namespace WpfMarketing
             lstSaleEventSingle.ItemsSource = si.ToList();
 
             //顯示既有的組合商品
-            
+
             var co = from t in db.SaleEventComboes.AsEnumerable()
                      where t.SaleEventID == EVID
-                    from p in db.Products
-                     
+                     join p in db.Products on t.AProductID equals p.ProductID
+                     join p2 in db.Products on t.BProductID equals p2.ProductID
+                     select new { AProductName = p.ProductName, AProductPrice=p.UnitPrice,
+                                  BProductName = p2.ProductName, BProductPrice=p2.UnitPrice,
+                                  SUMPrice =$"{p.UnitPrice + p2.UnitPrice:C}" ,
+                         Discount=$"{t.Discount:N2}",
+                         DiscountPrice=$"{ (p.UnitPrice + p2.UnitPrice) * (decimal)t.Discount:C}"
+                     };
 
-                     select new { AProductName = t.AProductID, BProductName =t.BProductID};
+
             lstSaleEventCombo.ItemsSource = co.ToList();
            
         }
