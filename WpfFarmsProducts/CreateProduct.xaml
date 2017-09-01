@@ -18,7 +18,7 @@
         <TextBox x:Name="txtMarkPrice" HorizontalAlignment="Left" Height="25" Margin="139,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
         <TextBox x:Name="txtUnitPrice" HorizontalAlignment="Left" Height="25" Margin="139,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
 
-        <Button x:Name="cmdCreateProduct" Content="新增產品" HorizontalAlignment="Left" Margin="159,384,0,0" VerticalAlignment="Top" Width="75" Click="CreateDataButton_Click"/>
+        <Button x:Name="cmdCreateProduct" Content="新增產品" HorizontalAlignment="Left" Margin="124,384,0,0" VerticalAlignment="Top" Width="75" Click="CreateDataButton_Click"/>
         <Button x:Name="cmdCancel" Content="取消" HorizontalAlignment="Left" Margin="266,384,0,0" VerticalAlignment="Top" Width="75"/>
 
         <DatePicker x:Name="dtpkSellStartDate" HorizontalAlignment="Left" Margin="139,62,0,0" VerticalAlignment="Top" Width="240" FontWeight="Bold" FontSize="16"/>
