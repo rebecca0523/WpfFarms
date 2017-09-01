@@ -65,5 +65,11 @@ namespace wpfFarmsCustomer
             CustomerRegister CustomerRegister = new CustomerRegister();
             CustomerRegister.ShowDialog();
         }
+
+        private void btnforget_Click(object sender, RoutedEventArgs e)
+        {
+            ForgetPassword forgetPassword = new ForgetPassword();
+            forgetPassword.ShowDialog();
+        }
     }
 }
