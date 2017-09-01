@@ -79,26 +79,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="farmDB.Context.cs">
+    <Compile Include="farmsDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmDB.Context.tt</DependentUpon>
+      <DependentUpon>farmsDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="farmDB.cs">
+    <Compile Include="farmsDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmDB.tt</DependentUpon>
+      <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="farmDB.Designer.cs">
+    <Compile Include="farmsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>farmDB.edmx</DependentUpon>
+      <DependentUpon>farmsDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="SaleEvent.cs">
-      <DependentUpon>farmDB.tt</DependentUpon>
+      <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SaleEventQuota.cs">
-      <DependentUpon>farmDB.tt</DependentUpon>
+      <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WindowSalEvent.xaml.cs">
       <DependentUpon>WindowSalEvent.xaml</DependentUpon>
@@ -130,12 +130,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="farmDB.edmx">
+    <EntityDeploy Include="farmsDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>farmDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>farmsDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="farmDB.edmx.diagram">
-      <DependentUpon>farmDB.edmx</DependentUpon>
+    <None Include="farmsDB.edmx.diagram">
+      <DependentUpon>farmsDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -162,15 +162,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="farmDB.Context.tt">
+    <Content Include="farmsDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>farmDB.edmx</DependentUpon>
-      <LastGenOutput>farmDB.Context.cs</LastGenOutput>
+      <DependentUpon>farmsDB.edmx</DependentUpon>
+      <LastGenOutput>farmsDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="farmDB.tt">
+    <Content Include="farmsDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>farmDB.edmx</DependentUpon>
-      <LastGenOutput>farmDB.cs</LastGenOutput>
+      <DependentUpon>farmsDB.edmx</DependentUpon>
+      <LastGenOutput>farmsDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
