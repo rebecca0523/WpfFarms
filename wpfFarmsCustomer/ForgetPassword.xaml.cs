@@ -27,7 +27,7 @@ namespace wpfFarmsCustomer
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
             string strSql = "checkidentity";
@@ -36,7 +36,25 @@ namespace wpfFarmsCustomer
             SqlCommand cmd = new SqlCommand(strSql,conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("Email",)
+            cmd.Parameters.AddWithValue("Email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("Name", txtName.Text);
+
+            SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
+            pReturnValue.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(pReturnValue);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
+            if(n==1)
+            {
+                EditPassword editPassword = new EditPassword();
+                editPassword.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("電子郵件或姓名錯誤！");
+            }
         }
     }
 }
