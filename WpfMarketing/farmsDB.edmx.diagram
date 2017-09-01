@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3fb619d5eb834de3ae3f4444772563a9" Name="Diagram1">
-        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3.625" PointY="1.125" />
+      <Diagram DiagramId="651312a0a2e547bfb772eaab5c7071d1" Name="Diagram1">
+        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3" PointY="4.375" />
         <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" />
       </Diagram>
     </edmx:Diagrams>

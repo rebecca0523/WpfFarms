@@ -61,14 +61,14 @@
           <Property Name="SaleEventStart" Type="DateTime" Precision="3" />
           <Property Name="SaleEventEnd" Type="DateTime" Precision="3" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SaleEventQuotas" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
+          <NavigationProperty Name="SaleEventQuota" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
         </EntityType>
         <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
-          <EntitySet Name="SaleEventQuotas" EntityType="farmsDBModel.SaleEventQuota" />
+          <EntitySet Name="SaleEvent" EntityType="Self.SaleEvent" />
+          <EntitySet Name="SaleEventQuota" EntityType="farmsDBModel.SaleEventQuota" />
           <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="farmsDBModel.FK_SaleEventQuota_SaleEvent">
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-            <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
+            <End Role="SaleEvent" EntitySet="SaleEvent" />
+            <End Role="SaleEventQuota" EntitySet="SaleEventQuota" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="SaleEventQuota">
@@ -99,7 +99,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
-          <EntitySetMapping Name="SaleEvents">
+          <EntitySetMapping Name="SaleEvent">
             <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
               <MappingFragment StoreEntitySet="SaleEvent">
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
@@ -112,7 +112,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SaleEventQuotas">
+          <EntitySetMapping Name="SaleEventQuota">
             <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
               <MappingFragment StoreEntitySet="SaleEventQuota">
                 <ScalarProperty Name="Discount" ColumnName="Discount" />
@@ -136,7 +136,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="無" />

@@ -15,44 +15,44 @@ using System.Windows.Shapes;
 namespace WpfMarketing
 {
     /// <summary>
-    /// SaleEvent.xaml 的互動邏輯
+    /// WindowSalEvent.xaml 的互動邏輯
     /// </summary>
-    public partial class SaleEvent : Window
+    public partial class WindowSalEvent : Window
     {
-        public SaleEvent()
+        public WindowSalEvent()
         {
             InitializeComponent();
         }
 
         int loginSupplierID = 1;
         farmsDBEntities db = new farmsDBEntities();
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-          
-            dtgTemp.ItemsSource = db.SaleEvents.ToArray();
-         
+            dtgTemp.ItemsSource = db.SaleEvent.ToArray();
+
 
             //listbox加入登入賣家的特賣會
-            var q = from d in db.SaleEvents
+            var t = from d in db.SaleEvent
                     where d.SupplierID == loginSupplierID
-                    select new { SaleEventTitle =d.SaleEventTitle, SaleEventStar =d.SaleEventStart, SaleEventEnd =d.SaleEventEnd};
-            lstSaleEvent.ItemsSource = q.ToList();
+                    select new { SaleEventTitle = d.SaleEventTitle, SaleEventStar = d.SaleEventStart, SaleEventEnd = d.SaleEventEnd };
+            lstSaleEvent.ItemsSource = t.ToList();
 
-            //
+           
+                   
         }
 
-
-     
         private void lstSaleEvent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //選取的index
             int n = int.Parse(lstSaleEvent.SelectedIndex.ToString());
 
             //listbox選取改變時 改變特賣會內容
-            var q = (from t in db.SaleEvents
-                    where t.SupplierID == loginSupplierID
-                    select t.SaleEventContent).OrderBy(s=>SaleEventID).Skip(n).FirstOrDefault();
-                     txtSEContent.Text = q+"           "+n;
+            var c = (from t in db.SaleEvent
+                     where t.SupplierID == loginSupplierID
+                     orderby t.SaleEventID
+                     select t.SaleEventContent).Skip(n).FirstOrDefault();
+            txtSEContent.Text = c + "           " + n;
             
         }
     }

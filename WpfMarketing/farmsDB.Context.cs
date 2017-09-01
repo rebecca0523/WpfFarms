@@ -25,7 +25,7 @@ namespace WpfMarketing
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<SaleEvent> SaleEvents { get; set; }
-        public virtual DbSet<SaleEventQuota> SaleEventQuotas { get; set; }
+        public virtual DbSet<SaleEvent> SaleEvent { get; set; }
+        public virtual DbSet<SaleEventQuota> SaleEventQuota { get; set; }
     }
 }

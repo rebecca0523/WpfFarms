@@ -22,11 +22,12 @@ namespace WpfFarmsProducts
     
         public int ProductID { get; set; }
         public Nullable<int> SupplierID { get; set; }
+        public string ProductName { get; set; }
         public Nullable<System.DateTime> SellStartDate { get; set; }
         public Nullable<System.DateTime> SellEndDate { get; set; }
         public Nullable<decimal> MarkPrice { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<float> PreOrder { get; set; }
+        public Nullable<bool> PreOrder { get; set; }
         public Nullable<System.DateTime> ShippedDate { get; set; }
         public string ProductDescription { get; set; }
         public Nullable<int> TotalQTY { get; set; }

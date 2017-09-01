@@ -62,7 +62,8 @@ namespace wpfFarmsCustomer
 
         private void btnregistered_Click(object sender, RoutedEventArgs e)
         {
-
+            CustomerRegister CustomerRegister = new CustomerRegister();
+            CustomerRegister.ShowDialog();
         }
     }
 }
