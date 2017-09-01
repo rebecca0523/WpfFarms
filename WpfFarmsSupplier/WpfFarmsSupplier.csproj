@@ -34,9 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,8 +69,21 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="SuppliersCRUD.xaml.cs">
-      <DependentUpon>SuppliersCRUD.xaml</DependentUpon>
+    <Compile Include="framsDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>framsDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="framsDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>framsDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersCRUDmulti.xaml.cs">
+      <DependentUpon>SuppliersCRUDmulti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersCRUDsingle.xaml.cs">
+      <DependentUpon>SuppliersCRUDsingle.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindowSupplier.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -75,7 +97,11 @@
       <DependentUpon>MainWindowSupplier.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SuppliersCRUD.xaml">
+    <Page Include="SuppliersCRUDmulti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuppliersCRUDsingle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,16 +132,33 @@
     <None Include="DataLINQtoSQL.dbml.layout">
       <DependentUpon>DataLINQtoSQL.dbml</DependentUpon>
     </None>
+    <EntityDeploy Include="framsDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>framsDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="framsDBModel.edmx.diagram">
+      <DependentUpon>framsDBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="framsDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>framsDBModel.Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
