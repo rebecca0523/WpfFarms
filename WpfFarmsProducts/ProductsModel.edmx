@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
-        <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'farmsDB.dbo.ProductImages' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+      <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ProductImages">
           <Key>
             <PropertyRef Name="ProductImageID" />
-            <PropertyRef Name="ProductID" />
           </Key>
           <Property Name="ProductImageID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
@@ -27,7 +24,7 @@
           <Property Name="SellEndDate" Type="datetime" />
           <Property Name="MarkPrice" Type="money" />
           <Property Name="UnitPrice" Type="money" />
-          <Property Name="PreOrder" Type="real" />
+          <Property Name="PreOrder" Type="bit" />
           <Property Name="ShippedDate" Type="datetime" />
           <Property Name="ProductDescription" Type="varchar" MaxLength="1000" />
           <Property Name="TotalQTY" Type="int" />
@@ -54,31 +51,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="farmsDBModelStoreContainer">
-          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="ProductImages" EntityType="Self.ProductImages" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-    [ProductImages].[ProductImageID] AS [ProductImageID], 
-    [ProductImages].[ProductID] AS [ProductID], 
-    [ProductImages].[ProductImage] AS [ProductImage]
-    FROM [dbo].[ProductImages] AS [ProductImages]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="ProductImages" EntitySet="ProductImages" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="farmsDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-        <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Products" EntityType="farmsDBModel.Product" />
-          <EntitySet Name="ProductImages" EntityType="farmsDBModel.ProductImage" />
-          <AssociationSet Name="FK_ProductImages_Products" Association="farmsDBModel.FK_ProductImages_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="ProductImage" EntitySet="ProductImages" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="ProductImageID" />
+          </Key>
+          <Property Name="ProductImageID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductImage1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductImages_Products" FromRole="ProductImages" ToRole="Products" />
+        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -90,7 +83,7 @@
           <Property Name="SellEndDate" Type="DateTime" Precision="3" />
           <Property Name="MarkPrice" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="PreOrder" Type="Single" />
+          <Property Name="PreOrder" Type="Boolean" />
           <Property Name="ShippedDate" Type="DateTime" Precision="3" />
           <Property Name="ProductDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="TotalQTY" Type="Int32" />
@@ -103,68 +96,66 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ProductImages" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImage" />
-        </EntityType>
-        <EntityType Name="ProductImage">
-          <Key>
-            <PropertyRef Name="ProductImageID" />
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductImageID" Type="Int32" Nullable="false" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="ProductImage1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="ProductImage" ToRole="Product" />
+          <NavigationProperty Name="ProductImages" Relationship="Self.FK_ProductImages_Products" FromRole="Products" ToRole="ProductImages" />
         </EntityType>
         <Association Name="FK_ProductImages_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="farmsDBModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductImages" Type="Self.ProductImage" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
+            <Principal Role="Products">
               <PropertyRef Name="ProductID" />
             </Principal>
-            <Dependent Role="ProductImage">
+            <Dependent Role="ProductImages">
               <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+        <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductImages" EntitySet="ProductImages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="farmsDBModel.Product">
-              <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-                <ScalarProperty Name="DiscountedQuota" ColumnName="DiscountedQuota" />
-                <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
-                <ScalarProperty Name="Discounted" ColumnName="Discounted" />
-                <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
-                <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
-                <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
-                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-                <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
-                <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
-                <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ProductImages">
             <EntityTypeMapping TypeName="farmsDBModel.ProductImage">
               <MappingFragment StoreEntitySet="ProductImages">
-                <ScalarProperty Name="ProductImage1" ColumnName="ProductImage" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductImage1" ColumnName="ProductImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="farmsDBModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
+                <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
+                <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
+                <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
+                <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
+                <ScalarProperty Name="Discounted" ColumnName="Discounted" />
+                <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
+                <ScalarProperty Name="DiscountedQuota" ColumnName="DiscountedQuota" />
+                <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -173,7 +164,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -189,6 +180,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams />
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>

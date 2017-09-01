@@ -47,6 +47,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -95,25 +96,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Product.cs">
-      <DependentUpon>ProductsModelHome.tt</DependentUpon>
+      <DependentUpon>ProductsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductImage.cs">
-      <DependentUpon>ProductsModelHome.tt</DependentUpon>
+      <DependentUpon>ProductsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductsModelHome.Context.cs">
+    <Compile Include="ProductsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModelHome.Context.tt</DependentUpon>
+      <DependentUpon>ProductsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductsModelHome.cs">
+    <Compile Include="ProductsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModelHome.tt</DependentUpon>
+      <DependentUpon>ProductsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductsModelHome.Designer.cs">
+    <Compile Include="ProductsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModelHome.edmx</DependentUpon>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -133,12 +134,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="ProductsModelHome.edmx">
+    <EntityDeploy Include="ProductsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductsModelHome.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProductsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProductsModelHome.edmx.diagram">
-      <DependentUpon>ProductsModelHome.edmx</DependentUpon>
+    <None Include="ProductsModel.edmx.diagram">
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,15 +153,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProductsModelHome.Context.tt">
+    <Content Include="ProductsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductsModelHome.edmx</DependentUpon>
-      <LastGenOutput>ProductsModelHome.Context.cs</LastGenOutput>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
+      <LastGenOutput>ProductsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ProductsModelHome.tt">
+    <Content Include="ProductsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductsModelHome.edmx</DependentUpon>
-      <LastGenOutput>ProductsModelHome.cs</LastGenOutput>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
+      <LastGenOutput>ProductsModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

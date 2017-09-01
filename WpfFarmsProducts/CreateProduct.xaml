@@ -5,25 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsProducts"
         mc:Ignorable="d"
-        Title="CreateProduct" Height="478.55" Width="520.241">
+        Title="CreateProduct" Height="826.525" Width="791.241" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="33,22,0,0" TextWrapping="Wrap" Text="產品名稱" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="13,62,0,0" TextWrapping="Wrap" Text="開始銷售日" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="13,102,0,0" TextWrapping="Wrap" Text="結束銷售日" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,142,0,0" TextWrapping="Wrap" Text="市場售價" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,182,0,0" TextWrapping="Wrap" Text="預計售價" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,222,0,0" TextWrapping="Wrap" Text="開放預購" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,22,0,0" TextWrapping="Wrap" Text="產品名稱" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="61,62,0,0" TextWrapping="Wrap" Text="開始銷售日" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="61,102,0,0" TextWrapping="Wrap" Text="結束銷售日" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,142,0,0" TextWrapping="Wrap" Text="市場售價" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,182,0,0" TextWrapping="Wrap" Text="預計售價" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,222,0,0" TextWrapping="Wrap" Text="開放預購" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,262,0,0" TextWrapping="Wrap" Text="出貨日" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,302,0,0" TextWrapping="Wrap" Text="總銷售量" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="41,342,0,0" TextWrapping="Wrap" Text="當前可銷售量" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,382,0,0" TextWrapping="Wrap" Text="已銷售量" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,422,0,0" TextWrapping="Wrap" Text="特價商品" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,462,0,0" TextWrapping="Wrap" Text="組合折扣" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,502,0,0" TextWrapping="Wrap" Text="滿額折扣" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,542,0,0" TextWrapping="Wrap" Text="折扣點數" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,582,0,0" TextWrapping="Wrap" Text="商品描述" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="txtbCreatedDate" HorizontalAlignment="Left" Margin="187,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="240" />
+        <TextBlock x:Name="txtbLastUpdateDate" HorizontalAlignment="Left" Margin="187,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="240" />
 
-        <TextBox x:Name="txtProductName" HorizontalAlignment="Left" Height="25" Margin="139,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
-        <TextBox x:Name="txtMarkPrice" HorizontalAlignment="Left" Height="25" Margin="139,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
-        <TextBox x:Name="txtUnitPrice" HorizontalAlignment="Left" Height="25" Margin="139,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtProductName" HorizontalAlignment="Left" Height="25" Margin="187,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtMarkPrice" HorizontalAlignment="Left" Height="25" Margin="187,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtUnitPrice" HorizontalAlignment="Left" Height="25" Margin="187,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtTotalQTY" HorizontalAlignment="Left" Height="25" Margin="187,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtCanSaleQTY" HorizontalAlignment="Left" Height="25" Margin="187,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtQuantitySold" HorizontalAlignment="Left" Height="25" Margin="187,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <TextBox x:Name="txtProductDescription" HorizontalAlignment="Left" Height="177" Margin="187,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
 
-        <Button x:Name="cmdCreateProduct" Content="新增產品" HorizontalAlignment="Left" Margin="159,384,0,0" VerticalAlignment="Top" Width="75" Click="CreateDataButton_Click"/>
-        <Button x:Name="cmdCancel" Content="取消" HorizontalAlignment="Left" Margin="266,384,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="cmdCreateProduct" Content="新增產品" HorizontalAlignment="Left" Margin="81,636,0,0" VerticalAlignment="Top" Width="80" Click="CreateDataButton_Click" IsDefault="True" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="29" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="cmdCancel" Content="取消" HorizontalAlignment="Left" Margin="81,694,0,0" VerticalAlignment="Top" Width="80" Click="cmdCancel_Click" IsCancel="True" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="29" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="cmdInsertImages" Content="加入圖片" HorizontalAlignment="Left" Margin="466,22,0,0" VerticalAlignment="Top" Width="80" IsDefault="True" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="29" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.512,1" Click="cmdInsertImages_Click"/>
 
-        <DatePicker x:Name="dtpkSellStartDate" HorizontalAlignment="Left" Margin="139,62,0,0" VerticalAlignment="Top" Width="240" FontWeight="Bold" FontSize="16"/>
-        <DatePicker x:Name="dtpkSellEndDate" HorizontalAlignment="Left" Margin="139,102,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
-        <CheckBox x:Name="chkPreOrder" Content="開放" HorizontalAlignment="Left" Margin="139,222,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <DatePicker x:Name="dtpkSellStartDate" HorizontalAlignment="Left" Margin="187,62,0,0" VerticalAlignment="Top" Width="240" FontWeight="Bold" FontSize="16"/>
+        <DatePicker x:Name="dtpkSellEndDate" HorizontalAlignment="Left" Margin="187,102,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+        <DatePicker x:Name="dtpkShippedDate" HorizontalAlignment="Left" Margin="187,262,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+
+        <CheckBox x:Name="chkPreOrder" Content="有" HorizontalAlignment="Left" Margin="187,222,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <CheckBox x:Name="chkDiscounted" Content="有" HorizontalAlignment="Left" Margin="187,422,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <CheckBox x:Name="chkDiscountedAB" Content="有" HorizontalAlignment="Left" Margin="187,462,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <CheckBox x:Name="chkDiscountedQuota" Content="有" HorizontalAlignment="Left" Margin="187,502,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <CheckBox x:Name="chkDiscountedPoint" Content="有" HorizontalAlignment="Left" Margin="187,542,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <WrapPanel HorizontalAlignment="Left" Height="697" Margin="466,62,0,0" VerticalAlignment="Top" Width="278">
+            <Image Height="100" Width="100"/>
+        </WrapPanel>
 
     </Grid>
 </Window>

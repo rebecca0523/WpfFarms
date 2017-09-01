@@ -25,26 +25,29 @@ namespace WpfFarmsProducts
             InitializeComponent();            
         }
 
-        //farmsDBEntities farmsDBEntities = new farmsDBEntities();
-
-        farmsEntitiesHome farmsEntitiesHome = new farmsEntitiesHome();
+        farmsDBEntities farmsDBEntities = new farmsDBEntities();     
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
-
-            this.ProductsDataGrid.ItemsSource = farmsEntitiesHome.Products.ToList();
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();        
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             CreateProduct createProduct = new CreateProduct();
-            createProduct.ShowDialog();
+            //createProduct.ShowDialog();
+            //createProduct.Owner = this;            
+            if (createProduct.ShowDialog() == true)
+            {
+                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
+            }
+            
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.farmsDBEntities.SaveChanges();
         }
+        
     }
 }
