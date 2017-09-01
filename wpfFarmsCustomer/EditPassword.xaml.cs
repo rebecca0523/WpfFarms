@@ -36,8 +36,8 @@ namespace wpfFarmsCustomer
             SqlCommand cmd = new SqlCommand(strSql, conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("Name", txtName.Text);
+            //cmd.Parameters.AddWithValue("Email", txtEmail.Text);
+            //cmd.Parameters.AddWithValue("Name", txtName.Text);
 
             SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
             pPassword.Direction = ParameterDirection.Input;
