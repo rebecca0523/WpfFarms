@@ -29,7 +29,7 @@ namespace WpfMarketing
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dtgTemp.ItemsSource = db.SaleEvent.ToArray();
+          
 
 
             //listbox加入登入賣家的特賣會
@@ -42,18 +42,47 @@ namespace WpfMarketing
                    
         }
 
+        //listbox選取改變時
         private void lstSaleEvent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //選取的index
             int n = int.Parse(lstSaleEvent.SelectedIndex.ToString());
 
-            //listbox選取改變時 改變特賣會內容
+            //選取listbox item的活動ID
+            var EVID = (from t in db.SaleEvent
+                               where t.SupplierID == loginSupplierID
+                               orderby t.SaleEventID
+                               select t.SaleEventID).Skip(n).FirstOrDefault();
+            // 改變特賣會內容
             var c = (from t in db.SaleEvent
-                     where t.SupplierID == loginSupplierID
-                     orderby t.SaleEventID
-                     select t.SaleEventContent).Skip(n).FirstOrDefault();
+                    where t.SaleEventID == EVID
+                    select t.SaleEventContent).FirstOrDefault();
             txtSEContent.Text = c + "           " + n;
+
+            //顯示既有的滿額折扣
+
+            var qu = from t in db.SaleEventQuota.AsEnumerable()
+                    where t.SaleEventID == EVID
+                    select new { Quota =$"{ t.Quota:C}", Discount=$"{t.Discount:N2}" };
+            lstSaleEventQuota.ItemsSource = qu.ToList();
+
+            //顯示既有的單品折扣
+            var si = from t in db.SaleEventSingleProducts.AsEnumerable()
+                    where t.SaleEventID == EVID
+                    join p in db.Products on t.ProductID equals p.ProductID
+                    select new { ProductName = p.ProductName, UnitPrice =$"{p.UnitPrice:C}", Discount = $"{t.Discount:N2}" , DiscountPrice =$"{p.UnitPrice * (decimal)t.Discount:N2}" };
+            lstSaleEventSingle.ItemsSource = si.ToList();
+
+            //顯示既有的組合商品
             
+            var co = from t in db.SaleEventComboes.AsEnumerable()
+                     where t.SaleEventID == EVID
+                    from p in db.Products
+                     
+
+                     select new { AProductName = t.AProductID, BProductName =t.BProductID};
+            lstSaleEventCombo.ItemsSource = co.ToList();
+           
         }
     }
 }

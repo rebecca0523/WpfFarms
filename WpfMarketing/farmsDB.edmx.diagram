@@ -5,10 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="651312a0a2e547bfb772eaab5c7071d1" Name="Diagram1">
-        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="4.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="1.25" PointY="3.125" />
         <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" />
-      </Diagram>
+        <EntityTypeShape EntityType="farmsDBModel.Products" Width="1.5" PointX="6.75" PointY="2.25" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventSingleProduct" Width="1.5" PointX="3.875" PointY="4.125" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_Products" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_SaleEvent" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventCombo" Width="2.5" PointX="9" PointY="2.75" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products1" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventA_B_SaleEvent" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

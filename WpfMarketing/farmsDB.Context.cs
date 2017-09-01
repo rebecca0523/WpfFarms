@@ -27,5 +27,8 @@ namespace WpfMarketing
     
         public virtual DbSet<SaleEvent> SaleEvent { get; set; }
         public virtual DbSet<SaleEventQuota> SaleEventQuota { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
+        public virtual DbSet<SaleEventCombo> SaleEventComboes { get; set; }
     }
 }
