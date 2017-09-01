@@ -72,7 +72,7 @@
                 </StackPanel>
             </UniformGrid>
             <TextBox x:Name="txtSEContent" Height="152" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="21" Width="445" Background="#FFF5DAB9"/>
-            <Button Content="儲存" Canvas.Left="656" Canvas.Top="531" Width="126" Height="28" Background="#FFF0D5F1"/>
+            <Button x:Name="btnSave" Content="儲存" Canvas.Left="656" Canvas.Top="531" Width="126" Height="28" Background="#FFF0D5F1" Click="btnSave_Click"/>
 
 
         </Canvas>

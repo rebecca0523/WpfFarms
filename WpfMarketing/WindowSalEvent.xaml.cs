@@ -90,5 +90,30 @@ namespace WpfMarketing
             lstSaleEventCombo.ItemsSource = co.ToList();
            
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i <= lstSaleEvent.Items.Count - 1; i++)
+            {
+                //不要的字,符號
+                char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+                //轉字串 切割
+                var q = lstSaleEvent.Items[i].ToString();
+                string[] qa = q.Split(delimiterChars);
+                //取ID
+                var EVID = (from t in db.SaleEvent
+                            where t.SupplierID == loginSupplierID
+                            orderby t.SaleEventID
+                            select t.SaleEventID).Skip(i).FirstOrDefault();
+
+                var se = (from s in this.db.SaleEvent
+                          where s.SaleEventID == EVID
+                          select s).FirstOrDefault();
+                string evt = qa[3];
+                se.SaleEventTitle = evt;
+                this.db.SaveChanges();
+
+            };
+        }
     }
 }
