@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfFarmsProducts
+namespace WpfFarmsSupplier
 {
     using System;
     using System.Data.Entity;
@@ -25,7 +25,6 @@ namespace WpfFarmsProducts
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ProductImage> ProductImages { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Suppliers> Suppliers { get; set; }
     }
 }

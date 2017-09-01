@@ -24,22 +24,38 @@ namespace WpfFarmsProducts
             InitializeComponent();
         }
 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        farmsEntitiesHome farmsEntitiesHome = new farmsEntitiesHome();
+        //farmsDBEntities farmsDBEntities = new farmsDBEntities();
 
         private void CreateDataButton_Click(object sender, RoutedEventArgs e)
         {
-            // int ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID;
+             //int ProductID = farmsEntitiesHome.Products.ToList().LastOrDefault(n=>n.ProductID==0).ProductID;
             Product product = new Product {
-                ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,
+
+                //ProductID = farmsEntitiesHome.Products.ToList().LastOrDefault(n=>n.ProductID==0).ProductID + 1,
                 ProductName = this.txtProductName.Text,
                 SellStartDate = this.dtpkSellStartDate.DisplayDate,
-                SellEndDate=this.dtpkSellEndDate.DisplayDate,
-                MarkPrice=decimal.Parse( this.txtMarkPrice.Text),
-                UnitPrice=decimal.Parse(this.txtUnitPrice.Text),
+                SellEndDate = this.dtpkSellEndDate.DisplayDate,
+                MarkPrice = decimal.Parse(this.txtMarkPrice.Text),
+                UnitPrice = decimal.Parse(this.txtUnitPrice.Text),
+                PreOrder = this.chkPreOrder.IsChecked,
                 CreatedDate = DateTime.Now
+
+                //ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,
+                //ProductName = this.txtProductName.Text,
+                //SellStartDate = this.dtpkSellStartDate.DisplayDate,
+                //SellEndDate = this.dtpkSellEndDate.DisplayDate,
+                //MarkPrice = decimal.Parse(this.txtMarkPrice.Text),
+                //UnitPrice = decimal.Parse(this.txtUnitPrice.Text),
+                //PreOrder = this.chkPreOrder.IsChecked,
+                //CreatedDate = DateTime.Now
             };
-            this.farmsDBEntities.Products.Add(product);
-            this.farmsDBEntities.SaveChanges();
+
+            this.farmsEntitiesHome.Products.Add(product);
+            this.farmsEntitiesHome.SaveChanges();
+
+            //this.farmsDBEntities.Products.Add(product);
+            //this.farmsDBEntities.SaveChanges();
         }
     }
 }

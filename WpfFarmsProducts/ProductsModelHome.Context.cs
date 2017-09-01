@@ -13,10 +13,10 @@ namespace WpfFarmsProducts
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class farmsDBEntities : DbContext
+    public partial class farmsEntitiesHome : DbContext
     {
-        public farmsDBEntities()
-            : base("name=farmsDBEntities")
+        public farmsEntitiesHome()
+            : base("name=farmsEntitiesHome")
         {
         }
     

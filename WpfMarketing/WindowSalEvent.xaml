@@ -9,13 +9,17 @@
     <Window.Resources>
         <DataTemplate x:Key="SEDataTemplate">
             <DockPanel>
-
                 <TextBox Text="{Binding SaleEventTitle,Mode=OneWay}" DockPanel.Dock="Left" Margin="20,0,0,0" HorizontalContentAlignment="Left" Width="100" />
                 <DatePicker SelectedDate="{Binding SaleEventStar,Mode=OneWay}" DockPanel.Dock="Left" HorizontalContentAlignment="Left"/>
                 <DatePicker SelectedDate="{Binding SaleEventEnd,Mode=OneWay}" DockPanel.Dock="Left" HorizontalContentAlignment="Left" />
+            </DockPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SEQuotaTemplate">
+            <DockPanel>
+                <TextBlock Text="{Binding Quota,Mode=OneWay}" />
+                <TextBlock Text="{Binding Discount,Mode=OneWay}"/>
 
             </DockPanel>
-
         </DataTemplate>
 
     </Window.Resources>
@@ -29,7 +33,7 @@
             <UniformGrid Columns="3" Canvas.Left="330" Canvas.Top="187">
                 <StackPanel Height="339" Canvas.Left="337" Canvas.Top="178" Width="148" Background="#FFF8FFCD">
                     <TextBlock TextWrapping="Wrap" Text="滿額折扣" Margin="0,0,10,0"/>
-                    <ListBox x:Name="lstSaleEventQuota" />
+                    <ListBox x:Name="lstSaleEventQuota" ItemTemplate="{DynamicResource SEQuotaTemplate}" Margin="0" Height="324"/>
                 </StackPanel>
                 <StackPanel Height="339" Canvas.Left="490" Canvas.Top="178" Background="#FFD0FBBF">
                     <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0,0,10,0"/>
