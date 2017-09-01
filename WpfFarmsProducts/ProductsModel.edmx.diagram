@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2cfcc15c6d684102972bc62f92b3b9bc" Name="Diagram1" >
-        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="0.75" PointY="1.125" />
         <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="0.75" PointY="1.125" />
         <AssociationConnector Association="farmsDBModel.FK_ProductImages_Products" />
       </Diagram>
     </edmx:Diagrams>

@@ -25,7 +25,7 @@ namespace WpfFarmsProducts
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }
