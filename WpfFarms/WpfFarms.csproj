@@ -111,10 +111,6 @@
       <Project>{1678d205-7bb2-4c52-9dbf-9ed61ebac5f5}</Project>
       <Name>WpfFarmsProducts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
-      <Project>{163a032f-360d-48b3-a26f-e2d537f7ffe5}</Project>
-      <Name>WpfFarmsSupplier</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

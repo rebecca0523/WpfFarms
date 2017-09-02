@@ -50,7 +50,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <!--<Grid DataContext="{StaticResource supplierViewSource}" Height="48"/>-->
-        
+
         <Canvas HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="527">
             <Button x:Name="cmdSave" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click"/>
             <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="196" Click="Button_Click"/>
@@ -58,10 +58,34 @@
             <Button Content="foward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="321"/>
             <Button Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="452"/>
         </Canvas>
-        <Canvas Height="191" Margin="0" VerticalAlignment="Top">
+        <Canvas Height="247" Margin="0" VerticalAlignment="Top">
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+
             </Canvas.Background>
+            <Label Content="Supplier ID:" Canvas.Left="6" Canvas.Top="48" Height="25" Width="75"/>
+            <TextBox x:Name="supplierIDTextBox" Height="17" Width="106" Canvas.Left="117" Canvas.Top="55" />
+            <Label Content="Supplier Name:" Canvas.Left="261" Canvas.Top="55" />
+            <TextBox x:Name="supplierNameTextBox" Width="106" Canvas.Left="390" Canvas.Top="55" />
+            <Label Content="email 1:" Canvas.Left="12" Canvas.Top="120" Height="25" Width="55" />
+            <TextBox x:Name="email1TextBox" Canvas.Left="117" Canvas.Top="120" Width="106" Height="17" />
+            <Label Content="Contact Name 1:" Canvas.Left="6" Canvas.Top="91" Height="25" Width="111" />
+            <TextBox x:Name="contactName1TextBox" Width="106" Canvas.Left="117" Canvas.Top="91" Height="17" />
+            <Label Content="Contact Name 2:" Canvas.Left="254" Canvas.Top="91" />
+            <TextBox x:Name="contactName2TextBox" Width="106" Canvas.Left="390" Canvas.Top="91" Height="17" />
+            <Label Content="email 2:" Canvas.Left="305" Canvas.Top="120" />
+            <TextBox x:Name="emai21TextBox" Canvas.Left="390" Canvas.Top="120" Width="106" Height="17" />
+            <Label Content="Line ID:" Canvas.Left="12" Canvas.Top="149" Height="25" Width="55" />
+            <TextBox x:Name="lineIDTextBox" Canvas.Left="117" Canvas.Top="149" Width="106" Height="17" />
+            <Label Content="Postal Code:" Canvas.Left="6" Canvas.Top="178" Width="90" />
+            <TextBox x:Name="postalCodeTextBox"  Canvas.Left="117" Canvas.Top="178" Width="106" Height="17" />
+            <Label Content="Address:" Canvas.Left="237" Canvas.Top="178" />
+            <TextBox x:Name="addressTextBox" Canvas.Left="295" Canvas.Top="178" Width="206" Height="17" />
+
+
+
+
+
 
         </Canvas>
     </StackPanel>
