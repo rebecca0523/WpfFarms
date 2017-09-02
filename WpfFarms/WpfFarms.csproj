@@ -99,17 +99,13 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\wpfFarmsCustomer\wpfFarmsCustomer.csproj">
+    <ProjectReference Include="..\wpfFarmsCustomer\WpfFarmsCustomer.csproj">
       <Project>{b09c11c1-ed84-430f-85a1-8d3aa6dc2417}</Project>
-      <Name>wpfFarmsCustomer</Name>
+      <Name>WpfFarmsCustomer</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfFarmsProducts\WpfFarmsProducts.csproj">
       <Project>{1678d205-7bb2-4c52-9dbf-9ed61ebac5f5}</Project>
       <Name>WpfFarmsProducts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
-      <Project>{71acd86f-34f5-419d-9954-ff7222789579}</Project>
-      <Name>WpfFarmsSupplier</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
