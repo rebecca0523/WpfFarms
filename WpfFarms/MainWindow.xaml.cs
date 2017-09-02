@@ -39,7 +39,7 @@ namespace WpfFarms
        
         private void miSuppliersCRUD_Click(object sender, RoutedEventArgs e)
         {
-            SuppliersCRUDsingle SuppliersCRUD = new SuppliersCRUDsingle();
+            SuppliersMainCRUD SuppliersCRUD = new SuppliersMainCRUD();
 
             SuppliersCRUD.ShowDialog();
 
