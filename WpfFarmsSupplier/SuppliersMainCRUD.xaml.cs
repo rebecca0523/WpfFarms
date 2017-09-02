@@ -23,5 +23,13 @@ namespace WpfFarmsSupplier
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));
+            // 透過設定 CollectionViewSource.Source 屬性載入資料: 
+            // supplierViewSource.Source = [泛用資料來源]
+        }
     }
 }
