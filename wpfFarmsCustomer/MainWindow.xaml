@@ -13,7 +13,7 @@
         <Label Content="電子郵件" HorizontalAlignment="Left" Margin="131,82,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
         <Label Content="密碼" HorizontalAlignment="Left" Margin="131,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
         <Button x:Name="btnregister" Content="註冊" HorizontalAlignment="Left" Margin="304,192,0,0" VerticalAlignment="Top" Width="75" Click="btnregistered_Click"/>
-        <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" Margin="220,226,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" Margin="220,226,0,0" VerticalAlignment="Top" Width="75" Click="btnforget_Click"/>
 
     </Grid>
 </Window>

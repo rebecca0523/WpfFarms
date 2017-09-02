@@ -94,10 +94,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>farmsDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Products.cs">
+      <DependentUpon>farmsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="SaleEvent.cs">
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="SaleEventCombo.cs">
+      <DependentUpon>farmsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="SaleEventQuota.cs">
+      <DependentUpon>farmsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleEventSingleProduct.cs">
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WindowSalEvent.xaml.cs">

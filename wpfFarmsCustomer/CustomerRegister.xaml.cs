@@ -30,7 +30,6 @@ namespace wpfFarmsCustomer
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            CustomerRegister customerRegister = new CustomerRegister();
 
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
             string strSql = "Insert";
@@ -113,8 +112,7 @@ namespace wpfFarmsCustomer
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
-
-            customerRegister.Close();
+            //TODO:MSGBOX關閉後註冊畫面也一併關閉
         }
     }
 }
