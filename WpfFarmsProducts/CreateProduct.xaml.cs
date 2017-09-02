@@ -49,23 +49,31 @@ namespace WpfFarmsProducts
                 DiscountedQuota = this.chkDiscountedQuota.IsChecked,
                 DiscountedPoint = this.chkDiscountedPoint.IsChecked,
                 CreatedDate = DateTime.Now,
-                LastUpdateDate = DateTime.Now
+                LastUpdateDate = DateTime.Now       
             };
 
             this.farmsDBEntities.Products.Add(product);
             this.farmsDBEntities.SaveChanges();
 
+            foreach (string i in allowableFileTypes)
+            {
+                FileStream fileStream = new FileStream(i, FileMode.Open);
+                byte[] ImageByte = new byte[fileStream.Length];
+                fileStream.Read(ImageByte, 0, ImageByte.Length);
+                fileStream.Close();
+                ProductImage productImage = new ProductImage
+                {
+                    ProductImageID = farmsDBEntities.ProductImages.ToList().LastOrDefault().ProductImageID + 1,
+                    ProductID = product.ProductID,
+                    ProductImage1 = ImageByte
+                };
+                this.farmsDBEntities.ProductImages.Add(productImage);
+                this.farmsDBEntities.SaveChanges();
+            }
+
             MessageBox.Show("新增檔案完成");
             this.DialogResult = true;
             this.Close();
-
-
-
-            //}
-            //catch(System.FormatException ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
         }
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)
@@ -75,48 +83,40 @@ namespace WpfFarmsProducts
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //this.txtbCreatedDate.Text = DateTime.Now.ToShortDateString();
-            //this.txtbLastUpdateDate.Text= DateTime.Now.ToShortDateString();
+            
         }
+
+        List<string> allowableFileTypes = new List<string>();
 
         private void cmdInsertImages_Click(object sender, RoutedEventArgs e)
         {
+            allowableFileTypes.Clear();
+            //this.FishEyePanel.Children.Clear();
+            this.wpanelInsertImage.Children.Clear();
+
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
             openFileDialog.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
             openFileDialog.Multiselect = true;
-            List<string> allowableFileTypes = new List<string>();
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                allowableFileTypes.AddRange(openFileDialog.FileNames);//把要的檔案放進allowableFileTypes
-
+                allowableFileTypes.AddRange(openFileDialog.FileNames);//把選取的檔案名子放進allowableFileTypes
+                
                 foreach (string i in allowableFileTypes)
                 {
-                    Image image = new Image();
                     BitmapImage bitmapImage = new BitmapImage();
+                    Image image = new Image();
                     bitmapImage.BeginInit();
                     bitmapImage.UriSource = new Uri(i, UriKind.Absolute);
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;//在載入時快取整個影像至記憶體。 影像資料的所有要求都會從記憶體存放區填入
+                    bitmapImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;//載入影像時未使用現有的影像快取。 只有在快取中的影像需要重新整理時，才應該選取此選項
                     bitmapImage.EndInit();
                     image.Source = bitmapImage;
                     this.wpanelInsertImage.Children.Add(image);
-                }
-                //    //if (!openFileDialog.FileName.Equals(String.Empty))
-                //    //{
-                //    //    FileInfo f = new FileInfo(openFileDialog.FileName);
-                //    //    if (allowableFileTypes.Contains(f.Extension.ToLower()))
-                //    //    {
-                //    //        Image image = new Image();
-                //    //        image.Source = f.FullName;
-                //    //    }
-                //    //    else
-                //    //    {
-                //    //        MessageBox.Show("Invalid file type");
-                //    //    }
-                //    //}
-                //    //else
-                //    //{
-                //    //    MessageBox.Show("You did pick a file to use");
-                //    //}
+                    //this.FishEyePanel.RenderTransformOrigin = new Point(0.5, 0.5);
+                    //this.FishEyePanel.RenderTransform = new RotateTransform(90);                                     
+                    //this.FishEyePanel.Children.Add(image);                        
+                }               
             }
         }
     }

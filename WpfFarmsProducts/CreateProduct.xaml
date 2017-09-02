@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:FishEye="clr-namespace:WpfFishEyeControl;assembly=WpfFishEyeControl"
         xmlns:local="clr-namespace:WpfFarmsProducts"
         mc:Ignorable="d"
         Title="CreateProduct" Height="826.525" Width="791.241" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
@@ -46,7 +47,11 @@
         <CheckBox x:Name="chkDiscountedAB" Content="有" HorizontalAlignment="Left" Margin="187,462,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <CheckBox x:Name="chkDiscountedQuota" Content="有" HorizontalAlignment="Left" Margin="187,502,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <CheckBox x:Name="chkDiscountedPoint" Content="有" HorizontalAlignment="Left" Margin="187,542,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <WrapPanel x:Name="wpanelInsertImage" HorizontalAlignment="Left" Height="697" Margin="466,62,0,0" VerticalAlignment="Top" Width="278"/>
+        <WrapPanel x:Name="wpanelInsertImage" HorizontalAlignment="Left" Height="697" Margin="466,62,0,0" VerticalAlignment="Top" Width="278">
+            <!--<FishEye:FishEyePanel x:Name="FishEyePanel" >
+                
+            </FishEye:FishEyePanel>-->
+        </WrapPanel>
 
     </Grid>
 </Window>
