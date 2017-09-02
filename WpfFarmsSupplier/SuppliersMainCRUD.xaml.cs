@@ -35,14 +35,16 @@ namespace WpfFarmsSupplier
             supplierViewSource.Source = context.Suppliers.ToList();
         }
 
-        Supplier SupplierTable = new Supplier();
+        Supplier SupplierTable;
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
-            //SupplierTable.SupplierName = supplierDataGrid.sup
+            SupplierTable = new Supplier();
+            SupplierTable.SupplierName = supplierNameTextBox.Text;
+            SupplierTable.email1 = email1TextBox.Text;
 
-
-            //context.SaveChanges();
-            //supplierViewSource.Source = context.Suppliers.ToList();
+            context.Suppliers.Add(SupplierTable);
+            context.SaveChanges();
+            supplierViewSource.Source = context.Suppliers.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
