@@ -1,0 +1,14 @@
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\bin\Debug\WpfCustomer.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\bin\Debug\WpfCustomer.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\bin\Debug\WpfCustomer.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\MainWindow.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\App.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer_MarkupCompile.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer_MarkupCompile.lref
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\MainWindow.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer.g.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer.Properties.Resources.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfFarmsCustomer.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfFarmsCustomer.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfCustomer\obj\Debug\WpfCustomer.pdb

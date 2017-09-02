@@ -1,0 +1,15 @@
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarms.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarms.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarms.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\MainWindow.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\App.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms_MarkupCompile.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms_MarkupCompile.lref
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\MainWindow.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.g.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.Properties.Resources.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb

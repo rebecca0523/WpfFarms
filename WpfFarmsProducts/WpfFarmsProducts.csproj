@@ -138,9 +138,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProductsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProductsModel.edmx.diagram">
-      <DependentUpon>ProductsModel.edmx</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

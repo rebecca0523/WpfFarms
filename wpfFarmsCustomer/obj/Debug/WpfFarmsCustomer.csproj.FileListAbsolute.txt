@@ -1,0 +1,17 @@
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\wpfFarmsCustomer.exe.config
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\wpfFarmsCustomer.exe
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\wpfFarmsCustomer.pdb
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\CustomerRegister.g.cs
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\MainWindow.g.cs
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\App.g.cs
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_MarkupCompile.cache
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_MarkupCompile.lref
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\CustomerRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\MainWindow.baml
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.g.resources
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.Properties.Resources.resources
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.exe
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.pdb

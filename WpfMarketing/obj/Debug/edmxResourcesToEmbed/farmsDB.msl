@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
+    <EntitySetMapping Name="SaleEvent">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
+        <MappingFragment StoreEntitySet="SaleEvent">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventTitle" ColumnName="SaleEventTitle" />
+          <ScalarProperty Name="SaleEventContent" ColumnName="SaleEventContent" />
+          <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
+          <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventQuota">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
+        <MappingFragment StoreEntitySet="SaleEventQuota">
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Quota" ColumnName="Quota" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

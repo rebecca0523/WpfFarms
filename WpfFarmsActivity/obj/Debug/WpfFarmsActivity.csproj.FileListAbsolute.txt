@@ -1,0 +1,19 @@
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\Simple Styles.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\MainWindow.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\App.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_MarkupCompile.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_MarkupCompile.lref
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\App.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\MainWindow.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.g.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.Properties.Resources.resources
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb

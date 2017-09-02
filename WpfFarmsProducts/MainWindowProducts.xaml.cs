@@ -35,8 +35,7 @@ namespace WpfFarmsProducts
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             CreateProduct createProduct = new CreateProduct();
-            //createProduct.ShowDialog();
-            //createProduct.Owner = this;            
+                  
             if (createProduct.ShowDialog() == true)
             {
                 this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();

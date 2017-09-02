@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ProductImages">
+    <Key>
+      <PropertyRef Name="ProductImageID" />
+    </Key>
+    <Property Name="ProductImageID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductImage" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" />
+    <Property Name="SellStartDate" Type="datetime" />
+    <Property Name="SellEndDate" Type="datetime" />
+    <Property Name="MarkPrice" Type="money" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="PreOrder" Type="bit" />
+    <Property Name="ShippedDate" Type="datetime" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="TotalQTY" Type="int" />
+    <Property Name="CanSaleQTY" Type="int" />
+    <Property Name="QuantitySold" Type="int" />
+    <Property Name="Discounted" Type="bit" />
+    <Property Name="DiscountedAB" Type="bit" />
+    <Property Name="DiscountedQuota" Type="bit" />
+    <Property Name="DiscountedPoint" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_ProductImages_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductImages">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="farmsDBModelStoreContainer">
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductImages" EntitySet="ProductImages" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
