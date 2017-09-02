@@ -85,6 +85,9 @@
     <Compile Include="SuppliersCRUDsingle.xaml.cs">
       <DependentUpon>SuppliersCRUDsingle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuppliersMainCRUD.xaml.cs">
+      <DependentUpon>SuppliersMainCRUD.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindowSupplier.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SuppliersCRUDsingle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuppliersMainCRUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
