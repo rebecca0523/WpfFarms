@@ -32,5 +32,16 @@ namespace WpfFarmsSupplier.Properties {
                 return ((string)(this["farmsDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WINDOWS-U4KPP12\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Secur" +
+            "ity=True")]
+        public string NorthwindConnectionString {
+            get {
+                return ((string)(this["NorthwindConnectionString"]));
+            }
+        }
     }
 }
