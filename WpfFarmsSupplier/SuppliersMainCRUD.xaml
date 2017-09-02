@@ -5,75 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsSupplier"
         mc:Ignorable="d"
-        Title="SuppliersMainCRUD" Height="800" Width="700" Loaded="Window_Loaded">
+        Title="SuppliersMainCRUD" Height="506.666" Width="902.667" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Supplier}, CreateList=True}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource supplierViewSource}">
-        <Grid x:Name="grid1" DataContext="{StaticResource supplierViewSource}" HorizontalAlignment="Left" Margin="26,282,0,0" VerticalAlignment="Top" Height="464" Width="291">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Label Content="Supplier ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="supplierIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding SupplierID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Supplier Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-            <TextBox x:Name="supplierNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding SupplierName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Contact Name 1:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox x:Name="contactName1TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding ContactName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Contact Name 2:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox x:Name="contactName2TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding ContactName2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-
-            <Label Content="email 1:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
-            <TextBox x:Name="email1TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding email1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="email 2:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
-            <TextBox x:Name="email2TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding email2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
 
 
-            <Label Content="Phone 1:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
-            <TextBox x:Name="phone1TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="6" Text="{Binding Phone1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Phone 2:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
-            <TextBox x:Name="phone2TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="7" Text="{Binding Phone2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Line ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
-            <TextBox x:Name="lineIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="8" Text="{Binding LineID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-
-
-            <Label Content="Postal Code:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
-            <TextBox x:Name="postalCodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="9" Text="{Binding PostalCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="10" VerticalAlignment="Center"/>
-            <TextBox x:Name="addressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="10" Text="{Binding Address, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-
-            <Label Content="Created User ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="11" VerticalAlignment="Center"/>
-            <TextBox x:Name="createdUserIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="11" Text="{Binding CreatedUserID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Created Date:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="12" VerticalAlignment="Center"/>
-            <DatePicker x:Name="createdDateDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="12" SelectedDate="{Binding CreatedDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
-            <Label Content="Last Update User ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="13" VerticalAlignment="Center"/>
-            <TextBox x:Name="lastUpdateUserIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="13" Text="{Binding LastUpdateUserID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-
-
-            <Label Content="Last Update Date:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="14" VerticalAlignment="Center"/>
-            <DatePicker x:Name="lastUpdateDateDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="14" SelectedDate="{Binding LastUpdateDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
-
-
-        </Grid>
-        <DataGrid x:Name="supplierDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,20,585" RowDetailsVisibilityMode="VisibleWhenSelected">
+    <StackPanel>
+        <DataGrid x:Name="supplierDataGrid" DataContext="{StaticResource supplierViewSource}"  AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="201" Foreground="#FF1B1A1A" Panel.ZIndex="7" Background="{x:Null}">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="supplierIDColumn" Binding="{Binding SupplierID}" Header="Supplier ID" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="supplierNameColumn" Binding="{Binding SupplierName}" Header="Supplier Name" Width="SizeToHeader"/>
@@ -110,13 +49,20 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Canvas HorizontalAlignment="Left" Height="27" Margin="66,214,0,0" VerticalAlignment="Top" Width="527">
-            <Button x:Name="cmdADD" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
-            <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="196"/>
-            <Button Content="delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="94"/>
+        <!--<Grid DataContext="{StaticResource supplierViewSource}" Height="48"/>-->
+        
+        <Canvas HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="527">
+            <Button x:Name="cmdSave" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click"/>
+            <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="196" Click="Button_Click"/>
+            <Button Content="delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="94" Click="Button_Click_1"/>
             <Button Content="foward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="321"/>
             <Button Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="452"/>
         </Canvas>
+        <Canvas Height="191" Margin="0" VerticalAlignment="Top">
+            <Canvas.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Canvas.Background>
 
-    </Grid>
+        </Canvas>
+    </StackPanel>
 </Window>
