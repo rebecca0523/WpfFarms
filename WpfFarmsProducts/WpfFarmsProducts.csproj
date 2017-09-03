@@ -72,6 +72,9 @@
     <Compile Include="CreateProduct.xaml.cs">
       <DependentUpon>CreateProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>ProductsModel.tt</DependentUpon>
+    </Compile>
     <Page Include="CreateProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

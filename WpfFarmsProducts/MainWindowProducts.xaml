@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfFarmsProducts.MainWindow"
+﻿<Window x:Class="WpfFarmsProducts.MainWindowProducts"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,15 +16,27 @@
         </ToolBarTray>
         <DockPanel LastChildFill="True" Margin="0,50,0,0">
             <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" >
-                <!--<DataGrid.Columns>                    
-                   <DataGridTemplateColumn Header="SellStartDate">
+                <DataGrid.Columns>
+                    
+                    <DataGridTemplateColumn Header="ProductID">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
+                                <TextBlock Text="{Binding ProductID}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                   <DataGridTemplateColumn Header="SellStartDate">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
                                 <DatePicker SelectedDate="{Binding SellStartDate}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                </DataGrid.Columns>-->
+                    
+                    <DataGridCheckBoxColumn Header="Discounted" Binding="{Binding Discounted}"/>
+                    
+                </DataGrid.Columns>
             </DataGrid>
             
         </DockPanel>

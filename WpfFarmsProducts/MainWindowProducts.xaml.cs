@@ -18,18 +18,19 @@ namespace WpfFarmsProducts
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowProducts : Window
     {
-        public MainWindow()
+        public MainWindowProducts()
         {
             InitializeComponent();            
         }
 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();     
+        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        public static int SupplierID =1; //暫定抓1號小農
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();        
+        private void Window_Loaded(object sender, RoutedEventArgs e)        {
+
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID )/*.Select(n=>new { ProductID= n.ProductID, SellStartDate =n.SellStartDate})*/.ToList();        
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -38,7 +39,7 @@ namespace WpfFarmsProducts
                   
             if (createProduct.ShowDialog() == true)
             {
-                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.ToList();
+                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(N => N.SupplierID == SupplierID ).ToList(); 
             }
             
         }

@@ -3,9 +3,14 @@
   <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ProductImages" EntityType="farmsDBModel.ProductImage" />
     <EntitySet Name="Products" EntityType="farmsDBModel.Product" />
+    <EntitySet Name="Suppliers" EntityType="farmsDBModel.Supplier" />
     <AssociationSet Name="FK_ProductImages_Products" Association="farmsDBModel.FK_ProductImages_Products">
       <End Role="Product" EntitySet="Products" />
       <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Suppliers" Association="farmsDBModel.FK_Products_Suppliers">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Product" EntitySet="Products" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ProductImage">
@@ -42,6 +47,28 @@
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ProductImages" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImage" />
+    <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
   </EntityType>
   <Association Name="FK_ProductImages_Products">
     <End Type="farmsDBModel.Product" Role="Product" Multiplicity="1" />
@@ -52,6 +79,18 @@
       </Principal>
       <Dependent Role="ProductImage">
         <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Suppliers">
+    <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <End Type="farmsDBModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SupplierID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

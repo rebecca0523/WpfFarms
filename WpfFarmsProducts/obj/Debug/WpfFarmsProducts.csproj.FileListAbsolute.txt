@@ -33,7 +33,6 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\EntityFramework.S
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\EntityFramework.xml
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\zh-Hant\EntityFramework.resources.dll
-C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csprojResolveAssemblyReference.cache
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\CreateProduct.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\MainWindowProducts.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ShinyBlueDictionary.g.cs
@@ -53,3 +52,4 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.exe
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csprojResolveAssemblyReference.cache

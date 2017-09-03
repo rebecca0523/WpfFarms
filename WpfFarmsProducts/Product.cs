@@ -43,5 +43,6 @@ namespace WpfFarmsProducts
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductImage> ProductImages { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }

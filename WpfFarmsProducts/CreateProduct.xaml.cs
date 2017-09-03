@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static WpfFarmsProducts.MainWindowProducts;
 
 namespace WpfFarmsProducts
 {
@@ -25,25 +26,26 @@ namespace WpfFarmsProducts
             InitializeComponent();
         }
                 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();        
-
+        farmsDBEntities farmsDBEntities = new farmsDBEntities();     
+        
         private void CreateDataButton_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             //try
             //{
             Product product = new Product
             {
                 ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,//0筆資料時會錯誤
+                SupplierID= SupplierID,
                 ProductName = this.txtProductName.Text,
                 SellStartDate = this.dtpkSellStartDate.DisplayDate,
                 SellEndDate = this.dtpkSellEndDate.DisplayDate,
-                MarkPrice = decimal.Parse(this.txtMarkPrice.Text),//型別要再判斷
-                UnitPrice = decimal.Parse(this.txtUnitPrice.Text),//型別要再判斷
+                MarkPrice = decimal.Parse(this.txtMarkPrice.Text),//要防輸入型別的錯誤
+                UnitPrice = decimal.Parse(this.txtUnitPrice.Text),//要防輸入型別的錯誤
                 PreOrder = this.chkPreOrder.IsChecked,
                 ShippedDate = this.dtpkShippedDate.DisplayDate,
-                TotalQTY = int.Parse(this.txtTotalQTY.Text),//型別要再判斷
-                CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//型別要再判斷
-                QuantitySold = int.Parse(this.txtQuantitySold.Text),//型別要再判斷
+                TotalQTY = int.Parse(this.txtTotalQTY.Text),//要防輸入型別的錯誤
+                CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//要防輸入型別的錯誤
+                QuantitySold = int.Parse(this.txtQuantitySold.Text),//要防輸入型別的錯誤
                 Discounted = this.chkDiscounted.IsChecked,
                 DiscountedAB = this.chkDiscountedAB.IsChecked,
                 DiscountedQuota = this.chkDiscountedQuota.IsChecked,

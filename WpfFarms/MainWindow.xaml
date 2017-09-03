@@ -14,7 +14,7 @@
             <MenuItem Header="小農">
                 <MenuItem Name="miSuppliersCRUD" Header="小農基本資料檔"  Click="miSuppliersCRUD_Click"/>
             </MenuItem>
-            <MenuItem Header="商品"/>
+            <MenuItem x:Name="miProducts" Header="商品" Click="miProducts_Click" />
             <MenuItem Header="行銷"/>
             <MenuItem Header="活動"/>
         </Menu>
