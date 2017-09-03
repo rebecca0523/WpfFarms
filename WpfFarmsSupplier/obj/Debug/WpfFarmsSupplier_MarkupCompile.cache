@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\
 WpfFarmsSupplier
 none
 false
 DEBUG;TRACE
-C:\99GitHub\WpfFarms\WpfFarmsSupplier\App.xaml
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsSupplier\App.xaml
 2-280586444
 4441742557
 13-760166832
-18-2119672473
+18-1105386892
 MainWindow.xaml;SuppliersMainCRUD.xaml;
 
-False
+True
 
