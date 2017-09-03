@@ -64,6 +64,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="farmDBModelNB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>farmDBModelNB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="farmDBModelNB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>farmDBModelNB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="farmDBModelNB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>farmDBModelNB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="farmsDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,7 +95,7 @@
       <DependentUpon>farmsDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
-      <DependentUpon>farmsDBModel.tt</DependentUpon>
+      <DependentUpon>farmDBModelNB.tt</DependentUpon>
     </Compile>
     <Compile Include="SuppliersMainCRUD.xaml.cs">
       <DependentUpon>SuppliersMainCRUD.xaml</DependentUpon>
@@ -124,6 +139,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>farmsDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="farmDBModelNB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>farmDBModelNB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="farmDBModelNB.edmx.diagram">
+      <DependentUpon>farmDBModelNB.edmx</DependentUpon>
+    </None>
     <None Include="farmsDBModel.edmx.diagram">
       <DependentUpon>farmsDBModel.edmx</DependentUpon>
     </None>
@@ -138,6 +160,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="farmDBModelNB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>farmDBModelNB.edmx</DependentUpon>
+      <LastGenOutput>farmDBModelNB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="farmDBModelNB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>farmDBModelNB.edmx</DependentUpon>
+      <LastGenOutput>farmDBModelNB.cs</LastGenOutput>
+    </Content>
     <Content Include="farmsDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>farmsDBModel.Context.cs</LastGenOutput>
