@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="farmsDBModel1StoreContainer" CdmEntityContainer="farmsDBEntities1">
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="farmsDBModel1.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
+          <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

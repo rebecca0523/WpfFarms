@@ -7,7 +7,7 @@
         xmlns:meterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:meterialDesign1="http://schemas.microsoft.com/xps/2005/06"
         mc:Ignorable="d"
-        Title="ActivityWindow" Height="805.312" Width="693.118" Loaded="ActivityWindow_Loaded">
+        Title="ActivityWindow" Height="805.312" Width="693.118">
 
 
     <Grid>
@@ -23,74 +23,74 @@
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*活動名稱"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="NametextBox" Height="33" TextWrapping="Wrap" Text="活動名稱" Width="378" Margin="5" FontSize="16"/>
+                        <TextBlock x:Name="ActivityNameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*活動名稱"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="ActivityNameInput" Height="33" TextWrapping="Wrap" Text="活動名稱" Width="378" Margin="5" FontSize="16"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*"/><Run Text="發車"/><Run Text="地區"/><Run Text="："/></TextBlock>
-                        <ComboBox Width="66" HorizontalAlignment="Left" Margin="5,0,5,5" FontSize="16" Height="34">
+                        <TextBlock x:Name="CityComboBoxLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*"/><Run Text="發車"/><Run Text="地區"/><Run Text="："/></TextBlock>
+                        <ComboBox x:Name="CityComboBox" Width="66" HorizontalAlignment="Left" Margin="5,0,5,5" FontSize="16" Height="34">
                             <ComboBoxItem Content="台北"/>
                             <ComboBoxItem Content="桃園"/>
                             <ComboBoxItem Content="台中"/>
                             <ComboBoxItem Content="台南"/>
                             <ComboBoxItem Content="高雄"/>
                         </ComboBox>
-                        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="＊人數上限：" Width="108" FontSize="18" HorizontalAlignment="Left" Margin="5,9,0,9"/>
-                        <TextBox x:Name="textBox" TextWrapping="Wrap" Text="40&#xD;&#xA;" Width="35" Margin="0,9" FontSize="16" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="*開團人數：" Width="103" FontSize="18" HorizontalAlignment="Left" Margin="5,9,0,9"/>
-                        <TextBox x:Name="textBox_Copy" TextWrapping="Wrap" Text="20&#xA;" Width="35" Margin="0,9" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="MaxQuantityLabel" TextWrapping="Wrap" Text="＊人數上限：" Width="108" FontSize="18" HorizontalAlignment="Left" Margin="5,9,0,9"/>
+                        <TextBox x:Name="MaxQuantityInput" TextWrapping="Wrap" Text="40&#xD;&#xA;" Width="35" Margin="0,9" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="GroupQuantityLabel" TextWrapping="Wrap" Text="*開團人數：" Width="103" FontSize="18" HorizontalAlignment="Left" Margin="5,9,0,9"/>
+                        <TextBox x:Name="GroupQuantityInput" TextWrapping="Wrap" Text="20&#xA;" Width="35" Margin="0,9" FontSize="16" HorizontalAlignment="Left"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*"/><Run Text="活動"/><Run Text="售價"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox5" TextWrapping="Wrap" Width="55" Margin="5,9" FontSize="16" HorizontalAlignment="Left" Text="0000"/>
-                        <TextBlock x:Name="textBlock6_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18" Text="*出團日期："/>
-                        <DatePicker Margin="0,9" Width="122.9" HorizontalAlignment="Left" FontSize="16"/>
+                        <TextBlock x:Name="PriceLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*"/><Run Text="活動"/><Run Text="售價"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="PriceInput" TextWrapping="Wrap" Width="55" Margin="5,9" FontSize="16" HorizontalAlignment="Left" Text="0000"/>
+                        <TextBlock x:Name="ActivityDateLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18" Text="*出團日期："/>
+                        <DatePicker x:Name="ActivityDate" Margin="0,9" Width="122.9" HorizontalAlignment="Left" FontSize="16"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*活動"/><Run Text="地址"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox3" Height="33" TextWrapping="Wrap" Text="活動地址" Width="378" Margin="5" FontSize="16"/>
+                        <TextBlock x:Name="ActivityAddressLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*活動"/><Run Text="地址"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="ActivityAddressInput" Height="33" TextWrapping="Wrap" Text="活動地址" Width="378" Margin="5" FontSize="16"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*連絡電話"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox4" Height="33" TextWrapping="Wrap" Text="00-0000-0000" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="textBlock5_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*電子郵件"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox4_Copy" Height="33" TextWrapping="Wrap" Text="xxx@xxxxx.com" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PhoneLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*連絡電話"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="PhoneInput" Height="33" TextWrapping="Wrap" Text="00-0000-0000" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="EmailLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*電子郵件"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="EmailInput" Height="33" TextWrapping="Wrap" Text="xxx@xxxxx.com" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
-                        <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*匯款銀行"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox6" Height="33" TextWrapping="Wrap" Text="000" Width="68" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="textBlock7_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*匯款帳號"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="textBox6_Copy" Height="33" TextWrapping="Wrap" Text="00000000000000" Width="198.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="ATMBankLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*匯款銀行"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="ATMBankInput" Height="33" TextWrapping="Wrap" Text="000" Width="68" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="ATMAccountLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*匯款帳號"/><Run Text="："/></TextBlock>
+                        <TextBox x:Name="ATMAccountInput" Height="33" TextWrapping="Wrap" Text="00000000000000" Width="198.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
         </StackPanel>
         <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" VerticalAlignment="Bottom" Margin="40,0,40,39" Padding="0" Height="281">
             <Border BorderBrush="Black" BorderThickness="1">
-                <RichTextBox x:Name="richTextBox"  VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" MinWidth="0" Margin="10" VerticalAlignment="Top" Height="220" >
+                <RichTextBox x:Name="ActivityContentInput"  VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" MinWidth="0" Margin="10" VerticalAlignment="Top" Height="220" >
                     <FlowDocument>
                         <Paragraph>
-                            <Run Text="RichTextBox"/>
+                            <Run x:Name="RunText" Text="RichTextBox"/>
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
@@ -98,7 +98,7 @@
         </meterialDesign:Card>
 
 
-        <Button x:Name="button" Content="確定" HorizontalAlignment="Left" Margin="195,0,0,29.072" VerticalAlignment="Bottom" Width="75" Click="button_Click_1"/>
-        <Button x:Name="button1" Content="取消" HorizontalAlignment="Right" Margin="0,0,221.118,29.072" VerticalAlignment="Bottom" Width="75"/>
+        <Button x:Name="Accept" Content="確定" HorizontalAlignment="Left" Margin="195,0,0,29.072" VerticalAlignment="Bottom" Width="75" IsDefault="True"/>
+        <Button x:Name="Cancel" Content="取消" HorizontalAlignment="Right" Margin="0,0,221.118,29.072" VerticalAlignment="Bottom" Width="75" IsCancel="True"/>
     </Grid>
 </Window>

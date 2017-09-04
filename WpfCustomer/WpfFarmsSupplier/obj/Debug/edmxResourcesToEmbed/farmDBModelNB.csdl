@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="farmsDBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="farmsDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+  </EntityContainer>
+</Schema>

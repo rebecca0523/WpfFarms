@@ -1,0 +1,92 @@
+﻿<Window x:Class="WpfFarmsSupplier.SuppliersMainCRUD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFarmsSupplier"
+        mc:Ignorable="d"
+        Title="SuppliersMainCRUD" Height="506.666" Width="902.667" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Supplier}, CreateList=True}"/>
+    </Window.Resources>
+
+
+    <StackPanel>
+        <DataGrid x:Name="supplierDataGrid" DataContext="{StaticResource supplierViewSource}"  AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="201" Foreground="#FF1B1A1A" Panel.ZIndex="7" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="supplierIDColumn" Binding="{Binding SupplierID}" Header="Supplier ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="supplierNameColumn" Binding="{Binding SupplierName}" Header="Supplier Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="contactName1Column" Binding="{Binding ContactName1}" Header="Contact Name 1" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="contactName2Column" Binding="{Binding ContactName2}" Header="Contact Name 2" Width="SizeToHeader"/>
+
+                <DataGridTextColumn x:Name="phone1Column" Binding="{Binding Phone1}" Header="Phone 1" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="phone2Column" Binding="{Binding Phone2}" Header="Phone 2" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="email1Column" Binding="{Binding email1}" Header="email 1" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="email2Column" Binding="{Binding email2}" Header="email 2" Width="SizeToHeader"/>
+
+                <DataGridTextColumn x:Name="lineIDColumn" Binding="{Binding LineID}" Header="Line ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="postalCodeColumn" Binding="{Binding PostalCode}" Header="Postal Code" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
+
+
+                <DataGridTextColumn x:Name="createdUserIDColumn" Binding="{Binding CreatedUserID}" Header="Created User ID" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="createdDateColumn" Header="Created Date" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding CreatedDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTextColumn x:Name="lastUpdateUserIDColumn" Binding="{Binding LastUpdateUserID}" Header="Last Update User ID" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="lastUpdateDateColumn" Header="Last Update Date" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding LastUpdateDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<Grid DataContext="{StaticResource supplierViewSource}" Height="48"/>-->
+
+        <Canvas HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="527">
+            <Button x:Name="cmdSave" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click"/>
+            <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="196" Click="Button_Click"/>
+            <Button Content="delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="94" Click="Button_Click_1"/>
+            <Button Content="foward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="321"/>
+            <Button Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="452"/>
+        </Canvas>
+        <Canvas Height="247" Margin="0" VerticalAlignment="Top">
+            <Canvas.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+
+            </Canvas.Background>
+            <Label Content="Supplier ID:" Canvas.Left="6" Canvas.Top="48" Height="25" Width="75"/>
+            <TextBox x:Name="supplierIDTextBox" Height="17" Width="106" Canvas.Left="117" Canvas.Top="55" />
+            <Label Content="Supplier Name:" Canvas.Left="261" Canvas.Top="55" />
+            <TextBox x:Name="supplierNameTextBox" Width="106" Canvas.Left="390" Canvas.Top="55" />
+            <Label Content="email 1:" Canvas.Left="12" Canvas.Top="120" Height="25" Width="55" />
+            <TextBox x:Name="email1TextBox" Canvas.Left="117" Canvas.Top="120" Width="106" Height="17" />
+            <Label Content="Contact Name 1:" Canvas.Left="6" Canvas.Top="91" Height="25" Width="111" />
+            <TextBox x:Name="contactName1TextBox" Width="106" Canvas.Left="117" Canvas.Top="91" Height="17" />
+            <Label Content="Contact Name 2:" Canvas.Left="254" Canvas.Top="91" />
+            <TextBox x:Name="contactName2TextBox" Width="106" Canvas.Left="390" Canvas.Top="91" Height="17" />
+            <Label Content="email 2:" Canvas.Left="305" Canvas.Top="120" />
+            <TextBox x:Name="emai21TextBox" Canvas.Left="390" Canvas.Top="120" Width="106" Height="17" />
+            <Label Content="Line ID:" Canvas.Left="12" Canvas.Top="149" Height="25" Width="55" />
+            <TextBox x:Name="lineIDTextBox" Canvas.Left="117" Canvas.Top="149" Width="106" Height="17" />
+            <Label Content="Postal Code:" Canvas.Left="6" Canvas.Top="178" Width="90" />
+            <TextBox x:Name="postalCodeTextBox"  Canvas.Left="117" Canvas.Top="178" Width="106" Height="17" />
+            <Label Content="Address:" Canvas.Left="237" Canvas.Top="178" />
+            <TextBox x:Name="addressTextBox" Canvas.Left="295" Canvas.Top="178" Width="206" Height="17" />
+
+
+
+
+
+
+        </Canvas>
+    </StackPanel>
+</Window>

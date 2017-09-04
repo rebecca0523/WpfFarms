@@ -7,7 +7,6 @@ C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_M
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.g.resources
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.Properties.Resources.resources
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.csproj.GenerateResource.Cache
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.exe
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.pdb
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csprojResolveAssemblyReference.cache
@@ -112,9 +111,6 @@ C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\EditCustomer.g.cs
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\CustomerAccount.baml
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\DeleteCustomer.baml
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\EditCustomer.baml
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.exe
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\EntityFramework.dll
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.pdb
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.exe.config
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\EntityFramework.xml
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.exe
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.pdb
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.exe.config

@@ -10,7 +10,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\MainWindow.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.g.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.Properties.Resources.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.GenerateResource.Cache
-C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csprojResolveAssemblyReference.cache
@@ -104,3 +103,8 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.xml

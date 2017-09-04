@@ -18,6 +18,8 @@ namespace WpfMarketing
         public Nullable<int> SaleEventID { get; set; }
         public Nullable<decimal> Quota { get; set; }
         public Nullable<float> Discount { get; set; }
+        public Nullable<bool> Active { get; set; }
+        public Nullable<System.DateTime> EdditTime { get; set; }
     
         public virtual SaleEvent SaleEvent { get; set; }
     }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfFarmsActivity;
 
 namespace WpfFarms
 {
@@ -29,6 +30,11 @@ namespace WpfFarms
             LoginAndRegister loginAndRegister = new LoginAndRegister();
             loginAndRegister.Show();
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
