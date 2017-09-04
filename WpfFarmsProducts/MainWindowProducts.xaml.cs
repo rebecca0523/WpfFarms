@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,13 @@ namespace WpfFarmsProducts
         {
             this.farmsDBEntities.SaveChanges();
         }
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //DataRowView dataRowView=(DataRowView)ProductsDataGrid.SelectedItem;
+            //string name = dataRowView.Row[0].ToString();
+            ////DelUserData
+            //dataRowView.Delete();
+        }
     }
 }

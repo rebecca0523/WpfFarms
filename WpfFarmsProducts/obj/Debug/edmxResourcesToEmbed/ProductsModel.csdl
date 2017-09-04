@@ -41,7 +41,6 @@
     <Property Name="QuantitySold" Type="Int32" />
     <Property Name="Discounted" Type="Boolean" />
     <Property Name="DiscountedAB" Type="Boolean" />
-    <Property Name="DiscountedQuota" Type="Boolean" />
     <Property Name="DiscountedPoint" Type="Boolean" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
