@@ -14,7 +14,7 @@
                 </StackPanel>
                 <DockPanel Height="64" LastChildFill="False" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
                     <Button x:Name="addActivity" Content="新增場次" Height="44" VerticalAlignment="Center" Width="90" Margin="10,10,9,10" HorizontalAlignment="Center" Click="Button_Click"/>
-                    <Button Content="修改內容" Height="44" Width="90" DockPanel.Dock="Right" Margin="9,10,10,10" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="EditActivity" Content="修改內容" Height="44" Width="90" DockPanel.Dock="Right" Margin="9,10,10,10" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
                 </DockPanel>
             </DockPanel>
         </Border>
