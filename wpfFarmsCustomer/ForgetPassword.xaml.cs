@@ -33,38 +33,28 @@ namespace wpfFarmsCustomer
             string strSql = "editPassword";
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand(strSql,conn);
+            SqlCommand cmd = new SqlCommand(strSql, conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("Name", txtName.Text);
+            SqlParameter pEmail = new SqlParameter("@Email", SqlDbType.NVarChar, 50);
+            pEmail.Direction = ParameterDirection.Input;
+            pEmail.Value = txtEmail.Text;
+            cmd.Parameters.Add(pEmail);
 
-            SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
-            pReturnValue.Direction = ParameterDirection.ReturnValue;
-            cmd.Parameters.Add(pReturnValue);
+            SqlParameter pName = new SqlParameter("@Name", SqlDbType.NChar, 10);
+            pName.Direction = ParameterDirection.Input;
+            pName.Value = txtName.Text;
+            cmd.Parameters.Add(pName);
 
-            //if (txtPassword != txtEmail)
-            //{
-            //    MessageBox.Show("請輸入正確密碼");
-            //}
+            SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NVarChar, 50);
+            pPassword.Direction = ParameterDirection.Input;
+            pPassword.Value = txtEmail.Text;
+            cmd.Parameters.Add(pPassword);
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
-            if(n==1)
-            {
-                SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
-                pPassword.Direction = ParameterDirection.Input;
-                pPassword.Value = txtPassword.Text;
-                cmd.Parameters.Add(pPassword);
-            }
-            else
-            {
-                MessageBox.Show("電子郵件或姓名錯誤！");
-            }
+            MessageBox.Show("修改完成");
         }
 
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+            private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

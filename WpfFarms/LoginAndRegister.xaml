@@ -11,11 +11,11 @@
         <StackPanel HorizontalAlignment="Center" Height="250" Margin="10,30,0,0" VerticalAlignment="Center" Width="495">
             <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
                 <Label Content="電子郵件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="123@iii.com"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
                 <Label Content="密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="123"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="455" Margin="0,40,0,0">
                 <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="60,0,0,0" Click="btnforget_Click">

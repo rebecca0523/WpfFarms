@@ -57,11 +57,11 @@ namespace wpfFarmsCustomer
             pPassword.Value = txtPassword.Text;
             cmd.Parameters.Add(pPassword);
 
-            if(txtGender.Text=="男")
+            if(txtGender.Text=="男姓")
             {
                 txtGender.Text = 1.ToString();
             }
-            else if(txtGender.Text=="女")
+            else if(txtGender.Text=="女姓")
             {
                 txtGender.Text = 2.ToString();
             }
