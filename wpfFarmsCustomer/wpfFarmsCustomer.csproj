@@ -165,5 +165,11 @@
   <ItemGroup>
     <Resource Include="Custimage\000.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfFarmsActivity\WpfFarmsActivity.csproj">
+      <Project>{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}</Project>
+      <Name>WpfFarmsActivity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

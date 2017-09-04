@@ -96,3 +96,4 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.c
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
 >>>>>>> 5623c334ceeae12e5a044c32b93bbd57e1c0f2b2
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs

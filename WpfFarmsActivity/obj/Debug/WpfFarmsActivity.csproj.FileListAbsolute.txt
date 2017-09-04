@@ -68,3 +68,4 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll

@@ -24,19 +24,5 @@ namespace WpfFarmsActivity
         {
             InitializeComponent();
         }
-
-
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ActivityWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-        private void Cancel_Click(object sender, RoutedEventArgs e)
-        {
-        }
     }
 }

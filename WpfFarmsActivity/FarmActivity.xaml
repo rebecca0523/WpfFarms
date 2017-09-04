@@ -7,7 +7,7 @@
         xmlns:meterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:meterialDesign1="http://schemas.microsoft.com/xps/2005/06"
         mc:Ignorable="d"
-        Title="ActivityWindow" Height="805.312" Width="693.118" Loaded="ActivityWindow_Loaded">
+        Title="ActivityWindow" Height="805.312" Width="693.118">
 
 
     <Grid>
@@ -98,7 +98,7 @@
         </meterialDesign:Card>
 
 
-        <Button x:Name="Accept" Content="確定" HorizontalAlignment="Left" Margin="195,0,0,29.072" VerticalAlignment="Bottom" Width="75" Click="button_Click_1" IsDefault="True"/>
-        <Button x:Name="Cancel" Content="取消" HorizontalAlignment="Right" Margin="0,0,221.118,29.072" VerticalAlignment="Bottom" Width="75" Click="Cancel_Click" IsCancel="True"/>
+        <Button x:Name="Accept" Content="確定" HorizontalAlignment="Left" Margin="195,0,0,29.072" VerticalAlignment="Bottom" Width="75" IsDefault="True"/>
+        <Button x:Name="Cancel" Content="取消" HorizontalAlignment="Right" Margin="0,0,221.118,29.072" VerticalAlignment="Bottom" Width="75" IsCancel="True"/>
     </Grid>
 </Window>

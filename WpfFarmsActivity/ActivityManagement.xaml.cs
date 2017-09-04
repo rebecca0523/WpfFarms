@@ -23,39 +23,34 @@ namespace WpfFarmsActivity
         {
             InitializeComponent();
         }
-        bool IsButtonClick;int count;
+        int count;
         FarmActivity FA = new FarmActivity();
         global::WpfFarmsActivity.UserControl1[] x = new UserControl1[50];
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            count++;
-            IsButtonClick = true;
+            FA = new FarmActivity();
             FA.Show();
-            x[count] = new UserControl1();
-            x[count].Name = "ActivityTable" + count;
-            x[count].addActivity.Click +=new RoutedEventHandler(AddActivity_Click);
-            x[count].EditActivity.Click += new RoutedEventHandler(EditActivity_Click);
-            x[count].ActivityName.Content = FA.ActivityNameInput.Text;
             FA.Accept.Click += new RoutedEventHandler(Accept_Click);
             FA.Cancel.Click += new RoutedEventHandler(Cancel_Click);
-            this.ListWrapPanel.Children.Add(x[count]);
-
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
+            
+            x[count] = new UserControl1();
+            x[count].Name = "ActivityTable" + count;
+            x[count].addActivity.Click += new RoutedEventHandler(AddActivity_Click);
+            x[count].EditActivity.Click += new RoutedEventHandler(EditActivity_Click);
+            x[count].ActivityName.Name = "ActivityName" + count;
+            x[count].ActivityName.Content = FA.ActivityNameInput.Text;
+            this.ListWrapPanel.Children.Add(x[count]);
             FA.Hide();
+            count++;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            if (IsButtonClick==true)
-            {
-                this.ListWrapPanel.Children.Remove(x[count]);
-                IsButtonClick = false;
-                FA.Hide();
-                count--;
-            }
+            FA.Hide();
         }
         private void EditActivity_Click(object sender, RoutedEventArgs e)
         {
@@ -73,4 +68,4 @@ namespace WpfFarmsActivity
             }
         }
     }
-    }
+}
