@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfFarmsProducts.MainWindow"
+﻿<Window x:Class="WpfFarmsProducts.MainWindowProducts"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,24 +7,104 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ToolBarTray Height="50" VerticalAlignment="Top" DockPanel.Dock="Top">
+        <ToolBarTray VerticalAlignment="Top" DockPanel.Dock="Top">
             <ToolBar VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left">
-                <Button x:Name="cmdShowCreateProductsXaml" Content="新增" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Click="CreateButton_Click" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
-                <Button Content="刪除" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
-                <Button x:Name="SaveButton" Content="存檔" Height="45" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Click="SaveButton_Click"/>
+                <Button x:Name="cmdShowCreateProducts" Content="新增" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Click="CreateButton_Click" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0"/>
+                <Button x:Name="cmdDeleteProducts" Content="刪除" VerticalAlignment="Stretch" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdDeleteProducts_Click"/>
+                <Button x:Name="cmdSaveProducts" Content="存檔" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Click="SaveButton_Click"/>
+            </ToolBar>
+            <ToolBar VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left">
+                <Button x:Name="cmdChangeProductDescription" Content="更改產品描述" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdChangeProductDescription_Click" />
+                <Button x:Name="cmdChangeImages" Content="更改圖片" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdChangeImages_Click" />
             </ToolBar>
         </ToolBarTray>
-        <DockPanel LastChildFill="True" Margin="0,50,0,0">
-            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" >
-                <!--<DataGrid.Columns>                    
-                   <DataGridTemplateColumn Header="SellStartDate">
+        <DockPanel LastChildFill="True" Margin="0,34,0,0">
+            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="ProductsDataGrid_SelectionChanged" >
+                <!--AutoGenerateColumns 搞老半天就是你這個屬性在作怪,要關掉才不會重複出現Columns-->
+                <DataGrid.ItemBindingGroup>
+                    <BindingGroup/>
+                </DataGrid.ItemBindingGroup>
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="小農編號">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <DatePicker SelectedDate="{Binding SellStartDate}" />
+                                <TextBlock Text="{Binding SupplierID}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                </DataGrid.Columns>-->
+                    
+                    <DataGridTemplateColumn Header="產品編號">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ProductID}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="產品名" Binding="{Binding ProductName}"/>
+
+                    <DataGridTemplateColumn Header="開始銷售日">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DatePicker SelectedDate="{Binding SellStartDate}" IsDropDownOpen="False" IsEnabled="True" IsTodayHighlighted="False" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="結束銷售日">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DatePicker SelectedDate="{Binding SellEndDate}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="市場售價" Binding="{Binding MarkPrice}"/>
+                    
+                    <DataGridTextColumn Header="售價" Binding="{Binding UnitPrice}"/>
+
+                    <DataGridCheckBoxColumn Header="開放預購" Binding="{Binding PreOrder}"/>
+
+                    <DataGridTemplateColumn Header="出貨日">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DatePicker SelectedDate="{Binding ShippedDate}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="總銷售量" Binding="{Binding TotalQTY}"/>
+
+                    <DataGridTextColumn Header="當前可銷售量" Binding="{Binding CanSaleQTY}"/>
+
+                    <DataGridTextColumn Header="已銷售量" Binding="{Binding QuantitySold}"/>
+
+                    <DataGridCheckBoxColumn Header="特價商品" Binding="{Binding Discounted}"/>
+
+                    <DataGridCheckBoxColumn Header="組合折扣" Binding="{Binding DiscountedCombo}"/>
+
+                    <DataGridCheckBoxColumn Header="折扣點數" Binding="{Binding DiscountedPoint}"/>
+
+                    <DataGridTemplateColumn Header="建檔日">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DatePicker SelectedDate="{Binding CreatedDate}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="資料最近更新日期">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DatePicker SelectedDate="{Binding LastUpdateDate}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="商品描述" Binding="{Binding ProductDescription}"/>
+
+                </DataGrid.Columns>
             </DataGrid>
             
         </DockPanel>

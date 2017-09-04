@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="farmsDBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="LineID" Type="nvarchar" MaxLength="50" />
+    <Property Name="email1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email2" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="farmsDBModel1StoreContainer">
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

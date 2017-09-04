@@ -6,15 +6,15 @@
              xmlns:local="clr-namespace:WpfFarmsActivity"
              mc:Ignorable="d" Height="272.459" Width="249.836">
     <WrapPanel HorizontalAlignment="Left" Height="295" Margin="0" VerticalAlignment="Top" Width="267">
-        <Border BorderBrush="Black" BorderThickness="1" Height="250" Width="220" Margin="20">
+        <Border BorderBrush="Black" BorderThickness="1" Height="250" Width="220" Margin="10">
             <DockPanel LastChildFill="False">
                 <StackPanel VerticalAlignment="Top" DockPanel.Dock="Top" Height="180">
                     <Image Height="139" Margin="10"/>
-                    <Label Content="Label"/>
+                    <Label x:Name="ActivityName" Content="Label"/>
                 </StackPanel>
                 <DockPanel Height="64" LastChildFill="False" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
                     <Button x:Name="addActivity" Content="新增場次" Height="44" VerticalAlignment="Center" Width="90" Margin="10,10,9,10" HorizontalAlignment="Center" Click="Button_Click"/>
-                    <Button Content="修改內容" Height="44" Width="90" DockPanel.Dock="Right" Margin="9,10,10,10" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="EditActivity" Content="修改內容" Height="44" Width="90" DockPanel.Dock="Right" Margin="9,10,10,10" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
                 </DockPanel>
             </DockPanel>
         </Border>

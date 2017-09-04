@@ -30,34 +30,47 @@ namespace wpfFarmsCustomer
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
-            string strSql = "checkidentity";
+            string strSql = "editPassword";
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand(strSql,conn);
+            SqlCommand cmd = new SqlCommand(strSql, conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("Name", txtName.Text);
+            SqlParameter pEmail = new SqlParameter("@Email", SqlDbType.NVarChar, 50);
+            pEmail.Direction = ParameterDirection.Input;
+            pEmail.Value = txtEmail.Text;
+            cmd.Parameters.Add(pEmail);
 
-            SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
-            pReturnValue.Direction = ParameterDirection.ReturnValue;
-            cmd.Parameters.Add(pReturnValue);
+            SqlParameter pName = new SqlParameter("@Name", SqlDbType.NChar, 10);
+            pName.Direction = ParameterDirection.Input;
+            pName.Value = txtName.Text;
+            cmd.Parameters.Add(pName);
+
+            SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
+            pPassword.Direction = ParameterDirection.Input;
+            pPassword.Value = txtPassword.Text;
+            cmd.Parameters.Add(pPassword);
+
+            if(txtPassword.Text!=txtCheck.Text)
+            {
+                MessageBox.Show("輸入密碼不同");
+                txtPassword.Focus();
+                txtPassword.SelectAll();
+            }
 
             conn.Open();
+            //==================
             cmd.ExecuteNonQuery();
-            int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
-            if(n==1)
-            {
-                EditPassword editPassword = new EditPassword();
-                editPassword.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("電子郵件或姓名錯誤！");
-            }
+            MessageBox.Show("修改密碼成功！");
+
+            //===================
+            cmd.Dispose();
+            conn.Close();
+            conn.Dispose();
+            this.Close();
         }
 
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+            private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

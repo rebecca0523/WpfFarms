@@ -13,12 +13,12 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="farmsDBModel.Product">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
           <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
           <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-          <ScalarProperty Name="DiscountedQuota" ColumnName="DiscountedQuota" />
-          <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
+          <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
           <ScalarProperty Name="Discounted" ColumnName="Discounted" />
           <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
           <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
@@ -33,6 +33,27 @@
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="farmsDBModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
+          <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
