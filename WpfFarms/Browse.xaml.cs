@@ -26,8 +26,9 @@ namespace WpfFarms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow loginAndRegister = new MainWindow();
+            LoginAndRegister loginAndRegister = new LoginAndRegister();
             loginAndRegister.Show();
+
         }
     }
 }

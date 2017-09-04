@@ -31,7 +31,8 @@ namespace WpfFarms
         private void btnregister_Click(object sender, RoutedEventArgs e)
         {
             CustomerRegister CustomerRegister = new CustomerRegister();
-            CustomerRegister.ShowDialog();
+            CustomerRegister.Show();
+            this.Close();
         }
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,7 @@ namespace WpfFarms
                 MessageBox.Show("登入成功！");
                 CustomerAccount customerAccount = new CustomerAccount();
                 customerAccount.Show();
+                this.Close();
             }
             else
             {
@@ -65,12 +67,14 @@ namespace WpfFarms
             }
             conn.Close();
             conn.Dispose();
+            
         }
 
         private void btnforget_Click(object sender, RoutedEventArgs e)
         {
             ForgetPassword forgetPassword = new ForgetPassword();
-            forgetPassword.ShowDialog();
+            forgetPassword.Show();
+            this.Close();
         }
     }
 }

@@ -100,3 +100,5 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.g.resour
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.Properties.Resources.resources
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.g.cs
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.baml

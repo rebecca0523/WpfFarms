@@ -16,8 +16,8 @@
             <GradientStop Color="#FF6D98FF" Offset="0.851"/>
         </LinearGradientBrush>
     </Window.Resources>
-    <Grid Height="283">
-        <StackPanel HorizontalAlignment="Left" Margin="10,15,0,5" Width="100" Height="263" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
+    <Grid Margin="0,10,0.2,2.4">
+        <StackPanel HorizontalAlignment="Left" Margin="10,35,0,10" Width="100" Height="261" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="100">
                 <Image Height="111" Source="Custimage/000.PNG" OpacityMask="#FFCACACA"/>
                 <Label Content="label" HorizontalContentAlignment="Center" />
@@ -51,7 +51,12 @@
             </Button>
 
         </StackPanel>
-        <TextBlock Margin="0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="#FFDDC8FA"/>
+        <Menu VerticalAlignment="Top" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="30">
+            <MenuItem Header="小農專區" FontSize="20"/>
+            <MenuItem Header="活動專區" FontSize="20"/>
+            <MenuItem Header="商品專區" FontSize="20"/>
+            <MenuItem Header="行銷專區" FontSize="20"/>
+        </Menu>
 
     </Grid>
 </Window>

@@ -11,7 +11,7 @@
         <Label Content="請輸入新密碼" HorizontalAlignment="Left" Margin="138,121,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="225,168,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Label Content="確認新密碼" HorizontalAlignment="Left" Margin="149,165,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSend" Content="確認送出" HorizontalAlignment="Left" Margin="188,221,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
+        <Button x:Name="btnSend" Content="確認送出" HorizontalAlignment="Center" Margin="10,220,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
         <Label Content="請輸入電子郵件" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,38,0,0"/>
         <Label Content="請輸入姓名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,79,0,0"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="225,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

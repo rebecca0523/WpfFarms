@@ -43,6 +43,11 @@ namespace wpfFarmsCustomer
             pReturnValue.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(pReturnValue);
 
+            //if (txtPassword != txtEmail)
+            //{
+            //    MessageBox.Show("請輸入正確密碼");
+            //}
+
             conn.Open();
             cmd.ExecuteNonQuery();
             int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
