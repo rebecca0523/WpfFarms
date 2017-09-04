@@ -12,29 +12,41 @@ namespace WpfMarketing
     using System;
     using System.Collections.Generic;
     
-    public partial class SaleEvent
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SaleEvent()
+        public Product()
         {
             this.SaleEventComboes = new HashSet<SaleEventCombo>();
+            this.SaleEventComboes1 = new HashSet<SaleEventCombo>();
             this.SaleEventSingleProducts = new HashSet<SaleEventSingleProduct>();
-            this.SaleEventQuotas = new HashSet<SaleEventQuota>();
         }
     
+        public int ProductID { get; set; }
         public Nullable<int> SupplierID { get; set; }
-        public int SaleEventID { get; set; }
-        public string SaleEventTitle { get; set; }
-        public string SaleEventContent { get; set; }
-        public Nullable<System.DateTime> SaleEventStart { get; set; }
-        public Nullable<System.DateTime> SaleEventEnd { get; set; }
-        public Nullable<System.DateTime> EdditTime { get; set; }
+        public string ProductName { get; set; }
+        public Nullable<System.DateTime> SellStartDate { get; set; }
+        public Nullable<System.DateTime> SellEndDate { get; set; }
+        public Nullable<decimal> MarkPrice { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<bool> PreOrder { get; set; }
+        public Nullable<System.DateTime> ShippedDate { get; set; }
+        public string ProductDescription { get; set; }
+        public Nullable<int> TotalQTY { get; set; }
+        public Nullable<int> CanSaleQTY { get; set; }
+        public Nullable<int> QuantitySold { get; set; }
+        public Nullable<bool> Discounted { get; set; }
+        public Nullable<bool> DiscountedAB { get; set; }
+        public Nullable<bool> DiscountedPoint { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> LastUpdateDate { get; set; }
+        public string LastUpdateUserID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleEventCombo> SaleEventComboes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
+        public virtual ICollection<SaleEventCombo> SaleEventComboes1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleEventQuota> SaleEventQuotas { get; set; }
+        public virtual ICollection<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
     }
 }

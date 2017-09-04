@@ -20,8 +20,8 @@ namespace WpfMarketing
         public Nullable<int> BProductID { get; set; }
         public Nullable<float> Discount { get; set; }
     
-        public virtual Products Product { get; set; }
-        public virtual Products Product1 { get; set; }
         public virtual SaleEvent SaleEvent { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Product Product1 { get; set; }
     }
 }

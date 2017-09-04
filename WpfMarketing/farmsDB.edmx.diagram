@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20ce953560f5467a8e345d216436265f" Name="Diagram1">
+        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventCombo" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventA_B_SaleEvent" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventSingleProduct" Width="1.5" PointX="6.125" PointY="7.5" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_SaleEvent" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3" PointY="11.25" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" />
+        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="8.375" PointY="6.125" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products1" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_Products" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

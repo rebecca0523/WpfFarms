@@ -19,7 +19,6 @@
     <Property Name="QuantitySold" Type="int" />
     <Property Name="Discounted" Type="bit" />
     <Property Name="DiscountedAB" Type="bit" />
-    <Property Name="DiscountedQuota" Type="bit" />
     <Property Name="DiscountedPoint" Type="bit" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="LastUpdateDate" Type="datetime" />
@@ -55,6 +54,8 @@
     <Property Name="SaleEventID" Type="int" />
     <Property Name="Quota" Type="money" />
     <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
   </EntityType>
   <EntityType Name="SaleEventSingleProduct">
     <Key>
@@ -64,6 +65,8 @@
     <Property Name="SaleEventID" Type="int" />
     <Property Name="ProductID" Type="int" />
     <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
   </EntityType>
   <Association Name="FK_SaleEventA+B_SaleEvent">
     <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />

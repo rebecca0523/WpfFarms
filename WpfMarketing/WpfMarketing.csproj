@@ -85,8 +85,8 @@
       <DependentUpon>farmsDB.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="farmsDB.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="farmsDB.Designer.cs">
@@ -94,7 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>farmsDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Products.cs">
+    <Compile Include="Product.cs">
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SaleEvent.cs">
