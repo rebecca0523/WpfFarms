@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfFarmsProducts;
 
 namespace wpfFarmsCustomer
 {
@@ -22,6 +23,12 @@ namespace wpfFarmsCustomer
         public CustomerAccount()
         {
             InitializeComponent();
+        }               
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowProducts mainWindowProducts = new MainWindowProducts();
+            mainWindowProducts.ShowDialog();
         }
     }
 }

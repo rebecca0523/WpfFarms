@@ -21,7 +21,7 @@ namespace WpfFarmsProducts
         }
     
         public int ProductID { get; set; }
-        public Nullable<int> SupplierID { get; set; }
+        public int SupplierID { get; set; }
         public string ProductName { get; set; }
         public Nullable<System.DateTime> SellStartDate { get; set; }
         public Nullable<System.DateTime> SellEndDate { get; set; }
@@ -34,11 +34,12 @@ namespace WpfFarmsProducts
         public Nullable<int> CanSaleQTY { get; set; }
         public Nullable<int> QuantitySold { get; set; }
         public Nullable<bool> Discounted { get; set; }
-        public Nullable<bool> DiscountedAB { get; set; }
+        public Nullable<bool> DiscountedCombo { get; set; }
         public Nullable<bool> DiscountedPoint { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> LastUpdateDate { get; set; }
         public string LastUpdateUserID { get; set; }
+        public Nullable<bool> DeleteProduct { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductImage> ProductImages { get; set; }

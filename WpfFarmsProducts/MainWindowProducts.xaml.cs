@@ -29,10 +29,11 @@ namespace WpfFarmsProducts
 
         farmsDBEntities farmsDBEntities = new farmsDBEntities();
         public static int SupplierID =1; //暫定抓1號小農
+        public static int GetSelectProductID;
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)        {
-
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID ).ToList();        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID&&n.DeleteProduct==false).ToList();        
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -41,9 +42,9 @@ namespace WpfFarmsProducts
                   
             if (createProduct.ShowDialog() == true)
             {
-                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(N => N.SupplierID == SupplierID ).ToList(); 
+                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
             }
-            
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -51,12 +52,43 @@ namespace WpfFarmsProducts
             this.farmsDBEntities.SaveChanges();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void cmdDeleteProducts_Click(object sender, RoutedEventArgs e)
         {
-            //DataRowView dataRowView=(DataRowView)ProductsDataGrid.SelectedItem;
-            //string name = dataRowView.Row[0].ToString();
-            ////DelUserData
-            //dataRowView.Delete();
+            var deleteProduct = this.farmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
+            deleteProduct.DeleteProduct = true;
+            this.farmsDBEntities.SaveChanges();
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+        }
+
+        private void ProductsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid grid = sender as DataGrid;//背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背
+            if (grid.SelectedItem != null)//背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背
+            {
+                GetSelectProductID = (grid.SelectedItem as Product).ProductID;//抓點中欄位的ProductID
+            }
+        }               
+
+        private void cmdChangeProductDescription_Click(object sender, RoutedEventArgs e)
+        {
+            if (GetSelectProductID ==0)
+            {
+                MessageBox.Show("請選擇修改哪筆資料");
+            }
+            else
+            {
+                ProductDescription productDescription = new ProductDescription();
+                if (productDescription.ShowDialog() == true)
+                {
+                    this.ProductsDataGrid.ItemsSource = null;
+                    this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                }                
+            }
+        }
+
+        private void cmdChangeImages_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

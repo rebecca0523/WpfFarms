@@ -13,11 +13,12 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="farmsDBModel.Product">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
           <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
           <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-          <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
+          <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
           <ScalarProperty Name="Discounted" ColumnName="Discounted" />
           <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
           <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
