@@ -53,3 +53,4 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll

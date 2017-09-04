@@ -15,18 +15,30 @@
             </ToolBar>
         </ToolBarTray>
         <DockPanel LastChildFill="True" Margin="0,50,0,0">
-            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" >
+            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
+                <!--AutoGenerateColumns 搞老半天就是你這個屬性在作怪-->
+                <DataGrid.ItemBindingGroup>
+                    <BindingGroup/>
+                </DataGrid.ItemBindingGroup>
                 <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="小農編號">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SupplierID}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     
-                    <DataGridTemplateColumn Header="ProductID">
+                    <DataGridTemplateColumn Header="產品編號">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ProductID}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    
-                   <DataGridTemplateColumn Header="SellStartDate">
+
+                    <DataGridTemplateColumn Header="開始銷售日">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DatePicker SelectedDate="{Binding SellStartDate}" />
@@ -34,7 +46,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     
-                    <DataGridCheckBoxColumn Header="Discounted" Binding="{Binding Discounted}"/>
+                    <DataGridCheckBoxColumn Header="單品折扣" Binding="{Binding Discounted}"/>
                     
                 </DataGrid.Columns>
             </DataGrid>

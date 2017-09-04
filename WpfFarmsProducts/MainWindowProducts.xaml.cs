@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace WpfFarmsProducts
 
         private void Window_Loaded(object sender, RoutedEventArgs e)        {
 
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID )/*.Select(n=>new { ProductID= n.ProductID, SellStartDate =n.SellStartDate})*/.ToList();        
+            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID ).ToList();        
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
