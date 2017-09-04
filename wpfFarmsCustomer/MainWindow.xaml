@@ -5,15 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="CustomersCRUD" Height="350" Width="525">
+        Title="CustomersCRUD" Height="350" Width="530" Background="{x:Null}">
     <Grid>
-        <Button x:Name="btnlogin" Content="登入" HorizontalAlignment="Left" Margin="131,192,0,0" VerticalAlignment="Top" Width="75" Click="btnlogin_Click"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="193,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="193,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
-        <Label Content="電子郵件" HorizontalAlignment="Left" Margin="131,82,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="密碼" HorizontalAlignment="Left" Margin="131,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnregister" Content="註冊" HorizontalAlignment="Left" Margin="304,192,0,0" VerticalAlignment="Top" Width="75" Click="btnregistered_Click"/>
-        <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" Margin="220,226,0,0" VerticalAlignment="Top" Width="75" Click="btnforget_Click"/>
-
+        <TextBlock Margin="0" TextWrapping="Wrap" Text="會員登入" VerticalAlignment="Top" Background="#FFFDCECE"/>
+        <StackPanel HorizontalAlignment="Left" Height="250" Margin="10,30,0,0" VerticalAlignment="Top" Width="495">
+            <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
+                <Label Content="電子郵件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
+                <Label Content="密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="455" Margin="0,40,0,0">
+                <Button x:Name="btnforget_Copy" Content="忘記密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnforget_Click" Height="70" Margin="60,0,0,0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF8CAAFF" Offset="0.222"/>
+                            <GradientStop Color="White" Offset="0.917"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnlogin_Copy" Content="登入" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnlogin_Click" Height="70" Margin="60,0,0,0">
+                    <Button.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF739DF0" Offset="1"/>
+                            <GradientStop Color="White"/>
+                        </RadialGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnregister" Content="註冊" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnregistered_Click" Height="70" Margin="60,0,0,0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF739DF0" Offset="1"/>
+                            <GradientStop Color="White"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="200" Margin="280,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="0"/> 
     </Grid>
 </Window>

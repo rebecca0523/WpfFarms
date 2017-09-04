@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\App.xaml
-4732892811
+6-1058377651
 
-81999725589
-14598183689
-CustomerRegister.xaml;EditPassword.xaml;ForgetPassword.xaml;MainWindow.xaml;
+10-982367994
+17-491339580
+CustomerAccount.xaml;CustomerRegister.xaml;DeleteCustomer.xaml;EditCustomer.xaml;ForgetPassword.xaml;MainWindow.xaml;
 
-False
+True
 

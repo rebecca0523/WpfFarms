@@ -32,7 +32,6 @@
           <Property Name="QuantitySold" Type="int" />
           <Property Name="Discounted" Type="bit" />
           <Property Name="DiscountedAB" Type="bit" />
-          <Property Name="DiscountedQuota" Type="bit" />
           <Property Name="DiscountedPoint" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="LastUpdateDate" Type="datetime" />
@@ -140,7 +139,6 @@
           <Property Name="QuantitySold" Type="Int32" />
           <Property Name="Discounted" Type="Boolean" />
           <Property Name="DiscountedAB" Type="Boolean" />
-          <Property Name="DiscountedQuota" Type="Boolean" />
           <Property Name="DiscountedPoint" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
@@ -193,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -215,7 +213,6 @@
                 <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-                <ScalarProperty Name="DiscountedQuota" ColumnName="DiscountedQuota" />
                 <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
                 <ScalarProperty Name="Discounted" ColumnName="Discounted" />
                 <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
@@ -278,9 +275,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram DiagramId="ebd57ddf88b24b25ae86985ab9832dd0" Name="Diagram1">
-        <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="5.25" PointY="2.75" />
+        <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="5.25" PointY="2.625" />
         <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="1.5" />
         <AssociationConnector Association="farmsDBModel.FK_ProductImages_Products" />
         <AssociationConnector Association="farmsDBModel.FK_Products_Suppliers" />
       </Diagram>
