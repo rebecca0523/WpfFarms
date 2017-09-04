@@ -35,7 +35,6 @@ namespace WpfFarmsProducts
         public Nullable<int> QuantitySold { get; set; }
         public Nullable<bool> Discounted { get; set; }
         public Nullable<bool> DiscountedAB { get; set; }
-        public Nullable<bool> DiscountedQuota { get; set; }
         public Nullable<bool> DiscountedPoint { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> LastUpdateDate { get; set; }

@@ -1,0 +1,33 @@
+﻿WpfFarmsSupplier
+
+
+winexe
+C#
+.cs
+<<<<<<< HEAD
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\
+=======
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\
+>>>>>>> 5623c334ceeae12e5a044c32b93bbd57e1c0f2b2
+WpfFarmsSupplier
+none
+false
+DEBUG;TRACE
+<<<<<<< HEAD
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\App.xaml
+3-1072793720
+4441742557
+19-39980230
+182105937409
+MainWindow.xaml;SuppliersMainCRUD.xaml;SuppliersRegister.xaml;
+=======
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\App.xaml
+2-280586444
+4441742557
+17-2002862180
+18-935233946
+MainWindow.xaml;SuppliersMainCRUD.xaml;
+>>>>>>> 5623c334ceeae12e5a044c32b93bbd57e1c0f2b2
+
+False
+

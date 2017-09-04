@@ -17,7 +17,6 @@
           <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-          <ScalarProperty Name="DiscountedQuota" ColumnName="DiscountedQuota" />
           <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
           <ScalarProperty Name="Discounted" ColumnName="Discounted" />
           <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
