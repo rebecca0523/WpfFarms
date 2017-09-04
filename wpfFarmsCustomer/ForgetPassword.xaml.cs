@@ -30,7 +30,7 @@ namespace wpfFarmsCustomer
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
-            string strSql = "checkidentity";
+            string strSql = "editPassword";
 
             SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand(strSql,conn);
@@ -48,8 +48,10 @@ namespace wpfFarmsCustomer
             int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
             if(n==1)
             {
-                EditPassword editPassword = new EditPassword();
-                editPassword.ShowDialog();
+                SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
+                pPassword.Direction = ParameterDirection.Input;
+                pPassword.Value = txtPassword.Text;
+                cmd.Parameters.Add(pPassword);
             }
             else
             {

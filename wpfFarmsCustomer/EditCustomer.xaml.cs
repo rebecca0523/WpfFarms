@@ -30,7 +30,7 @@ namespace wpfFarmsCustomer
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
-            string strSql = "editPassword";
+            string strSql = "";
 
             SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand(strSql, conn);
