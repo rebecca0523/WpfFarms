@@ -23,5 +23,11 @@ namespace WpfFarms
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginAndRegister = new MainWindow();
+            loginAndRegister.Show();
+        }
     }
 }

@@ -60,7 +60,6 @@ namespace wpfFarmsCustomer
             }
             conn.Close();
             conn.Dispose();
-
         }
 
         private void btnregistered_Click(object sender, RoutedEventArgs e)
