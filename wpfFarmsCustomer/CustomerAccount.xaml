@@ -51,7 +51,13 @@
             </Button>
 
         </StackPanel>
-        <Menu VerticalAlignment="Top" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="30">
+        <Menu VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch" Height="30">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA2A0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Menu.Background>
             <MenuItem Header="小農專區" FontSize="20"/>
             <MenuItem Header="活動專區" FontSize="20"/>
             <MenuItem Header="商品專區" FontSize="20"/>
