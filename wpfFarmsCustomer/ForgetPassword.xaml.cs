@@ -46,12 +46,28 @@ namespace wpfFarmsCustomer
             pName.Value = txtName.Text;
             cmd.Parameters.Add(pName);
 
-            SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NVarChar, 50);
+            SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.NChar, 20);
             pPassword.Direction = ParameterDirection.Input;
-            pPassword.Value = txtEmail.Text;
+            pPassword.Value = txtPassword.Text;
             cmd.Parameters.Add(pPassword);
 
-            MessageBox.Show("修改完成");
+            if(txtPassword.Text!=txtCheck.Text)
+            {
+                MessageBox.Show("輸入密碼不同");
+                txtPassword.Focus();
+                txtPassword.SelectAll();
+            }
+
+            conn.Open();
+            //==================
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("修改密碼成功！");
+
+            //===================
+            cmd.Dispose();
+            conn.Close();
+            conn.Dispose();
+            this.Close();
         }
 
             private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)

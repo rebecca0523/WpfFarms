@@ -76,5 +76,10 @@ namespace WpfFarms
             forgetPassword.Show();
             this.Close();
         }
+
+        private void btndelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
