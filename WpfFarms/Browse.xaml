@@ -10,7 +10,7 @@
         <TextBox HorizontalAlignment="Left" Height="20" Margin="117,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="340" VerticalContentAlignment="Center"/>
 
         <Button Content="小農介紹" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="20"/>
-        <Button Content="會員登入/註冊" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="20"/>
+        <Button Content="會員登入/註冊" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="20" Click="Button_Click"/>
         <Button Content="活動" HorizontalAlignment="Left" Margin="367,10,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="20"/>
         <Button Content="關於我們" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Height="20"/>
         <Button Content="搜尋" HorizontalAlignment="Left" Margin="467,47,0,0" VerticalAlignment="Top" Width="50" Height="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>

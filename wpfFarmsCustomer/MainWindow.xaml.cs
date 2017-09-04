@@ -31,33 +31,35 @@ namespace wpfFarmsCustomer
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-                string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
-                string strsql = "login";
+            string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
+            string strsql = "login";
 
-                SqlConnection conn = new SqlConnection(strConn);
-                SqlCommand cmd = new SqlCommand(strsql, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand(strsql, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("Password", txtPassword.Text);
+            cmd.Parameters.AddWithValue("Email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("Password", txtPassword.Text);
 
-                SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
-                pReturnValue.Direction = ParameterDirection.ReturnValue;
-                cmd.Parameters.Add(pReturnValue);
+            SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
+            pReturnValue.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(pReturnValue);
 
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
-                if (n == 1)
-                {
-                    MessageBox.Show("登入成功！");
-                }
-                else
-                {
-                    MessageBox.Show("電子郵件或密碼錯誤！");
-                }
-                conn.Close();
-                conn.Dispose();
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
+            if (n == 1)
+            {
+                MessageBox.Show("登入成功！");
+                CustomerAccount customerAccount = new CustomerAccount();
+                customerAccount.Show();
+            }
+            else
+            {
+                MessageBox.Show("電子郵件或密碼錯誤！");
+            }
+            conn.Close();
+            conn.Dispose();
         }
 
         private void btnregistered_Click(object sender, RoutedEventArgs e)
