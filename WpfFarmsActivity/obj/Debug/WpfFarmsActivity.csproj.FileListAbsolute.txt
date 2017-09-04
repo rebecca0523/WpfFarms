@@ -46,7 +46,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignColo
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.resources.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityList.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityListItem.g.cs
@@ -67,3 +66,5 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.e
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.baml
