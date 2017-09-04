@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarms", "WpfFarms\WpfFar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFarmsSupplier", "WpfFarmsSupplier\WpfFarmsSupplier.csproj", "{163A032F-360D-48B3-A26F-E2D537F7FFE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMarketing", "WpfMarketing\WpfMarketing.csproj", "{69AC41BF-95AB-48B0-B5C3-809D9BE9FB26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{163A032F-360D-48B3-A26F-E2D537F7FFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{163A032F-360D-48B3-A26F-E2D537F7FFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{163A032F-360D-48B3-A26F-E2D537F7FFE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AC41BF-95AB-48B0-B5C3-809D9BE9FB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AC41BF-95AB-48B0-B5C3-809D9BE9FB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69AC41BF-95AB-48B0-B5C3-809D9BE9FB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AC41BF-95AB-48B0-B5C3-809D9BE9FB26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
