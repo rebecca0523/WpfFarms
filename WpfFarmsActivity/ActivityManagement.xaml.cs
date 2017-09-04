@@ -26,20 +26,11 @@ namespace WpfFarmsActivity
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            global::WpfFarmsActivity.UserControl1 x = new UserControl1();
-            x.addActivity.Click += AddActivity_Click;
-            this.ListWrapPanel.Children.Add(x);
+            
+            FarmActivity FA = new FarmActivity();
+            FA.Show();
         }
 
-        private void AddActivity_Click(object sender, RoutedEventArgs e)
-        {
-            ActivityList activity = new ActivityList();
-            activity.Show();
-            for (int i = 0; i < VisualChildrenCount; i++)
-            {
-                global::WpfFarmsActivity.ActivityListItem x = new ActivityListItem();
-                activity.ListPanel.Children.Add(x);
-            }
-        }
+        
     }
 }

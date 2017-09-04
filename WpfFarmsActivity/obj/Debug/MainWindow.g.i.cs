@@ -34,339 +34,333 @@ using System.Windows.Shell;
 using WpfFarmsActivity;
 
 
-namespace WpfFarmsActivity {
-    
-    
+namespace WpfFarmsActivity
+{
+
+
     /// <summary>
     /// MainWindow
     /// </summary>
-    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
-        
-        
-        #line 1 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal WpfFarmsActivity.MainWindow ActivityWindow;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 13 "..\..\MainWindow.xaml"
+    public partial class FarmActivity : System.Windows.Window, System.Windows.Markup.IComponentConnector
+    {
+
+#line default
+#line hidden
+
+
+#line 13 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ToolBar toolBar;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 25 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 25 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock2;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 26 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 26 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox1;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 33 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 33 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock3;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 34 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox comboBox1;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 41 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 41 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 42 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 42 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 43 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 43 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 44 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 44 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 51 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 51 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock6;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 52 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 52 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox5;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 53 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 53 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock6_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 61 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 61 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock4;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 62 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 62 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox3;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 69 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 69 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock5;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 70 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 70 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox4;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 71 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 71 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock5_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 72 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 72 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox4_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 79 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 79 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock7;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 80 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 80 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox6;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 81 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 81 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock textBlock7_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 82 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 82 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox6_Copy;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 89 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 89 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RichTextBox richTextBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 100 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 100 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 101 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 101 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button1;
-        
-        #line default
-        #line hidden
-        
+
+#line default
+#line hidden
+
         private bool _contentLoaded;
-        
+
         /// <summary>
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public void InitializeComponent() {
-            if (_contentLoaded) {
+        public void InitializeComponent()
+        {
+            if (_contentLoaded)
+            {
                 return;
             }
             _contentLoaded = true;
             System.Uri resourceLocater = new System.Uri("/WpfFarmsActivity;component/mainwindow.xaml", System.UriKind.Relative);
-            
-            #line 1 "..\..\MainWindow.xaml"
+
+#line 1 "..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
-            
-            #line default
-            #line hidden
+
+#line default
+#line hidden
         }
-        
+
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target)
+        {
             switch (connectionId)
             {
-            case 1:
-            this.ActivityWindow = ((WpfFarmsActivity.MainWindow)(target));
-            return;
-            case 2:
-            this.toolBar = ((System.Windows.Controls.ToolBar)(target));
-            return;
-            case 3:
-            this.textBlock2 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 4:
-            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 5:
-            this.textBlock3 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 6:
-            this.comboBox1 = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 7:
-            this.textBlock = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 8:
-            this.textBox = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 9:
-            this.textBlock_Copy = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 10:
-            this.textBox_Copy = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 11:
-            this.textBlock6 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 12:
-            this.textBox5 = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 13:
-            this.textBlock6_Copy = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 14:
-            this.textBlock4 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 15:
-            this.textBox3 = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 16:
-            this.textBlock5 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 17:
-            this.textBox4 = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 18:
-            this.textBlock5_Copy = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 19:
-            this.textBox4_Copy = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 20:
-            this.textBlock7 = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 21:
-            this.textBox6 = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 22:
-            this.textBlock7_Copy = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 23:
-            this.textBox6_Copy = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 24:
-            this.richTextBox = ((System.Windows.Controls.RichTextBox)(target));
-            return;
-            case 25:
-            this.button = ((System.Windows.Controls.Button)(target));
-            
-            #line 100 "..\..\MainWindow.xaml"
-            this.button.Click += new System.Windows.RoutedEventHandler(this.button_Click_1);
-            
-            #line default
-            #line hidden
-            return;
-            case 26:
-            this.button1 = ((System.Windows.Controls.Button)(target));
-            return;
+                case 1:
+                    this.ActivityWindow = ((WpfFarmsActivity.FarmActivity)(target));
+                    return;
+                case 2:
+                    this.toolBar = ((System.Windows.Controls.ToolBar)(target));
+                    return;
+                case 3:
+                    this.textBlock2 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 4:
+                    this.textBox1 = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 5:
+                    this.textBlock3 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 6:
+                    this.comboBox1 = ((System.Windows.Controls.ComboBox)(target));
+                    return;
+                case 7:
+                    this.textBlock = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 8:
+                    this.textBox = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 9:
+                    this.textBlock_Copy = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 10:
+                    this.textBox_Copy = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 11:
+                    this.textBlock6 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 12:
+                    this.textBox5 = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 13:
+                    this.textBlock6_Copy = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 14:
+                    this.textBlock4 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 15:
+                    this.textBox3 = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 16:
+                    this.textBlock5 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 17:
+                    this.textBox4 = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 18:
+                    this.textBlock5_Copy = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 19:
+                    this.textBox4_Copy = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 20:
+                    this.textBlock7 = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 21:
+                    this.textBox6 = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 22:
+                    this.textBlock7_Copy = ((System.Windows.Controls.TextBlock)(target));
+                    return;
+                case 23:
+                    this.textBox6_Copy = ((System.Windows.Controls.TextBox)(target));
+                    return;
+                case 24:
+                    this.richTextBox = ((System.Windows.Controls.RichTextBox)(target));
+                    return;
+                case 25:
+                    this.button = ((System.Windows.Controls.Button)(target));
+
+#line 100 "..\..\MainWindow.xaml"
+                    this.button.Click += new System.Windows.RoutedEventHandler(this.button_Click_1);
+
+#line default
+#line hidden
+                    return;
+                case 26:
+                    this.button1 = ((System.Windows.Controls.Button)(target));
+                    return;
             }
             this._contentLoaded = true;
         }
+
+        internal System.Windows.Window ActivityWindow;
     }
 }
 
