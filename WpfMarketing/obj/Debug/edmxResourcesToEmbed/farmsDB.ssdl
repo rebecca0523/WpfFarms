@@ -5,7 +5,7 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="SupplierID" Type="int" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
     <Property Name="ProductName" Type="varchar" MaxLength="100" />
     <Property Name="SellStartDate" Type="datetime" />
     <Property Name="SellEndDate" Type="datetime" />
@@ -18,11 +18,12 @@
     <Property Name="CanSaleQTY" Type="int" />
     <Property Name="QuantitySold" Type="int" />
     <Property Name="Discounted" Type="bit" />
-    <Property Name="DiscountedAB" Type="bit" />
+    <Property Name="DiscountedCombo" Type="bit" />
     <Property Name="DiscountedPoint" Type="bit" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="LastUpdateDate" Type="datetime" />
     <Property Name="LastUpdateUserID" Type="varchar" MaxLength="10" />
+    <Property Name="DeleteProduct" Type="bit" />
   </EntityType>
   <EntityType Name="SaleEvent">
     <Key>
@@ -45,6 +46,8 @@
     <Property Name="AProductID" Type="int" />
     <Property Name="BProductID" Type="int" />
     <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="int" />
+    <Property Name="EdditTime" Type="int" />
   </EntityType>
   <EntityType Name="SaleEventQuota">
     <Key>
