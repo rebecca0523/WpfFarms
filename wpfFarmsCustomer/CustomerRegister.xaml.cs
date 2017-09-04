@@ -57,15 +57,7 @@ namespace wpfFarmsCustomer
             pPassword.Value = txtPassword.Text;
             cmd.Parameters.Add(pPassword);
 
-            if(txtGender.Text=="男姓")
-            {
-                txtGender.Text = 1.ToString();
-            }
-            else if(txtGender.Text=="女姓")
-            {
-                txtGender.Text = 2.ToString();
-            }
-            SqlParameter pGender = new SqlParameter("@Gender", SqlDbType.Int);
+            SqlParameter pGender = new SqlParameter("@Gender", SqlDbType.NChar,10);
             pGender.Direction = ParameterDirection.Input;
             pGender.Value = txtGender.Text;
             cmd.Parameters.Add(pGender);
@@ -80,10 +72,10 @@ namespace wpfFarmsCustomer
             pMobile.Value = txtMobile.Text;
             cmd.Parameters.Add(pMobile);
 
-            SqlParameter pAddress = new SqlParameter("@Address", SqlDbType.NVarChar, 80);
-            pAddress.Direction = ParameterDirection.Input;
-            pAddress.Value = txtAddress.Text;
-            cmd.Parameters.Add(pAddress);
+            SqlParameter pAddressID = new SqlParameter("@AddressID", SqlDbType.NVarChar, 80);
+            pAddressID.Direction = ParameterDirection.Input;
+            pAddressID.Value = txtAddress.Text;
+            cmd.Parameters.Add(pAddressID);
 
             SqlParameter pCreationDate = new SqlParameter("@CreationDate", SqlDbType.DateTime);
             pCreationDate.Direction = ParameterDirection.Input;

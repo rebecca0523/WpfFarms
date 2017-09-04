@@ -18,7 +18,7 @@
                 <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="123"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="455" Margin="0,40,0,0">
-                <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="60,0,0,0" Click="btnforget_Click">
+                <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="30,0,0,0" Click="btnforget_Click">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF8CAAFF" Offset="0.222"/>
@@ -26,7 +26,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnlogin" Content="登入" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="60,0,0,0" Click="btnlogin_Click">
+                <Button x:Name="btnlogin" Content="登入" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="30,0,0,0" Click="btnlogin_Click">
                     <Button.Background>
                         <RadialGradientBrush>
                             <GradientStop Color="#FF739DF0" Offset="1"/>
@@ -34,12 +34,20 @@
                         </RadialGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnregister" Content="註冊" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnregister_Click" Height="70" Margin="60,0,0,0">
+                <Button x:Name="btnregister" Content="註冊" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnregister_Click" Height="70" Margin="30,0,0,0">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF739DF0" Offset="1"/>
                             <GradientStop Color="White"/>
                         </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btndelete" Content="刪除會員" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="30,0,0,0" Click="btndelete_Click">
+                    <Button.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FF8CAAFF"/>
+                        </RadialGradientBrush>
                     </Button.Background>
                 </Button>
             </WrapPanel>
