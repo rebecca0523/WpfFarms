@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace WpfFarmsSupplier
         {
             InitializeComponent();
         }
-        farmsDBEntities context = new farmsDBEntities();
+        
+        AllFarmsDBEntities context = new AllFarmsDBEntities();
 
 
         string Email ="testselina66@ms68.hinet.net";
@@ -86,6 +88,7 @@ namespace WpfFarmsSupplier
 
             SupplierTable.LastUpdateUserID = context.CustomerInfoes.Where(c => c.Email == Email).Select(c => c.CustomerID).FirstOrDefault();
             SupplierTable.LastUpdateDate = System.DateTime.Now;
+            
             context.Suppliers.Add(SupplierTable);
             context.SaveChanges();
 

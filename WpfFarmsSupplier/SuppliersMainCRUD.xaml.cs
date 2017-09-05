@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,9 @@ namespace WpfFarmsSupplier
             
         }
         System.Windows.Data.CollectionViewSource supplierViewSource;
-        farmsDBEntities context = new farmsDBEntities();
+        AllFarmsDBEntities context = new AllFarmsDBEntities();
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //    System.Windows.Data.CollectionViewSource supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));

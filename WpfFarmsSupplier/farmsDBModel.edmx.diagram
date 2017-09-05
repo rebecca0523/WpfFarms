@@ -7,6 +7,8 @@
       <Diagram DiagramId="0826aeb25e24409cad4d53033b9d9028" Name="Diagram1">
         <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.CustomerInfo" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersVideo" Width="1.5" PointX="3" PointY="6" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersVedio_Suppliers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

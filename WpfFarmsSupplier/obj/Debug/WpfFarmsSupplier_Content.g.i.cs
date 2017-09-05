@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmdbmodelnb.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmdbmodelnb.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmsdbmodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmsdbmodel.tt")]
 
