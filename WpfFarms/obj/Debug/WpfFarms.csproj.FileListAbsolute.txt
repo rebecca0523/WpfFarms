@@ -151,3 +151,6 @@ D:\99GitHub\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.GenerateResource.Cache
 D:\99GitHub\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\WpfFarms\obj\Debug\WpfFarms.exe
 D:\99GitHub\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.dll
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.xml
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
