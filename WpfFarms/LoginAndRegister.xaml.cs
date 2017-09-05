@@ -74,6 +74,7 @@ namespace WpfFarms
             ForgetPassword forgetPassword = new ForgetPassword();
             forgetPassword.Show();
         }
+    
 
         private void btndelete_Click(object sender, RoutedEventArgs e)
         {
