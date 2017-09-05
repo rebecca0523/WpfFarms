@@ -32,7 +32,6 @@ namespace WpfFarms
         {
             CustomerRegister CustomerRegister = new CustomerRegister();
             CustomerRegister.Show();
-            this.Close();
         }
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
@@ -74,7 +73,6 @@ namespace WpfFarms
         {
             ForgetPassword forgetPassword = new ForgetPassword();
             forgetPassword.Show();
-            this.Close();
         }
 
         private void btndelete_Click(object sender, RoutedEventArgs e)
