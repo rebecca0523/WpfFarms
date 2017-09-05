@@ -14,7 +14,7 @@
                 <GradientStop Color="#FFCCCBE5" Offset="0.04"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="btnSend" Content="確認送出" HorizontalAlignment="Left" Margin="215,250,0,0" VerticalAlignment="Top" Width="90" Click="btnSend_Click" Background="{DynamicResource Brush1}" Height="30"/>
+        <Button x:Name="btnSend" Content="確認送出" HorizontalAlignment="Left" Margin="197,250,0,0" VerticalAlignment="Top" Width="90" Click="btnSend_Click" Background="{DynamicResource Brush1}" Height="30"/>
         <TextBlock Height="20" Margin="0" TextWrapping="Wrap" Text="會員註冊" VerticalAlignment="Top">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
