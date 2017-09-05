@@ -103,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LoginAndRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,24 +117,6 @@
     </Compile>
     <Compile Include="CustomerAccount.xaml.cs">
       <DependentUpon>CustomerAccount.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfo.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="CustomerRegister.xaml.cs">
       <DependentUpon>CustomerRegister.xaml</DependentUpon>
@@ -143,6 +129,9 @@
     </Compile>
     <Compile Include="ForgetPassword.xaml.cs">
       <DependentUpon>ForgetPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndRegister.xaml.cs">
+      <DependentUpon>LoginAndRegister.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -167,13 +156,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="CustomerInfoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CustomerInfoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CustomerInfoModel.edmx.diagram">
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
@@ -199,18 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Custimage\000.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CustomerInfoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CustomerInfoModel.Context.cs</LastGenOutput>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="CustomerInfoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-      <LastGenOutput>CustomerInfoModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

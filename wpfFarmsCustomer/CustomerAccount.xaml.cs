@@ -16,10 +16,10 @@ using System.Windows.Shapes;
 using WpfFarmsSupplier;
 using System.Data;
 using wpfFarmsCustomer;
-using WpfFarms;
 using WpfFarmsActivity;
 using WpfFarmsProducts;
 using WpfMarketing;
+using static wpfFarmsCustomer.LoginAndRegister;
 
 namespace wpfFarmsCustomer
 {
@@ -41,7 +41,7 @@ namespace wpfFarmsCustomer
             SqlCommand cmd = new SqlCommand(strSql, conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Email", LoginAndRegister.loginEmail);
+            cmd.Parameters.AddWithValue("@Email", loginEmail);
             cmd.Parameters.AddWithValue("@Password", LoginAndRegister.loginPassword);
 
             //SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.NChar, 10);
@@ -68,7 +68,7 @@ namespace wpfFarmsCustomer
 
         private void MenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
         {
-            SuppliersVedioCRUD vedioCRUD = new SuppliersVedioCRUD();
+            SuppliersVideoCRUD vedioCRUD = new SuppliersVideoCRUD();
 
             vedioCRUD.Show();
         }
