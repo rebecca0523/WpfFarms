@@ -216,6 +216,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WpfFarmsProducts\WpfFarmsProducts.csproj">
+      <Project>{1678D205-7BB2-4C52-9DBF-9ED61EBAC5F5}</Project>
+      <Name>WpfFarmsProducts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
       <Project>{163a032f-360d-48b3-a26f-e2d537f7ffe5}</Project>
       <Name>WpfFarmsSupplier</Name>
