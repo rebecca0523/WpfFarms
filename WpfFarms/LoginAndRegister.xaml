@@ -11,7 +11,7 @@
         <StackPanel HorizontalAlignment="Center" Height="250" Margin="10,30,0,0" VerticalAlignment="Center" Width="495">
             <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
                 <Label Content="電子郵件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="123@iii.com"/>
+                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="selina66@ms68.hinet.net"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="255" Margin="0,40,0,0">
                 <Label Content="密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>

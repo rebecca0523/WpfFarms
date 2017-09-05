@@ -46,8 +46,8 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid Loaded="Grid_Loaded">
-        <DataGrid x:Name="CustomerInfoDataGrid" HorizontalAlignment="Center" Height="145" Margin="10,50,0,0" VerticalAlignment="Top" Width="305" HorizontalContentAlignment="Center" RowStyle="{DynamicResource CustomerInfoRow}"/>
+    <Grid>
+        <DataGrid x:Name="CustomerInfoDataGrid" HorizontalAlignment="Center" Height="145" Margin="10,50,0,0" VerticalAlignment="Top" Width="305" HorizontalContentAlignment="Center" RowStyle="{DynamicResource CustomerInfoRow}" Loaded="CustomerInfoDataGrid_Loaded"/>
 
     </Grid>
 </Window>
