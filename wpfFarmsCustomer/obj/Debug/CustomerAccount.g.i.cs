@@ -56,6 +56,14 @@ namespace wpfFarmsCustomer {
         #line default
         #line hidden
         
+        
+        #line 67 "..\..\CustomerAccount.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.MenuItem mimMarketing;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -100,6 +108,23 @@ namespace wpfFarmsCustomer {
             
             #line 63 "..\..\CustomerAccount.xaml"
             this.myMenuItemVedioCRUD.Click += new System.Windows.RoutedEventHandler(this.myMenuItemVedioCRUD_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 3:
+            
+            #line 66 "..\..\CustomerAccount.xaml"
+            ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItem_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
+            this.mimMarketing = ((System.Windows.Controls.MenuItem)(target));
+            
+            #line 67 "..\..\CustomerAccount.xaml"
+            this.mimMarketing.Click += new System.Windows.RoutedEventHandler(this.mimMarketing_Click);
             
             #line default
             #line hidden

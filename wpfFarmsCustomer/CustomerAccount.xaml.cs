@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfFarmsSupplier;
+using WpfMarketing;
 
 namespace wpfFarmsCustomer
 {
@@ -44,6 +45,18 @@ namespace wpfFarmsCustomer
             vedioCRUD.Show();
         }
 
-      
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+        private void mimMarketing_Click(object sender, RoutedEventArgs e)
+        {
+            //行銷專區
+            WindowSalEvent SE = new WindowSalEvent();
+            SE.Show();
+
+
+        }
     }
 }
