@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\
 WpfFarmsProducts
 none
 false
 DEBUG;TRACE
-D:\99GitHub\WpfFarms\WpfFarmsProducts\App.xaml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\App.xaml
 51272366698
 21069184110
 17224361027
-21396955356
+21-33617584
 CreateProduct.xaml;MainWindowProducts.xaml;ProductDescription.xaml;ShinyBlueDictionary.xaml;TwilightBlueDictionary.xaml;
 
 True

@@ -11,8 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfFarmsActivity;
-using WpfFarmsSupplier;
 
 namespace wpfFarmsCustomer
 {
@@ -24,19 +22,6 @@ namespace wpfFarmsCustomer
         public CustomerAccount()
         {
             InitializeComponent();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            ActivityManagement ActivityManagement = new ActivityManagement();
-            ActivityManagement.Show();
-        }
-
-        private void myMenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
-        {
-            SuppliersRegister supreg = new SuppliersRegister();
-
-            supreg.Show();
         }
     }
 }
