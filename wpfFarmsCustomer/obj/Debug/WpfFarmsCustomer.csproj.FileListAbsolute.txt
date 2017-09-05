@@ -174,3 +174,9 @@ D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.Generate
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.exe
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsSupplier.exe
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\EntityFramework.dll
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsSupplier.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsSupplier.exe.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\EntityFramework.xml
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\zh-Hant\EntityFramework.resources.dll

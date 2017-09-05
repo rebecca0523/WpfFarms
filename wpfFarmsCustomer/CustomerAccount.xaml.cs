@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfFarmsActivity;
+using WpfFarmsSupplier;
 
 namespace wpfFarmsCustomer
 {
@@ -29,6 +30,13 @@ namespace wpfFarmsCustomer
         {
             ActivityManagement ActivityManagement = new ActivityManagement();
             ActivityManagement.Show();
+        }
+
+        private void myMenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersRegister supreg = new SuppliersRegister();
+
+            supreg.Show();
         }
     }
 }
