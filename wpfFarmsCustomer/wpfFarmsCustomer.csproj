@@ -111,42 +111,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddressInfo.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BlackListInfo.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ChatLog.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="CustomerAccount.xaml.cs">
       <DependentUpon>CustomerAccount.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfo.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerInfoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerLoginlog.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerRegister.xaml.cs">
       <DependentUpon>CustomerRegister.xaml</DependentUpon>
@@ -169,9 +139,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostalCodeInfo.cs">
-      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -189,13 +156,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="CustomerInfoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CustomerInfoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CustomerInfoModel.edmx.diagram">
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
@@ -246,18 +206,6 @@
       <Project>{69ac41bf-95ab-48b0-b5c3-809d9be9fb26}</Project>
       <Name>WpfMarketing</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CustomerInfoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-      <LastGenOutput>CustomerInfoModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CustomerInfoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-      <LastGenOutput>CustomerInfoModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
