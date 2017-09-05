@@ -45,7 +45,6 @@ C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.Generate
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
-<<<<<<< HEAD
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
@@ -95,7 +94,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.c
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
->>>>>>> 5623c334ceeae12e5a044c32b93bbd57e1c0f2b2
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
@@ -121,3 +119,4 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsS
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll

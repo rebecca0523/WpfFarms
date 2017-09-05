@@ -45,8 +45,8 @@ namespace WpfFarmsSupplier
                 
                 supplierViewSource.Source = context.Suppliers.Where(s => s.email1 == Email).ToList();
 
-                createdUserNMLabel.Content=
-                lastUpdateUserNMLabel=
+                //createdUserNMLabel.Content=
+                //lastUpdateUserNMLabel=
 
                 cmdSave.IsEnabled = false;
                 
