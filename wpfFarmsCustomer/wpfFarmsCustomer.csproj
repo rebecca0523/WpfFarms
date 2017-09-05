@@ -50,11 +50,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Effects, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,6 +114,24 @@
     <Compile Include="CustomerAccount.xaml.cs">
       <DependentUpon>CustomerAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomerInfo.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerInfoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerRegister.xaml.cs">
       <DependentUpon>CustomerRegister.xaml</DependentUpon>
     </Compile>
@@ -140,6 +167,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="CustomerInfoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CustomerInfoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CustomerInfoModel.edmx.diagram">
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,9 +201,24 @@
     <Resource Include="Custimage\000.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WpfFarmsActivity\WpfFarmsActivity.csproj">
-      <Project>{28E180F5-5062-4BD2-ACD2-0B60CB919EAA}</Project>
-      <Name>WpfFarmsActivity</Name>
+    <Content Include="CustomerInfoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CustomerInfoModel.Context.cs</LastGenOutput>
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="CustomerInfoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerInfoModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
+      <Project>{163a032f-360d-48b3-a26f-e2d537f7ffe5}</Project>
+      <Name>WpfFarmsSupplier</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

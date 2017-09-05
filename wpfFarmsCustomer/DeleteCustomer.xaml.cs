@@ -23,5 +23,11 @@ namespace wpfFarmsCustomer
         {
             InitializeComponent();
         }
+
+        private void CustomerInfoDataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            farmsDBEntities dc = new farmsDBEntities();
+            CustomerInfoDataGrid.ItemsSource = dc.CustomerInfo.ToArray();
+        }
     }
 }

@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsSupplier"
         mc:Ignorable="d"
-        Title="SuppliersRegister" Height="706" Width="839" Loaded="Window_Loaded">
+        Title="SuppliersRegister" Height="873" Width="899" Loaded="Window_Loaded" FontSize="18">
     <Window.Resources>
         <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Supplier}, CreateList=True}"/>
     </Window.Resources>
-    <StackPanel Margin="0,94,0,-6">
-        <Canvas HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="256" Margin="165,0,0,0">
-            <Button x:Name="cmdSave" Content="註冊" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click" Background="#FF001EFF">
+    <StackPanel Margin="0,36,2,-6">
+        <Canvas HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="390" Margin="165,0,0,0">
+            <Button x:Name="cmdSave" Content="註冊" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click" Background="#FF001EFF" FontSize="18">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
                 </Button.Foreground>
             </Button>
-            <Button x:Name="cmdEditSave" Content="修改後存檔" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="181" Click="cmdEditSave_Click" Canvas.Top="1" Background="#FF001EFF">
+            <Button x:Name="cmdEditSave" Content="修改後存檔" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Canvas.Left="181" Click="cmdEditSave_Click" Canvas.Top="1" Background="#FF001EFF" FontSize="18">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>
             </Button>
         </Canvas>
-        <Grid x:Name="grid1" DataContext="{StaticResource supplierViewSource}" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Top" Width="485">
+        <Grid x:Name="grid1" DataContext="{StaticResource supplierViewSource}" HorizontalAlignment="Left" Margin="165,20,0,0" VerticalAlignment="Top" Width="570">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -44,7 +44,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Supplier ID(唯讀):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center">
+            <Label Content="Supplier ID(唯讀):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" >
                 <Label.Background>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
                 </Label.Background>
@@ -59,7 +59,7 @@
             <Label Content="Contact Name 2:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
             <TextBox x:Name="contactName2TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,4,0,4" Grid.Row="3" Text="{Binding ContactName2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
 
-            <Label Content="email 1(必填):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Width="97">
+            <Label Content="email 1(必填):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Width="140">
                 <Label.Background>
                     <SolidColorBrush Color="#FFFF0034"/>
                 </Label.Background>
@@ -81,9 +81,6 @@
             <Label Content="Postal Code:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
             <!--<TextBox x:Name="postalCodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,4,0,4" Grid.Row="9" Text="{Binding PostalCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>-->
 
-            <ComboBox x:Name="postalCodeComboBox">
-
-            </ComboBox>
 
 
 
