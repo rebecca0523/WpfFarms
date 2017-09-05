@@ -103,13 +103,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LoginAndRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddressInfo.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackListInfo.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatLog.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerAccount.xaml.cs">
       <DependentUpon>CustomerAccount.xaml</DependentUpon>
@@ -132,6 +145,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerLoginlog.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomerRegister.xaml.cs">
       <DependentUpon>CustomerRegister.xaml</DependentUpon>
     </Compile>
@@ -144,12 +160,18 @@
     <Compile Include="ForgetPassword.xaml.cs">
       <DependentUpon>ForgetPassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginAndRegister.xaml.cs">
+      <DependentUpon>LoginAndRegister.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostalCodeInfo.cs">
+      <DependentUpon>CustomerInfoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -201,18 +223,6 @@
     <Resource Include="Custimage\000.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomerInfoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CustomerInfoModel.Context.cs</LastGenOutput>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="CustomerInfoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
-      <LastGenOutput>CustomerInfoModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +246,18 @@
       <Project>{69ac41bf-95ab-48b0-b5c3-809d9be9fb26}</Project>
       <Name>WpfMarketing</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomerInfoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerInfoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CustomerInfoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomerInfoModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerInfoModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
