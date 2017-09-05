@@ -53,7 +53,7 @@ namespace wpfFarmsCustomer
 
             if(txtPassword.Text!=txtCheck.Text)
             {
-                MessageBox.Show("輸入密碼不同");
+                MessageBox.Show("輸入密碼不符");
                 txtPassword.Focus();
                 txtPassword.SelectAll();
             }
