@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,8 @@ namespace wpfFarmsCustomer
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            farmsDBEntities dc = new farmsDBEntities();
-            customerInfoDataGrid.ItemsSource = dc.CustomerInfo.ToList();
+            AllFarmsDBEntities dc = new AllFarmsDBEntities();
+            customerInfoDataGrid.ItemsSource = dc.CustomerInfoes.ToList();
         }
     }
 }

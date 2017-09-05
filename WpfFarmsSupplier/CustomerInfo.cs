@@ -18,7 +18,7 @@ namespace WpfFarmsSupplier
         public Nullable<int> SupplierID { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
-        public int Gender { get; set; }
+        public string Gender { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public Nullable<int> Evaluation { get; set; }

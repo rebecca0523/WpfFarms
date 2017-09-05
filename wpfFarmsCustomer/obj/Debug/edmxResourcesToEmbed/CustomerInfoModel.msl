@@ -1,6 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
+    <EntitySetMapping Name="AddressInfo">
+      <EntityTypeMapping TypeName="farmsDBModel.AddressInfo">
+        <MappingFragment StoreEntitySet="AddressInfo">
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlackListInfo">
+      <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
+        <MappingFragment StoreEntitySet="BlackListInfo">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
+          <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatLog">
+      <EntityTypeMapping TypeName="farmsDBModel.ChatLog">
+        <MappingFragment StoreEntitySet="ChatLog">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
+          <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
+          <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CustomerInfo">
       <EntityTypeMapping TypeName="farmsDBModel.CustomerInfo">
         <MappingFragment StoreEntitySet="CustomerInfo">
@@ -19,6 +51,26 @@
           <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
           <ScalarProperty Name="Interestied" ColumnName="Interestied" />
           <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerLoginlog">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerLoginlog">
+        <MappingFragment StoreEntitySet="CustomerLoginlog">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+          <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostalCodeInfo">
+      <EntityTypeMapping TypeName="farmsDBModel.PostalCodeInfo">
+        <MappingFragment StoreEntitySet="PostalCodeInfo">
+          <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
+          <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

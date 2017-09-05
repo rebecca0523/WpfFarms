@@ -57,7 +57,6 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
-D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_Content.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.cache
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.lref
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.baml
@@ -78,6 +77,7 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.Sq
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
@@ -131,7 +131,6 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
-C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_Content.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.lref
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.baml
@@ -152,5 +151,9 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersV
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pdb
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
