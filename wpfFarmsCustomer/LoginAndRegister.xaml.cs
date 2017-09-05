@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpfFarmsCustomer;
 
-namespace WpfFarms
+namespace wpfFarmsCustomer
 {
     /// <summary>
     /// LoginAndRegister.xaml 的互動邏輯
