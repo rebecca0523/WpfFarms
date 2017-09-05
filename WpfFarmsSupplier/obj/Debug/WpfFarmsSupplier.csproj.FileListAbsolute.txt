@@ -70,7 +70,6 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.baml
-=======
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
