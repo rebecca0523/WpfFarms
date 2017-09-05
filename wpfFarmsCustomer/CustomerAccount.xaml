@@ -62,7 +62,7 @@
                 <MenuItem x:Name="myMenuItemfarmsCRUD" Header="維護小農基本資料" Click="myMenuItemfarmsCRUD_Click"></MenuItem>
                 <MenuItem x:Name="myMenuItemVedioCRUD" Header="維護小農Vedio資料" Click="myMenuItemVedioCRUD_Click" ></MenuItem>
             </MenuItem>
-            <MenuItem Header="活動專區" FontSize="20" Click="MenuItem_Click"/>
+            <MenuItem Header="活動專區" FontSize="20" />
             <MenuItem Header="商品專區" FontSize="20"/>
             <MenuItem Header="行銷專區" FontSize="20"/>
         </Menu>
