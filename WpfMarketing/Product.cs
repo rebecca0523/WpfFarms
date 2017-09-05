@@ -17,9 +17,9 @@ namespace WpfMarketing
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.SaleEventSingleProducts = new HashSet<SaleEventSingleProduct>();
             this.SaleEventComboes = new HashSet<SaleEventCombo>();
             this.SaleEventComboes1 = new HashSet<SaleEventCombo>();
-            this.SaleEventSingleProducts = new HashSet<SaleEventSingleProduct>();
         }
     
         public int ProductID { get; set; }
@@ -44,10 +44,10 @@ namespace WpfMarketing
         public Nullable<bool> DeleteProduct { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleEventCombo> SaleEventComboes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleEventCombo> SaleEventComboes1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
     }
 }

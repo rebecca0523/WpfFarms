@@ -40,19 +40,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SaleEventComboes">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
-        <MappingFragment StoreEntitySet="SaleEventCombo">
-          <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="AProductID" ColumnName="AProductID" />
-          <ScalarProperty Name="BProductID" ColumnName="BProductID" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SaleEventQuotas">
       <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
         <MappingFragment StoreEntitySet="SaleEventQuota">
@@ -74,6 +61,19 @@
           <ScalarProperty Name="Discount" ColumnName="Discount" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventComboes">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
+        <MappingFragment StoreEntitySet="SaleEventCombo">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="BProductID" ColumnName="BProductID" />
+          <ScalarProperty Name="AProductID" ColumnName="AProductID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

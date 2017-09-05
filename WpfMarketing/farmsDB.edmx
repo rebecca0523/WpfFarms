@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -52,7 +52,7 @@
           <Property Name="BProductID" Type="int" />
           <Property Name="Discount" Type="real" />
           <Property Name="Active" Type="bit" />
-          <Property Name="EdditTime" Type="int" />
+          <Property Name="EdditTime" Type="datetime" />
         </EntityType>
         <EntityType Name="SaleEventQuota">
           <Key>
@@ -179,8 +179,7 @@
             <End Role="SaleEventQuota" EntitySet="SaleEventQuota" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -208,9 +207,9 @@
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="DeleteProduct" Type="Boolean" />
-          <NavigationProperty Name="SaleEventComboes" Relationship="Self.FK_SaleEventAB_Products" FromRole="Products" ToRole="SaleEventCombo" />
-          <NavigationProperty Name="SaleEventComboes1" Relationship="Self.FK_SaleEventAB_Products1" FromRole="Products" ToRole="SaleEventCombo" />
           <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_Products" FromRole="Products" ToRole="SaleEventSingleProduct" />
+          <NavigationProperty Name="SaleEventComboes" Relationship="farmsDBModel.FK_SaleEventAB_Products" FromRole="Product" ToRole="SaleEventCombo" />
+          <NavigationProperty Name="SaleEventComboes1" Relationship="farmsDBModel.FK_SaleEventAB_Products1" FromRole="Product" ToRole="SaleEventCombo" />
         </EntityType>
         <EntityType Name="SaleEvent">
           <Key>
@@ -223,24 +222,9 @@
           <Property Name="SaleEventStart" Type="DateTime" Precision="3" />
           <Property Name="SaleEventEnd" Type="DateTime" Precision="3" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SaleEventComboes" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventCombo" />
           <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventSingleProduct" />
           <NavigationProperty Name="SaleEventQuotas" Relationship="Self.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
-        </EntityType>
-        <EntityType Name="SaleEventCombo">
-          <Key>
-            <PropertyRef Name="SaleEventComboID" />
-          </Key>
-          <Property Name="SaleEventComboID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SaleEventID" Type="Int32" />
-          <Property Name="AProductID" Type="Int32" />
-          <Property Name="BProductID" Type="Int32" />
-          <Property Name="Discount" Type="Single" />
-          <Property Name="Active" Type="Boolean" />
-          <Property Name="EdditTime" Type="Int32" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_SaleEventAB_Products" FromRole="SaleEventCombo" ToRole="Products" />
-          <NavigationProperty Name="Product1" Relationship="Self.FK_SaleEventAB_Products1" FromRole="SaleEventCombo" ToRole="Products" />
-          <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEventCombo" ToRole="SaleEvent" />
+          <NavigationProperty Name="SaleEventComboes" Relationship="farmsDBModel.FK_SaleEventA_B_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventCombo" />
         </EntityType>
         <EntityType Name="SaleEventQuota">
           <Key>
@@ -267,30 +251,6 @@
           <NavigationProperty Name="Product" Relationship="Self.FK_SaleEventProduct_Products" FromRole="SaleEventSingleProduct" ToRole="Products" />
           <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEventSingleProduct" ToRole="SaleEvent" />
         </EntityType>
-        <Association Name="FK_SaleEventAB_Products">
-          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="SaleEventCombo">
-              <PropertyRef Name="AProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventAB_Products1">
-          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="SaleEventCombo">
-              <PropertyRef Name="BProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SaleEventProduct_Products">
           <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
           <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
@@ -300,18 +260,6 @@
             </Principal>
             <Dependent Role="SaleEventSingleProduct">
               <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventA_B_SaleEvent">
-          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
-          <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SaleEvent">
-              <PropertyRef Name="SaleEventID" />
-            </Principal>
-            <Dependent Role="SaleEventCombo">
-              <PropertyRef Name="SaleEventID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -342,24 +290,11 @@
         <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
-          <EntitySet Name="SaleEventComboes" EntityType="Self.SaleEventCombo" />
           <EntitySet Name="SaleEventQuotas" EntityType="Self.SaleEventQuota" />
           <EntitySet Name="SaleEventSingleProducts" EntityType="Self.SaleEventSingleProduct" />
-          <AssociationSet Name="FK_SaleEventAB_Products" Association="Self.FK_SaleEventAB_Products">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventAB_Products1" Association="Self.FK_SaleEventAB_Products1">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
-          </AssociationSet>
           <AssociationSet Name="FK_SaleEventProduct_Products" Association="Self.FK_SaleEventProduct_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventA_B_SaleEvent" Association="Self.FK_SaleEventA_B_SaleEvent">
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
           </AssociationSet>
           <AssociationSet Name="FK_SaleEventProduct_SaleEvent" Association="Self.FK_SaleEventProduct_SaleEvent">
             <End Role="SaleEvent" EntitySet="SaleEvents" />
@@ -369,7 +304,71 @@
             <End Role="SaleEvent" EntitySet="SaleEvents" />
             <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
           </AssociationSet>
+          <EntitySet Name="SaleEventComboes" EntityType="farmsDBModel.SaleEventCombo" />
+          <AssociationSet Name="FK_SaleEventAB_Products" Association="farmsDBModel.FK_SaleEventAB_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventAB_Products1" Association="farmsDBModel.FK_SaleEventAB_Products1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventA_B_SaleEvent" Association="farmsDBModel.FK_SaleEventA_B_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="SaleEventCombo">
+          <Key>
+            <PropertyRef Name="SaleEventComboID" />
+          </Key>
+          <Property Name="SaleEventComboID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleEventID" Type="Int32" />
+          <Property Name="AProductID" Type="Int32" />
+          <Property Name="BProductID" Type="Int32" />
+          <Property Name="Discount" Type="Single" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="EdditTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_SaleEventAB_Products" FromRole="SaleEventCombo" ToRole="Product" />
+          <NavigationProperty Name="Product1" Relationship="farmsDBModel.FK_SaleEventAB_Products1" FromRole="SaleEventCombo" ToRole="Product" />
+          <NavigationProperty Name="SaleEvent" Relationship="farmsDBModel.FK_SaleEventA_B_SaleEvent" FromRole="SaleEventCombo" ToRole="SaleEvent" />
+        </EntityType>
+        <Association Name="FK_SaleEventAB_Products">
+          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="farmsDBModel.SaleEventCombo" Role="SaleEventCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="SaleEventCombo">
+              <PropertyRef Name="AProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventAB_Products1">
+          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="farmsDBModel.SaleEventCombo" Role="SaleEventCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="SaleEventCombo">
+              <PropertyRef Name="BProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventA_B_SaleEvent">
+          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="0..1" />
+          <End Type="farmsDBModel.SaleEventCombo" Role="SaleEventCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventCombo">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -415,19 +414,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SaleEventComboes">
-            <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
-              <MappingFragment StoreEntitySet="SaleEventCombo">
-                <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="AProductID" ColumnName="AProductID" />
-                <ScalarProperty Name="BProductID" ColumnName="BProductID" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SaleEventQuotas">
             <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
               <MappingFragment StoreEntitySet="SaleEventQuota">
@@ -449,6 +435,19 @@
                 <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEventComboes">
+            <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
+              <MappingFragment StoreEntitySet="SaleEventCombo">
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="BProductID" ColumnName="BProductID" />
+                <ScalarProperty Name="AProductID" ColumnName="AProductID" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

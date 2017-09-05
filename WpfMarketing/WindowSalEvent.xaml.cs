@@ -518,15 +518,21 @@ namespace WpfMarketing
         //修改組合商品
         private void btnAlterCombo_Click(object sender, RoutedEventArgs e)
         {
-            int APID;
-            int BPID;
+            int SECBID;
             float DC;
-            if (int.TryParse(txkComAProductID.Text,out APID) && 
-                int.TryParse(txkComBProductID.Text,out BPID)&&
+            if (int.TryParse(txkSEComboID.Text,out SECBID) && 
                 (float.TryParse(txtComboDiscount.Text,out DC)))
             { } else { return; }
-           
 
+            var evcb = (from t in db.SaleEventComboes
+                        where t.SaleEventComboID == SECBID
+                        select t).FirstOrDefault();
+            evcb.Discount = DC;
+            evcb.Active = true;
+            evcb.EdditTime = DateTime.Now;
+
+
+            LoadComboListBox();
         }
     }
 

@@ -47,7 +47,7 @@
     <Property Name="BProductID" Type="int" />
     <Property Name="Discount" Type="real" />
     <Property Name="Active" Type="bit" />
-    <Property Name="EdditTime" Type="int" />
+    <Property Name="EdditTime" Type="datetime" />
   </EntityType>
   <EntityType Name="SaleEventQuota">
     <Key>
