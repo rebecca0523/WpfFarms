@@ -151,3 +151,5 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
