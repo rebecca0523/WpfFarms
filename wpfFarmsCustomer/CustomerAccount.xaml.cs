@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfFarmsProducts;
 using WpfFarmsSupplier;
 
 namespace wpfFarmsCustomer
@@ -39,6 +40,10 @@ namespace wpfFarmsCustomer
             vedioCRUD.Show();
         }
 
-      
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowProducts mainWindowProducts = new MainWindowProducts();
+            mainWindowProducts.ShowDialog();
+        }
     }
 }

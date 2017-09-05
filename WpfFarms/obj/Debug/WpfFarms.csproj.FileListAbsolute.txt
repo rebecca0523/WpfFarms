@@ -45,15 +45,12 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\Browse.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\wpfFarmsCustomer.exe
-C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsActivity.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsActivity.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\wpfFarmsCustomer.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\wpfFarmsCustomer.exe.config
-C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.pdb
-C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsSupplier.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsSupplier.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.xml
@@ -203,3 +200,10 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\AllData.dll.config

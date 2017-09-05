@@ -46,7 +46,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignColo
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.resources.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityList.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityListItem.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.g.cs
@@ -143,3 +142,5 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsAc
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache

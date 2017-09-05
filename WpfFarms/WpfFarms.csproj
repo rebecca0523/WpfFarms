@@ -149,10 +149,6 @@
       <Project>{b09c11c1-ed84-430f-85a1-8d3aa6dc2417}</Project>
       <Name>WpfFarmsCustomer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfFarmsProducts\WpfFarmsProducts.csproj">
-      <Project>{1678d205-7bb2-4c52-9dbf-9ed61ebac5f5}</Project>
-      <Name>WpfFarmsProducts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
       <Project>{163A032F-360D-48B3-A26F-E2D537F7FFE5}</Project>
       <Name>WpfFarmsSupplier</Name>

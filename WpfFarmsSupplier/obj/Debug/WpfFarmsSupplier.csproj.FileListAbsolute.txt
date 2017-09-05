@@ -78,7 +78,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.Sq
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.resources.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
@@ -153,3 +152,5 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersV
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache

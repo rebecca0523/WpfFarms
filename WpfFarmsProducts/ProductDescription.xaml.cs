@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace WpfFarmsProducts
             InitializeComponent();
         }
 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        AllFarmsDBEntities allFarmsDBEntities = new AllFarmsDBEntities();
         public static string AddProductDescription;
 
         private void cmdSaveProductDescription_Click(object sender, RoutedEventArgs e)
