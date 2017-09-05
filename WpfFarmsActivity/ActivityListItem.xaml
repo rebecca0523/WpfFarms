@@ -5,16 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfFarmsActivity"
              xmlns:meterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" Height="113.114" Width="408.197" BorderThickness="1">
-    <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3">
-        <Grid Margin="0">
+             mc:Ignorable="d" Height="180" Width="470" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth4" Margin="10" VerticalAlignment="Stretch" >
+        <Grid Margin="10">
             <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
-            <StackPanel HorizontalAlignment="Left" Height="100" Margin="115,10,0,0" VerticalAlignment="Top" Width="188">
+            <StackPanel HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top">
                 <Label Content="Label"/>
                 <DatePicker Margin="10,9,0,9" Width="168" HorizontalAlignment="Left" FontSize="16"/>
                 <Label Content="Label"/>
             </StackPanel>
-            <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="334,34,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="55"/>
+            <Button x:Name="Add" HorizontalAlignment="Left" Margin="332,18,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28">
+                <meterialDesign:PackIcon Kind="Pencil" />
+            </Button>
+            <Button x:Name="Delete" HorizontalAlignment="Left" Margin="332,62,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28" Background="Red" BorderBrush="Red">
+                <meterialDesign:PackIcon Kind="Delete" />
+            </Button>
         </Grid>
     </meterialDesign:Card>
 </UserControl>

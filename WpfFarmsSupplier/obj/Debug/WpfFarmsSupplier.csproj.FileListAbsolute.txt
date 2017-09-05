@@ -121,3 +121,4 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsS
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
