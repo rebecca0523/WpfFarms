@@ -14,6 +14,12 @@ namespace WpfFarmsSupplier
     
     public partial class Supplier
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Supplier()
+        {
+            this.SuppliersVideos = new HashSet<SuppliersVideo>();
+        }
+    
         public int SupplierID { get; set; }
         public string SupplierName { get; set; }
         public string ContactName1 { get; set; }
@@ -29,5 +35,8 @@ namespace WpfFarmsSupplier
         public Nullable<int> CreatedUserID { get; set; }
         public Nullable<System.DateTime> LastUpdateDate { get; set; }
         public Nullable<int> LastUpdateUserID { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SuppliersVideo> SuppliersVideos { get; set; }
     }
 }

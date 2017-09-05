@@ -19,10 +19,16 @@
     <Property Name="CreatedUserID" Type="Int32" />
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="SuppliersVideos" Relationship="farmsDBModel.FK_SuppliersVedio_Suppliers" FromRole="Supplier" ToRole="SuppliersVideo" />
   </EntityType>
   <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
     <EntitySet Name="CustomerInfoes" EntityType="farmsDBModel.CustomerInfo" />
+    <EntitySet Name="SuppliersVideos" EntityType="farmsDBModel.SuppliersVideo" />
+    <AssociationSet Name="FK_SuppliersVedio_Suppliers" Association="farmsDBModel.FK_SuppliersVedio_Suppliers">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="SuppliersVideo" EntitySet="SuppliersVideos" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="CustomerInfo">
     <Key>
@@ -32,11 +38,11 @@
     <Property Name="SupplierID" Type="Int32" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="Evaluation" Type="Int32" />
-    <Property Name="AddressID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Useridentity" Type="Int32" Nullable="false" />
     <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -44,4 +50,34 @@
     <Property Name="Interestied" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="InterestiedPic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="SuppliersVideo">
+    <Key>
+      <PropertyRef Name="SuppliersVideoID" />
+    </Key>
+    <Property Name="SuppliersVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="VideoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="VideomimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VideoName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SuppliersVedio_Suppliers" FromRole="SuppliersVideo" ToRole="Supplier" />
+  </EntityType>
+  <Association Name="FK_SuppliersVedio_Suppliers">
+    <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="farmsDBModel.SuppliersVideo" Role="SuppliersVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersVideo">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
