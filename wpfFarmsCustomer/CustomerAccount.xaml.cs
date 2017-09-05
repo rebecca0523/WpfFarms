@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfFarmsSupplier;
 
 namespace wpfFarmsCustomer
 {
@@ -23,5 +24,26 @@ namespace wpfFarmsCustomer
         {
             InitializeComponent();
         }
+
+        private void myMenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersRegister suppRegister = new SuppliersRegister();
+
+            suppRegister.Show();
+
+
+
+
+
+        }
+
+        private void myMenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersVedioCRUD vedioCRUD = new SuppliersVedioCRUD();
+
+            vedioCRUD.Show();
+        }
+
+      
     }
 }
