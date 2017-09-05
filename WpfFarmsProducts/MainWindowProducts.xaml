@@ -9,17 +9,18 @@
     <Grid>
         <ToolBarTray VerticalAlignment="Top" DockPanel.Dock="Top">
             <ToolBar VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left">
-                <Button x:Name="cmdShowCreateProductsXaml" Content="新增" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Click="CreateButton_Click" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0"/>
-                <Button Content="刪除一行" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="Button_Click"/>
-                <Button x:Name="SaveButton" Content="存檔" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Click="SaveButton_Click"/>
+                <Button x:Name="cmdShowCreateProducts" Content="新增" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Click="CreateButton_Click" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0"/>
+                <Button x:Name="cmdDeleteProducts" Content="刪除" VerticalAlignment="Stretch" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdDeleteProducts_Click"/>
+                <Button x:Name="cmdSaveProducts" Content="存檔" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Click="SaveButton_Click"/>
             </ToolBar>
             <ToolBar VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left">
-                <Button Content="更改產品描述" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" />
+                <Button x:Name="cmdChangeProductDescription" Content="更改產品描述" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdChangeProductDescription_Click" />
+                <Button x:Name="cmdChangeImages" Content="更改圖片" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Margin="0,0,5,0" Click="cmdChangeImages_Click" />
             </ToolBar>
         </ToolBarTray>
         <DockPanel LastChildFill="True" Margin="0,34,0,0">
-            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionUnit="CellOrRowHeader" >
-                <!--AutoGenerateColumns 搞老半天就是你這個屬性在作怪-->
+            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="ProductsDataGrid_SelectionChanged" >
+                <!--AutoGenerateColumns 搞老半天就是你這個屬性在作怪,要關掉才不會重複出現Columns-->
                 <DataGrid.ItemBindingGroup>
                     <BindingGroup/>
                 </DataGrid.ItemBindingGroup>
@@ -81,7 +82,7 @@
 
                     <DataGridCheckBoxColumn Header="特價商品" Binding="{Binding Discounted}"/>
 
-                    <DataGridCheckBoxColumn Header="組合折扣" Binding="{Binding DiscountedAB}"/>
+                    <DataGridCheckBoxColumn Header="組合折扣" Binding="{Binding DiscountedCombo}"/>
 
                     <DataGridCheckBoxColumn Header="折扣點數" Binding="{Binding DiscountedPoint}"/>
 
@@ -100,6 +101,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="商品描述" Binding="{Binding ProductDescription}"/>
 
                 </DataGrid.Columns>
             </DataGrid>

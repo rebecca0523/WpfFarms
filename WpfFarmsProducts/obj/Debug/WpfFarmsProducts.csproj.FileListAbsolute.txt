@@ -79,3 +79,5 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsP
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml

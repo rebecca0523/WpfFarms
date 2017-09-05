@@ -13,7 +13,7 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="SupplierID" Type="int" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
     <Property Name="ProductName" Type="varchar" MaxLength="100" />
     <Property Name="SellStartDate" Type="datetime" />
     <Property Name="SellEndDate" Type="datetime" />
@@ -26,11 +26,12 @@
     <Property Name="CanSaleQTY" Type="int" />
     <Property Name="QuantitySold" Type="int" />
     <Property Name="Discounted" Type="bit" />
-    <Property Name="DiscountedAB" Type="bit" />
+    <Property Name="DiscountedCombo" Type="bit" />
     <Property Name="DiscountedPoint" Type="bit" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="LastUpdateDate" Type="datetime" />
     <Property Name="LastUpdateUserID" Type="varchar" MaxLength="10" />
+    <Property Name="DeleteProduct" Type="bit" />
   </EntityType>
   <EntityType Name="Suppliers">
     <Key>
@@ -65,7 +66,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Products_Suppliers">
-    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Suppliers">

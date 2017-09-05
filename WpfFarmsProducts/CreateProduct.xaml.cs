@@ -47,10 +47,11 @@ namespace WpfFarmsProducts
                 CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//要防輸入型別的錯誤
                 QuantitySold = int.Parse(this.txtQuantitySold.Text),//要防輸入型別的錯誤
                 Discounted = this.chkDiscounted.IsChecked,
-                DiscountedAB = this.chkDiscountedAB.IsChecked,               
+                DiscountedCombo = this.chkDiscountedCombo.IsChecked,               
                 DiscountedPoint = this.chkDiscountedPoint.IsChecked,
                 CreatedDate = DateTime.Now,
-                LastUpdateDate = DateTime.Now       
+                LastUpdateDate = DateTime.Now,     
+                DeleteProduct=false
             };
 
             this.farmsDBEntities.Products.Add(product);

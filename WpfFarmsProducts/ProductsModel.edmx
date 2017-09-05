@@ -18,7 +18,7 @@
             <PropertyRef Name="ProductID" />
           </Key>
           <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="SupplierID" Type="int" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="varchar" MaxLength="100" />
           <Property Name="SellStartDate" Type="datetime" />
           <Property Name="SellEndDate" Type="datetime" />
@@ -31,11 +31,12 @@
           <Property Name="CanSaleQTY" Type="int" />
           <Property Name="QuantitySold" Type="int" />
           <Property Name="Discounted" Type="bit" />
-          <Property Name="DiscountedAB" Type="bit" />
+          <Property Name="DiscountedCombo" Type="bit" />
           <Property Name="DiscountedPoint" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="LastUpdateDate" Type="datetime" />
           <Property Name="LastUpdateUserID" Type="varchar" MaxLength="10" />
+          <Property Name="DeleteProduct" Type="bit" />
         </EntityType>
         <EntityType Name="Suppliers">
           <Key>
@@ -70,7 +71,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Products_Suppliers">
-          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
@@ -125,7 +126,7 @@
             <PropertyRef Name="ProductID" />
           </Key>
           <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
           <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SellStartDate" Type="DateTime" Precision="3" />
           <Property Name="SellEndDate" Type="DateTime" Precision="3" />
@@ -138,11 +139,12 @@
           <Property Name="CanSaleQTY" Type="Int32" />
           <Property Name="QuantitySold" Type="Int32" />
           <Property Name="Discounted" Type="Boolean" />
-          <Property Name="DiscountedAB" Type="Boolean" />
+          <Property Name="DiscountedCombo" Type="Boolean" />
           <Property Name="DiscountedPoint" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteProduct" Type="Boolean" />
           <NavigationProperty Name="ProductImages" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImage" />
           <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
         </EntityType>
@@ -180,7 +182,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Products_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
           <End Type="farmsDBModel.Product" Role="Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -209,11 +211,12 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="farmsDBModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
                 <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
                 <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-                <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
+                <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
                 <ScalarProperty Name="Discounted" ColumnName="Discounted" />
                 <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
                 <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
@@ -275,9 +278,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram DiagramId="ebd57ddf88b24b25ae86985ab9832dd0" Name="Diagram1">
-        <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="5.25" PointY="2.625" />
+        <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="5.25" PointY="2.75" />
         <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="1.625" />
         <AssociationConnector Association="farmsDBModel.FK_ProductImages_Products" />
         <AssociationConnector Association="farmsDBModel.FK_Products_Suppliers" />
       </Diagram>

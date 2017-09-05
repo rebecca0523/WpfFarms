@@ -1,6 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="farmsDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
+          <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
+          <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
+          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
+          <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
+          <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
+          <ScalarProperty Name="Discounted" ColumnName="Discounted" />
+          <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
+          <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="SaleEvents">
       <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
         <MappingFragment StoreEntitySet="SaleEvent">
@@ -22,6 +48,20 @@
           <ScalarProperty Name="AProductID" ColumnName="AProductID" />
           <ScalarProperty Name="BProductID" ColumnName="BProductID" />
           <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventQuotas">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
+        <MappingFragment StoreEntitySet="SaleEventQuota">
+          <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="Quota" ColumnName="Quota" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -34,43 +74,6 @@
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
           <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleEventQuotas">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
-        <MappingFragment StoreEntitySet="SaleEventQuota">
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Quota" ColumnName="Quota" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="farmsDBModel.Product">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-          <ScalarProperty Name="DiscountedAB" ColumnName="DiscountedAB" />
-          <ScalarProperty Name="Discounted" ColumnName="Discounted" />
-          <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
-          <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
-          <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
-          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
-          <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
-          <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

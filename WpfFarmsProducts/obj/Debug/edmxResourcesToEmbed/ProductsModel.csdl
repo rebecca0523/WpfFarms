@@ -27,7 +27,7 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
     <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="SellStartDate" Type="DateTime" Precision="3" />
     <Property Name="SellEndDate" Type="DateTime" Precision="3" />
@@ -40,11 +40,12 @@
     <Property Name="CanSaleQTY" Type="Int32" />
     <Property Name="QuantitySold" Type="Int32" />
     <Property Name="Discounted" Type="Boolean" />
-    <Property Name="DiscountedAB" Type="Boolean" />
+    <Property Name="DiscountedCombo" Type="Boolean" />
     <Property Name="DiscountedPoint" Type="Boolean" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DeleteProduct" Type="Boolean" />
     <NavigationProperty Name="ProductImages" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImage" />
     <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
   </EntityType>
@@ -82,7 +83,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Products_Suppliers">
-    <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
     <End Type="farmsDBModel.Product" Role="Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Supplier">

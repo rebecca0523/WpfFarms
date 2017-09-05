@@ -85,8 +85,8 @@
       <DependentUpon>farmsDB.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="farmsDB.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="farmsDB.Designer.cs">

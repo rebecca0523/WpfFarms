@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMarketing"
         mc:Ignorable="d"
-        Title="WindowSalEvent" Height="709" Width="855" Loaded="Window_Loaded">
+        Title="WindowSalEvent" Height="595" Width="1569" Loaded="Window_Loaded">
     <Window.Resources>
         <!--名稱日期TEMP-->
         <DataTemplate x:Key="SEDataTemplate">
@@ -45,68 +45,107 @@
             </DockPanel>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
-        <Canvas  Margin="0">
-            <StackPanel Height="549" Canvas.Left="10" Canvas.Top="10" Width="277" Background="#FFFFE1E1">
-                <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
-                <ListBox x:Name="lstSaleEvent" VerticalContentAlignment="Top" Height="530" ItemTemplate="{DynamicResource SEDataTemplate}" SelectionChanged="lstSaleEvent_SelectionChanged"/>
+    <Grid Margin="0" Width="1562">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="977*"/>
+            <ColumnDefinition Width="303*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF7F4F4" Offset="0"/>
+                <GradientStop Color="#FFD4F7DC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+
+
+        <!--活動列表-->
+        <StackPanel Width="274" Background="#FFFFE1E1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="554">
+            <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
+            <ListBox x:Name="lstSaleEvent" VerticalContentAlignment="Top" Height="530" ItemTemplate="{DynamicResource SEDataTemplate}" SelectionChanged="lstSaleEvent_SelectionChanged"/>
+        </StackPanel>
+        <UniformGrid Rows="4" RenderTransformOrigin="9.16,5.7" Background="#FFE8E6E6" Grid.Column="1" Margin="10">
+            <StackPanel Canvas.Left="392" Canvas.Top="-198">
+                <UniformGrid Columns="4" Height="29">
+                    <TextBox x:Name="txtTitle" TextWrapping="Wrap"/>
+                    <DatePicker x:Name="dtpStart" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                    <DatePicker x:Name="dtpEnd" VerticalContentAlignment="Stretch"/>
+                    <Button x:Name="btnNewSaleEvent" Content="新增活動" Click="btnNewSaleEvent_Click" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                </UniformGrid>
+                <TextBox x:Name="txtSEContent" TextWrapping="Wrap" Background="#FFF5DAB9" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="105"/>
             </StackPanel>
-            <DockPanel>
-                <TextBlock Text="{Binding Quota,Mode=OneWay}" />
-                <TextBlock Text="{Binding Discount,Mode=OneWay}"/>
-            </DockPanel>
-            <UniformGrid Rows="3" Width="545" Height="348" RenderTransformOrigin="9.16,5.7" Canvas.Left="292" Canvas.Top="178" Background="#FFE8E6E6">
-                <!--滿額-->
-                <StackPanel Canvas.Left="337" Canvas.Top="178" Background="#FFF8FFCD">
-                    <DockPanel x:Name="btn">
-                        <TextBlock TextWrapping="Wrap" Text="滿額折扣" Width="57" HorizontalAlignment="Left"/>
-                        <TextBox x:Name="txtQuota" Width="103" />
-                        <TextBox x:Name="txtQuotaDiscount" Width="95" />
-                        <Button x:Name="btnAlterQuota" Width="65" Content="修改" Click="btnAlterQuota_Click" />
-                        <Button x:Name="btnNewQuota" Width="65" Content="新增" Click="btnNewQuota_Click" />
-                        <Button x:Name="btnOffQuota" Content="刪除" Click="btnOffQuota_Click" />
-                    </DockPanel>
-                    <ListBox x:Name="lstSaleEventQuota" ItemTemplate="{DynamicResource SEQuotaTemplate}" Margin="0" Height="325" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventQuota_SelectionChanged"/>
-                </StackPanel>
-                <!--單品-->
-                <StackPanel Canvas.Left="490" Canvas.Top="178" Background="#FFD0FBBF">
-                    <DockPanel>
-                        <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0,0,10,0" Width="72" HorizontalAlignment="Left"/>
-                        <ComboBox x:Name="cboProducts" Width="109" SelectionChanged="cboProducts_SelectionChanged" />
-                        <TextBlock x:Name="txkUnitPrice" Width="86"/>
-                        <TextBox x:Name="txtProductDiscount" Width="34" KeyUp="txtProductDiscount_KeyUp"/>
-                        <TextBlock x:Name="txkDiscountPrice" Width="75"/>
-                        <Button x:Name="btnAlterSingle" Width="65" Content="修改" Click="btnAlterSingle_Click"  />
-                        <Button x:Name="btnNewSingle" Width="65" Content="新增" Click="btnNewSingle_Click"  />
-                        <Button x:Name="btnOffSingle" Content="刪除" Click="btnOffSingle_Click"  />
-                    </DockPanel>
+            <!--滿額-->
+            <StackPanel Canvas.Left="337" Canvas.Top="178" Background="#FFF8FFCD">
+                <UniformGrid Columns="6">
+                    <TextBlock TextWrapping="Wrap" Text="滿額折扣"/>
+                    <TextBox x:Name="txtQuota" Width="156" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                    <TextBox x:Name="txtQuotaDiscount" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                    <Button x:Name="btnAlterQuota" Content="修改" Click="btnAlterQuota_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <Button x:Name="btnNewQuota" Content="新增" Click="btnNewQuota_Click" />
+                    <Button x:Name="btnOffQuota" Content="刪除" Click="btnOffQuota_Click" />
+                </UniformGrid>
+                <ListBox x:Name="lstSaleEventQuota" ItemTemplate="{DynamicResource SEQuotaTemplate}" Margin="0" Height="325" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventQuota_SelectionChanged"/>
+            </StackPanel>
+            <!--單品-->
+            <StackPanel Canvas.Left="490" Canvas.Top="178" Background="#FFD0FBBF">
+                <UniformGrid Columns="8">
+                    <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0,0,10,0" Width="48" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="cboProducts" SelectionChanged="cboProducts_SelectionChanged" />
+                    <TextBlock x:Name="txkUnitPrice"/>
+                    <TextBox x:Name="txtProductDiscount" KeyUp="txtProductDiscount_KeyUp"/>
+                    <TextBlock x:Name="txkDiscountPrice"/>
+                    <Button x:Name="btnAlterSingle" Content="修改" Click="btnAlterSingle_Click"  />
+                    <Button x:Name="btnNewSingle" Content="新增" Click="btnNewSingle_Click"  />
+                    <Button x:Name="btnOffSingle" Content="刪除" Click="btnOffSingle_Click"  />
+                </UniformGrid>
 
-                    <ListBox x:Name="lstSaleEventSingle" ItemTemplate="{DynamicResource SESingleTemplate}" Height="99" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventSingle_SelectionChanged" IsSynchronizedWithCurrentItem="True"/>
-                </StackPanel>
-                <!--組合-->
-                <StackPanel Background="#FFC1F6FB">
-                    <TextBlock TextWrapping="Wrap" Text="組合折扣" Margin="0,0,10,0"/>
-                    <ListBox x:Name="lstSaleEventCombo" Height="99" ItemTemplate="{DynamicResource SEComboTemplate}"/>
-                </StackPanel>
-            </UniformGrid>
-            <TextBox x:Name="txtSEContent" Height="137" Canvas.Left="337" TextWrapping="Wrap" Canvas.Top="36" Width="445" Background="#FFF5DAB9"/>
-            <Button x:Name="btnSave" Content="修改/儲存" Canvas.Left="656" Canvas.Top="531" Width="126" Height="28" Background="#FFF0D5F1" Click="btnSave_Click"/>
-            <DockPanel  Height="21" LastChildFill="False" Canvas.Left="337" Canvas.Top="10" Width="445">
-                <TextBox x:Name="txtTitle" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
-                <DatePicker x:Name="dtpStart" Height="21" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dtpEnd" Height="21" VerticalAlignment="Top"/>
-                <Button x:Name="btnNewSaleEvent" Width="80" Content="新增活動" Click="btnNewSaleEvent_Click" />
+                <ListBox x:Name="lstSaleEventSingle" ItemTemplate="{DynamicResource SESingleTemplate}" Height="99" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventSingle_SelectionChanged" IsSynchronizedWithCurrentItem="True"/>
+            </StackPanel>
+            <!--組合-->
+            <StackPanel Background="#FFC1F6FB">
+                <UniformGrid Columns="11">
+                    <TextBlock TextWrapping="Wrap" Margin="0,0,10,0"><Run Text="組合折扣"/></TextBlock>
+                    <ComboBox x:Name="cboAProduct" SelectionChanged="cboAProduct_SelectionChanged"/>
+                    <TextBlock x:Name="txkAProductPrice" Width="40"/>
+                    <ComboBox x:Name="cboBProduct" SelectionChanged="cboBProduct_SelectionChanged"/>
+                    <TextBlock x:Name="txkBProductPrice" Width="40"/>
+                    <TextBlock x:Name="txkSUMPrice" Width="40"/>
+                    <TextBox x:Name="txtComboDiscount" Width="40" Text="1.0"/>
+                    <TextBlock x:Name="txkComboDiscountPrice" Width="40"/>
+                    <Button x:Name="btnAlterCombo" Content="修改"/>
+                    <Button x:Name="btnNewCombo" Content="新增"/>
+                    <Button x:Name="btnDeleteCombo" Content="刪除"/>
 
-            </DockPanel>
-            <TextBlock x:Name="txkEVID" Canvas.Left="337" TextWrapping="Wrap" Canvas.Top="533" Height="20" Width="20" Background="#FFF1CFBB" Text="0"/>
-            <TextBlock x:Name="txkQID" Background="#FFF0F3A2" Width="20" Canvas.Left="362" Canvas.Top="533" Height="20" Text="0" />
-            <TextBlock x:Name="txkcboPID"  Background="#FF4CB01C" Width="20" Canvas.Left="398" Canvas.Top="533" Height="20" Text="0" />
-            <TextBlock x:Name="txkPID"  Background="#FFC2F0AC" Width="20" Canvas.Left="398" Canvas.Top="556" Height="20" Text="0" />
-            <TextBox x:Name="txtShow" Height="121" Canvas.Left="435" TextWrapping="Wrap" Text="TextBox" Canvas.Top="536" Width="206"/>
+                </UniformGrid>
+
+
+                <ListBox x:Name="lstSaleEventCombo" Height="99" ItemTemplate="{DynamicResource SEComboTemplate}"/>
+            </StackPanel>
+        </UniformGrid>
+
+        <Button x:Name="btnSave" Content="修改/儲存" Width="126" Height="28" Background="#FFF0D5F1" Click="btnSave_Click" Grid.Column="2" Margin="10,558,167,354"/>
 
 
 
-        </Canvas>
+        <UniformGrid Rows="2" Columns="4" Width="105" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2">
+            <TextBlock x:Name="txkEVID" Canvas.Left="292" TextWrapping="Wrap" Canvas.Top="533" Background="#FFF1CFBB" Text="0"/>
+            <TextBlock x:Name="txkQID" Background="#FFF0F3A2" Canvas.Left="317" Canvas.Top="533" Text="0" />
+            <TextBlock x:Name="txkcboPID"  Background="#FF4CB01C" Canvas.Left="342" Canvas.Top="533" Text="0" />
+            <TextBlock x:Name="txkPID"  Background="#FFC2F0AC" Canvas.Left="342" Canvas.Top="558" Text="0" />
+            <TextBlock x:Name="txkComAProductID" Canvas.Left="376" TextWrapping="Wrap" Text="0" Canvas.Top="533" Background="#FFC3A3EA"/>
+            <TextBlock x:Name="txkLisAProductID" Canvas.Left="376" TextWrapping="Wrap" Text="0" Canvas.Top="558" Background="#FFE07EF5"/>
+            <TextBlock x:Name="txkComBProductID" Background="#FFF9C12C" Canvas.Left="406" Canvas.Top="563" Text="0"/>
+            <TextBlock x:Name="txkLisBProductID" Background="#FFE87373" Canvas.Left="415" Canvas.Top="536" Text="0"/>
+
+        </UniformGrid>
+
+        <TextBox x:Name="txtShow" Height="121" TextWrapping="Wrap" Text="TextBox" Width="206" Grid.Column="2" Margin="10,42,87,777"/>
+
+
+
+
 
     </Grid>
 </Window>
