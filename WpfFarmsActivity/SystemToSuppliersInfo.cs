@@ -7,18 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wpfFarmsCustomer
+namespace WpfFarmsActivity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ChatLog
+    public partial class SystemToSuppliersInfo
     {
-        public int CustomerID { get; set; }
+        public int infoMessageID { get; set; }
         public int SupplierID { get; set; }
-        public System.DateTime ChatDatetime { get; set; }
-        public System.Guid ChatPic { get; set; }
-        public string ChatRecording { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
+        public string infoMessageDesc { get; set; }
+        public Nullable<bool> isread { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<int> CreatedUserID { get; set; }
+        public Nullable<System.DateTime> LastUpdateDate { get; set; }
+        public Nullable<int> LastUpdateUserID { get; set; }
+    
+        public virtual Suppliers Suppliers { get; set; }
     }
 }

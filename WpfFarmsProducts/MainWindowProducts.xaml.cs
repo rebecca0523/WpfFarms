@@ -30,8 +30,9 @@ namespace WpfFarmsProducts
         }
 
         AllFarmsDBEntities allFarmsDBEntities = new AllFarmsDBEntities();
-        public static int SupplierID =1; //暫定抓1號小農
+        public static int SupplierID =4; //暫定抓1號小農
         public static int GetSelectProductID;
+        public static string  SendProductDescription;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -81,9 +82,10 @@ namespace WpfFarmsProducts
             {
                 ProductDescription productDescription = new ProductDescription();
                 if (productDescription.ShowDialog() == true)
-                {
-                    var SaveProductDescription = this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在SaveProductDescriptiont後面點到ProductDescription        
-                    SaveProductDescription.ProductDescription = AddProductDescription;
+                {                    
+                    (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).ProductDescription= AddProductDescription;//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在SaveProductDescriptiont後面點到ProductDescription        
+                    SendProductDescription = (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).ProductDescription;
+
                     this.allFarmsDBEntities.SaveChanges();
                     this.ProductsDataGrid.ItemsSource = null;
                     this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfFarmsProducts"
         mc:Ignorable="d"
         Title="商品描述" Height="450
-        " Width="525">
+        " Width="525" Loaded="Window_Loaded">
     <Grid>
         <TextBlock Margin="25,10,0,0" TextWrapping="Wrap" Text="字型大小" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48"/>
         <Slider x:Name="h" Margin="87,10,59,0" VerticalAlignment="Top" Maximum="64" Minimum="12" IsSnapToTickEnabled="True"/>

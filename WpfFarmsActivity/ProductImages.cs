@@ -7,16 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wpfFarmsCustomer
+namespace WpfFarmsActivity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class AddressInfo
+    public partial class ProductImages
     {
-        public string AddressID { get; set; }
-        public int CustomerID { get; set; }
-        public string PostalCodeID { get; set; }
-        public string Address { get; set; }
+        public int ProductImageID { get; set; }
+        public int ProductID { get; set; }
+        public byte[] ProductImage { get; set; }
+    
+        public virtual Products Products { get; set; }
     }
 }

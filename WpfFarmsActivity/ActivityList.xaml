@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsActivity"
         mc:Ignorable="d"
-        Title="ActivityList" Height="765.2" Width="575.8">
+        Title="ActivityList" Height="1127.039" Width="876.344">
     <Grid>
-        <WrapPanel x:Name="ListPanel" HorizontalAlignment="Left" Height="670" Margin="139,36,0,0" VerticalAlignment="Top" Width="398"/>
+        <WrapPanel x:Name="ListPanel" HorizontalAlignment="Left" Height="903" Margin="220,137,0,0" VerticalAlignment="Top" Width="595"/>
 
     </Grid>
 </Window>

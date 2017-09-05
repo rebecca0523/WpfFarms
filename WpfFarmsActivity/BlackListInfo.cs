@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wpfFarmsCustomer
+namespace WpfFarmsActivity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CustomerLoginlog
+    public partial class BlackListInfo
     {
         public int CustomerID { get; set; }
-        public int LoginIP { get; set; }
-        public bool Loginstatus { get; set; }
-        public System.DateTime LastUpdate { get; set; }
+        public int SupplierID { get; set; }
+        public string BlackListReason { get; set; }
+        public System.DateTime BlackListDate { get; set; }
     }
 }

@@ -207,5 +207,14 @@
       <Name>WpfMarketing</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
+      <Project>{163a032f-360d-48b3-a26f-e2d537f7ffe5}</Project>
+      <Name>WpfFarmsSupplier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,16 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wpfFarmsCustomer
+namespace WpfFarmsActivity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BlackListInfo
+    public partial class SaleEventQuota
     {
-        public int CustomerID { get; set; }
-        public int SupplierID { get; set; }
-        public string BlackListReason { get; set; }
-        public System.DateTime BlackListDate { get; set; }
+        public int SaleEventQuotaID { get; set; }
+        public Nullable<int> SaleEventID { get; set; }
+        public Nullable<decimal> Quota { get; set; }
+        public Nullable<float> Discount { get; set; }
+        public Nullable<bool> Active { get; set; }
+        public Nullable<System.DateTime> EdditTime { get; set; }
+    
+        public virtual SaleEvent SaleEvent { get; set; }
     }
 }

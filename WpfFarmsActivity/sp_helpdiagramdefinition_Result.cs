@@ -7,16 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wpfFarmsCustomer
+namespace WpfFarmsActivity
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class PostalCodeInfo
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public string PostalCodeID { get; set; }
-        public string PostalCode { get; set; }
-        public string PostalCodeName { get; set; }
-        public string FloorNumber { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
