@@ -11,14 +11,6 @@
 
 
     <Grid>
-        <ToolBar x:Name="toolBar" Height="31" VerticalAlignment="Top">
-            <Button Margin="0" Width="24" Height="24">
-                <Button.Background>
-                    <ImageBrush ImageSource="image/ImageStack_16x.png"/>
-                </Button.Background>
-
-            </Button>
-        </ToolBar>
         <StackPanel Margin="70,52.5,70,0" VerticalAlignment="Top">
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="5">
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
@@ -32,12 +24,12 @@
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
                         <TextBlock x:Name="CityComboBoxLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*"/><Run Text="發車"/><Run Text="地區"/><Run Text="："/></TextBlock>
-                        <ComboBox x:Name="CityComboBox" Width="66" HorizontalAlignment="Left" Margin="5,0,5,5" FontSize="16" Height="34">
-                            <ComboBoxItem Content="台北"/>
+                        <ComboBox x:Name="CityComboBox" Width="66" HorizontalAlignment="Left" Margin="5,0,5,5" FontSize="16" Height="34" SelectedIndex="0">
+                            <!--<ComboBoxItem Content="台北"/>
                             <ComboBoxItem Content="桃園"/>
                             <ComboBoxItem Content="台中"/>
                             <ComboBoxItem Content="台南"/>
-                            <ComboBoxItem Content="高雄"/>
+                            <ComboBoxItem Content="高雄"/>-->
                         </ComboBox>
                         <TextBlock x:Name="MaxQuantityLabel" TextWrapping="Wrap" Text="＊人數上限：" Width="108" FontSize="18" HorizontalAlignment="Left" Margin="5,9,0,9"/>
                         <TextBox x:Name="MaxQuantityInput" TextWrapping="Wrap" Text="40&#xD;&#xA;" Width="35" Margin="0,9" FontSize="16" HorizontalAlignment="Left"/>
@@ -60,7 +52,7 @@
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
                         <TextBlock x:Name="ActivityAddressLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*活動"/><Run Text="地址"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="ActivityAddressInput" Height="33" TextWrapping="Wrap" Text="活動地址" Width="378" Margin="5" FontSize="16"/>
+                        <TextBox x:Name="ActivityAddressInput" Height="33" TextWrapping="Wrap" Text="{Binding Address, Mode=OneWay}" Width="378" Margin="5" FontSize="16"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
@@ -68,9 +60,9 @@
                 <Border BorderBrush="Black" BorderThickness="1" Height="46" Margin="0" VerticalAlignment="Top">
                     <DockPanel>
                         <TextBlock x:Name="PhoneLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*連絡電話"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="PhoneInput" Height="33" TextWrapping="Wrap" Text="00-0000-0000" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="PhoneInput" Height="33" TextWrapping="Wrap" Text="{Binding Phone1, Mode=OneWay}" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
                         <TextBlock x:Name="EmailLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18"><Run Text="*電子郵件"/><Run Text="："/></TextBlock>
-                        <TextBox x:Name="EmailInput" Height="33" TextWrapping="Wrap" Text="xxx@xxxxx.com" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="EmailInput" Height="33" TextWrapping="Wrap" Text="{Binding email1, Mode=OneWay}" Width="132.667" Margin="5,5.5" FontSize="16" HorizontalAlignment="Left"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>

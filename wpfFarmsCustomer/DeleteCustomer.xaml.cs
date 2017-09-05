@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace wpfFarmsCustomer
         public DeleteCustomer()
         {
             InitializeComponent();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            AllFarmsDBEntities dc = new AllFarmsDBEntities();
+            customerInfoDataGrid.ItemsSource = dc.CustomerInfoes.ToList();
         }
     }
 }

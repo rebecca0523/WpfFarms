@@ -27,5 +27,6 @@ namespace WpfFarmsSupplier
     
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<CustomerInfo> CustomerInfoes { get; set; }
+        public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
     }
 }

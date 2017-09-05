@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WpfFarmsProducts"
         mc:Ignorable="d"
         Title="商品描述" Height="450
-        " Width="525">
+        " Width="525" Loaded="Window_Loaded">
     <Grid>
         <TextBlock Margin="25,10,0,0" TextWrapping="Wrap" Text="字型大小" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48"/>
         <Slider x:Name="h" Margin="87,10,59,0" VerticalAlignment="Top" Maximum="64" Minimum="12" IsSnapToTickEnabled="True"/>
         <TextBlock Margin="0,13,40,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=h, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="14"/>
-        <TextBox x:Name="txtProductDescription" Margin="25,33,27,60" TextWrapping="Wrap" FontSize="{Binding Value, ElementName=h, Mode=OneWay}" Text="請輸入商品描述"/>
+        <TextBox x:Name="txtProductDescription" Margin="25,35,27,60" TextWrapping="Wrap" FontSize="{Binding Value, ElementName=h, Mode=OneWay}" Text="請輸入商品描述"/>
         <Button x:Name="cmdSaveProductDescription" Content="儲存" Margin="111,0,0,22" Foreground="White" Style="{DynamicResource ShinyBlueButtonStyle}" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Click="cmdSaveProductDescription_Click" IsDefault="True"/>
         <Button x:Name="cmdCancel" Content="取消" HorizontalAlignment="Right" Margin="0,0,131,20" Width="75" Foreground="White" Style="{DynamicResource ShinyBlueButtonStyle}" Height="20" VerticalAlignment="Bottom" IsCancel="True"/>
 

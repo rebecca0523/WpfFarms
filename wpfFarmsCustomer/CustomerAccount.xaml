@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="CustomerAccount" Height="348" Width="530">
+        Title="CustomerAccount" Height="348" Width="530" Loaded="Window_Loaded">
     <Window.Resources>
         <LinearGradientBrush x:Key="Brush2" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
             <GradientStop Color="#FF0043FF" Offset="1"/>
@@ -20,7 +20,7 @@
         <StackPanel HorizontalAlignment="Left" Margin="10,35,0,10" Width="100" Height="261" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="100">
                 <Image Height="111" Source="Custimage/000.PNG" OpacityMask="#FFCACACA"/>
-                <Label Content="label" HorizontalContentAlignment="Center" />
+                <Label x:Name="labUser" Content="label" HorizontalContentAlignment="Center" />
             </StackPanel>
             <Button Content="黑名單" Margin="0,5,0,0" Background="{DynamicResource Brush2}">
                 <Button.Resources>
@@ -58,9 +58,12 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem Header="小農專區" FontSize="20"/>
-            <MenuItem Header="活動專區" FontSize="20" Click="MenuItem_Click"/>
-            <MenuItem Header="商品專區" FontSize="20"/>
+            <MenuItem Header="小農專區" FontSize="20">
+                <MenuItem x:Name="MenuItemfarmsCRUD" Header="維護小農基本資料" Click="MenuItemfarmsCRUD_Click"></MenuItem>
+                <MenuItem x:Name="MenuItemVedioCRUD" Header="維護小農Vedio資料" Click="MenuItemVedioCRUD_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="活動專區" FontSize="20" />
+            <MenuItem Header="商品專區" FontSize="20" Click="MenuItem_Click"/>
             <MenuItem Header="行銷專區" FontSize="20"/>
         </Menu>
 

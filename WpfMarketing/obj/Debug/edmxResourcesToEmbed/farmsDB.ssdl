@@ -46,8 +46,8 @@
     <Property Name="AProductID" Type="int" />
     <Property Name="BProductID" Type="int" />
     <Property Name="Discount" Type="real" />
-    <Property Name="Active" Type="int" />
-    <Property Name="EdditTime" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
   </EntityType>
   <EntityType Name="SaleEventQuota">
     <Key>
@@ -80,30 +80,6 @@
       </Principal>
       <Dependent Role="SaleEventCombo">
         <PropertyRef Name="SaleEventID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SaleEventAB_Products">
-    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
-    <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="ProductID" />
-      </Principal>
-      <Dependent Role="SaleEventCombo">
-        <PropertyRef Name="AProductID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SaleEventAB_Products1">
-    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
-    <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="ProductID" />
-      </Principal>
-      <Dependent Role="SaleEventCombo">
-        <PropertyRef Name="BProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -151,14 +127,6 @@
     <EntitySet Name="SaleEventSingleProduct" EntityType="Self.SaleEventSingleProduct" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_SaleEventA+B_SaleEvent" Association="Self.FK_SaleEventA+B_SaleEvent">
       <End Role="SaleEvent" EntitySet="SaleEvent" />
-      <End Role="SaleEventCombo" EntitySet="SaleEventCombo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SaleEventAB_Products" Association="Self.FK_SaleEventAB_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="SaleEventCombo" EntitySet="SaleEventCombo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SaleEventAB_Products1" Association="Self.FK_SaleEventAB_Products1">
-      <End Role="Products" EntitySet="Products" />
       <End Role="SaleEventCombo" EntitySet="SaleEventCombo" />
     </AssociationSet>
     <AssociationSet Name="FK_SaleEventProduct_Products" Association="Self.FK_SaleEventProduct_Products">

@@ -8,11 +8,11 @@
     <Property Name="SupplierID" Type="int" />
     <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Mobile" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Evaluation" Type="int" />
-    <Property Name="AddressID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AddressID" Type="varchar" MaxLength="80" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Useridentity" Type="int" Nullable="false" />
     <Property Name="CreationDate" Type="datetime" Nullable="false" />
@@ -40,8 +40,42 @@
     <Property Name="LastUpdateDate" Type="datetime" />
     <Property Name="LastUpdateUserID" Type="int" />
   </EntityType>
+  <EntityType Name="SuppliersVideo">
+    <Key>
+      <PropertyRef Name="SuppliersVideoID" />
+    </Key>
+    <Property Name="SuppliersVideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuppliersID" Type="int" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="VideoFile" Type="varbinary(max)" />
+    <Property Name="VideomimeType" Type="nvarchar" MaxLength="50" />
+    <Property Name="VideoName" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_SuppliersVedio_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="SuppliersVideo" Type="Self.SuppliersVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersVideo">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="farmsDBModelStoreContainer">
     <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersVideo" EntityType="Self.SuppliersVideo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SuppliersVedio_Suppliers" Association="Self.FK_SuppliersVedio_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersVideo" EntitySet="SuppliersVideo" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

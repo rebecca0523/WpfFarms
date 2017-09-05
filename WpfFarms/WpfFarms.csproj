@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -42,9 +48,12 @@
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,10 +76,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginAndRegister.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,9 +86,6 @@
     </Compile>
     <Compile Include="Browse.xaml.cs">
       <DependentUpon>Browse.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginAndRegister.xaml.cs">
-      <DependentUpon>LoginAndRegister.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -129,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfFarmsActivity\WpfFarmsActivity.csproj">
@@ -139,16 +142,11 @@
       <Project>{b09c11c1-ed84-430f-85a1-8d3aa6dc2417}</Project>
       <Name>WpfFarmsCustomer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfFarmsProducts\WpfFarmsProducts.csproj">
-      <Project>{1678d205-7bb2-4c52-9dbf-9ed61ebac5f5}</Project>
-      <Name>WpfFarmsProducts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
       <Project>{163A032F-360D-48B3-A26F-E2D537F7FFE5}</Project>
       <Name>WpfFarmsSupplier</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="images\f7900047b50593447dc.jpg" />
   </ItemGroup>

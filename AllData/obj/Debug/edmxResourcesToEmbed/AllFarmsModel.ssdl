@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActivityCity">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="nchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="ActivityFarmer">
+    <Key>
+      <PropertyRef Name="ActivityFarmerID" />
+    </Key>
+    <Property Name="ActivityFarmerID" Type="int" Nullable="false" />
+    <Property Name="ActivityOrderID" Type="int" />
+    <Property Name="ActivityPhotoID" Type="int" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivityAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaxQuantity" Type="int" />
+    <Property Name="GroupQuantity" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="ActivityDate" Type="datetime" />
+    <Property Name="ActivityContent" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="ATMBank" Type="nvarchar" MaxLength="10" />
+    <Property Name="ATMAccount" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ActivityOrder">
+    <Key>
+      <PropertyRef Name="ActivityOrderID" />
+    </Key>
+    <Property Name="ActivityFarmerID" Type="int" />
+    <Property Name="ActivityOrderID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalPrice" Type="money" />
+    <Property Name="ATMBank" Type="nvarchar" MaxLength="10" />
+    <Property Name="ATMAccount" Type="nvarchar" MaxLength="30" />
+    <Property Name="GroupConfirm" Type="bit" />
+    <Property Name="PaymentConfirm" Type="bit" />
+    <Property Name="ReceivedConfirm" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ActivityPhoto">
+    <Key>
+      <PropertyRef Name="ActivityPhotoID" />
+    </Key>
+    <Property Name="ActivityPhotoID" Type="int" Nullable="false" />
+    <Property Name="ActivityPhoto" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="AddressInfo">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="PostalCodeID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="AdvertisingID" Type="int" Nullable="false" />
+    <Property Name="AdvertisingITitle" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="AdvertisingIContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdvertisingStarTime" Type="datetime" Nullable="false" />
+    <Property Name="AdvertisingEndTime" Type="datetime" Nullable="false" />
+    <Property Name="AdvertisingPhoto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AlreadyPaid" Type="bit" Nullable="false" />
+    <Property Name="AdvertisingLink" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BlackListInfo">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="BlackListDate" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="BlackListReason" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="BlackListDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Browse">
+    <Key>
+      <PropertyRef Name="BrowseID" />
+    </Key>
+    <Property Name="BrowseID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+  </EntityType>
+  <EntityType Name="ChatLog">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="ChatDatetime" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="ChatDatetime" Type="datetime" Nullable="false" />
+    <Property Name="ChatPic" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ChatRecording" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreationDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="CustomerInfo">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Evaluation" Type="int" />
+    <Property Name="AddressID" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Useridentity" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="Interestied" Type="nvarchar" MaxLength="100" />
+    <Property Name="InterestiedPic" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CustomerLoginlog">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="LastUpdate" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="LoginIP" Type="int" Nullable="false" />
+    <Property Name="Loginstatus" Type="bit" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerRefund">
+    <Key>
+      <PropertyRef Name="RefundID" />
+    </Key>
+    <Property Name="RefundID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="RefundAgree" Type="bit" />
+    <Property Name="Cash" Type="money" />
+    <Property Name="RefundReason" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="ActivityOrderID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerReturn">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="ReturnID" Type="int" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="ReturnOrder" Type="bit" />
+    <Property Name="ReturnReason" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="Cash" Type="money" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerSubscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="SuppliersID" Type="int" Nullable="false" />
+    <Property Name="SubscriptionDate" Type="datetime" Nullable="false" />
+    <Property Name="AllowMail" Type="bit" />
+  </EntityType>
+  <EntityType Name="DiscountPointsEvent">
+    <Key>
+      <PropertyRef Name="DiscountPointsEventID" />
+    </Key>
+    <Property Name="DiscountPointsEventID" Type="int" Nullable="false" />
+    <Property Name="DiscountPointsEventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiscountPointsEvenContent" Type="nvarchar(max)" />
+    <Property Name="DiscountPointsEventStart" Type="datetime" Nullable="false" />
+    <Property Name="DiscountPointsEventEnd" Type="datetime" Nullable="false" />
+    <Property Name="BirthdayPoint" Type="int" />
+    <Property Name="LoginPoint" Type="int" />
+    <Property Name="SharePoint" Type="int" />
+    <Property Name="Quota" Type="money" />
+    <Property Name="QuotaPoint" Type="int" />
+    <Property Name="QPointToOneNTD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DiscountPointsEventDetail">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="DiscountPointsEventID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="DiscountPointsEventID" Type="int" Nullable="false" />
+    <Property Name="getBirthdayPoint" Type="int" />
+    <Property Name="getLoginPoint" Type="int" />
+    <Property Name="getSharePoint" Type="int" />
+    <Property Name="getQuotaPoint" Type="int" />
+    <Property Name="usedPoint" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Discount" Type="real" />
+    <Property Name="DiscountPoint" Type="money" />
+    <Property Name="SaleEventID" Type="int" />
+    <Property Name="ShipmentStatus" Type="bit" />
+    <Property Name="MakeCollectionsStatus" Type="bit" />
+    <Property Name="PaymentStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="Consignee" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="60" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="10" />
+    <Property Name="OrderStatus" Type="nvarchar" MaxLength="3" />
+    <Property Name="CustomerDemand" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="PostalCodeInfo">
+    <Key>
+      <PropertyRef Name="PostalCodeID" />
+    </Key>
+    <Property Name="PostalCodeID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PostalCode" Type="nchar" MaxLength="5" />
+    <Property Name="PostalCodeName" Type="nvarchar" MaxLength="80" />
+    <Property Name="FloorNumber" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="ProductGrowPlanDetail">
+    <Key>
+      <PropertyRef Name="ProductGrowID" />
+    </Key>
+    <Property Name="ProductGrowID" Type="int" Nullable="false" />
+    <Property Name="StepItemID" Type="int" Nullable="false" />
+    <Property Name="StepItemDESC" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="StatusDatae" Type="date" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedDateUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductGrowPlanMaster">
+    <Key>
+      <PropertyRef Name="ProductGrowID" />
+    </Key>
+    <Property Name="SupplierFarmID" Type="int" Nullable="false" />
+    <Property Name="ProductGrowID" Type="int" Nullable="false" />
+    <Property Name="ProductKind" Type="nvarchar" MaxLength="20" />
+    <Property Name="Planting" Type="date" />
+    <Property Name="PlanHarvestDate" Type="date" />
+    <Property Name="PlanHarvestQTY" Type="int" />
+    <Property Name="ActuallyarvestQTY" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedDateUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductImages">
+    <Key>
+      <PropertyRef Name="ProductImageID" />
+    </Key>
+    <Property Name="ProductImageID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductImage" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" />
+    <Property Name="SellStartDate" Type="datetime" />
+    <Property Name="SellEndDate" Type="datetime" />
+    <Property Name="MarkPrice" Type="money" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="PreOrder" Type="bit" />
+    <Property Name="ShippedDate" Type="datetime" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="TotalQTY" Type="int" />
+    <Property Name="CanSaleQTY" Type="int" />
+    <Property Name="QuantitySold" Type="int" />
+    <Property Name="Discounted" Type="bit" />
+    <Property Name="DiscountedCombo" Type="bit" />
+    <Property Name="DiscountedPoint" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="varchar" MaxLength="10" />
+    <Property Name="DeleteProduct" Type="bit" />
+  </EntityType>
+  <EntityType Name="SaleEvent">
+    <Key>
+      <PropertyRef Name="SaleEventID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="SaleEventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleEventTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="SaleEventContent" Type="nvarchar(max)" />
+    <Property Name="SaleEventStart" Type="datetime" />
+    <Property Name="SaleEventEnd" Type="datetime" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SaleEventCombo">
+    <Key>
+      <PropertyRef Name="SaleEventComboID" />
+    </Key>
+    <Property Name="SaleEventComboID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleEventID" Type="int" />
+    <Property Name="AProductID" Type="int" />
+    <Property Name="BProductID" Type="int" />
+    <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SaleEventQuota">
+    <Key>
+      <PropertyRef Name="SaleEventQuotaID" />
+    </Key>
+    <Property Name="SaleEventQuotaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleEventID" Type="int" />
+    <Property Name="Quota" Type="money" />
+    <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SaleEventSingleProduct">
+    <Key>
+      <PropertyRef Name="SaleEventSingleProductID" />
+    </Key>
+    <Property Name="SaleEventSingleProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleEventID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Discount" Type="real" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="LineID" Type="nvarchar" MaxLength="50" />
+    <Property Name="email1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email2" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SuppliersBulletinBoard">
+    <Key>
+      <PropertyRef Name="BoardID" />
+    </Key>
+    <Property Name="BoardID" Type="int" Nullable="false" />
+    <Property Name="SupplierD" Type="int" />
+    <Property Name="seqID" Type="int" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndData" Type="date" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SuppliersFarm">
+    <Key>
+      <PropertyRef Name="SupplierFarmID" />
+    </Key>
+    <Property Name="SupplierFarmID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="SupplierFarmDESC" Type="nvarchar" MaxLength="20" />
+    <Property Name="FarmSoilKind" Type="nvarchar" MaxLength="20" />
+    <Property Name="FarmSoilRange" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedDateUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SuppliersStoryDetail">
+    <Key>
+      <PropertyRef Name="SuppliersStoryID" />
+      <PropertyRef Name="StoryItemID" />
+    </Key>
+    <Property Name="SuppliersStoryID" Type="int" Nullable="false" />
+    <Property Name="StoryItemID" Type="int" Nullable="false" />
+    <Property Name="StoryItemDesc" Type="nvarchar" MaxLength="1000" />
+    <Property Name="StoryItemPhoto" Type="varchar(max)" />
+    <Property Name="StoryItemSEQ" Type="int" />
+    <Property Name="StoryItemStatus" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SuppliersStoryMaster">
+    <Key>
+      <PropertyRef Name="SuppliersStoryID" />
+    </Key>
+    <Property Name="SuppliersStoryID" Type="int" Nullable="false" />
+    <Property Name="SuppliersID" Type="int" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderByKind" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SuppliersVideo">
+    <Key>
+      <PropertyRef Name="SuppliersVideoID" />
+    </Key>
+    <Property Name="SuppliersVideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuppliersID" Type="int" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="VideoFile" Type="varbinary(max)" />
+    <Property Name="VideomimeType" Type="nvarchar" MaxLength="50" />
+    <Property Name="VideoName" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SystemToSuppliersInfo">
+    <Key>
+      <PropertyRef Name="infoMessageID" />
+    </Key>
+    <Property Name="infoMessageID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="infoMessageDesc" Type="nvarchar" MaxLength="500" />
+    <Property Name="isread" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserID" Type="int" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+  </EntityType>
+  <Association Name="FK_ActivityFarmer_ActivityCity">
+    <End Role="ActivityCity" Type="Self.ActivityCity" Multiplicity="0..1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityFarmer_ActivityPhoto">
+    <End Role="ActivityPhoto" Type="Self.ActivityPhoto" Multiplicity="0..1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityPhoto">
+        <PropertyRef Name="ActivityPhotoID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="ActivityPhotoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityFarmer_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityOrder_ActivityFarmer">
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="0..1" />
+    <End Role="ActivityOrder" Type="Self.ActivityOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityFarmer">
+        <PropertyRef Name="ActivityFarmerID" />
+      </Principal>
+      <Dependent Role="ActivityOrder">
+        <PropertyRef Name="ActivityFarmerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Advertising_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Advertising">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Browse_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Browse" Type="Self.Browse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Browse">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerSubscription_CustomerInfo">
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+    <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerInfo">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerSubscription">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerSubscription_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="CustomerSubscription">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiscountPointsEventDetail_CustomerInfo">
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+    <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerInfo">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="DiscountPointsEventDetail">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiscountPointsEventDetail_DiscountPointsEvent">
+    <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="1" />
+    <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiscountPointsEvent">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Principal>
+      <Dependent Role="DiscountPointsEventDetail">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+    <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="1" />
+    <End Role="ProductGrowPlanDetail" Type="Self.ProductGrowPlanDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGrowPlanMaster">
+        <PropertyRef Name="ProductGrowID" />
+      </Principal>
+      <Dependent Role="ProductGrowPlanDetail">
+        <PropertyRef Name="ProductGrowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGrowPlanMaster_SuppliersFarm">
+    <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="1" />
+    <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuppliersFarm">
+        <PropertyRef Name="SupplierFarmID" />
+      </Principal>
+      <Dependent Role="ProductGrowPlanMaster">
+        <PropertyRef Name="SupplierFarmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductImages">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEvent_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SaleEvent">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventA+B_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventCombo">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventProduct_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SaleEventSingleProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventProduct_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventSingleProduct">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventQuota_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventQuota" Type="Self.SaleEventQuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventQuota">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShoppingCart_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersBulletinBoard_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="SuppliersBulletinBoard" Type="Self.SuppliersBulletinBoard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersBulletinBoard">
+        <PropertyRef Name="SupplierD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersFarm_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersFarm">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersStoryDetail_SuppliersStoryMaster">
+    <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="1" />
+    <End Role="SuppliersStoryDetail" Type="Self.SuppliersStoryDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuppliersStoryMaster">
+        <PropertyRef Name="SuppliersStoryID" />
+      </Principal>
+      <Dependent Role="SuppliersStoryDetail">
+        <PropertyRef Name="SuppliersStoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersStoryMaster_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersStoryMaster">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersVedio_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="SuppliersVideo" Type="Self.SuppliersVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersVideo">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemToSuppliersInfo_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="SystemToSuppliersInfo" Type="Self.SystemToSuppliersInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SystemToSuppliersInfo">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="farmsDBModelStoreContainer">
+    <EntitySet Name="ActivityCity" EntityType="Self.ActivityCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivityFarmer" EntityType="Self.ActivityFarmer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivityOrder" EntityType="Self.ActivityOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivityPhoto" EntityType="Self.ActivityPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AddressInfo" EntityType="Self.AddressInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertising" EntityType="Self.Advertising" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlackListInfo" EntityType="Self.BlackListInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Browse" EntityType="Self.Browse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatLog" EntityType="Self.ChatLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerLoginlog" EntityType="Self.CustomerLoginlog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerRefund" EntityType="Self.CustomerRefund" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerReturn" EntityType="Self.CustomerReturn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerSubscription" EntityType="Self.CustomerSubscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiscountPointsEvent" EntityType="Self.DiscountPointsEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiscountPointsEventDetail" EntityType="Self.DiscountPointsEventDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostalCodeInfo" EntityType="Self.PostalCodeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductGrowPlanDetail" EntityType="Self.ProductGrowPlanDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductGrowPlanMaster" EntityType="Self.ProductGrowPlanMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleEvent" EntityType="Self.SaleEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleEventCombo" EntityType="Self.SaleEventCombo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleEventQuota" EntityType="Self.SaleEventQuota" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleEventSingleProduct" EntityType="Self.SaleEventSingleProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersBulletinBoard" EntityType="Self.SuppliersBulletinBoard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersFarm" EntityType="Self.SuppliersFarm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersStoryDetail" EntityType="Self.SuppliersStoryDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersStoryMaster" EntityType="Self.SuppliersStoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersVideo" EntityType="Self.SuppliersVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemToSuppliersInfo" EntityType="Self.SystemToSuppliersInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="Self.FK_ActivityFarmer_ActivityCity">
+      <End Role="ActivityCity" EntitySet="ActivityCity" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="Self.FK_ActivityFarmer_ActivityPhoto">
+      <End Role="ActivityPhoto" EntitySet="ActivityPhoto" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="Self.FK_ActivityFarmer_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="Self.FK_ActivityOrder_ActivityFarmer">
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmer" />
+      <End Role="ActivityOrder" EntitySet="ActivityOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Advertising_Suppliers" Association="Self.FK_Advertising_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Advertising" EntitySet="Advertising" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Browse_Products" Association="Self.FK_Browse_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Browse" EntitySet="Browse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerSubscription_CustomerInfo" Association="Self.FK_CustomerSubscription_CustomerInfo">
+      <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+      <End Role="CustomerSubscription" EntitySet="CustomerSubscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerSubscription_Suppliers" Association="Self.FK_CustomerSubscription_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="CustomerSubscription" EntitySet="CustomerSubscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsEventDetail_CustomerInfo" Association="Self.FK_DiscountPointsEventDetail_CustomerInfo">
+      <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+      <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent">
+      <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvent" />
+      <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster" Association="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+      <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMaster" />
+      <End Role="ProductGrowPlanDetail" EntitySet="ProductGrowPlanDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGrowPlanMaster_SuppliersFarm" Association="Self.FK_ProductGrowPlanMaster_SuppliersFarm">
+      <End Role="SuppliersFarm" EntitySet="SuppliersFarm" />
+      <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductImages" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Suppliers" Association="Self.FK_Products_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEvent_Suppliers" Association="Self.FK_SaleEvent_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SaleEvent" EntitySet="SaleEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventA+B_SaleEvent" Association="Self.FK_SaleEventA+B_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvent" />
+      <End Role="SaleEventCombo" EntitySet="SaleEventCombo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventProduct_Products" Association="Self.FK_SaleEventProduct_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventProduct_SaleEvent" Association="Self.FK_SaleEventProduct_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvent" />
+      <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="Self.FK_SaleEventQuota_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvent" />
+      <End Role="SaleEventQuota" EntitySet="SaleEventQuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShoppingCart_Products" Association="Self.FK_ShoppingCart_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersBulletinBoard_Suppliers" Association="Self.FK_SuppliersBulletinBoard_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersBulletinBoard" EntitySet="SuppliersBulletinBoard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersFarm_Suppliers" Association="Self.FK_SuppliersFarm_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersFarm" EntitySet="SuppliersFarm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersStoryDetail_SuppliersStoryMaster" Association="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster">
+      <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMaster" />
+      <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersStoryMaster_Suppliers" Association="Self.FK_SuppliersStoryMaster_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersVedio_Suppliers" Association="Self.FK_SuppliersVedio_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersVideo" EntitySet="SuppliersVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemToSuppliersInfo_Suppliers" Association="Self.FK_SystemToSuppliersInfo_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
