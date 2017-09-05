@@ -119,3 +119,5 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsS
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml

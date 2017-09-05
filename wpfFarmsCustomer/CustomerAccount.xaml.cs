@@ -38,5 +38,12 @@ namespace wpfFarmsCustomer
 
             supreg.Show();
         }
+
+        private void myMenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersVedioCRUD vedioCRUD = new SuppliersVedioCRUD();
+
+            vedioCRUD.Show();
+        }
     }
 }
