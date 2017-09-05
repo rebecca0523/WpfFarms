@@ -90,7 +90,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.g.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
@@ -145,3 +144,8 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSu
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml

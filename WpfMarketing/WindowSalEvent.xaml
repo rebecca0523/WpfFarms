@@ -35,8 +35,10 @@
         <!--組合TEMP-->
         <DataTemplate x:Key="SEComboTemplate">
             <DockPanel>
+                <TextBlock Text="{Binding AProductID,Mode=OneWay}" Visibility="Hidden"/>
                 <TextBlock Text="{Binding AProductName,Mode=OneWay}" />
                 <TextBlock Text="{Binding AProductPrice,Mode=OneWay}" Margin="10,0,0,0" />
+                <TextBlock Text="{Binding BProductID,Mode=OneWay}" Visibility="Hidden"/>
                 <TextBlock Text="{Binding BProductName,Mode=OneWay}" Margin="10,0,0,0" />
                 <TextBlock Text="{Binding BProductPrice,Mode=OneWay}" Margin="10,0,0,0" />
                 <TextBlock Text="{Binding SUMPrice,Mode=OneWay}" Margin="10,0,0,0" />
@@ -68,11 +70,12 @@
         </StackPanel>
         <UniformGrid Rows="4" RenderTransformOrigin="9.16,5.7" Background="#FFE8E6E6" Grid.Column="1" Margin="10">
             <StackPanel Canvas.Left="392" Canvas.Top="-198">
-                <UniformGrid Columns="4" Height="29">
+                <UniformGrid Columns="5" Height="29">
                     <TextBox x:Name="txtTitle" TextWrapping="Wrap"/>
                     <DatePicker x:Name="dtpStart" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
                     <DatePicker x:Name="dtpEnd" VerticalContentAlignment="Stretch"/>
                     <Button x:Name="btnNewSaleEvent" Content="新增活動" Click="btnNewSaleEvent_Click" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                    <Button x:Name="btnSave" Content="修改/儲存" Background="#FFF0D5F1" Click="btnSave_Click" Grid.Column="2" Margin="0"/>
                 </UniformGrid>
                 <TextBox x:Name="txtSEContent" TextWrapping="Wrap" Background="#FFF5DAB9" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="105"/>
             </StackPanel>
@@ -108,28 +111,26 @@
                 <UniformGrid Columns="11">
                     <TextBlock TextWrapping="Wrap" Margin="0,0,10,0"><Run Text="組合折扣"/></TextBlock>
                     <ComboBox x:Name="cboAProduct" SelectionChanged="cboAProduct_SelectionChanged"/>
-                    <TextBlock x:Name="txkAProductPrice" Width="40"/>
+                    <TextBlock x:Name="txkAProductPrice" TextAlignment="Right"/>
                     <ComboBox x:Name="cboBProduct" SelectionChanged="cboBProduct_SelectionChanged"/>
-                    <TextBlock x:Name="txkBProductPrice" Width="40"/>
-                    <TextBlock x:Name="txkSUMPrice" Width="40"/>
-                    <TextBox x:Name="txtComboDiscount" Width="40" Text="1.0"/>
-                    <TextBlock x:Name="txkComboDiscountPrice" Width="40"/>
-                    <Button x:Name="btnAlterCombo" Content="修改"/>
+                    <TextBlock x:Name="txkBProductPrice" TextAlignment="Right"/>
+                    <TextBlock x:Name="txkSUMPrice" TextAlignment="Right"/>
+                    <TextBox x:Name="txtComboDiscount" Text="1.0" Width="83" HorizontalContentAlignment="Right"/>
+                    <TextBlock x:Name="txkComboDiscountPrice" TextAlignment="Right"/>
+                    <Button x:Name="btnAlterCombo" Content="修改" Click="btnAlterCombo_Click"/>
                     <Button x:Name="btnNewCombo" Content="新增"/>
                     <Button x:Name="btnDeleteCombo" Content="刪除"/>
 
                 </UniformGrid>
 
 
-                <ListBox x:Name="lstSaleEventCombo" Height="99" ItemTemplate="{DynamicResource SEComboTemplate}"/>
+                <ListBox x:Name="lstSaleEventCombo" Height="99" ItemTemplate="{DynamicResource SEComboTemplate}" SelectionChanged="lstSaleEventCombo_SelectionChanged"/>
             </StackPanel>
         </UniformGrid>
 
-        <Button x:Name="btnSave" Content="修改/儲存" Width="126" Height="28" Background="#FFF0D5F1" Click="btnSave_Click" Grid.Column="2" Margin="10,558,167,354"/>
 
 
-
-        <UniformGrid Rows="2" Columns="4" Width="105" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2">
+        <UniformGrid Rows="3" Columns="4" Width="105" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2">
             <TextBlock x:Name="txkEVID" Canvas.Left="292" TextWrapping="Wrap" Canvas.Top="533" Background="#FFF1CFBB" Text="0"/>
             <TextBlock x:Name="txkQID" Background="#FFF0F3A2" Canvas.Left="317" Canvas.Top="533" Text="0" />
             <TextBlock x:Name="txkcboPID"  Background="#FF4CB01C" Canvas.Left="342" Canvas.Top="533" Text="0" />
@@ -138,10 +139,11 @@
             <TextBlock x:Name="txkLisAProductID" Canvas.Left="376" TextWrapping="Wrap" Text="0" Canvas.Top="558" Background="#FFE07EF5"/>
             <TextBlock x:Name="txkComBProductID" Background="#FFF9C12C" Canvas.Left="406" Canvas.Top="563" Text="0"/>
             <TextBlock x:Name="txkLisBProductID" Background="#FFE87373" Canvas.Left="415" Canvas.Top="536" Text="0"/>
+            <TextBlock x:Name="txkSEComboID" Background="#FFE87373" Canvas.Left="415" Canvas.Top="536" Text="0"/>
+
 
         </UniformGrid>
-
-        <TextBox x:Name="txtShow" Height="121" TextWrapping="Wrap" Text="TextBox" Width="206" Grid.Column="2" Margin="10,42,87,777"/>
+        <TextBox x:Name="txtShow" Grid.Column="2" HorizontalAlignment="Left" Height="322" Margin="33,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="243" Background="#FFC78A8A"/>
 
 
 

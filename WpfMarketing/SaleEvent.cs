@@ -18,8 +18,8 @@ namespace WpfMarketing
         public SaleEvent()
         {
             this.SaleEventComboes = new HashSet<SaleEventCombo>();
-            this.SaleEventQuotas = new HashSet<SaleEventQuota>();
             this.SaleEventSingleProducts = new HashSet<SaleEventSingleProduct>();
+            this.SaleEventQuotas = new HashSet<SaleEventQuota>();
         }
     
         public Nullable<int> SupplierID { get; set; }
@@ -33,8 +33,8 @@ namespace WpfMarketing
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleEventCombo> SaleEventComboes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleEventQuota> SaleEventQuotas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleEventSingleProduct> SaleEventSingleProducts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SaleEventQuota> SaleEventQuotas { get; set; }
     }
 }

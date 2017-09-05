@@ -200,3 +200,6 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.Ge
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\obj\Debug\WpfFarms.exe
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll

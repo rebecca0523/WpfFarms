@@ -81,6 +81,4 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsP
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
