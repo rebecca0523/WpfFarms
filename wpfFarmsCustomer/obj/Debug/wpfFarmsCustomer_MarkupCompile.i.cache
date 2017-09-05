@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\
+C:\Users\admin\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\
 wpfFarmsCustomer
 none
 false
 DEBUG;TRACE
-C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\App.xaml
+C:\Users\admin\Source\Repos\WpfFarms\wpfFarmsCustomer\App.xaml
 6-1058377651
 
-142069903954
-18-329919683
+1472339125
+18-916525988
 CustomerAccount.xaml;CustomerRegister.xaml;DeleteCustomer.xaml;EditCustomer.xaml;ForgetPassword.xaml;MainWindow.xaml;
 
 True
