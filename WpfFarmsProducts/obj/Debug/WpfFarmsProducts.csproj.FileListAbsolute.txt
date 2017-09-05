@@ -96,7 +96,6 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\MainWindow
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\ShinyBlueDictionary.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\App.g.cs
-C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_Content.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.lref
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\obj\Debug\App.baml
@@ -154,3 +153,6 @@ C:\Users\III\Desktop\新增資料夾 (5)\WpfFarms\WpfFarmsProducts\obj\Debug\Wpf
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config

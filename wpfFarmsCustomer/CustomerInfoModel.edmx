@@ -5,6 +5,37 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddressInfo">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="PostalCodeID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlackListInfo">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="BlackListDate" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="BlackListReason" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="BlackListDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChatLog">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ChatDatetime" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="ChatDatetime" Type="datetime" Nullable="false" />
+          <Property Name="ChatPic" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChatRecording" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="CustomerInfo">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -25,14 +56,69 @@
           <Property Name="Interestied" Type="nvarchar" MaxLength="100" />
           <Property Name="InterestiedPic" Type="nvarchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="CustomerLoginlog">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="LastUpdate" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="LoginIP" Type="int" Nullable="false" />
+          <Property Name="Loginstatus" Type="bit" Nullable="false" />
+          <Property Name="LastUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostalCodeInfo">
+          <Key>
+            <PropertyRef Name="PostalCodeID" />
+          </Key>
+          <Property Name="PostalCodeID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PostalCode" Type="nchar" MaxLength="5" />
+          <Property Name="PostalCodeName" Type="nvarchar" MaxLength="80" />
+          <Property Name="FloorNumber" Type="nvarchar" MaxLength="30" />
+        </EntityType>
         <EntityContainer Name="farmsDBModelStoreContainer">
+          <EntitySet Name="AddressInfo" EntityType="Self.AddressInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlackListInfo" EntityType="Self.BlackListInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatLog" EntityType="Self.ChatLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerLoginlog" EntityType="Self.CustomerLoginlog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostalCodeInfo" EntityType="Self.PostalCodeInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddressInfo">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlackListInfo">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="BlackListDate" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="BlackListReason" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BlackListDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="ChatLog">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ChatDatetime" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="ChatDatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChatPic" Type="Guid" Nullable="false" />
+          <Property Name="ChatRecording" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="CustomerInfo">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -53,8 +139,32 @@
           <Property Name="Interestied" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="InterestiedPic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="CustomerLoginlog">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="LastUpdate" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="LoginIP" Type="Int32" Nullable="false" />
+          <Property Name="Loginstatus" Type="Boolean" Nullable="false" />
+          <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PostalCodeInfo">
+          <Key>
+            <PropertyRef Name="PostalCodeID" />
+          </Key>
+          <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="PostalCodeName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressInfo" EntityType="Self.AddressInfo" />
+          <EntitySet Name="BlackListInfo" EntityType="Self.BlackListInfo" />
+          <EntitySet Name="ChatLog" EntityType="Self.ChatLog" />
           <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" />
+          <EntitySet Name="CustomerLoginlog" EntityType="Self.CustomerLoginlog" />
+          <EntitySet Name="PostalCodeInfo" EntityType="Self.PostalCodeInfo" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -62,6 +172,38 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
+          <EntitySetMapping Name="AddressInfo">
+            <EntityTypeMapping TypeName="farmsDBModel.AddressInfo">
+              <MappingFragment StoreEntitySet="AddressInfo">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlackListInfo">
+            <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
+              <MappingFragment StoreEntitySet="BlackListInfo">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
+                <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatLog">
+            <EntityTypeMapping TypeName="farmsDBModel.ChatLog">
+              <MappingFragment StoreEntitySet="ChatLog">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
+                <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
+                <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CustomerInfo">
             <EntityTypeMapping TypeName="farmsDBModel.CustomerInfo">
               <MappingFragment StoreEntitySet="CustomerInfo">
@@ -80,6 +222,26 @@
                 <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
                 <ScalarProperty Name="Interestied" ColumnName="Interestied" />
                 <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerLoginlog">
+            <EntityTypeMapping TypeName="farmsDBModel.CustomerLoginlog">
+              <MappingFragment StoreEntitySet="CustomerLoginlog">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostalCodeInfo">
+            <EntityTypeMapping TypeName="farmsDBModel.PostalCodeInfo">
+              <MappingFragment StoreEntitySet="PostalCodeInfo">
+                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
+                <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

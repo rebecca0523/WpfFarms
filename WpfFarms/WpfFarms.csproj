@@ -76,10 +76,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginAndRegister.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,9 +86,6 @@
     </Compile>
     <Compile Include="Browse.xaml.cs">
       <DependentUpon>Browse.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginAndRegister.xaml.cs">
-      <DependentUpon>LoginAndRegister.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

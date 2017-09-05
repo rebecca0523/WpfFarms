@@ -34,6 +34,8 @@ namespace WpfFarms
             CustomerRegister.Show();
         }
 
+        public static string loginEmail;
+        public static string loginPassword;
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
@@ -55,9 +57,12 @@ namespace WpfFarms
             int n = Convert.ToInt32(cmd.Parameters["@Return_Values"].Value);
             if (n == 1)
             {
+                loginEmail = txtEmail.Text;
+                loginPassword = txtPassword.Text;
                 MessageBox.Show("登入成功！");
                 CustomerAccount customerAccount = new CustomerAccount();
                 customerAccount.Show();
+
                 this.Close();
             }
             else

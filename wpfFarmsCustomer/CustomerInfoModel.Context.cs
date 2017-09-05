@@ -25,6 +25,11 @@ namespace wpfFarmsCustomer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AddressInfo> AddressInfo { get; set; }
+        public virtual DbSet<BlackListInfo> BlackListInfo { get; set; }
+        public virtual DbSet<ChatLog> ChatLog { get; set; }
         public virtual DbSet<CustomerInfo> CustomerInfo { get; set; }
+        public virtual DbSet<CustomerLoginlog> CustomerLoginlog { get; set; }
+        public virtual DbSet<PostalCodeInfo> PostalCodeInfo { get; set; }
     }
 }

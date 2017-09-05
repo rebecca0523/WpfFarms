@@ -100,7 +100,7 @@ namespace WpfFarms {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfFarms;component/loginandregister.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/wpfFarmsCustomer;component/loginandregister.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\LoginAndRegister.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
