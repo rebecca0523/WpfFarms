@@ -19,7 +19,7 @@
             </ToolBar>
         </ToolBarTray>
         <DockPanel LastChildFill="True" Margin="0,34,0,0">
-            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="ProductsDataGrid_SelectionChanged" >
+            <DataGrid x:Name="ProductsDataGrid" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="ProductsDataGrid_SelectionChanged" CanUserAddRows="False" >
                 <!--AutoGenerateColumns 搞老半天就是你這個屬性在作怪,要關掉才不會重複出現Columns-->
                 <DataGrid.ItemBindingGroup>
                     <BindingGroup/>
@@ -29,7 +29,7 @@
                     <DataGridTemplateColumn Header="小農編號">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding SupplierID}"/>
+                                <TextBlock Text="{Binding Path= SupplierID}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -37,17 +37,17 @@
                     <DataGridTemplateColumn Header="產品編號">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding ProductID}"/>
+                                <TextBlock Text="{Binding Path= ProductID}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="產品名" Binding="{Binding ProductName}"/>
+                    <DataGridTextColumn Header="產品名" Binding="{Binding Path= ProductName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                     <DataGridTemplateColumn Header="開始銷售日">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
-                                <DatePicker SelectedDate="{Binding SellStartDate}" IsDropDownOpen="False" IsEnabled="True" IsTodayHighlighted="False" />
+                                <DatePicker SelectedDate="{Binding Path= SellStartDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -55,41 +55,42 @@
                     <DataGridTemplateColumn Header="結束銷售日">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
-                                <DatePicker SelectedDate="{Binding SellEndDate}" />
+                                <DatePicker SelectedDate="{Binding Path= SellEndDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="市場售價" Binding="{Binding MarkPrice}"/>
-                    
-                    <DataGridTextColumn Header="售價" Binding="{Binding UnitPrice}"/>
+                    <DataGridTextColumn Header="市場售價" Binding="{Binding Path= MarkPrice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridCheckBoxColumn Header="開放預購" Binding="{Binding PreOrder}"/>
+                    <DataGridTextColumn Header="售價" Binding="{Binding Path= UnitPrice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <DataGridCheckBoxColumn Header="開放預購" Binding="{Binding Path= PreOrder,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                     <DataGridTemplateColumn Header="出貨日">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
-                                <DatePicker SelectedDate="{Binding ShippedDate}" />
+                                <DatePicker SelectedDate="{Binding Path= ShippedDate,Mode=TwoWay,  UpdateSourceTrigger=PropertyChanged}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="總銷售量" Binding="{Binding TotalQTY}"/>
+                    <DataGridTextColumn Header="總銷售量" Binding="{Binding Path= TotalQTY,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridTextColumn Header="當前可銷售量" Binding="{Binding CanSaleQTY}"/>
+                    <DataGridTextColumn Header="當前可銷售量" Binding="{Binding Path= CanSaleQTY,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridTextColumn Header="已銷售量" Binding="{Binding QuantitySold}"/>
+                    <DataGridTextColumn Header="已銷售量" Binding="{Binding Path= QuantitySold,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridCheckBoxColumn Header="特價商品" Binding="{Binding Discounted}"/>
+                    <DataGridCheckBoxColumn Header="特價商品" Binding="{Binding Path= Discounted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridCheckBoxColumn Header="組合折扣" Binding="{Binding DiscountedCombo}"/>
+                    <DataGridCheckBoxColumn Header="組合折扣" Binding="{Binding Path= DiscountedCombo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <DataGridCheckBoxColumn Header="折扣點數" Binding="{Binding DiscountedPoint}"/>
+                    <DataGridCheckBoxColumn Header="折扣點數" Binding="{Binding Path= DiscountedPoint,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                     <DataGridTemplateColumn Header="建檔日">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
-                                <DatePicker SelectedDate="{Binding CreatedDate}" />
+                                <DatePicker SelectedDate="{Binding Path= CreatedDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" />
+                                <!--測試用上面這個是不能修改的-->
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -97,12 +98,12 @@
                     <DataGridTemplateColumn Header="資料最近更新日期">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
-                                <DatePicker SelectedDate="{Binding LastUpdateDate}" />
+                                <DatePicker SelectedDate="{Binding Path= LastUpdateDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="商品描述" Binding="{Binding ProductDescription}"/>
+                    <DataGridTextColumn Header="商品描述" Binding="{Binding Path= ProductDescription,Mode=TwoWay,  UpdateSourceTrigger=PropertyChanged}"/>
 
                 </DataGrid.Columns>
             </DataGrid>

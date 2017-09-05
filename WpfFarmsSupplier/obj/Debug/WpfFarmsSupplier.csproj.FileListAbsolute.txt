@@ -45,7 +45,6 @@ C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.Generate
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
-<<<<<<< HEAD
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
@@ -58,7 +57,6 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
-D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_Content.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.cache
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.lref
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.baml
@@ -71,7 +69,6 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.baml
-=======
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
@@ -92,10 +89,8 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.g.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
->>>>>>> 5623c334ceeae12e5a044c32b93bbd57e1c0f2b2
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
@@ -121,4 +116,42 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsS
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.xml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_Content.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.cache
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.lref
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.baml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.baml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.baml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.g.resources
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUD.baml
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pdb
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config

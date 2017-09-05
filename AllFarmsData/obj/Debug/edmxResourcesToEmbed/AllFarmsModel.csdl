@@ -1,0 +1,1025 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActivityCity">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_ActivityCity" FromRole="ActivityCity" ToRole="ActivityFarmer" />
+  </EntityType>
+  <EntityType Name="ActivityFarmer">
+    <Key>
+      <PropertyRef Name="ActivityFarmerID" />
+    </Key>
+    <Property Name="ActivityFarmerID" Type="Int32" Nullable="false" />
+    <Property Name="ActivityOrderID" Type="Int32" />
+    <Property Name="ActivityPhotoID" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaxQuantity" Type="Int32" />
+    <Property Name="GroupQuantity" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ActivityDate" Type="DateTime" Precision="3" />
+    <Property Name="ActivityContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ActivityCity" Relationship="Self.FK_ActivityFarmer_ActivityCity" FromRole="ActivityFarmer" ToRole="ActivityCity" />
+    <NavigationProperty Name="ActivityPhoto" Relationship="Self.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityFarmer" ToRole="ActivityPhoto" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_ActivityFarmer_Suppliers" FromRole="ActivityFarmer" ToRole="Suppliers" />
+    <NavigationProperty Name="ActivityOrders" Relationship="Self.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityFarmer" ToRole="ActivityOrder" />
+  </EntityType>
+  <EntityType Name="ActivityOrder">
+    <Key>
+      <PropertyRef Name="ActivityOrderID" />
+    </Key>
+    <Property Name="ActivityFarmerID" Type="Int32" />
+    <Property Name="ActivityOrderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GroupConfirm" Type="Boolean" />
+    <Property Name="PaymentConfirm" Type="Boolean" />
+    <Property Name="ReceivedConfirm" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ActivityFarmer" Relationship="Self.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityOrder" ToRole="ActivityFarmer" />
+  </EntityType>
+  <EntityType Name="ActivityPhoto">
+    <Key>
+      <PropertyRef Name="ActivityPhotoID" />
+    </Key>
+    <Property Name="ActivityPhotoID" Type="Int32" Nullable="false" />
+    <Property Name="ActivityPhoto1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityPhoto" ToRole="ActivityFarmer" />
+  </EntityType>
+  <EntityType Name="AddressInfo">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="AdvertisingID" Type="Int32" Nullable="false" />
+    <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdvertisingStarTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdvertisingEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AlreadyPaid" Type="Boolean" Nullable="false" />
+    <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="BlackListInfo">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="BlackListDate" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="BlackListReason" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BlackListDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Browse">
+    <Key>
+      <PropertyRef Name="BrowseID" />
+    </Key>
+    <Property Name="BrowseID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Browse_Products" FromRole="Browse" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ChatLog">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="ChatDatetime" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="ChatDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ChatPic" Type="Guid" Nullable="false" />
+    <Property Name="ChatRecording" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CustomerInfo">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Evaluation" Type="Int32" />
+    <Property Name="AddressID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Useridentity" Type="Int32" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="Interestied" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InterestiedPic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CustomerSubscriptions" Relationship="Self.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerInfo" ToRole="CustomerSubscription" />
+    <NavigationProperty Name="DiscountPointsEventDetails" Relationship="Self.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="CustomerInfo" ToRole="DiscountPointsEventDetail" />
+  </EntityType>
+  <EntityType Name="CustomerLoginlog">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="LastUpdate" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="LoginIP" Type="Int32" Nullable="false" />
+    <Property Name="Loginstatus" Type="Boolean" Nullable="false" />
+    <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="CustomerRefund">
+    <Key>
+      <PropertyRef Name="RefundID" />
+    </Key>
+    <Property Name="RefundID" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="RefundAgree" Type="Boolean" />
+    <Property Name="Cash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RefundReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ActivityOrderID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CustomerReturn">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="ReturnID" Type="Int32" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ReturnOrder" Type="Boolean" />
+    <Property Name="ReturnReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Cash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CustomerSubscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+    <Property Name="SubscriptionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AllowMail" Type="Boolean" />
+    <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerSubscription" ToRole="CustomerInfo" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_CustomerSubscription_Suppliers" FromRole="CustomerSubscription" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="DiscountPointsEvent">
+    <Key>
+      <PropertyRef Name="DiscountPointsEventID" />
+    </Key>
+    <Property Name="DiscountPointsEventID" Type="Int32" Nullable="false" />
+    <Property Name="DiscountPointsEventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiscountPointsEvenContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountPointsEventStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscountPointsEventEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BirthdayPoint" Type="Int32" />
+    <Property Name="LoginPoint" Type="Int32" />
+    <Property Name="SharePoint" Type="Int32" />
+    <Property Name="Quota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="QuotaPoint" Type="Int32" />
+    <Property Name="QPointToOneNTD" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DiscountPointsEventDetails" Relationship="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsEventDetail" />
+  </EntityType>
+  <EntityType Name="DiscountPointsEventDetail">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="DiscountPointsEventID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="DiscountPointsEventID" Type="Int32" Nullable="false" />
+    <Property Name="getBirthdayPoint" Type="Int32" />
+    <Property Name="getLoginPoint" Type="Int32" />
+    <Property Name="getSharePoint" Type="Int32" />
+    <Property Name="getQuotaPoint" Type="Int32" />
+    <Property Name="usedPoint" Type="Int32" />
+    <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="DiscountPointsEventDetail" ToRole="CustomerInfo" />
+    <NavigationProperty Name="DiscountPointsEvent" Relationship="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEventDetail" ToRole="DiscountPointsEvent" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="DiscountPoint" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SaleEventID" Type="Int32" />
+    <Property Name="ShipmentStatus" Type="Boolean" />
+    <Property Name="MakeCollectionsStatus" Type="Boolean" />
+    <Property Name="PaymentStatus" Type="Boolean" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_OrderDetails_Products" FromRole="OrderDetails" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="Consignee" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CellPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatus" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerDemand" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
+  </EntityType>
+  <EntityType Name="PostalCodeInfo">
+    <Key>
+      <PropertyRef Name="PostalCodeID" />
+    </Key>
+    <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="PostalCodeName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="FloorNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductGrowPlanDetail">
+    <Key>
+      <PropertyRef Name="ProductGrowID" />
+    </Key>
+    <Property Name="ProductGrowID" Type="Int32" Nullable="false" />
+    <Property Name="StepItemID" Type="Int32" Nullable="false" />
+    <Property Name="StepItemDESC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Int32" />
+    <Property Name="StatusDatae" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDateUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="ProductGrowPlanMaster" Relationship="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanDetail" ToRole="ProductGrowPlanMaster" />
+  </EntityType>
+  <EntityType Name="ProductGrowPlanMaster">
+    <Key>
+      <PropertyRef Name="ProductGrowID" />
+    </Key>
+    <Property Name="SupplierFarmID" Type="Int32" Nullable="false" />
+    <Property Name="ProductGrowID" Type="Int32" Nullable="false" />
+    <Property Name="ProductKind" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Planting" Type="DateTime" Precision="0" />
+    <Property Name="PlanHarvestDate" Type="DateTime" Precision="0" />
+    <Property Name="PlanHarvestQTY" Type="Int32" />
+    <Property Name="ActuallyarvestQTY" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDateUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="ProductGrowPlanDetail" Relationship="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanMaster" ToRole="ProductGrowPlanDetail" />
+    <NavigationProperty Name="SuppliersFarm" Relationship="Self.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="ProductGrowPlanMaster" ToRole="SuppliersFarm" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ProductImageID" />
+    </Key>
+    <Property Name="ProductImageID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductImage1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductImages_Products" FromRole="ProductImages" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SellStartDate" Type="DateTime" Precision="3" />
+    <Property Name="SellEndDate" Type="DateTime" Precision="3" />
+    <Property Name="MarkPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PreOrder" Type="Boolean" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="ProductDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TotalQTY" Type="Int32" />
+    <Property Name="CanSaleQTY" Type="Int32" />
+    <Property Name="QuantitySold" Type="Int32" />
+    <Property Name="Discounted" Type="Boolean" />
+    <Property Name="DiscountedCombo" Type="Boolean" />
+    <Property Name="DiscountedPoint" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DeleteProduct" Type="Boolean" />
+    <NavigationProperty Name="Browses" Relationship="Self.FK_Browse_Products" FromRole="Products" ToRole="Browse" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Products" FromRole="Products" ToRole="OrderDetails" />
+    <NavigationProperty Name="ProductImages" Relationship="Self.FK_ProductImages_Products" FromRole="Products" ToRole="ProductImages" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_Products_Suppliers" FromRole="Products" ToRole="Suppliers" />
+    <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_Products" FromRole="Products" ToRole="SaleEventSingleProduct" />
+    <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCart_Products" FromRole="Products" ToRole="ShoppingCart" />
+  </EntityType>
+  <EntityType Name="SaleEvent">
+    <Key>
+      <PropertyRef Name="SaleEventID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="SaleEventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleEventTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SaleEventContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SaleEventStart" Type="DateTime" Precision="3" />
+    <Property Name="SaleEventEnd" Type="DateTime" Precision="3" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SaleEvent_Suppliers" FromRole="SaleEvent" ToRole="Suppliers" />
+    <NavigationProperty Name="SaleEventComboes" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventCombo" />
+    <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventSingleProduct" />
+    <NavigationProperty Name="SaleEventQuotas" Relationship="Self.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
+  </EntityType>
+  <EntityType Name="SaleEventCombo">
+    <Key>
+      <PropertyRef Name="SaleEventComboID" />
+    </Key>
+    <Property Name="SaleEventComboID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleEventID" Type="Int32" />
+    <Property Name="AProductID" Type="Int32" />
+    <Property Name="BProductID" Type="Int32" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEventCombo" ToRole="SaleEvent" />
+  </EntityType>
+  <EntityType Name="SaleEventQuota">
+    <Key>
+      <PropertyRef Name="SaleEventQuotaID" />
+    </Key>
+    <Property Name="SaleEventQuotaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleEventID" Type="Int32" />
+    <Property Name="Quota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventQuota_SaleEvent" FromRole="SaleEventQuota" ToRole="SaleEvent" />
+  </EntityType>
+  <EntityType Name="SaleEventSingleProduct">
+    <Key>
+      <PropertyRef Name="SaleEventSingleProductID" />
+    </Key>
+    <Property Name="SaleEventSingleProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleEventID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_SaleEventProduct_Products" FromRole="SaleEventSingleProduct" ToRole="Products" />
+    <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEventSingleProduct" ToRole="SaleEvent" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ShoppingCart_Products" FromRole="ShoppingCart" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_Suppliers" FromRole="Suppliers" ToRole="ActivityFarmer" />
+    <NavigationProperty Name="Advertisings" Relationship="Self.FK_Advertising_Suppliers" FromRole="Suppliers" ToRole="Advertising" />
+    <NavigationProperty Name="CustomerSubscriptions" Relationship="Self.FK_CustomerSubscription_Suppliers" FromRole="Suppliers" ToRole="CustomerSubscription" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Suppliers" FromRole="Suppliers" ToRole="Products" />
+    <NavigationProperty Name="SaleEvents" Relationship="Self.FK_SaleEvent_Suppliers" FromRole="Suppliers" ToRole="SaleEvent" />
+    <NavigationProperty Name="SuppliersBulletinBoards" Relationship="Self.FK_SuppliersBulletinBoard_Suppliers" FromRole="Suppliers" ToRole="SuppliersBulletinBoard" />
+    <NavigationProperty Name="SuppliersFarms" Relationship="Self.FK_SuppliersFarm_Suppliers" FromRole="Suppliers" ToRole="SuppliersFarm" />
+    <NavigationProperty Name="SuppliersStoryMasters" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="Suppliers" ToRole="SuppliersStoryMaster" />
+    <NavigationProperty Name="SuppliersVedios" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="Suppliers" ToRole="SuppliersVedio" />
+    <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="Suppliers" ToRole="SystemToSuppliersInfo" />
+  </EntityType>
+  <EntityType Name="SuppliersBulletinBoard">
+    <Key>
+      <PropertyRef Name="BoardID" />
+    </Key>
+    <Property Name="BoardID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierD" Type="Int32" />
+    <Property Name="seqID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndData" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersBulletinBoard_Suppliers" FromRole="SuppliersBulletinBoard" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="SuppliersFarm">
+    <Key>
+      <PropertyRef Name="SupplierFarmID" />
+    </Key>
+    <Property Name="SupplierFarmID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierFarmDESC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FarmSoilKind" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FarmSoilRange" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDateUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="ProductGrowPlanMasters" Relationship="Self.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="SuppliersFarm" ToRole="ProductGrowPlanMaster" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersFarm_Suppliers" FromRole="SuppliersFarm" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="SuppliersStoryDetail">
+    <Key>
+      <PropertyRef Name="SuppliersStoryID" />
+      <PropertyRef Name="StoryItemID" />
+    </Key>
+    <Property Name="SuppliersStoryID" Type="Int32" Nullable="false" />
+    <Property Name="StoryItemID" Type="Int32" Nullable="false" />
+    <Property Name="StoryItemDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="StoryItemPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StoryItemSEQ" Type="Int32" />
+    <Property Name="StoryItemStatus" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="SuppliersStoryMaster" Relationship="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryDetail" ToRole="SuppliersStoryMaster" />
+  </EntityType>
+  <EntityType Name="SuppliersStoryMaster">
+    <Key>
+      <PropertyRef Name="SuppliersStoryID" />
+    </Key>
+    <Property Name="SuppliersStoryID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderByKind" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="SuppliersStoryMaster" ToRole="Suppliers" />
+    <NavigationProperty Name="SuppliersStoryDetails" Relationship="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryMaster" ToRole="SuppliersStoryDetail" />
+  </EntityType>
+  <EntityType Name="SuppliersVedio">
+    <Key>
+      <PropertyRef Name="SuppliersVedioID" />
+    </Key>
+    <Property Name="SuppliersVedioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersStoryTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <Property Name="VedioFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="SuppliersVedio" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SystemToSuppliersInfo">
+    <Key>
+      <PropertyRef Name="infoMessageID" />
+    </Key>
+    <Property Name="infoMessageID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="infoMessageDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isread" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="SystemToSuppliersInfo" ToRole="Suppliers" />
+  </EntityType>
+  <Association Name="FK_ActivityFarmer_ActivityCity">
+    <End Role="ActivityCity" Type="Self.ActivityCity" Multiplicity="0..1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityFarmer_ActivityPhoto">
+    <End Role="ActivityPhoto" Type="Self.ActivityPhoto" Multiplicity="0..1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityPhoto">
+        <PropertyRef Name="ActivityPhotoID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="ActivityPhotoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityFarmer_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="ActivityFarmer">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityOrder_ActivityFarmer">
+    <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="0..1" />
+    <End Role="ActivityOrder" Type="Self.ActivityOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityFarmer">
+        <PropertyRef Name="ActivityFarmerID" />
+      </Principal>
+      <Dependent Role="ActivityOrder">
+        <PropertyRef Name="ActivityFarmerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Advertising_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Advertising">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Browse_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Browse" Type="Self.Browse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Browse">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerSubscription_CustomerInfo">
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+    <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerInfo">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerSubscription">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiscountPointsEventDetail_CustomerInfo">
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+    <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerInfo">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="DiscountPointsEventDetail">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerSubscription_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="CustomerSubscription">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiscountPointsEventDetail_DiscountPointsEvent">
+    <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="1" />
+    <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiscountPointsEvent">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Principal>
+      <Dependent Role="DiscountPointsEventDetail">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+    <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="1" />
+    <End Role="ProductGrowPlanDetail" Type="Self.ProductGrowPlanDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGrowPlanMaster">
+        <PropertyRef Name="ProductGrowID" />
+      </Principal>
+      <Dependent Role="ProductGrowPlanDetail">
+        <PropertyRef Name="ProductGrowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGrowPlanMaster_SuppliersFarm">
+    <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="1" />
+    <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuppliersFarm">
+        <PropertyRef Name="SupplierFarmID" />
+      </Principal>
+      <Dependent Role="ProductGrowPlanMaster">
+        <PropertyRef Name="SupplierFarmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductImages" Type="Self.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductImages">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventProduct_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SaleEventSingleProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShoppingCart_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEvent_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SaleEvent">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventA_B_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventCombo">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventProduct_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventSingleProduct">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleEventQuota_SaleEvent">
+    <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+    <End Role="SaleEventQuota" Type="Self.SaleEventQuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleEvent">
+        <PropertyRef Name="SaleEventID" />
+      </Principal>
+      <Dependent Role="SaleEventQuota">
+        <PropertyRef Name="SaleEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersBulletinBoard_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="SuppliersBulletinBoard" Type="Self.SuppliersBulletinBoard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersBulletinBoard">
+        <PropertyRef Name="SupplierD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersFarm_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersFarm">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersStoryMaster_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersStoryMaster">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersVedio_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="SuppliersVedio" Type="Self.SuppliersVedio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SuppliersVedio">
+        <PropertyRef Name="SuppliersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemToSuppliersInfo_Suppliers">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="SystemToSuppliersInfo" Type="Self.SystemToSuppliersInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="SystemToSuppliersInfo">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersStoryDetail_SuppliersStoryMaster">
+    <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="1" />
+    <End Role="SuppliersStoryDetail" Type="Self.SuppliersStoryDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuppliersStoryMaster">
+        <PropertyRef Name="SuppliersStoryID" />
+      </Principal>
+      <Dependent Role="SuppliersStoryDetail">
+        <PropertyRef Name="SuppliersStoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AllFarmsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActivityCities" EntityType="Self.ActivityCity" />
+    <EntitySet Name="ActivityFarmers" EntityType="Self.ActivityFarmer" />
+    <EntitySet Name="ActivityOrders" EntityType="Self.ActivityOrder" />
+    <EntitySet Name="ActivityPhotoes" EntityType="Self.ActivityPhoto" />
+    <EntitySet Name="AddressInfoes" EntityType="Self.AddressInfo" />
+    <EntitySet Name="Advertisings" EntityType="Self.Advertising" />
+    <EntitySet Name="BlackListInfoes" EntityType="Self.BlackListInfo" />
+    <EntitySet Name="Browses" EntityType="Self.Browse" />
+    <EntitySet Name="ChatLogs" EntityType="Self.ChatLog" />
+    <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
+    <EntitySet Name="CustomerLoginlogs" EntityType="Self.CustomerLoginlog" />
+    <EntitySet Name="CustomerRefunds" EntityType="Self.CustomerRefund" />
+    <EntitySet Name="CustomerReturns" EntityType="Self.CustomerReturn" />
+    <EntitySet Name="CustomerSubscriptions" EntityType="Self.CustomerSubscription" />
+    <EntitySet Name="DiscountPointsEvents" EntityType="Self.DiscountPointsEvent" />
+    <EntitySet Name="DiscountPointsEventDetails" EntityType="Self.DiscountPointsEventDetail" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PostalCodeInfoes" EntityType="Self.PostalCodeInfo" />
+    <EntitySet Name="ProductGrowPlanDetails" EntityType="Self.ProductGrowPlanDetail" />
+    <EntitySet Name="ProductGrowPlanMasters" EntityType="Self.ProductGrowPlanMaster" />
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
+    <EntitySet Name="SaleEventComboes" EntityType="Self.SaleEventCombo" />
+    <EntitySet Name="SaleEventQuotas" EntityType="Self.SaleEventQuota" />
+    <EntitySet Name="SaleEventSingleProducts" EntityType="Self.SaleEventSingleProduct" />
+    <EntitySet Name="ShoppingCarts" EntityType="Self.ShoppingCart" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="SuppliersBulletinBoards" EntityType="Self.SuppliersBulletinBoard" />
+    <EntitySet Name="SuppliersFarms" EntityType="Self.SuppliersFarm" />
+    <EntitySet Name="SuppliersStoryDetails" EntityType="Self.SuppliersStoryDetail" />
+    <EntitySet Name="SuppliersStoryMasters" EntityType="Self.SuppliersStoryMaster" />
+    <EntitySet Name="SuppliersVedios" EntityType="Self.SuppliersVedio" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="SystemToSuppliersInfoes" EntityType="Self.SystemToSuppliersInfo" />
+    <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="Self.FK_ActivityFarmer_ActivityCity">
+      <End Role="ActivityCity" EntitySet="ActivityCities" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="Self.FK_ActivityFarmer_ActivityPhoto">
+      <End Role="ActivityPhoto" EntitySet="ActivityPhotoes" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="Self.FK_ActivityFarmer_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="Self.FK_ActivityOrder_ActivityFarmer">
+      <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+      <End Role="ActivityOrder" EntitySet="ActivityOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Advertising_Suppliers" Association="Self.FK_Advertising_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Advertising" EntitySet="Advertisings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Browse_Products" Association="Self.FK_Browse_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Browse" EntitySet="Browses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerSubscription_CustomerInfo" Association="Self.FK_CustomerSubscription_CustomerInfo">
+      <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+      <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsEventDetail_CustomerInfo" Association="Self.FK_DiscountPointsEventDetail_CustomerInfo">
+      <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+      <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerSubscription_Suppliers" Association="Self.FK_CustomerSubscription_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent">
+      <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvents" />
+      <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster" Association="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+      <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
+      <End Role="ProductGrowPlanDetail" EntitySet="ProductGrowPlanDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGrowPlanMaster_SuppliersFarm" Association="Self.FK_ProductGrowPlanMaster_SuppliersFarm">
+      <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
+      <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductImages" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Suppliers" Association="Self.FK_Products_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventProduct_Products" Association="Self.FK_SaleEventProduct_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShoppingCart_Products" Association="Self.FK_ShoppingCart_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEvent_Suppliers" Association="Self.FK_SaleEvent_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SaleEvent" EntitySet="SaleEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventA_B_SaleEvent" Association="Self.FK_SaleEventA_B_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvents" />
+      <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventProduct_SaleEvent" Association="Self.FK_SaleEventProduct_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvents" />
+      <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="Self.FK_SaleEventQuota_SaleEvent">
+      <End Role="SaleEvent" EntitySet="SaleEvents" />
+      <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersBulletinBoard_Suppliers" Association="Self.FK_SuppliersBulletinBoard_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersBulletinBoard" EntitySet="SuppliersBulletinBoards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersFarm_Suppliers" Association="Self.FK_SuppliersFarm_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersStoryMaster_Suppliers" Association="Self.FK_SuppliersStoryMaster_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersVedio_Suppliers" Association="Self.FK_SuppliersVedio_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersVedio" EntitySet="SuppliersVedios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemToSuppliersInfo_Suppliers" Association="Self.FK_SystemToSuppliersInfo_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersStoryDetail_SuppliersStoryMaster" Association="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster">
+      <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
+      <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

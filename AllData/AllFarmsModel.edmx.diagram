@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c5efda06294420fb1daed96b221e38b" Name="Diagram1">
+        <EntityTypeShape EntityType="farmsDBModel.ActivityCity" Width="1.5" PointX="5.75" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ActivityFarmer" Width="1.5" PointX="8" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ActivityOrder" Width="1.5" PointX="10.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ActivityPhoto" Width="1.5" PointX="5.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.AddressInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.Advertising" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.BlackListInfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.Browse" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ChatLog" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerInfo" Width="1.5" PointX="0.75" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerLoginlog" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerRefund" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerReturn" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerSubscription" Width="1.5" PointX="3" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.DiscountPointsEvent" Width="1.5" PointX="5.75" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.DiscountPointsEventDetail" Width="1.5" PointX="8" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.OrderDetail" Width="1.5" PointX="8.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.Order" Width="1.5" PointX="6" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.PostalCodeInfo" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ProductGrowPlanDetail" Width="1.5" PointX="7.5" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ProductGrowPlanMaster" Width="1.5" PointX="5.25" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ProductImage" Width="1.5" PointX="5.25" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="3" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="3" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventCombo" Width="1.5" PointX="5.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="5.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventSingleProduct" Width="1.5" PointX="8.25" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.ShoppingCart" Width="1.5" PointX="5.25" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.Supplier" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersBulletinBoard" Width="1.5" PointX="3" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersFarm" Width="1.5" PointX="3" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersStoryDetail" Width="1.5" PointX="5.25" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersStoryMaster" Width="1.5" PointX="3" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SuppliersVideo" Width="1.5" PointX="3" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SystemToSuppliersInfo" Width="1.5" PointX="3" PointY="58.5" IsExpanded="true" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityCity" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_Advertising_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_Browse_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_CustomerSubscription_CustomerInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_CustomerSubscription_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_DiscountPointsEventDetail_DiscountPointsEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ProductGrowPlanMaster_SuppliersFarm" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ProductImages_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_Products_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_ShoppingCart_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEvent_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventA_B_SaleEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_SaleEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersBulletinBoard_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersFarm_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersStoryMaster_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersVedio_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

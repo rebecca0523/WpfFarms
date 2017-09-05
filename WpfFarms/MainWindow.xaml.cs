@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfFarmsProducts;
 using WpfFarmsSupplier;
 
 namespace WpfFarms
@@ -53,8 +52,8 @@ namespace WpfFarms
 
         private void miProducts_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowProducts mainWindowProducts = new MainWindowProducts();
-            mainWindowProducts.ShowDialog();
+            //MainWindowProducts mainWindowProducts = new MainWindowProducts();
+            //mainWindowProducts.ShowDialog();
         }
     }
 }

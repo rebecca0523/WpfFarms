@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static WpfFarmsProducts.MainWindowProducts;
 
+
 namespace WpfFarmsProducts
 {
     /// <summary>
@@ -25,16 +27,16 @@ namespace WpfFarmsProducts
         {
             InitializeComponent();
         }
-                
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();     
-        
+
+        AllFarmsDBEntities allFarmsDBEntities = new AllFarmsDBEntities();
+
         private void CreateDataButton_Click(object sender, RoutedEventArgs e)
         {            
             //try
             //{
             Product product = new Product
             {
-                ProductID = farmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,//0筆資料時會錯誤
+                ProductID = allFarmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,//0筆資料時會錯誤
                 SupplierID= SupplierID,
                 ProductName = this.txtProductName.Text,
                 SellStartDate = this.dtpkSellStartDate.DisplayDate,
@@ -54,8 +56,8 @@ namespace WpfFarmsProducts
                 DeleteProduct=false
             };
 
-            this.farmsDBEntities.Products.Add(product);
-            this.farmsDBEntities.SaveChanges();
+            this.allFarmsDBEntities.Products.Add(product);
+            this.allFarmsDBEntities.SaveChanges();
 
             foreach (string i in allowableFileTypes)
             {
@@ -65,12 +67,12 @@ namespace WpfFarmsProducts
                 fileStream.Close();
                 ProductImage productImage = new ProductImage
                 {
-                    ProductImageID = farmsDBEntities.ProductImages.ToList().LastOrDefault().ProductImageID + 1,
+                    ProductImageID = allFarmsDBEntities.ProductImages.ToList().LastOrDefault().ProductImageID + 1,
                     ProductID = product.ProductID,
                     ProductImage1 = ImageByte
                 };
-                this.farmsDBEntities.ProductImages.Add(productImage);
-                this.farmsDBEntities.SaveChanges();
+                this.allFarmsDBEntities.ProductImages.Add(productImage);
+                this.allFarmsDBEntities.SaveChanges();
             }
 
             MessageBox.Show("新增檔案完成");

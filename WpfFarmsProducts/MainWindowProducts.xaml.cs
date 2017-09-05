@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static WpfFarmsProducts.ProductDescription;
 
 namespace WpfFarmsProducts
 {
@@ -27,13 +29,13 @@ namespace WpfFarmsProducts
             InitializeComponent();            
         }
 
-        farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        AllFarmsDBEntities allFarmsDBEntities = new AllFarmsDBEntities();
         public static int SupplierID =1; //暫定抓1號小農
         public static int GetSelectProductID;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID&&n.DeleteProduct==false).ToList();        
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID&&n.DeleteProduct==false).ToList();        
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -42,22 +44,22 @@ namespace WpfFarmsProducts
                   
             if (createProduct.ShowDialog() == true)
             {
-                this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
             }
 
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            this.farmsDBEntities.SaveChanges();
+            this.allFarmsDBEntities.SaveChanges();
         }
 
         private void cmdDeleteProducts_Click(object sender, RoutedEventArgs e)
         {
-            var deleteProduct = this.farmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
+            var deleteProduct = this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
             deleteProduct.DeleteProduct = true;
-            this.farmsDBEntities.SaveChanges();
-            this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+            this.allFarmsDBEntities.SaveChanges();
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
         }
 
         private void ProductsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,7 +67,7 @@ namespace WpfFarmsProducts
             DataGrid grid = sender as DataGrid;//背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背
             if (grid.SelectedItem != null)//背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背背
             {
-                GetSelectProductID = (grid.SelectedItem as Product).ProductID;//抓點中欄位的ProductID
+                GetSelectProductID = (grid.SelectedItem as Product).ProductID;//DataGrid的SelectionUnit要設為FullRow才抓的到ProductID
             }
         }               
 
@@ -80,9 +82,12 @@ namespace WpfFarmsProducts
                 ProductDescription productDescription = new ProductDescription();
                 if (productDescription.ShowDialog() == true)
                 {
+                    var SaveProductDescription = this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在SaveProductDescriptiont後面點到ProductDescription        
+                    SaveProductDescription.ProductDescription = AddProductDescription;
+                    this.allFarmsDBEntities.SaveChanges();
                     this.ProductsDataGrid.ItemsSource = null;
-                    this.ProductsDataGrid.ItemsSource = farmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
-                }                
+                    this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                }
             }
         }
 

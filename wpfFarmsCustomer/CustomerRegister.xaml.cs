@@ -57,9 +57,17 @@ namespace wpfFarmsCustomer
             pPassword.Value = txtPassword.Text;
             cmd.Parameters.Add(pPassword);
 
+           
             SqlParameter pGender = new SqlParameter("@Gender", SqlDbType.NChar,10);
             pGender.Direction = ParameterDirection.Input;
-            pGender.Value = txtGender.Text;
+            if (RaidioMen.IsChecked == true)
+            {
+                pGender.Value = "男";
+            }
+            else if(RadioFemale.IsChecked==true)
+            {
+                pGender.Value = "女";
+            }
             cmd.Parameters.Add(pGender);
 
             SqlParameter pPhone = new SqlParameter("@Phone", SqlDbType.NVarChar, 15);
@@ -104,7 +112,8 @@ namespace wpfFarmsCustomer
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
-            //TODO:MSGBOX關閉後註冊畫面也一併關閉
+            this.Close();
+
         }
     }
 }
