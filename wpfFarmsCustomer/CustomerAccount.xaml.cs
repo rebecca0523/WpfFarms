@@ -73,5 +73,10 @@ namespace wpfFarmsCustomer
             vedioCRUD.Show();
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowProducts mainWindowProducts = new MainWindowProducts();
+            mainWindowProducts.ShowDialog();
+        }
     }
 }
