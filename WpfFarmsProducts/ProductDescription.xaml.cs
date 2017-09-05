@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using static WpfFarmsProducts.MainWindowProducts;
+//using static WpfFarmsProducts.MainWindowProducts;
 
 namespace WpfFarmsProducts
 {
@@ -26,12 +26,15 @@ namespace WpfFarmsProducts
         }
 
         farmsDBEntities farmsDBEntities = new farmsDBEntities();
+        public static string AddProductDescription;
 
         private void cmdSaveProductDescription_Click(object sender, RoutedEventArgs e)
         {
-            var deleteProduct = this.farmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
-            deleteProduct.ProductDescription = txtProductDescription.Text;
-            this.farmsDBEntities.SaveChanges();
+            //var deleteProduct = this.farmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
+            //deleteProduct.ProductDescription = txtProductDescription.Text;
+            //this.farmsDBEntities.SaveChanges();
+
+            AddProductDescription = txtProductDescription.Text;
 
             MessageBox.Show("產品描述新增完成");
             this.DialogResult = true;
