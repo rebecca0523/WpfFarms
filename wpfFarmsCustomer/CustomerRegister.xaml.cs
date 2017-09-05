@@ -104,7 +104,8 @@ namespace wpfFarmsCustomer
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
-            //TODO:MSGBOX關閉後註冊畫面也一併關閉
+            this.Close();
+
         }
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="DeleteCustomer" Height="306.4" Width="528.2">
+        Title="DeleteCustomer" Height="400" Width="600">
     <Window.Resources>
-        <Style x:Key="CustomerInfoRow" TargetType="{x:Type DataGridRow}">
+        <Style x:Key="customerInfoRow" TargetType="{x:Type DataGridRow}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
@@ -46,8 +46,8 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid>
-        <DataGrid x:Name="CustomerInfoDataGrid" HorizontalAlignment="Center" Height="145" Margin="10,50,0,0" VerticalAlignment="Top" Width="305" HorizontalContentAlignment="Center" RowStyle="{DynamicResource CustomerInfoRow}" Loaded="CustomerInfoDataGrid_Loaded"/>
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid x:Name="customerInfoDataGrid" HorizontalAlignment="Center" Height="230" VerticalAlignment="Center" Width="375" RowStyle="{DynamicResource customerInfoRow}"/>
 
     </Grid>
 </Window>

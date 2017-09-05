@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfFarmsSupplier;
-using WpfMarketing;
 
 namespace wpfFarmsCustomer
 {
@@ -26,37 +25,20 @@ namespace wpfFarmsCustomer
             InitializeComponent();
         }
 
-        private void myMenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
+        private void MenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
         {
             SuppliersRegister suppRegister = new SuppliersRegister();
 
             suppRegister.Show();
-
-
-
-
-
         }
 
-        private void myMenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
+        private void MenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
         {
             SuppliersVedioCRUD vedioCRUD = new SuppliersVedioCRUD();
 
             vedioCRUD.Show();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
-        private void mimMarketing_Click(object sender, RoutedEventArgs e)
-        {
-            //行銷專區
-            WindowSalEvent SE = new WindowSalEvent();
-            SE.Show();
-
-
-        }
+      
     }
 }
