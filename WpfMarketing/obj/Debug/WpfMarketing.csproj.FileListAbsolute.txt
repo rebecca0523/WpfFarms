@@ -40,3 +40,4 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.exe
 C:\Users\chan\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\GeneratedInternalTypeHelper.g.cs

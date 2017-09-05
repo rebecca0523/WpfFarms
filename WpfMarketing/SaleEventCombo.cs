@@ -22,8 +22,6 @@ namespace WpfMarketing
         public Nullable<bool> Active { get; set; }
         public Nullable<System.DateTime> EdditTime { get; set; }
     
-        public virtual Product Product { get; set; }
-        public virtual Product Product1 { get; set; }
         public virtual SaleEvent SaleEvent { get; set; }
     }
 }

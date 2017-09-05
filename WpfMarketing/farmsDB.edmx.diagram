@@ -4,18 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="adced5150e3b4e2ebef555d1b5150b05" Name="Diagram1">
-        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEventSingleProduct" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+      <Diagram DiagramId="6afdbc5780d648cb9b0ec8ec27e6f832" Name="Diagram1">
+        <EntityTypeShape EntityType="farmsDBModel.Product" Width="1.5" PointX="3.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEvent" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventCombo" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventQuota" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.SaleEventSingleProduct" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
         <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="farmsDBModel.FK_SaleEventA_B_SaleEvent" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SaleEventProduct_SaleEvent" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SaleEventQuota_SaleEvent" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="farmsDBModel.SaleEventCombo" Width="1.5" PointX="3" PointY="3.875" />
-        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products" />
-        <AssociationConnector Association="farmsDBModel.FK_SaleEventAB_Products1" />
-        <AssociationConnector Association="farmsDBModel.FK_SaleEventA_B_SaleEvent" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
