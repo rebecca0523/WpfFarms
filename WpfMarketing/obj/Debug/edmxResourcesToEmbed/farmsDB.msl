@@ -68,12 +68,12 @@
     <EntitySetMapping Name="SaleEventSingleProducts">
       <EntityTypeMapping TypeName="farmsDBModel.SaleEventSingleProduct">
         <MappingFragment StoreEntitySet="SaleEventSingleProduct">
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
           <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
