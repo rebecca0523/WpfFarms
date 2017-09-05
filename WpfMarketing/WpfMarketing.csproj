@@ -109,6 +109,9 @@
     <Compile Include="SaleEventSingleProduct.cs">
       <DependentUpon>farmsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="WindowMarketing.xaml.cs">
+      <DependentUpon>WindowMarketing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowSalEvent.xaml.cs">
       <DependentUpon>WindowSalEvent.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowMarketing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowSalEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 namespace WpfMarketing
 {
     /// <summary>
-    /// WindowSalEvent.xaml 的互動邏輯
+    /// WindowMarketing.xaml 的互動邏輯
     /// </summary>
-    public partial class WindowSalEvent : Window
+    public partial class WindowMarketing : Window
     {
-
+        public WindowMarketing()
+        {
+            InitializeComponent();
+        }
         int loginSupplierID = 1;
         farmsDBEntities db = new farmsDBEntities();
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             LoadSaleEventListBox();
 
             //登入者既有商品
@@ -37,7 +38,6 @@ namespace WpfMarketing
             cboAProduct.ItemsSource = p.ToArray();
             cboBProduct.ItemsSource = p.ToArray();
         }
-
         //listbox加入登入賣家的特賣會
         private void LoadSaleEventListBox()
         {
@@ -66,7 +66,8 @@ namespace WpfMarketing
                      where t.SaleEventID == EVID
                      where t.Active == true
                      join p in db.Products on t.ProductID equals p.ProductID
-                     select new {
+                     select new
+                     {
                          ProductID = p.ProductID,
                          ProductName = p.ProductName,
                          UnitPrice = $"{p.UnitPrice:C0}",
@@ -81,19 +82,19 @@ namespace WpfMarketing
             int EVID = int.Parse(txkEVID.Text);
             var co = from t in db.SaleEventComboes.AsEnumerable()
                      where t.SaleEventID == EVID
-                     where t.Active==true
+                     where t.Active == true
                      join p in db.Products on t.AProductID equals p.ProductID
                      join p2 in db.Products on t.BProductID equals p2.ProductID
                      select new
                      {
-                         SaleEventComboID=t.SaleEventComboID,
+                         SaleEventComboID = t.SaleEventComboID,
                          AProductID = p.ProductID,
                          AProductName = p.ProductName,
                          AProductPrice = $"{p.UnitPrice:F0}",
-                         BProductID=p2.ProductID,
+                         BProductID = p2.ProductID,
                          BProductName = p2.ProductName,
                          BProductPrice = $"{p2.UnitPrice:F0}",
-                         SUMPrice = $"{p.UnitPrice+ p2.UnitPrice:F0}",
+                         SUMPrice = $"{p.UnitPrice + p2.UnitPrice:F0}",
                          Discount = $"{t.Discount:N2}",
                          DiscountPrice = $"{ (p.UnitPrice + p2.UnitPrice) * (decimal)t.Discount:N2}"
                      };
@@ -335,7 +336,7 @@ namespace WpfMarketing
                 return;
             }
             else { }
-            
+
             //存入SaleEventSingleProducts
             float F1;
             if (float.TryParse(txtProductDiscount.Text, out F1)) { } else { return; }
@@ -421,9 +422,9 @@ namespace WpfMarketing
             if (n < 0) return;
 
             var pa = (from t in db.Products
-                     where t.DeleteProduct == false
-                     orderby t.ProductID
-                     select t).Skip(n).FirstOrDefault();
+                      where t.DeleteProduct == false
+                      orderby t.ProductID
+                      select t).Skip(n).FirstOrDefault();
             txkComAProductID.Text = pa.ProductID.ToString();
             txkAProductPrice.Text = $"{pa.UnitPrice:F0}";
             CaculateComboDiscount();
@@ -435,9 +436,9 @@ namespace WpfMarketing
             if (n < 0) return;
 
             var pb = (from t in db.Products
-                     where t.DeleteProduct == false
-                     orderby t.ProductID
-                     select t).Skip(n).FirstOrDefault();
+                      where t.DeleteProduct == false
+                      orderby t.ProductID
+                      select t).Skip(n).FirstOrDefault();
             txkComBProductID.Text = pb.ProductID.ToString();
             txkBProductPrice.Text = $"{pb.UnitPrice:F0}";
             CaculateComboDiscount();
@@ -464,24 +465,25 @@ namespace WpfMarketing
         //商品組合ListBox選項改變
         private void lstSaleEventCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+
             //ListBox選中的商品ID
             int n = lstSaleEventCombo.SelectedIndex;
             if (n < 0) return;
             string s = lstSaleEventCombo.SelectedItem.ToString();
             char[] delimiterChars = { '=', ',' };
             String[] substrings = s.Split(delimiterChars);
-            
-       
+
+
 
             txkLisAProductID.Text = substrings[3];
             txkLisBProductID.Text = substrings[9];
 
             int ListAProductID;
             int ListBProductID;
-            if (int.TryParse(txkLisAProductID.Text, out ListAProductID)&&
+            if (int.TryParse(txkLisAProductID.Text, out ListAProductID) &&
                 int.TryParse(txkLisBProductID.Text, out ListBProductID)
-                ) { } else {return; }
+                ) { }
+            else { return; }
             //ID小於AB商品ID 以被刪除
             int ad = (from t in db.Products
                       where t.ProductID < ListAProductID
@@ -493,16 +495,16 @@ namespace WpfMarketing
                       where t.DeleteProduct == true
                       select t).Count();
             //ListBox選中的組合特賣ID
-       
+
             txkSEComboID.Text = substrings[1];
             int SECBID = int.Parse(txkSEComboID.Text);
             //特價值
             var sec = (from t in db.SaleEventComboes
-                      where t.SaleEventComboID == SECBID
-                      select t).FirstOrDefault();
+                       where t.SaleEventComboID == SECBID
+                       select t).FirstOrDefault();
 
             txtComboDiscount.Text = sec.Discount.ToString();
-            
+
             //傳至ComboBox
             cboAProduct.SelectedIndex = ListAProductID - ad - 1;
             cboBProduct.SelectedIndex = ListBProductID - bd - 1;
@@ -518,12 +520,13 @@ namespace WpfMarketing
             float DC;
             int APID;
             int BPID;
-            if (int.TryParse(txkSEComboID.Text,out SECBID) && 
-                (float.TryParse(txtComboDiscount.Text,out DC )) &&
+            if (int.TryParse(txkSEComboID.Text, out SECBID) &&
+                (float.TryParse(txtComboDiscount.Text, out DC)) &&
                 (int.TryParse(txkLisAProductID.Text, out APID) &&
-                (int.TryParse(txkLisBProductID.Text, out BPID) 
+                (int.TryParse(txkLisBProductID.Text, out BPID)
                 )))
-            { } else { return; }
+            { }
+            else { return; }
             if (SECBID == 0) { return; }
 
             var evcb = (from t in db.SaleEventComboes
@@ -549,20 +552,20 @@ namespace WpfMarketing
         //新增組合商品
         private void btnNewCombo_Click(object sender, RoutedEventArgs e)
         {
-            if (cboAProduct.SelectedIndex<=0 && cboBProduct.SelectedIndex<0) { MessageBox.Show("請選擇要新增的商品組合"); } else { }
+            if (cboAProduct.SelectedIndex <= 0 && cboBProduct.SelectedIndex < 0) { MessageBox.Show("請選擇要新增的商品組合"); } else { }
             int APID;
             int BPID;
             float DC;
             int EVID;
             if (int.TryParse(txkComAProductID.Text, out APID) &&
-                int.TryParse(txkBProductPrice.Text,out BPID)&&
+                int.TryParse(txkBProductPrice.Text, out BPID) &&
                 int.TryParse(txkEVID.Text, out EVID) &&
        (float.TryParse(txtComboDiscount.Text, out DC)))
             { }
             else { return; }
-           
 
-            SaleEventCombo SEC = new SaleEventCombo { SaleEventID= EVID, AProductID=APID,BProductID=BPID,Discount=DC,Active=true,EdditTime=DateTime.Now};
+
+            SaleEventCombo SEC = new SaleEventCombo { SaleEventID = EVID, AProductID = APID, BProductID = BPID, Discount = DC, Active = true, EdditTime = DateTime.Now };
             this.db.SaleEventComboes.Add(SEC);
 
             var Aproduct = (from t in db.Products
@@ -574,7 +577,7 @@ namespace WpfMarketing
                             where t.ProductID == BPID
                             select t).FirstOrDefault();
             Bproduct.DiscountedCombo = true;
-            
+
             this.db.SaveChanges();
 
             LoadComboListBox();
@@ -608,7 +611,7 @@ namespace WpfMarketing
                             select t).FirstOrDefault();
             Bproduct.DiscountedCombo = false;
 
-            
+
             evcb.EdditTime = DateTime.Now;
             this.db.SaveChanges();
 
@@ -620,6 +623,4 @@ namespace WpfMarketing
             CaculateComboDiscount();
         }
     }
-    
-
 }
