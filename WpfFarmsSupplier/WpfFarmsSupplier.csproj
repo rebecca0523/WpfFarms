@@ -65,10 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="LINQtoSQL.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LINQtoSQL.dbml</DependentUpon>
+    <Compile Include="SupplierMainWindow.xaml.cs">
+      <DependentUpon>SupplierMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SuppliersMainCRUD.xaml.cs">
       <DependentUpon>SuppliersMainCRUD.xaml</DependentUpon>
@@ -79,18 +77,14 @@
     <Compile Include="SuppliersVedioCRUD.xaml.cs">
       <DependentUpon>SuppliersVedioCRUD.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="SupplierMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SuppliersMainCRUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,14 +116,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="LINQtoSQL.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>LINQtoSQL.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LINQtoSQL.dbml.layout">
-      <DependentUpon>LINQtoSQL.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AllData.Supplier.datasource" />
     <None Include="Properties\DataSources\Supplier.datasource" />

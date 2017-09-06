@@ -54,12 +54,10 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.xml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\EntityFramework.SqlServer.xml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\zh-Hant\EntityFramework.resources.dll
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csprojResolveAssemblyReference.cache
-D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\App.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.cache
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier_MarkupCompile.lref
-D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\MainWindow.baml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersMainCRUD.baml
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.g.resources
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resources.resources
@@ -157,3 +155,5 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml

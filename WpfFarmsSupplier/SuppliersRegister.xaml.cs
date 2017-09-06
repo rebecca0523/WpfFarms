@@ -29,6 +29,12 @@ namespace WpfFarmsSupplier
 
 
         string Email ="testselina66@ms68.hinet.net";
+
+
+
+
+
+
         System.Windows.Data.CollectionViewSource supplierViewSource;
         Supplier SupplierTable;
         int count;
@@ -39,6 +45,10 @@ namespace WpfFarmsSupplier
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+           
+
+
              supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));
             // 透過設定 CollectionViewSource.Source 屬性載入資料: 
              count = context.Suppliers.Where(s => s.email1 == Email).Count();
