@@ -67,8 +67,6 @@
         <AssociationConnector Association="farmsDBModel.FK_SuppliersVedio_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="farmsDBModel.Advertising" Width="1.5" PointX="3" PointY="19.875" />
-        <AssociationConnector Association="farmsDBModel.FK_Advertising_Suppliers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

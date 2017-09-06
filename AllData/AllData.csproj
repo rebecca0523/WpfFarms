@@ -65,9 +65,6 @@
     <Compile Include="AddressInfo.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Advertising.cs">
-      <DependentUpon>AllFarmsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="AllFarmsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
