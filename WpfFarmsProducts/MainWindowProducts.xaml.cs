@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static WpfFarmsProducts.ProductDescription;
+using static AllData.CustomerClass;
 
 namespace WpfFarmsProducts
 {
@@ -30,13 +31,15 @@ namespace WpfFarmsProducts
         }
 
         AllFarmsDBEntities allFarmsDBEntities = new AllFarmsDBEntities();
-        public static int SupplierID =4; //暫定抓1號小農
+        //public static int SupplierID =1; //暫定抓1號小農
         public static int GetSelectProductID;
         public static string  SendProductDescription;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n=>n.SupplierID==SupplierID&&n.DeleteProduct==false).ToList();        
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n=>n.SupplierID==loginCustomerID&&n.DeleteProduct==false).ToList();
+            //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +48,9 @@ namespace WpfFarmsProducts
                   
             if (createProduct.ShowDialog() == true)
             {
-                this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
+
             }
 
         }
@@ -60,7 +65,9 @@ namespace WpfFarmsProducts
             var deleteProduct = this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault();//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在deleteProduct後面點到DeleteProduct        
             deleteProduct.DeleteProduct = true;
             this.allFarmsDBEntities.SaveChanges();
-            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+            
+            //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
         }
 
         private void ProductsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,15 +95,24 @@ namespace WpfFarmsProducts
 
                     this.allFarmsDBEntities.SaveChanges();
                     this.ProductsDataGrid.ItemsSource = null;
-                    this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                    //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+                    this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
+
                 }
             }
         }
 
         private void cmdChangeImages_Click(object sender, RoutedEventArgs e)
         {
-            ChangeImages changeImages = new ChangeImages();
-            changeImages.ShowDialog();
+            if (GetSelectProductID == 0)
+            {
+                MessageBox.Show("請選擇修改哪筆資料");
+            }
+            else
+            {
+                ChangeImages changeImages = new ChangeImages();
+                changeImages.ShowDialog();
+            }
         }
     }
 }

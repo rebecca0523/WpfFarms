@@ -93,10 +93,13 @@ D:\99GitHub\WpfFarms\WpfMarketing\bin\Debug\zh-Hant\EntityFramework.resources.dl
 D:\99GitHub\WpfFarms\WpfMarketing\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csprojResolveAssemblyReference.cache
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.g.cs
+D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowSalEvent.g.cs
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\App.g.cs
+D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_Content.g.cs
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_MarkupCompile.cache
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_MarkupCompile.lref
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.baml
+D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowSalEvent.baml
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.g.resources
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.Properties.Resources.resources
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.GenerateResource.Cache
@@ -108,6 +111,4 @@ C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll.config
-D:\99GitHub\WpfFarms\WpfMarketing\bin\Debug\AllData.dll
-D:\99GitHub\WpfFarms\WpfMarketing\bin\Debug\AllData.pdb
-D:\99GitHub\WpfFarms\WpfMarketing\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache

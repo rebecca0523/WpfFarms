@@ -321,3 +321,4 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\wpfFarmsCustomer\bin\Debug\zh-Hant\E
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\wpfFarmsCustomer\obj\Debug\LoginAndRegister.g.cs
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\wpfFarmsCustomer\obj\Debug\App.baml
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\wpfFarmsCustomer\obj\Debug\LoginAndRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.CoreCompileInputs.cache

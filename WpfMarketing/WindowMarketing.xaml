@@ -54,11 +54,13 @@
         <DataTemplate x:Key="ADDataTemplate" >
             <UniformGrid Rows="3">
                 <TextBlock Text="{Binding AdvertisingITitle,Mode=OneWay}" DockPanel.Dock="Left" />
-                 <TextBlock Text="{Binding AdvertisingStartTime,Mode=OneWay}" DockPanel.Dock="Left"  />
-                 <TextBlock Text="{Binding AdvertisingEndTime,Mode=OneWay}" DockPanel.Dock="Left" />
-                
+                <TextBlock Text="{Binding AdvertisingStartTime,Mode=OneWay}" DockPanel.Dock="Left"  />
+                <TextBlock Text="{Binding AdvertisingEndTime,Mode=OneWay}" DockPanel.Dock="Left" />
+
             </UniformGrid>
         </DataTemplate>
+
+
     </Window.Resources>
 
     <Grid>
@@ -277,7 +279,7 @@
                                     <RowDefinition Height="55*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="0,0,-0.113,2.226" TextWrapping="Wrap" Text="廣告標題" TextAlignment="Center"/>
-                                <TextBox x:Name="txtADTitle" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="請輸入標題"/>
+                                <TextBox x:Name="txtADTitle" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="請輸入標題" KeyDown="txtADTitle_KeyDown"/>
 
                             </Grid>
                             <UniformGrid Margin="0,0.509,-0.113,8" Grid.Row="1" Background="#FFF3E3E3" Rows="2" Columns="2">
@@ -302,7 +304,7 @@
                             </Grid>
 
                             <TextBlock Margin="0,0.019,-0.113,359.472" Grid.Row="4" TextWrapping="Wrap" Text="廣告內容" TextAlignment="Center" Grid.RowSpan="2"/>
-                            <TextBox x:Name="txtADContent" Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="請輸入廣告內容"/>
+                            <TextBox x:Name="txtADContent" Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="請輸入廣告內容" KeyDown="txtADContent_KeyDown"/>
 
                         </Grid>
                         <Grid Grid.Column="2" Margin="0,3,0,0" Background="#FFE5EBF7">
@@ -311,10 +313,12 @@
                                 <RowDefinition Height="323*"/>
                             </Grid.RowDefinitions>
                             <Button x:Name="btnNewAD" Content="新增" HorizontalAlignment="Left" Margin="237,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnNewAD_Click"/>
-                            <Button x:Name="btnAlter" Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
-                            <Button x:Name="btnDelete" Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
-                            <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}"/>
+                            <Button x:Name="btnAlter" Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnAlter_Click"/>
+                            <Button x:Name="btnDelete" Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+                            <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}" Stretch="UniformToFill" />
                             <TextBlock x:Name="txkADID" HorizontalAlignment="Left" Margin="162,121,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+                            <TextBlock x:Name="txkADTitleOnImage" HorizontalAlignment="Left" Margin="30,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="77" Width="262" FontSize="36"/>
+                            <TextBlock x:Name="txkADContentOnImage" HorizontalAlignment="Left" Margin="30,269,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="191" Width="516" FontSize="24"/>
                         </Grid>
 
 
@@ -323,7 +327,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="訂閱" Margin="-2,-2,0,-5" >
-              
+
             </TabItem>
 
 

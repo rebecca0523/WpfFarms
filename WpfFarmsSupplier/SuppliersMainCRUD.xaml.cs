@@ -51,15 +51,17 @@ namespace WpfFarmsSupplier
             context.Suppliers.Add(SupplierTable);
             context.SaveChanges();
             supplierViewSource.Source = context.Suppliers.ToList();
+            MessageBox.Show("新增成功");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();
             supplierViewSource.Source = context.Suppliers.ToList();
+            MessageBox.Show("修改成功");
         }
 
-        int suppID;
+       
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();

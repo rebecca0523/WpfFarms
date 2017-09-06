@@ -215,3 +215,4 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThe
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache

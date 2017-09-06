@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static WpfFarmsProducts.MainWindowProducts;
+using static AllData.CustomerClass;
 
 
 namespace WpfFarmsProducts
@@ -37,14 +38,15 @@ namespace WpfFarmsProducts
             Product product = new Product
             {
                 ProductID = allFarmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,//0筆資料時會錯誤
-                SupplierID= SupplierID,
+                //SupplierID= SupplierID,
+                SupplierID = loginCustomerID,
                 ProductName = this.txtProductName.Text,
-                SellStartDate = this.dtpkSellStartDate.DisplayDate,
-                SellEndDate = this.dtpkSellEndDate.DisplayDate,
+                SellStartDate = this.dtpkSellStartDate.SelectedDate,
+                SellEndDate = this.dtpkSellEndDate.SelectedDate,
                 MarkPrice = decimal.Parse(this.txtMarkPrice.Text),//要防輸入型別的錯誤
                 UnitPrice = decimal.Parse(this.txtUnitPrice.Text),//要防輸入型別的錯誤
                 PreOrder = this.chkPreOrder.IsChecked,
-                ShippedDate = this.dtpkShippedDate.DisplayDate,
+                ShippedDate = this.dtpkShippedDate.SelectedDate,
                 TotalQTY = int.Parse(this.txtTotalQTY.Text),//要防輸入型別的錯誤
                 CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//要防輸入型別的錯誤
                 QuantitySold = int.Parse(this.txtQuantitySold.Text),//要防輸入型別的錯誤
@@ -60,15 +62,20 @@ namespace WpfFarmsProducts
             this.allFarmsDBEntities.SaveChanges();
             
 
-            foreach (string i in openFileDialog.SafeFileNames)
+            foreach (string i in openFileDialog.FileNames)
             {
                 //FileStream fileStream = new FileStream(i, FileMode.Open);
                 //byte[] ImageByte = new byte[fileStream.Length];
                 //fileStream.Read(ImageByte, 0, ImageByte.Length);
                 //fileStream.Close();
-                
-                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", i);
-                File.Copy(openFileDialog.FileName, dest);
+
+                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
+                var files = System.IO.Directory.GetFiles("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages");
+
+                if (files.Contains(i))
+                {
+                    File.Copy(i, dest);//背背背背背背
+                }
 
                 ProductImage productImage = new ProductImage
                 {
