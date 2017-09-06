@@ -14,14 +14,14 @@ namespace AllData
     
     public partial class Advertising
     {
-        public int SupplierID { get; set; }
+        public Nullable<int> SupplierID { get; set; }
         public int AdvertisingID { get; set; }
         public string AdvertisingITitle { get; set; }
         public string AdvertisingIContent { get; set; }
-        public System.DateTime AdvertisingStarTime { get; set; }
-        public System.DateTime AdvertisingEndTime { get; set; }
+        public Nullable<System.DateTime> AdvertisingStartTime { get; set; }
+        public Nullable<System.DateTime> AdvertisingEndTime { get; set; }
         public byte[] AdvertisingPhoto { get; set; }
-        public bool AlreadyPaid { get; set; }
+        public Nullable<bool> AlreadyPaid { get; set; }
         public string AdvertisingLink { get; set; }
         public Nullable<System.DateTime> EdditTime { get; set; }
     

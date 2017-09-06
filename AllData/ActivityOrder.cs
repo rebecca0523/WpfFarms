@@ -16,7 +16,7 @@ namespace AllData
     {
         public Nullable<int> ActivityFarmerID { get; set; }
         public int ActivityOrderID { get; set; }
-        public Nullable<int> CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<decimal> TotalPrice { get; set; }
         public string ATMBank { get; set; }

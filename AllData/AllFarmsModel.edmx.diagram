@@ -4,13 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c5efda06294420fb1daed96b221e38b" Name="Diagram1" ZoomLevel="55">
+      <Diagram DiagramId="1c5efda06294420fb1daed96b221e38b" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="farmsDBModel.ActivityCity" Width="1.5" PointX="5.75" PointY="27.5" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.ActivityFarmer" Width="1.5" PointX="8" PointY="26.875" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.ActivityOrder" Width="1.5" PointX="10.25" PointY="27.75" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.ActivityPhoto" Width="1.5" PointX="5.75" PointY="33.875" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.AddressInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.Advertising" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.BlackListInfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.Browse" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.ChatLog" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -45,7 +44,6 @@
         <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer" ManuallyRouted="false" />
-        <AssociationConnector Association="farmsDBModel.FK_Advertising_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_Browse_Products" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_CustomerSubscription_CustomerInfo" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo" ManuallyRouted="false" />
@@ -69,6 +67,8 @@
         <AssociationConnector Association="farmsDBModel.FK_SuppliersVedio_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="farmsDBModel.Advertising" Width="1.5" PointX="3" PointY="19.875" />
+        <AssociationConnector Association="farmsDBModel.FK_Advertising_Suppliers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

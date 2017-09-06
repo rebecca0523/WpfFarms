@@ -13,7 +13,6 @@
       <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
         <MappingFragment StoreEntitySet="ActivityFarmer">
           <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
-          <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
           <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
           <ScalarProperty Name="CityID" ColumnName="CityID" />
@@ -66,22 +65,6 @@
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Advertisings">
-      <EntityTypeMapping TypeName="farmsDBModel.Advertising">
-        <MappingFragment StoreEntitySet="Advertising">
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
-          <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
-          <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
-          <ScalarProperty Name="AdvertisingStarTime" ColumnName="AdvertisingStarTime" />
-          <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
-          <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
-          <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
-          <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -297,9 +280,9 @@
     <EntitySetMapping Name="ProductImages">
       <EntityTypeMapping TypeName="farmsDBModel.ProductImage">
         <MappingFragment StoreEntitySet="ProductImages">
+          <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
           <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -474,9 +457,9 @@
     <EntitySetMapping Name="SuppliersVideos">
       <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
         <MappingFragment StoreEntitySet="SuppliersVideo">
+          <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
           <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
           <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-          <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
@@ -511,6 +494,22 @@
           <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
           <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
           <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisings">
+      <EntityTypeMapping TypeName="farmsDBModel.Advertising">
+        <MappingFragment StoreEntitySet="Advertising">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
+          <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
+          <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
+          <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
+          <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
+          <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
+          <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
+          <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

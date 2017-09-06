@@ -139,8 +139,6 @@ D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.Generate
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.exe
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
 C:\Users\III\Desktop\新增資料夾 (5)\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csprojResolveAssemblyReference.cache
 C:\Users\III\Desktop\新增資料夾 (5)\WpfFarms\WpfFarmsProducts\obj\Debug\CreateProduct.g.cs
 C:\Users\III\Desktop\新增資料夾 (5)\WpfFarms\WpfFarmsProducts\obj\Debug\MainWindowProducts.g.cs

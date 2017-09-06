@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AllData;
+using Microsoft.Win32;
+using System.IO;
 
 namespace WpfMarketing
 {
@@ -24,7 +27,7 @@ namespace WpfMarketing
             InitializeComponent();
         }
         int loginSupplierID = 1;
-        farmsDBEntities db = new farmsDBEntities();
+        AllFarmsDBEntities db = new AllFarmsDBEntities();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadSaleEventListBox();
@@ -122,9 +125,9 @@ namespace WpfMarketing
             //顯示標題 
             txtTitle.Text = se.SaleEventTitle;
             //顯示日期
-            dtpStart.SelectedDate = se.SaleEventStart;
+            dtpSEStart.SelectedDate = se.SaleEventStart;
             //顯示日期 
-            dtpEnd.SelectedDate = se.SaleEventEnd;
+            dtpSEEnd.SelectedDate = se.SaleEventEnd;
             //顯示內容
             txtSEContent.Text = se.SaleEventContent;
 
@@ -147,8 +150,8 @@ namespace WpfMarketing
                       select t).FirstOrDefault();
 
             string evTitle = txtTitle.Text;
-            var evStart = dtpStart.SelectedDate;
-            var evEnd = dtpEnd.SelectedDate;
+            var evStart = dtpSEStart.SelectedDate;
+            var evEnd = dtpSEEnd.SelectedDate;
             string evContent = txtSEContent.Text;
 
             ev.SaleEventTitle = evTitle;
@@ -167,8 +170,8 @@ namespace WpfMarketing
             {
                 SupplierID = loginSupplierID,
                 SaleEventTitle = txtTitle.Text,
-                SaleEventStart = dtpStart.SelectedDate,
-                SaleEventEnd = dtpEnd.SelectedDate,
+                SaleEventStart = dtpSEStart.SelectedDate,
+                SaleEventEnd = dtpSEEnd.SelectedDate,
                 SaleEventContent = txtSEContent.Text,
                 EdditTime = DateTime.Now
             };
@@ -621,6 +624,55 @@ namespace WpfMarketing
         private void txtComboDiscount_KeyUp(object sender, KeyEventArgs e)
         {
             CaculateComboDiscount();
+        }
+
+
+
+        //AD.開啟廣告圖片
+        private void btnOpenDialog_Click(object sender, RoutedEventArgs e)
+        {
+
+            Stream myStream = null;
+            System.Windows.Forms.OpenFileDialog op = new System.Windows.Forms.OpenFileDialog();
+            op.InitialDirectory = "c:\\";
+            op.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
+           
+
+            if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = op.OpenFile()) != null)
+                    {
+                        imgAD.Source = new BitmapImage(new Uri(op.FileName));
+                        txtFileName.Text = op.FileName;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
+
+        }
+        //AD 新增廣告
+        private void btnNewAD_Click(object sender, RoutedEventArgs e)
+        {
+
+          
+
+           var End = dtpADEnd.SelectedDate;
+            Advertising ADDB = new Advertising {
+                SupplierID = loginSupplierID,
+                AdvertisingITitle = txtADTitle.Text,
+                AdvertisingIContent = txtADContent.Text,
+              
+
+
+                EdditTime =DateTime.Now
+
+            };   
+
         }
     }
 }

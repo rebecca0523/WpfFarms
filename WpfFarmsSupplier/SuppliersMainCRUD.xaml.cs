@@ -23,11 +23,14 @@ namespace WpfFarmsSupplier
         public SuppliersMainCRUD()
         {
             InitializeComponent();
+
+            
             
         }
         System.Windows.Data.CollectionViewSource supplierViewSource;
         AllFarmsDBEntities context = new AllFarmsDBEntities();
 
+        
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

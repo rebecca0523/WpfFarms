@@ -46,5 +46,12 @@ namespace WpfFarmsSupplier
 
             vedioCRUD.Show();
         }
+
+        private void MenuItemVedioCRUDMulti_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersVedioCRUDMulti vedioCRUD = new SuppliersVedioCRUDMulti();
+
+            vedioCRUD.Show();
+        }
     }
 }

@@ -91,8 +91,8 @@
                             </Grid.RowDefinitions>
                             <UniformGrid Columns="5" Margin="0">
                                 <TextBox x:Name="txtTitle" TextWrapping="Wrap"/>
-                                <DatePicker x:Name="dtpStart" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
-                                <DatePicker x:Name="dtpEnd" VerticalContentAlignment="Stretch"/>
+                                <DatePicker x:Name="dtpSEStart" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                <DatePicker x:Name="dtpSEEnd" VerticalContentAlignment="Stretch"/>
                                 <Button x:Name="btnNewSaleEvent" Content="新增活動" Click="btnNewSaleEvent_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                                 <Button x:Name="btnSave" Content="修改/儲存" Background="#FFF0D5F1" Click="btnSave_Click" Grid.Column="2" Margin="0"/>
                             </UniformGrid>
@@ -234,6 +234,7 @@
 
                 </Grid>
             </TabItem>
+
             <TabItem Header="廣告設定" FontSize="20">
                 <Grid>
                     <Grid>
@@ -244,10 +245,10 @@
                         </Grid.ColumnDefinitions>
                         <Grid Margin="0" >
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="56*"/>
-                                <RowDefinition Height="809*"/>
+                                <RowDefinition Height="36*"/>
+                                <RowDefinition Height="827*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Margin="0" TextWrapping="Wrap" Text="TextBlock" Background="#FFF8F8F8"/>
+                            <TextBlock Margin="0" TextWrapping="Wrap" Text="廣告名稱" Background="#FFF8F8F8" TextAlignment="Center"/>
                             <ListBox Margin="0,2,0,0" Grid.Row="1" Background="#FFF5E1E1"/>
 
                         </Grid>
@@ -267,7 +268,7 @@
                                     <RowDefinition Height="55*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="0,0,-0.113,2.226" TextWrapping="Wrap" Text="廣告標題" TextAlignment="Center"/>
-                                <TextBox Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox"/>
+                                <TextBox x:Name="txtADTitle" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="請輸入標題"/>
 
                             </Grid>
                             <UniformGrid Margin="0,0.509,-0.113,8" Grid.Row="1" Background="#FFF3E3E3" Rows="2" Columns="2">
@@ -277,8 +278,8 @@
                                 <Border BorderThickness="1" BorderBrush="Black">
                                     <TextBlock Text="結束日期" TextAlignment="Center" />
                                 </Border>
-                                <DatePicker/>
-                                <DatePicker/>
+                                <DatePicker x:Name="dtpADStar"/>
+                                <DatePicker x:Name="dtpADEnd"/>
                             </UniformGrid>
                             <TextBlock Margin="0,0,-0.113,2.038" Grid.Row="2" TextWrapping="Wrap" Text="廣告圖片" Background="#FFEEE5E5" TextAlignment="Center"/>
 
@@ -287,19 +288,38 @@
                                     <ColumnDefinition Width="269*"/>
                                     <ColumnDefinition Width="82*"/>
                                 </Grid.ColumnDefinitions>
-                                <Button Content="Button" Grid.Column="2" Margin="0"/>
-                                <TextBox Margin="0" TextWrapping="Wrap" Text="TextBox"/>
+                                <Button x:Name="btnOpenDialog" Content="上傳" Grid.Column="2" Margin="0" Click="btnOpenDialog_Click"/>
+                                <TextBox x:Name="txtFileName" Margin="0" TextWrapping="Wrap"/>
                             </Grid>
 
                             <TextBlock Margin="0,0.019,-0.113,359.472" Grid.Row="4" TextWrapping="Wrap" Text="廣告內容" TextAlignment="Center" Grid.RowSpan="2"/>
-                            <TextBox Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="TextBox"/>
-
+                            <TextBox x:Name="txtADContent" Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="請輸入廣告內容"/>
 
                         </Grid>
+                        <Grid Grid.Column="2" Margin="0,3,0,0" Background="#FFE5EBF7">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="537*"/>
+                                <RowDefinition Height="323*"/>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="btnNewAD" Content="新增" HorizontalAlignment="Left" Margin="237,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnNewAD_Click"/>
+                            <Button Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+                            <Button Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+                            <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}"/>
+                        </Grid>
+
+
 
                     </Grid>
                 </Grid>
             </TabItem>
+            <TabItem Header="訂閱" Margin="-2,-2,0,-5" >
+              
+            </TabItem>
+
+
+
+
+
         </TabControl>
 
     </Grid>

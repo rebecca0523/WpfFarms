@@ -26,6 +26,7 @@ namespace AllData
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> LastUpdateUserID { get; set; }
         public Nullable<System.DateTime> LastUpdateDate { get; set; }
+        public string SuppliersVideoTitle { get; set; }
     
         public virtual Supplier Supplier { get; set; }
     }
