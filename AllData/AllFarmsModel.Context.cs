@@ -60,5 +60,6 @@ namespace AllData
         public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
+        public virtual DbSet<Advertising> Advertisings { get; set; }
     }
 }

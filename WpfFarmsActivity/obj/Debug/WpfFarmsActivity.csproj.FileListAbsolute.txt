@@ -142,7 +142,6 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsAc
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_Content.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.baml

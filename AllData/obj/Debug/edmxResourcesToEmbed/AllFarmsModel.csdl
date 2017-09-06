@@ -41,7 +41,7 @@
     </Key>
     <Property Name="ActivityFarmerID" Type="Int32" />
     <Property Name="ActivityOrderID" Type="Int32" Nullable="false" />
-    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" />
     <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -69,22 +69,6 @@
     <Property Name="CustomerID" Type="Int32" Nullable="false" />
     <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Advertising">
-    <Key>
-      <PropertyRef Name="AdvertisingID" />
-    </Key>
-    <Property Name="SupplierID" Type="Int32" Nullable="false" />
-    <Property Name="AdvertisingID" Type="Int32" Nullable="false" />
-    <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="AdvertisingStarTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="AdvertisingEndTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="AlreadyPaid" Type="Boolean" Nullable="false" />
-    <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EdditTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Supplier" Relationship="Self.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Suppliers" />
   </EntityType>
   <EntityType Name="BlackListInfo">
     <Key>
@@ -167,7 +151,7 @@
     <Key>
       <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="ReturnID" Type="Int32" />
+    <Property Name="ReturnID" Type="Int32" Nullable="false" />
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="CustomerID" Type="Int32" />
     <Property Name="ReturnOrder" Type="Boolean" />
@@ -306,6 +290,7 @@
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="ProductImage1" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Product" Relationship="Self.FK_ProductImages_Products" FromRole="ProductImages" ToRole="Products" />
+    <Property Name="ProductImagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -421,7 +406,6 @@
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
     <Property Name="LastUpdateUserID" Type="Int32" />
     <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_Suppliers" FromRole="Suppliers" ToRole="ActivityFarmer" />
-    <NavigationProperty Name="Advertisings" Relationship="Self.FK_Advertising_Suppliers" FromRole="Suppliers" ToRole="Advertising" />
     <NavigationProperty Name="CustomerSubscriptions" Relationship="Self.FK_CustomerSubscription_Suppliers" FromRole="Suppliers" ToRole="CustomerSubscription" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Products_Suppliers" FromRole="Suppliers" ToRole="Products" />
     <NavigationProperty Name="SaleEvents" Relationship="Self.FK_SaleEvent_Suppliers" FromRole="Suppliers" ToRole="SaleEvent" />
@@ -430,6 +414,7 @@
     <NavigationProperty Name="SuppliersStoryMasters" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="Suppliers" ToRole="SuppliersStoryMaster" />
     <NavigationProperty Name="SuppliersVideos" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="Suppliers" ToRole="SuppliersVideo" />
     <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="Suppliers" ToRole="SystemToSuppliersInfo" />
+    <NavigationProperty Name="Advertisings" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Supplier" ToRole="Advertising" />
   </EntityType>
   <EntityType Name="SuppliersBulletinBoard">
     <Key>
@@ -513,6 +498,7 @@
     <Property Name="LastUpdateUserID" Type="Int32" />
     <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="SuppliersVideo" ToRole="Suppliers" />
+    <Property Name="SuppliersVideoTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -583,18 +569,6 @@
       </Principal>
       <Dependent Role="ActivityOrder">
         <PropertyRef Name="ActivityFarmerID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Advertising_Suppliers">
-    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
-    <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Suppliers">
-        <PropertyRef Name="SupplierID" />
-      </Principal>
-      <Dependent Role="Advertising">
-        <PropertyRef Name="SupplierID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -880,7 +854,6 @@
     <EntitySet Name="ActivityOrders" EntityType="Self.ActivityOrder" />
     <EntitySet Name="ActivityPhotoes" EntityType="Self.ActivityPhoto" />
     <EntitySet Name="AddressInfoes" EntityType="Self.AddressInfo" />
-    <EntitySet Name="Advertisings" EntityType="Self.Advertising" />
     <EntitySet Name="BlackListInfoes" EntityType="Self.BlackListInfo" />
     <EntitySet Name="Browses" EntityType="Self.Browse" />
     <EntitySet Name="ChatLogs" EntityType="Self.ChatLog" />
@@ -926,10 +899,6 @@
     <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="Self.FK_ActivityOrder_ActivityFarmer">
       <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
       <End Role="ActivityOrder" EntitySet="ActivityOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Advertising_Suppliers" Association="Self.FK_Advertising_Suppliers">
-      <End Role="Suppliers" EntitySet="Suppliers" />
-      <End Role="Advertising" EntitySet="Advertisings" />
     </AssociationSet>
     <AssociationSet Name="FK_Browse_Products" Association="Self.FK_Browse_Products">
       <End Role="Products" EntitySet="Products" />
@@ -1023,5 +992,38 @@
       <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
       <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
     </AssociationSet>
+    <EntitySet Name="Advertisings" EntityType="farmsDBModel.Advertising" />
+    <AssociationSet Name="FK_Advertising_Suppliers" Association="farmsDBModel.FK_Advertising_Suppliers">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Advertising" EntitySet="Advertisings" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="AdvertisingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdvertisingStartTime" Type="DateTime" Precision="3" />
+    <Property Name="AdvertisingEndTime" Type="DateTime" Precision="3" />
+    <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AlreadyPaid" Type="Boolean" />
+    <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Supplier" />
+  </EntityType>
+  <Association Name="FK_Advertising_Suppliers">
+    <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <End Type="farmsDBModel.Advertising" Role="Advertising" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Advertising">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

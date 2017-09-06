@@ -26,6 +26,7 @@ namespace AllData
             this.SuppliersStoryMasters = new HashSet<SuppliersStoryMaster>();
             this.SuppliersVideos = new HashSet<SuppliersVideo>();
             this.SystemToSuppliersInfoes = new HashSet<SystemToSuppliersInfo>();
+            this.Advertisings = new HashSet<Advertising>();
         }
     
         public int SupplierID { get; set; }
@@ -62,5 +63,7 @@ namespace AllData
         public virtual ICollection<SuppliersVideo> SuppliersVideos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Advertising> Advertisings { get; set; }
     }
 }

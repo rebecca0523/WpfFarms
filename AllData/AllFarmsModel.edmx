@@ -67,6 +67,21 @@
           <Property Name="PostalCodeID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="80" Nullable="false" />
         </EntityType>
+        <EntityType Name="Advertising">
+          <Key>
+            <PropertyRef Name="AdvertisingID" />
+          </Key>
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="AdvertisingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdvertisingITitle" Type="nchar" MaxLength="10" />
+          <Property Name="AdvertisingIContent" Type="nvarchar(max)" />
+          <Property Name="AdvertisingStartTime" Type="datetime" />
+          <Property Name="AdvertisingEndTime" Type="datetime" />
+          <Property Name="AdvertisingPhoto" Type="varbinary(max)" />
+          <Property Name="AlreadyPaid" Type="bit" />
+          <Property Name="AdvertisingLink" Type="nvarchar(max)" />
+          <Property Name="EdditTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="BlackListInfo">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -437,7 +452,7 @@
           </Key>
           <Property Name="SuppliersVideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SuppliersID" Type="int" Nullable="false" />
-          <Property Name="SuppliersStoryTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SuppliersVideoTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="VideoFile" Type="varbinary(max)" />
@@ -516,6 +531,18 @@
             </Principal>
             <Dependent Role="ActivityOrder">
               <PropertyRef Name="ActivityFarmerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertising_Suppliers">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Advertising">
+              <PropertyRef Name="SupplierID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -789,6 +816,7 @@
           <EntitySet Name="ActivityOrder" EntityType="Self.ActivityOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActivityPhoto" EntityType="Self.ActivityPhoto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AddressInfo" EntityType="Self.AddressInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Advertising" EntityType="Self.Advertising" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BlackListInfo" EntityType="Self.BlackListInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Browse" EntityType="Self.Browse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChatLog" EntityType="Self.ChatLog" Schema="dbo" store:Type="Tables" />
@@ -834,6 +862,10 @@
           <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="Self.FK_ActivityOrder_ActivityFarmer">
             <End Role="ActivityFarmer" EntitySet="ActivityFarmer" />
             <End Role="ActivityOrder" EntitySet="ActivityOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertising_Suppliers" Association="Self.FK_Advertising_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Advertising" EntitySet="Advertising" />
           </AssociationSet>
           <AssociationSet Name="FK_Browse_Products" Association="Self.FK_Browse_Products">
             <End Role="Products" EntitySet="Products" />
@@ -1342,6 +1374,7 @@
           <NavigationProperty Name="SuppliersStoryMasters" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="Suppliers" ToRole="SuppliersStoryMaster" />
           <NavigationProperty Name="SuppliersVideos" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="Suppliers" ToRole="SuppliersVideo" />
           <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="Suppliers" ToRole="SystemToSuppliersInfo" />
+          <NavigationProperty Name="Advertisings" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Supplier" ToRole="Advertising" />
         </EntityType>
         <EntityType Name="SuppliersBulletinBoard">
           <Key>
@@ -1425,6 +1458,7 @@
           <Property Name="LastUpdateUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersVedio_Suppliers" FromRole="SuppliersVideo" ToRole="Suppliers" />
+          <Property Name="SuppliersVideoTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1918,7 +1952,40 @@
             <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
             <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
           </AssociationSet>
+          <EntitySet Name="Advertisings" EntityType="farmsDBModel.Advertising" />
+          <AssociationSet Name="FK_Advertising_Suppliers" Association="farmsDBModel.FK_Advertising_Suppliers">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Advertising" EntitySet="Advertisings" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Advertising">
+          <Key>
+            <PropertyRef Name="AdvertisingID" />
+          </Key>
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="AdvertisingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdvertisingStartTime" Type="DateTime" Precision="3" />
+          <Property Name="AdvertisingEndTime" Type="DateTime" Precision="3" />
+          <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AlreadyPaid" Type="Boolean" />
+          <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EdditTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Supplier" />
+        </EntityType>
+        <Association Name="FK_Advertising_Suppliers">
+          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+          <End Type="farmsDBModel.Advertising" Role="Advertising" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Advertising">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2381,9 +2448,9 @@
           <EntitySetMapping Name="SuppliersVideos">
             <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
               <MappingFragment StoreEntitySet="SuppliersVideo">
+                <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
                 <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
                 <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-                <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
@@ -2418,6 +2485,22 @@
                 <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
                 <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
                 <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisings">
+            <EntityTypeMapping TypeName="farmsDBModel.Advertising">
+              <MappingFragment StoreEntitySet="Advertising">
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+                <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
+                <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
+                <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
+                <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
+                <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
+                <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
+                <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
+                <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
