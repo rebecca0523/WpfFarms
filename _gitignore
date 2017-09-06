@@ -24,6 +24,7 @@ bld/
 
 # Visual Studio 2017 cache/options directory
 .vs/
+WpfFarms/WpfFarmsSupplier/bin/Debug/
 */bin/
 */obj/
 
