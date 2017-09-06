@@ -12,5 +12,6 @@ namespace AllData
         public static string loginPassword;
         public static int loginCustomerID;
         public static int loginSupplierID;
+        public static string loginName;
     }
 }

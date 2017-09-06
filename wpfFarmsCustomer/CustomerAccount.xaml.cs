@@ -55,7 +55,13 @@ namespace wpfFarmsCustomer
             //var q = from p in CI.Name
             //        where 
             //        select s;
-            labUser.Content = loginEmail;
+            AllData.AllFarmsDBEntities db = new AllData.AllFarmsDBEntities();
+            var Name = from p in db.CustomerInfoes
+                       where p.Email == loginEmail
+                       select p.Name;
+            loginName = Name.FirstOrDefault();
+            labUser.Content = loginName.ToString();
+            MessageBox.Show(loginName.ToString());
             //labUser.Content = n.ToString();
         }
 
