@@ -11,8 +11,7 @@
     <Key>
       <PropertyRef Name="ActivityFarmerID" />
     </Key>
-    <Property Name="ActivityFarmerID" Type="int" Nullable="false" />
-    <Property Name="ActivityOrderID" Type="int" />
+    <Property Name="ActivityFarmerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ActivityPhotoID" Type="int" />
     <Property Name="SupplierID" Type="int" Nullable="false" />
     <Property Name="CityID" Type="int" />
@@ -34,24 +33,24 @@
     <Key>
       <PropertyRef Name="ActivityOrderID" />
     </Key>
+    <Property Name="ActivityOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ActivityFarmerID" Type="int" />
-    <Property Name="ActivityOrderID" Type="int" Nullable="false" />
-    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
     <Property Name="Quantity" Type="int" />
     <Property Name="TotalPrice" Type="money" />
     <Property Name="ATMBank" Type="nvarchar" MaxLength="10" />
     <Property Name="ATMAccount" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
     <Property Name="GroupConfirm" Type="bit" />
     <Property Name="PaymentConfirm" Type="bit" />
     <Property Name="ReceivedConfirm" Type="bit" />
-    <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="LastUpdateDate" Type="datetime" />
   </EntityType>
   <EntityType Name="ActivityPhoto">
     <Key>
       <PropertyRef Name="ActivityPhotoID" />
     </Key>
-    <Property Name="ActivityPhotoID" Type="int" Nullable="false" />
+    <Property Name="ActivityPhotoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ActivityPhoto" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="AddressInfo">
@@ -67,15 +66,15 @@
     <Key>
       <PropertyRef Name="AdvertisingID" />
     </Key>
-    <Property Name="SupplierID" Type="int" Nullable="false" />
-    <Property Name="AdvertisingID" Type="int" Nullable="false" />
-    <Property Name="AdvertisingITitle" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="AdvertisingIContent" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="AdvertisingStarTime" Type="datetime" Nullable="false" />
-    <Property Name="AdvertisingEndTime" Type="datetime" Nullable="false" />
-    <Property Name="AdvertisingPhoto" Type="varbinary(max)" Nullable="false" />
-    <Property Name="AlreadyPaid" Type="bit" Nullable="false" />
-    <Property Name="AdvertisingLink" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="AdvertisingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdvertisingITitle" Type="nchar" MaxLength="10" />
+    <Property Name="AdvertisingIContent" Type="nvarchar(max)" />
+    <Property Name="AdvertisingStartTime" Type="datetime" />
+    <Property Name="AdvertisingEndTime" Type="datetime" />
+    <Property Name="AdvertisingPhoto" Type="varbinary(max)" />
+    <Property Name="AlreadyPaid" Type="bit" />
+    <Property Name="AdvertisingLink" Type="nvarchar(max)" />
     <Property Name="EdditTime" Type="datetime" />
   </EntityType>
   <EntityType Name="BlackListInfo">
@@ -141,7 +140,7 @@
     <Key>
       <PropertyRef Name="RefundID" />
     </Key>
-    <Property Name="RefundID" Type="int" Nullable="false" />
+    <Property Name="RefundID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" />
     <Property Name="CustomerID" Type="int" />
     <Property Name="RefundAgree" Type="bit" />
@@ -156,7 +155,7 @@
     <Key>
       <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="ReturnID" Type="int" />
+    <Property Name="ReturnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="CustomerID" Type="int" />
     <Property Name="ReturnOrder" Type="bit" />
@@ -205,6 +204,17 @@
     <Property Name="getSharePoint" Type="int" />
     <Property Name="getQuotaPoint" Type="int" />
     <Property Name="usedPoint" Type="int" />
+  </EntityType>
+  <EntityType Name="DiscountPointsRec">
+    <Key>
+      <PropertyRef Name="DiscountPointsRecID" />
+    </Key>
+    <Property Name="DiscountPointsRecID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DiscountPointsEventID" Type="int" />
+    <Property Name="sendPoint" Type="int" />
+    <Property Name="sendReason" Type="nvarchar(max)" />
+    <Property Name="sendTime" Type="datetime" />
   </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
@@ -282,7 +292,7 @@
     </Key>
     <Property Name="ProductImageID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="ProductImage" Type="varbinary(max)" />
+    <Property Name="ProductImagePath" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -448,7 +458,7 @@
     </Key>
     <Property Name="SuppliersVideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SuppliersID" Type="int" Nullable="false" />
-    <Property Name="SuppliersStoryTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SuppliersVideoTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="StartDate" Type="date" />
     <Property Name="EndDate" Type="date" />
     <Property Name="VideoFile" Type="varbinary(max)" />
@@ -531,7 +541,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Advertising_Suppliers">
-    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
     <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Suppliers">
@@ -598,6 +608,18 @@
         <PropertyRef Name="DiscountPointsEventID" />
       </Principal>
       <Dependent Role="DiscountPointsEventDetail">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiscountPointsRec_DiscountPointsEvent">
+    <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="0..1" />
+    <End Role="DiscountPointsRec" Type="Self.DiscountPointsRec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiscountPointsEvent">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Principal>
+      <Dependent Role="DiscountPointsRec">
         <PropertyRef Name="DiscountPointsEventID" />
       </Dependent>
     </ReferentialConstraint>
@@ -794,18 +816,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SuppliersVedio_Suppliers">
-    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
-    <End Role="SuppliersVideo" Type="Self.SuppliersVideo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Suppliers">
-        <PropertyRef Name="SupplierID" />
-      </Principal>
-      <Dependent Role="SuppliersVideo">
-        <PropertyRef Name="SuppliersID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_SystemToSuppliersInfo_Suppliers">
     <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
     <End Role="SystemToSuppliersInfo" Type="Self.SystemToSuppliersInfo" Multiplicity="*" />
@@ -835,6 +845,7 @@
     <EntitySet Name="CustomerSubscription" EntityType="Self.CustomerSubscription" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DiscountPointsEvent" EntityType="Self.DiscountPointsEvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DiscountPointsEventDetail" EntityType="Self.DiscountPointsEventDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiscountPointsRec" EntityType="Self.DiscountPointsRec" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostalCodeInfo" EntityType="Self.PostalCodeInfo" Schema="dbo" store:Type="Tables" />
@@ -894,6 +905,10 @@
     <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent">
       <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvent" />
       <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsRec_DiscountPointsEvent" Association="Self.FK_DiscountPointsRec_DiscountPointsEvent">
+      <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvent" />
+      <End Role="DiscountPointsRec" EntitySet="DiscountPointsRec" />
     </AssociationSet>
     <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
       <End Role="Orders" EntitySet="Orders" />
@@ -958,10 +973,6 @@
     <AssociationSet Name="FK_SuppliersStoryMaster_Suppliers" Association="Self.FK_SuppliersStoryMaster_Suppliers">
       <End Role="Suppliers" EntitySet="Suppliers" />
       <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMaster" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SuppliersVedio_Suppliers" Association="Self.FK_SuppliersVedio_Suppliers">
-      <End Role="Suppliers" EntitySet="Suppliers" />
-      <End Role="SuppliersVideo" EntitySet="SuppliersVideo" />
     </AssociationSet>
     <AssociationSet Name="FK_SystemToSuppliersInfo_Suppliers" Association="Self.FK_SystemToSuppliersInfo_Suppliers">
       <End Role="Suppliers" EntitySet="Suppliers" />

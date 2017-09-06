@@ -16,7 +16,7 @@ namespace AllData
     {
         public int ProductImageID { get; set; }
         public int ProductID { get; set; }
-        public byte[] ProductImage1 { get; set; }
+        public string ProductImagePath { get; set; }
     
         public virtual Product Product { get; set; }
     }

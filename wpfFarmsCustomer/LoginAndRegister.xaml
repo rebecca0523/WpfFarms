@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="LoginAndRegister" Height="400" Width="600">
+        Title="LoginAndRegister" Height="400" Width="600" Background="#FFC4ADC9">
     <Grid>
         <TextBlock Margin="0" TextWrapping="Wrap" Text="會員登入" VerticalAlignment="Top" Background="#FFFDCECE"/>
         <StackPanel HorizontalAlignment="Center" Height="250" Margin="10,30,0,0" VerticalAlignment="Center" Width="495">
@@ -17,7 +17,7 @@
                 <Label Content="密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Text="123"/>
             </WrapPanel>
-            <WrapPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="455" Margin="0,40,0,0">
+            <WrapPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="455" Margin="20,40,19.4,0">
                 <Button x:Name="btnforget" Content="忘記密碼" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="70" Margin="30,0,0,0" Click="btnforget_Click">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

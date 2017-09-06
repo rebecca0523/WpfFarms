@@ -24,11 +24,28 @@ namespace wpfFarmsCustomer
         {
             InitializeComponent();
         }
-
+        AllFarmsDBEntities db = new AllFarmsDBEntities();
+        public static int getCustomerID;
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            AllFarmsDBEntities dc = new AllFarmsDBEntities();
-            customerInfoDataGrid.ItemsSource = dc.CustomerInfoes.ToList();
+            var useridentity = from q in db.CustomerInfoes
+                               where q.Useridentity==0
+                               select q;
+            customerInfoDataGrid.ItemsSource = useridentity.ToList();
+        }
+
+        private void customerInfoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid grid = sender as DataGrid;
+            if(grid.SelectedItem!=null)
+            {
+                getCustomerID = (grid.SelectedItem as CustomerInfo).CustomerID;
+            }
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            //var changeidentity=this
         }
     }
 }

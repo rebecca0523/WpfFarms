@@ -63,10 +63,6 @@
                 <GradientStop Color="#FFD4F7DC" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-
-
-
-
         <!--活動列表-->
         <StackPanel Width="271" Background="#FFFFE1E1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="554">
             <TextBlock TextWrapping="Wrap" Text="建立特賣活動" Height="17.822" Margin="0,1,0,0"/>
@@ -178,8 +174,6 @@
                 <ListBox x:Name="lstSaleEventCombo" ItemTemplate="{DynamicResource SEComboTemplate}" SelectionChanged="lstSaleEventCombo_SelectionChanged" Margin="0" Grid.Row="1" VerticalContentAlignment="Top" />
             </Grid>
         </UniformGrid>
-
-
 
         <UniformGrid Rows="3" Columns="4" Width="105" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="0,-85,-32,0" Grid.ColumnSpan="2">
             <TextBlock x:Name="txkEVID" Canvas.Left="292" TextWrapping="Wrap" Canvas.Top="533" Background="#FFF1CFBB" Text="0"/>

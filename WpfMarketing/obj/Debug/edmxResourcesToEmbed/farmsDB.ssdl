@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="AdvertisingID" Type="int" Nullable="false" />
+    <Property Name="AdvertisingITitle" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="AdvertisingIContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdvertisingStarTime" Type="datetime" Nullable="false" />
+    <Property Name="AdvertisingEndTime" Type="datetime" Nullable="false" />
+    <Property Name="AdvertisingPhoto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AlreadyPaid" Type="bit" Nullable="false" />
+    <Property Name="AdvertisingLink" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EdditTime" Type="datetime" />
+  </EntityType>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -120,6 +135,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="farmsDBModelStoreContainer">
+    <EntitySet Name="Advertising" EntityType="Self.Advertising" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SaleEvent" EntityType="Self.SaleEvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SaleEventCombo" EntityType="Self.SaleEventCombo" Schema="dbo" store:Type="Tables" />

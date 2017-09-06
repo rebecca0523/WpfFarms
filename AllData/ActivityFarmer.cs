@@ -21,7 +21,6 @@ namespace AllData
         }
     
         public int ActivityFarmerID { get; set; }
-        public Nullable<int> ActivityOrderID { get; set; }
         public Nullable<int> ActivityPhotoID { get; set; }
         public int SupplierID { get; set; }
         public Nullable<int> CityID { get; set; }

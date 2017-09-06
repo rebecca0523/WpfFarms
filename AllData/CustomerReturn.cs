@@ -14,7 +14,7 @@ namespace AllData
     
     public partial class CustomerReturn
     {
-        public Nullable<int> ReturnID { get; set; }
+        public int ReturnID { get; set; }
         public int OrderID { get; set; }
         public Nullable<int> CustomerID { get; set; }
         public Nullable<bool> ReturnOrder { get; set; }

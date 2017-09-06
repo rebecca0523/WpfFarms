@@ -47,11 +47,13 @@
         <CheckBox x:Name="chkDiscountedCombo" Content="有" HorizontalAlignment="Left" Margin="187,462,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <CheckBox x:Name="chkDiscountedQuota" Content="有" HorizontalAlignment="Left" Margin="187,502,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <CheckBox x:Name="chkDiscountedPoint" Content="有" HorizontalAlignment="Left" Margin="187,542,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <WrapPanel x:Name="wpanelInsertImage" HorizontalAlignment="Left" Height="697" Margin="466,62,0,0" VerticalAlignment="Top" Width="278">
-            <!--<FishEye:FishEyePanel x:Name="FishEyePanel" >
+        <ScrollViewer Margin="466,80,30,30" Style="{DynamicResource ShinyBlueScrollViewer}" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+            <WrapPanel x:Name="wpanelInsertImage" >
+                <!--WrapPanel要實現滾動條要加入ScrollViewer並且是ScrollViewer包著,而且WrapPanel要設定Auto-->
+                <!--<FishEye:FishEyePanel x:Name="FishEyePanel" >
                 
-            </FishEye:FishEyePanel>-->
-        </WrapPanel>
-
+                </FishEye:FishEyePanel>-->
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

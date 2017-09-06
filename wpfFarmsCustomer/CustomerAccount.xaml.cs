@@ -19,7 +19,7 @@ using wpfFarmsCustomer;
 using WpfFarmsActivity;
 using WpfFarmsProducts;
 using WpfMarketing;
-using static wpfFarmsCustomer.LoginAndRegister;
+using static AllData.CustomerClass;
 
 namespace wpfFarmsCustomer
 {
@@ -42,29 +42,32 @@ namespace wpfFarmsCustomer
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Email", loginEmail);
-            cmd.Parameters.AddWithValue("@Password", LoginAndRegister.loginPassword);
+            cmd.Parameters.AddWithValue("@Password", loginPassword);
 
-            //SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.NChar, 10);
-            //pReturnValue.Direction = ParameterDirection.ReturnValue;
-            //cmd.Parameters.Add(pReturnValue);
+            AllData.AllFarmsDBEntities db = new AllData.AllFarmsDBEntities();
+            var Name = from p in db.CustomerInfoes
+                       where p.Email == loginEmail
+                       select p.Name;
+            loginName = Name.FirstOrDefault();
+            labUser.Content = loginName.ToString();
+        }
 
-            //conn.Open();
-            //cmd.ExecuteScalar();
-            //string n = Convert.ToString(cmd.Parameters["@Return_Values"].Value);
-            //CustomerInfo CI = new CustomerInfo();
-            //var q = from p in CI.Name
-            //        where 
-            //        select s;
-            labUser.Content = LoginAndRegister.loginEmail;
-            //labUser.Content = n.ToString();
+
+        private void MenuItemfarmsCRUDMulti_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersMainCRUD suppRegisterM = new SuppliersMainCRUD();
+
+            suppRegisterM.Show();
         }
 
         private void MenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
         {
-            SuppliersRegister suppRegister = new SuppliersRegister();
 
-            suppRegister.Show();
+            SuppliersRegister suppRegisterM = new SuppliersRegister();
+
+            suppRegisterM.Show();
         }
+
 
         private void MenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
         {
@@ -78,5 +81,7 @@ namespace wpfFarmsCustomer
             MainWindowProducts mainWindowProducts = new MainWindowProducts();
             mainWindowProducts.ShowDialog();
         }
+
+      
     }
 }

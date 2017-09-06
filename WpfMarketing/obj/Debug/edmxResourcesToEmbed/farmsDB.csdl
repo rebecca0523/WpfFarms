@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="AdvertisingID" Type="Int32" Nullable="false" />
+    <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdvertisingStarTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdvertisingEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AlreadyPaid" Type="Boolean" Nullable="false" />
+    <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EdditTime" Type="DateTime" Precision="3" />
+  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -128,6 +143,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="farmsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Advertisings" EntityType="Self.Advertising" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
     <EntitySet Name="SaleEventComboes" EntityType="Self.SaleEventCombo" />

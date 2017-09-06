@@ -9,6 +9,10 @@
             <GradientStop Color="#FFEEBDA2" Offset="0.917"/>
             <GradientStop Color="#FFF0D6A6" Offset="0.119"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="Brush2" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFEEBDA2" Offset="0.917"/>
+            <GradientStop Color="#FFF0D6A6" Offset="0.119"/>
+        </LinearGradientBrush>
 
     </Application.Resources>
 </Application>

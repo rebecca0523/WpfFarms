@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfFarmsSupplier.SupplierMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFarmsSupplier"
+        mc:Ignorable="d"
+        Title="SupplierMainWindow" Height="700" Width="800">
+    <Canvas>
+        <Menu>
+        <MenuItem Header="小農專區" FontSize="20">
+            <MenuItem x:Name="MenuItemfarmsCRUDMulti" Header="維護小農基本資料-多筆-系統管理員" Click="MenuItemfarmsCRUDMulti_Click" ></MenuItem>
+            <MenuItem x:Name="MenuItemfarmsCRUD" Header="維護小農基本資料" Click="MenuItemfarmsCRUD_Click" ></MenuItem>
+            <MenuItem x:Name="MenuItemVedioCRUD" Header="維護小農Vedio資料" Click="MenuItemVedioCRUD_Click"  ></MenuItem>
+            <MenuItem x:Name="MenuItemVedioCRUDMulti" Header="維護小農Vedio資料Multi" Click="MenuItemVedioCRUDMulti_Click"  ></MenuItem>
+        </MenuItem>
+        </Menu>
+
+
+    </Canvas>
+</Window>

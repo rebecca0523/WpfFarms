@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static WpfFarmsProducts.MainWindowProducts;
+using static AllData.CustomerClass;
 
 
 namespace WpfFarmsProducts
@@ -37,14 +38,15 @@ namespace WpfFarmsProducts
             Product product = new Product
             {
                 ProductID = allFarmsDBEntities.Products.ToList().LastOrDefault().ProductID + 1,//0筆資料時會錯誤
-                SupplierID= SupplierID,
+                //SupplierID= SupplierID,
+                SupplierID = loginCustomerID,
                 ProductName = this.txtProductName.Text,
-                SellStartDate = this.dtpkSellStartDate.DisplayDate,
-                SellEndDate = this.dtpkSellEndDate.DisplayDate,
+                SellStartDate = this.dtpkSellStartDate.SelectedDate,
+                SellEndDate = this.dtpkSellEndDate.SelectedDate,
                 MarkPrice = decimal.Parse(this.txtMarkPrice.Text),//要防輸入型別的錯誤
                 UnitPrice = decimal.Parse(this.txtUnitPrice.Text),//要防輸入型別的錯誤
                 PreOrder = this.chkPreOrder.IsChecked,
-                ShippedDate = this.dtpkShippedDate.DisplayDate,
+                ShippedDate = this.dtpkShippedDate.SelectedDate,
                 TotalQTY = int.Parse(this.txtTotalQTY.Text),//要防輸入型別的錯誤
                 CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//要防輸入型別的錯誤
                 QuantitySold = int.Parse(this.txtQuantitySold.Text),//要防輸入型別的錯誤
@@ -58,18 +60,28 @@ namespace WpfFarmsProducts
 
             this.allFarmsDBEntities.Products.Add(product);
             this.allFarmsDBEntities.SaveChanges();
+            
 
-            foreach (string i in allowableFileTypes)
+            foreach (string i in openFileDialog.FileNames)
             {
-                FileStream fileStream = new FileStream(i, FileMode.Open);
-                byte[] ImageByte = new byte[fileStream.Length];
-                fileStream.Read(ImageByte, 0, ImageByte.Length);
-                fileStream.Close();
+                //FileStream fileStream = new FileStream(i, FileMode.Open);
+                //byte[] ImageByte = new byte[fileStream.Length];
+                //fileStream.Read(ImageByte, 0, ImageByte.Length);
+                //fileStream.Close();
+
+                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
+                var files = System.IO.Directory.GetFiles("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages");
+
+                if (files.Contains(i))
+                {
+                    File.Copy(i, dest);//背背背背背背
+                }
+
                 ProductImage productImage = new ProductImage
                 {
                     ProductImageID = allFarmsDBEntities.ProductImages.ToList().LastOrDefault().ProductImageID + 1,
                     ProductID = product.ProductID,
-                    ProductImage1 = ImageByte
+                    ProductImagePath = i
                 };
                 this.allFarmsDBEntities.ProductImages.Add(productImage);
                 this.allFarmsDBEntities.SaveChanges();
@@ -89,24 +101,20 @@ namespace WpfFarmsProducts
         {
             
         }
-
-        List<string> allowableFileTypes = new List<string>();
+       
+        System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
 
         private void cmdInsertImages_Click(object sender, RoutedEventArgs e)
         {
-            allowableFileTypes.Clear();
             //this.FishEyePanel.Children.Clear();
             this.wpanelInsertImage.Children.Clear();
 
-            System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
             openFileDialog.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
-            openFileDialog.Multiselect = true;
+            openFileDialog.Multiselect = true;            
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                allowableFileTypes.AddRange(openFileDialog.FileNames);//把選取的檔案名子放進allowableFileTypes
-                
-                foreach (string i in allowableFileTypes)
+            {                             
+                foreach (string i in openFileDialog.FileNames)//選取的檔案名子  
                 {
                     BitmapImage bitmapImage = new BitmapImage();
                     Image image = new Image();
@@ -117,6 +125,7 @@ namespace WpfFarmsProducts
                     bitmapImage.EndInit();
                     image.Source = bitmapImage;
                     this.wpanelInsertImage.Children.Add(image);
+                    //Console.WriteLine(i);
                     //this.FishEyePanel.RenderTransformOrigin = new Point(0.5, 0.5);
                     //this.FishEyePanel.RenderTransform = new RotateTransform(90);                                     
                     //this.FishEyePanel.Children.Add(image);                        

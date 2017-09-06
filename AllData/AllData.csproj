@@ -92,6 +92,7 @@
     <Compile Include="ChatLog.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerClass.cs" />
     <Compile Include="CustomerInfo.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
@@ -111,6 +112,9 @@
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DiscountPointsEventDetail.cs">
+      <DependentUpon>AllFarmsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiscountPointsRec.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">

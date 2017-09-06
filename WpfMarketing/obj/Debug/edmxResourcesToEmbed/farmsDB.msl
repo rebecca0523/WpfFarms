@@ -1,6 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="farmsDBEntities">
+    <EntitySetMapping Name="Advertisings">
+      <EntityTypeMapping TypeName="farmsDBModel.Advertising">
+        <MappingFragment StoreEntitySet="Advertising">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
+          <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
+          <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
+          <ScalarProperty Name="AdvertisingStarTime" ColumnName="AdvertisingStarTime" />
+          <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
+          <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
+          <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
+          <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="farmsDBModel.Product">
         <MappingFragment StoreEntitySet="Products">

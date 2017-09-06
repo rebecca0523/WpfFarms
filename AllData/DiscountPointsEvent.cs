@@ -18,6 +18,7 @@ namespace AllData
         public DiscountPointsEvent()
         {
             this.DiscountPointsEventDetails = new HashSet<DiscountPointsEventDetail>();
+            this.DiscountPointsRecs = new HashSet<DiscountPointsRec>();
         }
     
         public int DiscountPointsEventID { get; set; }
@@ -34,5 +35,7 @@ namespace AllData
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiscountPointsEventDetail> DiscountPointsEventDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DiscountPointsRec> DiscountPointsRecs { get; set; }
     }
 }

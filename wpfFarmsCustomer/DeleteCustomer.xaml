@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="DeleteCustomer" Height="400" Width="600">
+        Title="DeleteCustomer" Height="400" Width="600" Background="#FFD3E2CB">
     <Window.Resources>
         <Style x:Key="customerInfoRow" TargetType="{x:Type DataGridRow}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
@@ -46,8 +46,17 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid Loaded="Grid_Loaded">
-        <DataGrid x:Name="customerInfoDataGrid" HorizontalAlignment="Center" Height="230" VerticalAlignment="Center" Width="375" RowStyle="{DynamicResource customerInfoRow}"/>
+    <Grid Loaded="Grid_Loaded" Margin="10,0,3.6,4.4">
+        <DataGrid x:Name="customerInfoDataGrid" RowStyle="{DynamicResource customerInfoRow}" Margin="0,68,10,45" SelectionChanged="customerInfoDataGrid_SelectionChanged" Background="White"/>
+        <Button x:Name="btnSend" Content="確認刪除" Margin="245,0,245,10" Click="btnSend_Click" Height="30" VerticalAlignment="Bottom">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF0D6A6" Offset="0"/>
+                    <GradientStop Color="#FFEEBDA2" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock Margin="0,2,0,0" TextWrapping="Wrap" Text="刪除會員" VerticalAlignment="Top" Background="#FFAAC7A5"/>
 
     </Grid>
 </Window>
