@@ -71,7 +71,7 @@
             </MenuItem>
             <MenuItem Header="活動專區" FontSize="20" />
             <MenuItem Header="商品專區" FontSize="20" Click="MenuItem_Click"/>
-            <MenuItem Header="行銷專區" FontSize="20"/>
+            <MenuItem x:Name="MenuItemMarketing" Header="行銷專區" FontSize="20" Click="MenuItemMarketing_Click"/>
         </Menu>
 
     </Grid>

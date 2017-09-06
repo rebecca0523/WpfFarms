@@ -82,6 +82,10 @@ namespace wpfFarmsCustomer
             mainWindowProducts.ShowDialog();
         }
 
-      
+        private void MenuItemMarketing_Click(object sender, RoutedEventArgs e)
+        {
+            WindowMarketing wm = new WindowMarketing();
+            wm.Show();
+        }
     }
 }
