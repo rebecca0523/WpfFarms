@@ -116,9 +116,6 @@ namespace WpfFarmsSupplier
 
 
 
-
-
-
                 SuppVideo.SuppliersID = 5;
                 SuppVideo.SuppliersVideoTitle = "小農5號影片";
                 SuppVideo.VideoFile = binaryReader.ReadBytes((Int32)byteLength);  //This data u can save in table
@@ -129,6 +126,8 @@ namespace WpfFarmsSupplier
 
                 context.SuppliersVideos.Add(SuppVideo);
                 context.SaveChanges();
+
+                MessageBox.Show("存檔成功");
 
             }
 
@@ -141,7 +140,7 @@ namespace WpfFarmsSupplier
         {
             
             SuppVideo = new SuppliersVideo();
-            SuppVideo = context.SuppliersVideos.Where(c => c.SuppliersVideoID == 5).FirstOrDefault();
+            SuppVideo = context.SuppliersVideos.Where(c => c.SuppliersVideoID == AllData.CustomerClass.loginSupplierID).FirstOrDefault();
 
             Byte[] video = SuppVideo.VideoFile;
 

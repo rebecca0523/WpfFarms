@@ -23,12 +23,13 @@ namespace WpfFarmsSupplier
         public SuppliersRegister()
         {
             InitializeComponent();
+//            MessageBox.Show(AllData.CustomerClass.loginEmail);
         }
         
         AllFarmsDBEntities context = new AllFarmsDBEntities();
 
 
-        string Email ="testselina66@ms68.hinet.net";
+        string Email = AllData.CustomerClass.loginEmail;
 
 
 
