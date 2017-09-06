@@ -638,6 +638,113 @@
             Internal use only.
             </summary>
         </member>
+        <member name="T:MaterialDesignThemes.Wpf.Screen">
+            <summary>
+             Represents a display device or multiple display devices on a single system.
+             Based on http://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Screen.cs
+             </summary>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.Screen._workingArea">
+            <summary>
+            Available working area on the screen. This excludes taskbars and other
+            docked windows.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.AllScreens">
+            <summary>
+            Gets an array of all of the displays on the system.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.Bounds">
+            <summary>
+            Gets the bounds of the display.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.DeviceName">
+            <summary>
+            Gets the device name associated with a display.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.Primary">
+            <summary>
+            Gets a value indicating whether a particular display is the primary device.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.PrimaryScreen">
+            <summary>
+            Gets the primary display.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.WorkingArea">
+            <summary>
+            Gets the working area of the screen.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Screen.DesktopChangedCount">
+            <summary>
+            Screen instances call this property to determine
+            if their WorkingArea cache needs to be invalidated.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.Equals(System.Object)">
+            <summary>
+            Specifies a value that indicates whether the specified object is equal to this one.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.FromPoint(System.Windows.Point)">
+            <summary>
+            Retrieves a <see cref='T:MaterialDesignThemes.Wpf.Screen'/> for the monitor that contains the specified point.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.FromRect(System.Windows.Rect)">
+            <summary>
+            Retrieves a <see cref='T:MaterialDesignThemes.Wpf.Screen'/> for the monitor that contains the largest region of the Rect.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.GetWorkingArea(System.Windows.Point)">
+            <summary>
+             Retrieves the working area for the monitor that is closest to the specified point.
+             </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.GetWorkingArea(System.Windows.Rect)">
+            <summary>
+             Retrieves the working area for the monitor that contains the largest region of the specified Rect.
+             </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.GetBounds(System.Windows.Point)">
+            <summary>
+             Retrieves the bounds of the monitor that is closest to the specified point.
+             </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.GetBounds(System.Windows.Rect)">
+            <summary>
+            Retrieves the bounds of the monitor that contains the largest region of the specified Rect.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.GetHashCode">
+            <summary>
+            Computes and retrieves a hash code for an object.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.OnDisplaySettingsChanging(System.Object,System.EventArgs)">
+            <summary>
+            Called by the SystemEvents class when our display settings are
+            changing.  We cache screen information and at this point we must
+            invalidate our cache.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.OnUserPreferenceChanged(System.Object,Microsoft.Win32.UserPreferenceChangedEventArgs)">
+            <summary>
+            Called by the SystemEvents class when our display settings have
+            changed.  Here, we increment a static counter that Screen instances
+            can check against to invalidate their cache.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Screen.ToString">
+            <summary>
+            Retrieves a string representing this object.
+            </summary>
+        </member>
         <member name="T:MaterialDesignThemes.Wpf.Snackbar">
             <summary>
             Implements a <see cref="T:MaterialDesignThemes.Wpf.Snackbar"/> inspired by the Material Design specs (https://material.google.com/components/snackbars-toasts.html).
@@ -661,6 +768,11 @@
             Add / Remove ActionClickEvent handler 
             </summary>
         </member>
+        <member name="P:MaterialDesignThemes.Wpf.Transitions.FadeWipe.Duration">
+            <summary>
+            Duration of the animation
+            </summary>
+        </member>
         <member name="T:MaterialDesignThemes.Wpf.Transitions.IndexedItemOffsetMultiplierExtension">
             <summary>
             Multiplies a time span unit by the index of an item in a list.  
@@ -669,6 +781,16 @@
             Example usage is for a <see cref="T:MaterialDesignThemes.Wpf.Transitions.TransitioningContent"/> to have a <see cref="P:MaterialDesignThemes.Wpf.Transitions.TransitionEffect.OffsetTime" />
             time delayed according to position in a list, so cascading animations can occur.
             </remarks>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Transitions.SlideWipe.Direction">
+            <summary>
+            Direction of the slide wipe
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.Transitions.SlideWipe.Duration">
+            <summary>
+            Duration of the animation
+            </summary>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.Transitions.TransitionAssist">
             <summary>
@@ -717,7 +839,7 @@
         </member>
         <member name="P:MaterialDesignThemes.Wpf.Transitions.Transitioner.AutoApplyTransitionOrigins">
             <summary>
-            If enabled, trnaisiotns origins will be applied to wipes, according to where a transition was triggered from.  For example, the mouse point where a user clicks a button.
+            If enabled, transition origins will be applied to wipes, according to where a transition was triggered from.  For example, the mouse point where a user clicks a button.
             </summary>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.Transitions.TransitionerSlide">
@@ -1093,6 +1215,21 @@
             <param name="element"></param>
             <returns></returns>
         </member>
+        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.HasTextFieldBoxProperty">
+            <summary>
+            Controls the visbility of the text field box.
+            </summary>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.HasTextAreaBoxProperty">
+            <summary>
+            Controls the visibility of the text field area box.
+            </summary>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.IncludeSpellingSuggestionsProperty">
+            <summary>
+            Automatially inserts spelling suggestions into the text box context menu.
+            </summary>
+        </member>
         <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.ApplyTextBoxViewMargin(System.Windows.Controls.Control,System.Windows.Thickness)">
             <summary>
             Applies the text box view margin.
@@ -1239,6 +1376,36 @@
         <member name="M:MaterialDesignThemes.Wpf.ValidationAssist.GetSuppress(System.Windows.DependencyObject)">
             <summary>
             Framework use only.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

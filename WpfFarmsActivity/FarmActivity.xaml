@@ -7,7 +7,7 @@
         xmlns:meterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:meterialDesign1="http://schemas.microsoft.com/xps/2005/06"
         mc:Ignorable="d"
-        Title="ActivityWindow" Height="805.312" Width="693.118">
+        Title="ActivityWindow" Height="1011.436" Width="693.118" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
 
     <Grid>
@@ -45,6 +45,10 @@
                         <TextBox x:Name="PriceInput" TextWrapping="Wrap" Width="55" Margin="5,9" FontSize="16" HorizontalAlignment="Left" Text="0000"/>
                         <TextBlock x:Name="ActivityDateLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18" Text="*出團日期："/>
                         <DatePicker x:Name="ActivityDate" Margin="0,9" Width="122.9" HorizontalAlignment="Left" FontSize="16"/>
+                        <TextBlock x:Name="PictureLabel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,9,0,0" FontSize="18" Text="*圖片："/>
+                        <Button x:Name="ImageAddbtn" Padding="0" Height="32" Width="32">
+                            <meterialDesign:PackIcon Kind="Image" />
+                        </Button>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>
@@ -79,7 +83,7 @@
         </StackPanel>
         <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth3" VerticalAlignment="Bottom" Margin="40,0,40,39" Padding="0" Height="281">
             <Border BorderBrush="Black" BorderThickness="1">
-                <RichTextBox x:Name="ActivityContentInput"  VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" MinWidth="0" Margin="10" VerticalAlignment="Top" Height="220" >
+                <RichTextBox x:Name="RichTextBox1"  VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" MinWidth="0" Margin="10" VerticalAlignment="Top" Height="220" >
                     <FlowDocument>
                         <Paragraph>
                             <Run x:Name="RunText" Text="RichTextBox"/>
@@ -92,5 +96,6 @@
 
         <Button x:Name="Accept" Content="確定" HorizontalAlignment="Left" Margin="195,0,0,29.072" VerticalAlignment="Bottom" Width="75" IsDefault="True"/>
         <Button x:Name="Cancel" Content="取消" HorizontalAlignment="Right" Margin="0,0,221.118,29.072" VerticalAlignment="Bottom" Width="75" IsCancel="True"/>
+        <Image HorizontalAlignment="Left" Height="181" Margin="123,454,0,0" VerticalAlignment="Top" Width="438"/>
     </Grid>
 </Window>

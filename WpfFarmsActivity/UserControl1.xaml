@@ -11,7 +11,7 @@
             <WrapPanel HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top">
                 <DockPanel LastChildFill="False">
                     <StackPanel VerticalAlignment="Top" DockPanel.Dock="Top" Height="180">
-                        <Image Height="139" Margin="10"/>
+                        <Image x:Name="Image" Height="139" Margin="10" Stretch="Fill" Source="{Binding ActivityPhoto, Mode=OneWay}"/>
                         <Label x:Name="ActivityName" Content="Label"/>
                     </StackPanel>
                     <DockPanel Height="64" LastChildFill="False" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
