@@ -83,7 +83,7 @@
             <Label Content="Postal Code:" Canvas.Left="6" Canvas.Top="178" Width="106" Height="32" />
             <TextBox x:Name="postalCodeTextBox"  Canvas.Left="133" Canvas.Top="178" Width="116" Height="25" />
             <Label Content="Address:" Canvas.Left="261" Canvas.Top="178" Height="32" Width="150" />
-            <TextBox x:Name="addressTextBox" Canvas.Left="418" Canvas.Top="178" Width="116" Height="25" />
+            <TextBox x:Name="addressTextBox" Canvas.Left="418" Canvas.Top="178" Width="445" Height="25" />
 
 
 

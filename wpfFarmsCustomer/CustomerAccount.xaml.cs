@@ -59,14 +59,15 @@ namespace wpfFarmsCustomer
             //labUser.Content = n.ToString();
         }
 
-        private void MenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
+
+        private void MenuItemfarmsCRUDMulti_Click(object sender, RoutedEventArgs e)
         {
             SuppliersMainCRUD suppRegisterM = new SuppliersMainCRUD();
 
             suppRegisterM.Show();
         }
 
-        private void MenuItemfarmsCRUD_Click_1(object sender, RoutedEventArgs e)
+        private void MenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
         {
 
             SuppliersRegister suppRegisterM = new SuppliersRegister();
@@ -88,6 +89,6 @@ namespace wpfFarmsCustomer
             mainWindowProducts.ShowDialog();
         }
 
-        
+      
     }
 }
