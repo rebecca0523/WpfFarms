@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQtoSQL">
+  <DataContextMoniker Name="/LINQtoSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b5a177ef-df73-4aa6-85a2-2a3d72148c6c" absoluteBounds="3.125, 1.75, 2, 3.5700402832031246">
+      <DataClassMoniker Name="/LINQtoSQLDataContext/Suppliers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47bb4c54-c032-4801-a966-832b5e0c2ae2" absoluteBounds="3.1399999999999997, 2.21, 1.9700000000000002, 3.010040283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

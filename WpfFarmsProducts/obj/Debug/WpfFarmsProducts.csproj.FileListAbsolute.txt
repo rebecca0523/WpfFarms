@@ -125,7 +125,6 @@ D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\MainWindowProducts.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ShinyBlueDictionary.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\App.g.cs
-D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_Content.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.cache
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.lref
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\App.baml
@@ -156,3 +155,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
+D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
+D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config

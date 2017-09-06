@@ -194,7 +194,6 @@ D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\EditCustomer.g.cs
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\ForgetPassword.g.cs
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\MainWindow.g.cs
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\App.g.cs
-D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_Content.g.cs
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_MarkupCompile.cache
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer_MarkupCompile.lref
 D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\CustomerAccount.baml
@@ -224,3 +223,18 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfMarketi
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfMarketing.exe.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\bin\Debug\AllData.dll.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\AllData.dll
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.exe
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.exe
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfMarketing.exe
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\AllData.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\AllData.dll.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsActivity.exe.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfFarmsProducts.exe.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfMarketing.pdb
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\bin\Debug\WpfMarketing.exe.config
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\LoginAndRegister.g.cs
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\App.baml
+D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Debug\LoginAndRegister.baml
