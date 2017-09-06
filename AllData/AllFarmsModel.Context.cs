@@ -59,8 +59,8 @@ namespace AllData
         public virtual DbSet<SuppliersFarm> SuppliersFarms { get; set; }
         public virtual DbSet<SuppliersStoryDetail> SuppliersStoryDetails { get; set; }
         public virtual DbSet<SuppliersStoryMaster> SuppliersStoryMasters { get; set; }
-        public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
+        public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
     }
 }
