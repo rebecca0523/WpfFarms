@@ -13,7 +13,7 @@
             <UniformGrid Rows="2">
                 <TextBlock Text="{Binding SaleEventTitle,Mode=OneWay}" DockPanel.Dock="Left" />
                 <DockPanel>
-                    <TextBlock Text="{Binding SaleEventStar,Mode=OneWay}" DockPanel.Dock="Left" Margin="50,0,0,0" />
+                    <TextBlock Text="{Binding SaleEventStart,Mode=OneWay}" DockPanel.Dock="Left" Margin="50,0,0,0" />
                     <TextBlock Text="{Binding SaleEventEnd,Mode=OneWay}" DockPanel.Dock="Left" Margin="50,0,0,0" />
                 </DockPanel>
             </UniformGrid>
@@ -50,11 +50,20 @@
                 <TextBlock Text="{Binding DiscountPrice,Mode=OneWay}" Margin="10,0,0,0" />
             </DockPanel>
         </DataTemplate>
+        <!--廣告TEMP-->
+        <DataTemplate x:Key="ADDataTemplate" >
+            <UniformGrid Rows="3">
+                <TextBlock Text="{Binding AdvertisingITitle,Mode=OneWay}" DockPanel.Dock="Left" />
+                 <TextBlock Text="{Binding AdvertisingStartTime,Mode=OneWay}" DockPanel.Dock="Left"  />
+                 <TextBlock Text="{Binding AdvertisingEndTime,Mode=OneWay}" DockPanel.Dock="Left" />
+                
+            </UniformGrid>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
         <TabControl Margin="0" TabStripPlacement="Left">
-            <TabItem Header="特賣設定" FontSize="20">
+            <TabItem Header="特賣設定" FontSize="20" Height="33" VerticalAlignment="Top">
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="101*"/>
@@ -249,7 +258,7 @@
                                 <RowDefinition Height="827*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Margin="0" TextWrapping="Wrap" Text="廣告名稱" Background="#FFF8F8F8" TextAlignment="Center"/>
-                            <ListBox Margin="0,2,0,0" Grid.Row="1" Background="#FFF5E1E1"/>
+                            <ListBox x:Name="lstAdvertising"  Margin="0,2,0,0" Grid.Row="1" ItemTemplate="{DynamicResource ADDataTemplate}" SelectionChanged="lstAdvertising_SelectionChanged"/>
 
                         </Grid>
                         <Grid Grid.Column="1" Margin="0" Background="#FFD0FCC6" Height="867">
@@ -278,7 +287,7 @@
                                 <Border BorderThickness="1" BorderBrush="Black">
                                     <TextBlock Text="結束日期" TextAlignment="Center" />
                                 </Border>
-                                <DatePicker x:Name="dtpADStar"/>
+                                <DatePicker x:Name="dtpADStart"/>
                                 <DatePicker x:Name="dtpADEnd"/>
                             </UniformGrid>
                             <TextBlock Margin="0,0,-0.113,2.038" Grid.Row="2" TextWrapping="Wrap" Text="廣告圖片" Background="#FFEEE5E5" TextAlignment="Center"/>
@@ -302,9 +311,10 @@
                                 <RowDefinition Height="323*"/>
                             </Grid.RowDefinitions>
                             <Button x:Name="btnNewAD" Content="新增" HorizontalAlignment="Left" Margin="237,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnNewAD_Click"/>
-                            <Button Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="btnAlter" Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="btnDelete" Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
                             <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}"/>
+                            <TextBlock x:Name="txkADID" HorizontalAlignment="Left" Margin="162,121,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
                         </Grid>
 
 

@@ -26,7 +26,9 @@ namespace WpfMarketing
         {
             InitializeComponent();
         }
+        //測試用supplierID
         int loginSupplierID = 1;
+
         AllFarmsDBEntities db = new AllFarmsDBEntities();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -40,13 +42,17 @@ namespace WpfMarketing
             cboProducts.ItemsSource = p.ToArray();
             cboAProduct.ItemsSource = p.ToArray();
             cboBProduct.ItemsSource = p.ToArray();
+
+            //廣告
+
+            LoadAdvertisingList();
         }
         //listbox加入登入賣家的特賣會
         private void LoadSaleEventListBox()
         {
             var t = from d in db.SaleEvents.AsEnumerable()
                     where d.SupplierID == loginSupplierID
-                    select new { SaleEventTitle = d.SaleEventTitle, SaleEventStar = $"{d.SaleEventStart:d}", SaleEventEnd = $"{d.SaleEventEnd:d}" };
+                    select new { SaleEventTitle = d.SaleEventTitle, SaleEventStart = $"{d.SaleEventStart:d}", SaleEventEnd = $"{d.SaleEventEnd:d}" };
             lstSaleEvent.ItemsSource = t.ToList();
         }
 
@@ -626,8 +632,19 @@ namespace WpfMarketing
             CaculateComboDiscount();
         }
 
-
-
+        //AD 載入既有廣告
+        private void LoadAdvertisingList()
+        {
+            
+            var ad = from t in db.Advertisings.AsEnumerable()
+                     where t.SupplierID == loginSupplierID
+                     select new { AdvertisingITitle =t.AdvertisingITitle,
+                          AdvertisingStartTime ="開始時間"+$"{t.AdvertisingStartTime:d}",
+                          AdvertisingEndTime = "結束時間"+$"{t.AdvertisingEndTime:d}"
+                     };
+            lstAdvertising.ItemsSource = ad.ToList();
+        }
+        
         //AD.開啟廣告圖片
         private void btnOpenDialog_Click(object sender, RoutedEventArgs e)
         {
@@ -658,21 +675,43 @@ namespace WpfMarketing
         //AD 新增廣告
         private void btnNewAD_Click(object sender, RoutedEventArgs e)
         {
-
-          
-
+            
            var End = dtpADEnd.SelectedDate;
             Advertising ADDB = new Advertising {
                 SupplierID = loginSupplierID,
                 AdvertisingITitle = txtADTitle.Text,
                 AdvertisingIContent = txtADContent.Text,
-              
-
-
+                AdvertisingStartTime = dtpADStart.SelectedDate,
+                AdvertisingEndTime=dtpADEnd.SelectedDate,
                 EdditTime =DateTime.Now
 
             };   
 
         }
+        //AD 選取LISTBOX項目
+        private void lstAdvertising_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int n = lstAdvertising.SelectedIndex;
+            if (n < 0) return;
+
+            var ADID = (from t in db.Advertisings
+                        where t.SupplierID == loginSupplierID
+                        orderby t.AdvertisingID
+                        select t.AdvertisingID).Skip(n).FirstOrDefault();
+
+            txkADID.Text = ADID.ToString();
+
+            var AD = (from t in db.Advertisings
+                      where t.SupplierID == loginSupplierID
+                      select t).FirstOrDefault();
+            txtADTitle.Text = AD.AdvertisingITitle;
+            dtpADStart.SelectedDate = AD.AdvertisingStartTime;
+            dtpADEnd.SelectedDate = AD.AdvertisingEndTime;
+            txtADContent.Text = AD.AdvertisingIContent;
+
+
+        }
+
+    
     }
 }

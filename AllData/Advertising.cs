@@ -24,6 +24,7 @@ namespace AllData
         public Nullable<bool> AlreadyPaid { get; set; }
         public string AdvertisingLink { get; set; }
         public Nullable<System.DateTime> EdditTime { get; set; }
+        public Nullable<bool> Active { get; set; }
     
         public virtual Supplier Supplier { get; set; }
     }
