@@ -106,6 +106,20 @@
                     <DataGridTextColumn Header="商品描述" Binding="{Binding Path= ProductDescription,Mode=TwoWay,  UpdateSourceTrigger=PropertyChanged}"/>
 
                 </DataGrid.Columns>
+                <!--<DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="0" Background="BlanchedAlmond" Padding="10">
+                            <StackPanel Orientation="Vertical">
+                                
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="12" Text="圖片: " VerticalAlignment="Center" />
+                                    <Image Height="100" Width="100" Source="{Binding Path= }" VerticalAlignment="Center" />
+                                </StackPanel>
+                                
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>-->
             </DataGrid>
             
         </DockPanel>

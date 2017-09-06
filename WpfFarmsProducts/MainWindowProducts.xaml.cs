@@ -37,7 +37,19 @@ namespace WpfFarmsProducts
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n=>n.SupplierID==loginCustomerID&&n.DeleteProduct==false).ToList();
+            loginCustomerID = 1;
+
+            //var q = from n in allFarmsDBEntities.Products.ToList()
+            //        where n.SupplierID == loginCustomerID && n.DeleteProduct == false
+            //        group n by n.ProductImages into g
+            //        select g;
+
+            //this.ProductsDataGrid.ItemsSource = q.ToList();
+
+            //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.ToList().Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).GroupBy(n => n.ProductImages).ToList();
+
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
+
             //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
 
         }
@@ -57,7 +69,11 @@ namespace WpfFarmsProducts
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).LastUpdateDate = DateTime.Now;
             this.allFarmsDBEntities.SaveChanges();
+            this.ProductsDataGrid.ItemsSource = null;
+            //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();
+            this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
         }
 
         private void cmdDeleteProducts_Click(object sender, RoutedEventArgs e)
@@ -87,12 +103,13 @@ namespace WpfFarmsProducts
             }
             else
             {
+                SendProductDescription = (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).ProductDescription;
+
                 ProductDescription productDescription = new ProductDescription();
                 if (productDescription.ShowDialog() == true)
                 {                    
                     (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).ProductDescription= AddProductDescription;//(機車)還要用.FirstOrDefault(),不能用LastOrDefault()或ToList(),才能在SaveProductDescriptiont後面點到ProductDescription        
-                    SendProductDescription = (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).ProductDescription;
-
+                    (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).LastUpdateDate = DateTime.Now;
                     this.allFarmsDBEntities.SaveChanges();
                     this.ProductsDataGrid.ItemsSource = null;
                     //this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == SupplierID && n.DeleteProduct == false).ToList();

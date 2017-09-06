@@ -65,14 +65,17 @@ namespace WpfFarmsProducts
             {
                 BitmapImage bitmapImage = new BitmapImage();
                 Image image = new Image();
-                bitmapImage.BeginInit();
-                bitmapImage.UriSource = new Uri(n.ProductImagePath, UriKind.Absolute);
-                bitmapImage.CacheOption= BitmapCacheOption.OnLoad;
-                bitmapImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                bitmapImage.EndInit();                
-                image.Height = 100;
-                image.Width = 100;
-                image.Source = bitmapImage;
+                if (n.ProductImagePath != null)
+                {
+                    bitmapImage.BeginInit();
+                    bitmapImage.UriSource = new Uri(n.ProductImagePath, UriKind.Absolute);
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bitmapImage.EndInit();
+                    image.Height = 100;
+                    image.Width = 100;
+                    image.Source = bitmapImage;
+                }
                 //image.MouseEnter += Image_MouseEnter;
                 //image.MouseLeave += Image_MouseLeave;
                 this.wpanelChangeImages.Children.Add(image);
@@ -91,6 +94,8 @@ namespace WpfFarmsProducts
             ((Image)sender).Width = 100;
         }
 
+        string path = new DirectoryInfo(new DirectoryInfo(System.Windows.Forms.Application.StartupPath).Parent.FullName).Parent.FullName;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (string i in openFileDialog.FileNames)
@@ -99,9 +104,9 @@ namespace WpfFarmsProducts
                 //byte[] ImageByte = new byte[fileStream.Length];
                 //fileStream.Read(ImageByte, 0, ImageByte.Length);
                 //fileStream.Close();
-
-                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
-                var files = System.IO.Directory.GetFiles("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages");
+                
+                string dest = System.IO.Path.Combine(path+"/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
+                var files = System.IO.Directory.GetFiles(path + "/Productimages");
                 
                 if ( files.Contains(i))
                 {
@@ -122,5 +127,6 @@ namespace WpfFarmsProducts
             this.DialogResult = true;
             this.Close();
         }
+        
     }
 }

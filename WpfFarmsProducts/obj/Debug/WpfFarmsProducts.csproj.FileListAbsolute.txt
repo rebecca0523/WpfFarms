@@ -200,3 +200,5 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\obj\Debug\Wp
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.pdb
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml

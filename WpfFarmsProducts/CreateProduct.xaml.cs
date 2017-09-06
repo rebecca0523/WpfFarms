@@ -47,6 +47,7 @@ namespace WpfFarmsProducts
                 UnitPrice = decimal.Parse(this.txtUnitPrice.Text),//要防輸入型別的錯誤
                 PreOrder = this.chkPreOrder.IsChecked,
                 ShippedDate = this.dtpkShippedDate.SelectedDate,
+                ProductDescription =this.txtProductDescription.Text,
                 TotalQTY = int.Parse(this.txtTotalQTY.Text),//要防輸入型別的錯誤
                 CanSaleQTY = int.Parse(this.txtCanSaleQTY.Text),//要防輸入型別的錯誤
                 QuantitySold = int.Parse(this.txtQuantitySold.Text),//要防輸入型別的錯誤
@@ -60,7 +61,8 @@ namespace WpfFarmsProducts
 
             this.allFarmsDBEntities.Products.Add(product);
             this.allFarmsDBEntities.SaveChanges();
-            
+
+            string path = new DirectoryInfo(new DirectoryInfo(System.Windows.Forms.Application.StartupPath).Parent.FullName).Parent.FullName;//移到上上層,發布後應該會有錯誤
 
             foreach (string i in openFileDialog.FileNames)
             {
@@ -69,8 +71,8 @@ namespace WpfFarmsProducts
                 //fileStream.Read(ImageByte, 0, ImageByte.Length);
                 //fileStream.Close();
 
-                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
-                var files = System.IO.Directory.GetFiles("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages");
+                string dest = System.IO.Path.Combine(path + "/Productimages", openFileDialog.SafeFileName);//合併字串,背背背背背背
+                var files = System.IO.Directory.GetFiles(path + "/Productimages");
 
                 if (files.Contains(i))
                 {
