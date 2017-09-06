@@ -30,8 +30,10 @@ WpfFarms/WpfFarmsProducts/bin/Debug/
 WpfFarms/WpfMarketing/bin/Debug/
 WpfFarms/WpfCustomer/bin/Debug/
 WpfFarms/AllData/bin/Debug/
-
-
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
 */bin/
 */obj/
 
