@@ -4,496 +4,67 @@
     <EntitySetMapping Name="ActivityCities">
       <EntityTypeMapping TypeName="farmsDBModel.ActivityCity">
         <MappingFragment StoreEntitySet="ActivityCity">
-          <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ActivityFarmers">
       <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
         <MappingFragment StoreEntitySet="ActivityFarmer">
-          <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
-          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="CityID" ColumnName="CityID" />
-          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-          <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
-          <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
-          <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
-          <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
+          <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+          <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
+          <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ActivityOrders">
       <EntityTypeMapping TypeName="farmsDBModel.ActivityOrder">
         <MappingFragment StoreEntitySet="ActivityOrder">
+          <ScalarProperty Name="ReceivedConfirm" ColumnName="ReceivedConfirm" />
+          <ScalarProperty Name="PaymentConfirm" ColumnName="PaymentConfirm" />
+          <ScalarProperty Name="GroupConfirm" ColumnName="GroupConfirm" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
           <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-          <ScalarProperty Name="GroupConfirm" ColumnName="GroupConfirm" />
-          <ScalarProperty Name="PaymentConfirm" ColumnName="PaymentConfirm" />
-          <ScalarProperty Name="ReceivedConfirm" ColumnName="ReceivedConfirm" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ActivityPhotoes">
       <EntityTypeMapping TypeName="farmsDBModel.ActivityPhoto">
         <MappingFragment StoreEntitySet="ActivityPhoto">
-          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
           <ScalarProperty Name="ActivityPhoto1" ColumnName="ActivityPhoto" />
+          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AddressInfoes">
       <EntityTypeMapping TypeName="farmsDBModel.AddressInfo">
         <MappingFragment StoreEntitySet="AddressInfo">
-          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BlackListInfoes">
-      <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
-        <MappingFragment StoreEntitySet="BlackListInfo">
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
-          <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Browses">
-      <EntityTypeMapping TypeName="farmsDBModel.Browse">
-        <MappingFragment StoreEntitySet="Browse">
-          <ScalarProperty Name="BrowseID" ColumnName="BrowseID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ChatLogs">
-      <EntityTypeMapping TypeName="farmsDBModel.ChatLog">
-        <MappingFragment StoreEntitySet="ChatLog">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
-          <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
-          <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
-          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerInfoes">
-      <EntityTypeMapping TypeName="farmsDBModel.CustomerInfo">
-        <MappingFragment StoreEntitySet="CustomerInfo">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
           <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Useridentity" ColumnName="Useridentity" />
-          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-          <ScalarProperty Name="Interestied" ColumnName="Interestied" />
-          <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerLoginlogs">
-      <EntityTypeMapping TypeName="farmsDBModel.CustomerLoginlog">
-        <MappingFragment StoreEntitySet="CustomerLoginlog">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
-          <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
-          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerRefunds">
-      <EntityTypeMapping TypeName="farmsDBModel.CustomerRefund">
-        <MappingFragment StoreEntitySet="CustomerRefund">
-          <ScalarProperty Name="RefundID" ColumnName="RefundID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="RefundAgree" ColumnName="RefundAgree" />
-          <ScalarProperty Name="Cash" ColumnName="Cash" />
-          <ScalarProperty Name="RefundReason" ColumnName="RefundReason" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerReturns">
-      <EntityTypeMapping TypeName="farmsDBModel.CustomerReturn">
-        <MappingFragment StoreEntitySet="CustomerReturn">
-          <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="ReturnOrder" ColumnName="ReturnOrder" />
-          <ScalarProperty Name="ReturnReason" ColumnName="ReturnReason" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="Cash" ColumnName="Cash" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerSubscriptions">
-      <EntityTypeMapping TypeName="farmsDBModel.CustomerSubscription">
-        <MappingFragment StoreEntitySet="CustomerSubscription">
-          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-          <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
-          <ScalarProperty Name="AllowMail" ColumnName="AllowMail" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DiscountPointsEvents">
-      <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEvent">
-        <MappingFragment StoreEntitySet="DiscountPointsEvent">
-          <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
-          <ScalarProperty Name="DiscountPointsEventName" ColumnName="DiscountPointsEventName" />
-          <ScalarProperty Name="DiscountPointsEvenContent" ColumnName="DiscountPointsEvenContent" />
-          <ScalarProperty Name="DiscountPointsEventStart" ColumnName="DiscountPointsEventStart" />
-          <ScalarProperty Name="DiscountPointsEventEnd" ColumnName="DiscountPointsEventEnd" />
-          <ScalarProperty Name="BirthdayPoint" ColumnName="BirthdayPoint" />
-          <ScalarProperty Name="LoginPoint" ColumnName="LoginPoint" />
-          <ScalarProperty Name="SharePoint" ColumnName="SharePoint" />
-          <ScalarProperty Name="Quota" ColumnName="Quota" />
-          <ScalarProperty Name="QuotaPoint" ColumnName="QuotaPoint" />
-          <ScalarProperty Name="QPointToOneNTD" ColumnName="QPointToOneNTD" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DiscountPointsEventDetails">
-      <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEventDetail">
-        <MappingFragment StoreEntitySet="DiscountPointsEventDetail">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
-          <ScalarProperty Name="getBirthdayPoint" ColumnName="getBirthdayPoint" />
-          <ScalarProperty Name="getLoginPoint" ColumnName="getLoginPoint" />
-          <ScalarProperty Name="getSharePoint" ColumnName="getSharePoint" />
-          <ScalarProperty Name="getQuotaPoint" ColumnName="getQuotaPoint" />
-          <ScalarProperty Name="usedPoint" ColumnName="usedPoint" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetails">
-      <EntityTypeMapping TypeName="farmsDBModel.OrderDetail">
-        <MappingFragment StoreEntitySet="OrderDetails">
-          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="DiscountPoint" ColumnName="DiscountPoint" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="ShipmentStatus" ColumnName="ShipmentStatus" />
-          <ScalarProperty Name="MakeCollectionsStatus" ColumnName="MakeCollectionsStatus" />
-          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="farmsDBModel.Order">
-        <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="Consignee" ColumnName="Consignee" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
-          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
-          <ScalarProperty Name="CustomerDemand" ColumnName="CustomerDemand" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PostalCodeInfoes">
-      <EntityTypeMapping TypeName="farmsDBModel.PostalCodeInfo">
-        <MappingFragment StoreEntitySet="PostalCodeInfo">
-          <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
-          <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProductGrowPlanDetails">
-      <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanDetail">
-        <MappingFragment StoreEntitySet="ProductGrowPlanDetail">
-          <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
-          <ScalarProperty Name="StepItemID" ColumnName="StepItemID" />
-          <ScalarProperty Name="StepItemDESC" ColumnName="StepItemDESC" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
-          <ScalarProperty Name="StatusDatae" ColumnName="StatusDatae" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProductGrowPlanMasters">
-      <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanMaster">
-        <MappingFragment StoreEntitySet="ProductGrowPlanMaster">
-          <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
-          <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
-          <ScalarProperty Name="ProductKind" ColumnName="ProductKind" />
-          <ScalarProperty Name="Planting" ColumnName="Planting" />
-          <ScalarProperty Name="PlanHarvestDate" ColumnName="PlanHarvestDate" />
-          <ScalarProperty Name="PlanHarvestQTY" ColumnName="PlanHarvestQTY" />
-          <ScalarProperty Name="ActuallyarvestQTY" ColumnName="ActuallyarvestQTY" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProductImages">
-      <EntityTypeMapping TypeName="farmsDBModel.ProductImage">
-        <MappingFragment StoreEntitySet="ProductImages">
-          <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
-          <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="farmsDBModel.Product">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
-          <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
-          <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-          <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
-          <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
-          <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
-          <ScalarProperty Name="Discounted" ColumnName="Discounted" />
-          <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
-          <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleEvents">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
-        <MappingFragment StoreEntitySet="SaleEvent">
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="SaleEventTitle" ColumnName="SaleEventTitle" />
-          <ScalarProperty Name="SaleEventContent" ColumnName="SaleEventContent" />
-          <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
-          <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleEventComboes">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
-        <MappingFragment StoreEntitySet="SaleEventCombo">
-          <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="AProductID" ColumnName="AProductID" />
-          <ScalarProperty Name="BProductID" ColumnName="BProductID" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleEventQuotas">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
-        <MappingFragment StoreEntitySet="SaleEventQuota">
-          <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="Quota" ColumnName="Quota" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleEventSingleProducts">
-      <EntityTypeMapping TypeName="farmsDBModel.SaleEventSingleProduct">
-        <MappingFragment StoreEntitySet="SaleEventSingleProduct">
-          <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
-          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ShoppingCarts">
-      <EntityTypeMapping TypeName="farmsDBModel.ShoppingCart">
-        <MappingFragment StoreEntitySet="ShoppingCart">
-          <ScalarProperty Name="CartID" ColumnName="CartID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Suppliers">
-      <EntityTypeMapping TypeName="farmsDBModel.Supplier">
-        <MappingFragment StoreEntitySet="Suppliers">
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-          <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
-          <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
-          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
-          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
-          <ScalarProperty Name="LineID" ColumnName="LineID" />
-          <ScalarProperty Name="email1" ColumnName="email1" />
-          <ScalarProperty Name="email2" ColumnName="email2" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersBulletinBoards">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersBulletinBoard">
-        <MappingFragment StoreEntitySet="SuppliersBulletinBoard">
-          <ScalarProperty Name="BoardID" ColumnName="BoardID" />
-          <ScalarProperty Name="SupplierD" ColumnName="SupplierD" />
-          <ScalarProperty Name="seqID" ColumnName="seqID" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndData" ColumnName="EndData" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersFarms">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersFarm">
-        <MappingFragment StoreEntitySet="SuppliersFarm">
-          <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="SupplierFarmDESC" ColumnName="SupplierFarmDESC" />
-          <ScalarProperty Name="FarmSoilKind" ColumnName="FarmSoilKind" />
-          <ScalarProperty Name="FarmSoilRange" ColumnName="FarmSoilRange" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersStoryDetails">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryDetail">
-        <MappingFragment StoreEntitySet="SuppliersStoryDetail">
-          <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
-          <ScalarProperty Name="StoryItemID" ColumnName="StoryItemID" />
-          <ScalarProperty Name="StoryItemDesc" ColumnName="StoryItemDesc" />
-          <ScalarProperty Name="StoryItemPhoto" ColumnName="StoryItemPhoto" />
-          <ScalarProperty Name="StoryItemSEQ" ColumnName="StoryItemSEQ" />
-          <ScalarProperty Name="StoryItemStatus" ColumnName="StoryItemStatus" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersStoryMasters">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryMaster">
-        <MappingFragment StoreEntitySet="SuppliersStoryMaster">
-          <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
-          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-          <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
-          <ScalarProperty Name="OrderByKind" ColumnName="OrderByKind" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersVideos">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
-        <MappingFragment StoreEntitySet="SuppliersVideo">
-          <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
-          <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
-          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
-          <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
-          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="farmsDBModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemToSuppliersInfoes">
-      <EntityTypeMapping TypeName="farmsDBModel.SystemToSuppliersInfo">
-        <MappingFragment StoreEntitySet="SystemToSuppliersInfo">
-          <ScalarProperty Name="infoMessageID" ColumnName="infoMessageID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="infoMessageDesc" ColumnName="infoMessageDesc" />
-          <ScalarProperty Name="isread" ColumnName="isread" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -510,6 +81,447 @@
           <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
           <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlackListInfoes">
+      <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
+        <MappingFragment StoreEntitySet="BlackListInfo">
+          <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+          <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Browses">
+      <EntityTypeMapping TypeName="farmsDBModel.Browse">
+        <MappingFragment StoreEntitySet="Browse">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="BrowseID" ColumnName="BrowseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatLogs">
+      <EntityTypeMapping TypeName="farmsDBModel.ChatLog">
+        <MappingFragment StoreEntitySet="ChatLog">
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
+          <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
+          <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerInfoes">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerInfo">
+        <MappingFragment StoreEntitySet="CustomerInfo">
+          <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
+          <ScalarProperty Name="Interestied" ColumnName="Interestied" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Useridentity" ColumnName="Useridentity" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerLoginlogs">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerLoginlog">
+        <MappingFragment StoreEntitySet="CustomerLoginlog">
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerRefunds">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerRefund">
+        <MappingFragment StoreEntitySet="CustomerRefund">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="RefundReason" ColumnName="RefundReason" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="RefundAgree" ColumnName="RefundAgree" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="RefundID" ColumnName="RefundID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerReturns">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerReturn">
+        <MappingFragment StoreEntitySet="CustomerReturn">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ReturnReason" ColumnName="ReturnReason" />
+          <ScalarProperty Name="ReturnOrder" ColumnName="ReturnOrder" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerSubscriptions">
+      <EntityTypeMapping TypeName="farmsDBModel.CustomerSubscription">
+        <MappingFragment StoreEntitySet="CustomerSubscription">
+          <ScalarProperty Name="AllowMail" ColumnName="AllowMail" />
+          <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscountPointsEvents">
+      <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEvent">
+        <MappingFragment StoreEntitySet="DiscountPointsEvent">
+          <ScalarProperty Name="QPointToOneNTD" ColumnName="QPointToOneNTD" />
+          <ScalarProperty Name="QuotaPoint" ColumnName="QuotaPoint" />
+          <ScalarProperty Name="Quota" ColumnName="Quota" />
+          <ScalarProperty Name="SharePoint" ColumnName="SharePoint" />
+          <ScalarProperty Name="LoginPoint" ColumnName="LoginPoint" />
+          <ScalarProperty Name="BirthdayPoint" ColumnName="BirthdayPoint" />
+          <ScalarProperty Name="DiscountPointsEventEnd" ColumnName="DiscountPointsEventEnd" />
+          <ScalarProperty Name="DiscountPointsEventStart" ColumnName="DiscountPointsEventStart" />
+          <ScalarProperty Name="DiscountPointsEvenContent" ColumnName="DiscountPointsEvenContent" />
+          <ScalarProperty Name="DiscountPointsEventName" ColumnName="DiscountPointsEventName" />
+          <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscountPointsEventDetails">
+      <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEventDetail">
+        <MappingFragment StoreEntitySet="DiscountPointsEventDetail">
+          <ScalarProperty Name="usedPoint" ColumnName="usedPoint" />
+          <ScalarProperty Name="getQuotaPoint" ColumnName="getQuotaPoint" />
+          <ScalarProperty Name="getSharePoint" ColumnName="getSharePoint" />
+          <ScalarProperty Name="getLoginPoint" ColumnName="getLoginPoint" />
+          <ScalarProperty Name="getBirthdayPoint" ColumnName="getBirthdayPoint" />
+          <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscountPointsRecs">
+      <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsRec">
+        <MappingFragment StoreEntitySet="DiscountPointsRec">
+          <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+          <ScalarProperty Name="sendReason" ColumnName="sendReason" />
+          <ScalarProperty Name="sendPoint" ColumnName="sendPoint" />
+          <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="DiscountPointsRecID" ColumnName="DiscountPointsRecID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="farmsDBModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="MakeCollectionsStatus" ColumnName="MakeCollectionsStatus" />
+          <ScalarProperty Name="ShipmentStatus" ColumnName="ShipmentStatus" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="DiscountPoint" ColumnName="DiscountPoint" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="farmsDBModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="CustomerDemand" ColumnName="CustomerDemand" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostalCodeInfoes">
+      <EntityTypeMapping TypeName="farmsDBModel.PostalCodeInfo">
+        <MappingFragment StoreEntitySet="PostalCodeInfo">
+          <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
+          <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductGrowPlanDetails">
+      <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanDetail">
+        <MappingFragment StoreEntitySet="ProductGrowPlanDetail">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="StatusDatae" ColumnName="StatusDatae" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="StepItemDESC" ColumnName="StepItemDESC" />
+          <ScalarProperty Name="StepItemID" ColumnName="StepItemID" />
+          <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductGrowPlanMasters">
+      <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanMaster">
+        <MappingFragment StoreEntitySet="ProductGrowPlanMaster">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ActuallyarvestQTY" ColumnName="ActuallyarvestQTY" />
+          <ScalarProperty Name="PlanHarvestQTY" ColumnName="PlanHarvestQTY" />
+          <ScalarProperty Name="PlanHarvestDate" ColumnName="PlanHarvestDate" />
+          <ScalarProperty Name="Planting" ColumnName="Planting" />
+          <ScalarProperty Name="ProductKind" ColumnName="ProductKind" />
+          <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
+          <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="farmsDBModel.ProductImage">
+        <MappingFragment StoreEntitySet="ProductImages">
+          <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="farmsDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
+          <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
+          <ScalarProperty Name="Discounted" ColumnName="Discounted" />
+          <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
+          <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
+          <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+          <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
+          <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
+          <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEvents">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
+        <MappingFragment StoreEntitySet="SaleEvent">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
+          <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
+          <ScalarProperty Name="SaleEventContent" ColumnName="SaleEventContent" />
+          <ScalarProperty Name="SaleEventTitle" ColumnName="SaleEventTitle" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventComboes">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
+        <MappingFragment StoreEntitySet="SaleEventCombo">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="BProductID" ColumnName="BProductID" />
+          <ScalarProperty Name="AProductID" ColumnName="AProductID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventQuotas">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
+        <MappingFragment StoreEntitySet="SaleEventQuota">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Quota" ColumnName="Quota" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleEventSingleProducts">
+      <EntityTypeMapping TypeName="farmsDBModel.SaleEventSingleProduct">
+        <MappingFragment StoreEntitySet="SaleEventSingleProduct">
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+          <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShoppingCarts">
+      <EntityTypeMapping TypeName="farmsDBModel.ShoppingCart">
+        <MappingFragment StoreEntitySet="ShoppingCart">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="farmsDBModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
+          <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersBulletinBoards">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersBulletinBoard">
+        <MappingFragment StoreEntitySet="SuppliersBulletinBoard">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="EndData" ColumnName="EndData" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="seqID" ColumnName="seqID" />
+          <ScalarProperty Name="SupplierD" ColumnName="SupplierD" />
+          <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersFarms">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersFarm">
+        <MappingFragment StoreEntitySet="SuppliersFarm">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="FarmSoilRange" ColumnName="FarmSoilRange" />
+          <ScalarProperty Name="FarmSoilKind" ColumnName="FarmSoilKind" />
+          <ScalarProperty Name="SupplierFarmDESC" ColumnName="SupplierFarmDESC" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersStoryDetails">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryDetail">
+        <MappingFragment StoreEntitySet="SuppliersStoryDetail">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="StoryItemStatus" ColumnName="StoryItemStatus" />
+          <ScalarProperty Name="StoryItemSEQ" ColumnName="StoryItemSEQ" />
+          <ScalarProperty Name="StoryItemPhoto" ColumnName="StoryItemPhoto" />
+          <ScalarProperty Name="StoryItemDesc" ColumnName="StoryItemDesc" />
+          <ScalarProperty Name="StoryItemID" ColumnName="StoryItemID" />
+          <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersStoryMasters">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryMaster">
+        <MappingFragment StoreEntitySet="SuppliersStoryMaster">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="OrderByKind" ColumnName="OrderByKind" />
+          <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersVideos">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
+        <MappingFragment StoreEntitySet="SuppliersVideo">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
+          <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
+          <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="farmsDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemToSuppliersInfoes">
+      <EntityTypeMapping TypeName="farmsDBModel.SystemToSuppliersInfo">
+        <MappingFragment StoreEntitySet="SystemToSuppliersInfo">
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="isread" ColumnName="isread" />
+          <ScalarProperty Name="infoMessageDesc" ColumnName="infoMessageDesc" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="infoMessageID" ColumnName="infoMessageID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

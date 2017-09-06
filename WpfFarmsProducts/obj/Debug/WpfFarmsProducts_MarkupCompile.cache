@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\
-=======
-D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\
->>>>>>> b65babdea57b637a33210e8b05ee590e423e0012
 WpfFarmsProducts
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\App.xaml
 61255153028
 
 8-2119796993
 22-1669193843
 ChangeImages.xaml;CreateProduct.xaml;MainWindowProducts.xaml;ProductDescription.xaml;ShinyBlueDictionary.xaml;TwilightBlueDictionary.xaml;
-=======
-D:\99GitHub\WpfFarms\WpfFarmsProducts\App.xaml
-51272366698
 
-7-942405551
-22-1016067887
-CreateProduct.xaml;MainWindowProducts.xaml;ProductDescription.xaml;ShinyBlueDictionary.xaml;TwilightBlueDictionary.xaml;
->>>>>>> b65babdea57b637a33210e8b05ee590e423e0012
-
-True
+False
 

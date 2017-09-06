@@ -114,6 +114,9 @@
     <Compile Include="DiscountPointsEventDetail.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DiscountPointsRec.cs">
+      <DependentUpon>AllFarmsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>

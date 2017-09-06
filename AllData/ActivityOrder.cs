@@ -14,18 +14,18 @@ namespace AllData
     
     public partial class ActivityOrder
     {
-        public Nullable<int> ActivityFarmerID { get; set; }
         public int ActivityOrderID { get; set; }
+        public Nullable<int> ActivityFarmerID { get; set; }
         public int CustomerID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<decimal> TotalPrice { get; set; }
         public string ATMBank { get; set; }
         public string ATMAccount { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> LastUpdateDate { get; set; }
         public Nullable<bool> GroupConfirm { get; set; }
         public Nullable<bool> PaymentConfirm { get; set; }
         public Nullable<bool> ReceivedConfirm { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> LastUpdateDate { get; set; }
     
         public virtual ActivityFarmer ActivityFarmer { get; set; }
     }

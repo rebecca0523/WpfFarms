@@ -1,4 +1,4 @@
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe.config
+﻿C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\EntityFramework.dll
@@ -152,7 +152,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
-<<<<<<< HEAD
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
@@ -161,8 +160,9 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescriptio
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
-=======
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
 >>>>>>> b65babdea57b637a33210e8b05ee590e423e0012
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache

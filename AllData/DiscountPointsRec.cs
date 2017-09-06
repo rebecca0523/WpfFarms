@@ -12,12 +12,15 @@ namespace AllData
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductImage
+    public partial class DiscountPointsRec
     {
-        public int ProductImageID { get; set; }
-        public int ProductID { get; set; }
-        public string ProductImagePath { get; set; }
+        public int DiscountPointsRecID { get; set; }
+        public Nullable<int> CustomerID { get; set; }
+        public Nullable<int> DiscountPointsEventID { get; set; }
+        public Nullable<int> sendPoint { get; set; }
+        public string sendReason { get; set; }
+        public Nullable<System.DateTime> sendTime { get; set; }
     
-        public virtual Product Product { get; set; }
+        public virtual DiscountPointsEvent DiscountPointsEvent { get; set; }
     }
 }

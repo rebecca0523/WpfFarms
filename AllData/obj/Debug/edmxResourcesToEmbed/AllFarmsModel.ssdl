@@ -205,6 +205,17 @@
     <Property Name="getQuotaPoint" Type="int" />
     <Property Name="usedPoint" Type="int" />
   </EntityType>
+  <EntityType Name="DiscountPointsRec">
+    <Key>
+      <PropertyRef Name="DiscountPointsRecID" />
+    </Key>
+    <Property Name="DiscountPointsRecID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DiscountPointsEventID" Type="int" />
+    <Property Name="sendPoint" Type="int" />
+    <Property Name="sendReason" Type="nvarchar(max)" />
+    <Property Name="sendTime" Type="datetime" />
+  </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
       <PropertyRef Name="OrderDetailID" />
@@ -601,6 +612,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DiscountPointsRec_DiscountPointsEvent">
+    <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="0..1" />
+    <End Role="DiscountPointsRec" Type="Self.DiscountPointsRec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiscountPointsEvent">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Principal>
+      <Dependent Role="DiscountPointsRec">
+        <PropertyRef Name="DiscountPointsEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OrderDetails_Orders">
     <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
     <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -822,6 +845,7 @@
     <EntitySet Name="CustomerSubscription" EntityType="Self.CustomerSubscription" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DiscountPointsEvent" EntityType="Self.DiscountPointsEvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DiscountPointsEventDetail" EntityType="Self.DiscountPointsEventDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiscountPointsRec" EntityType="Self.DiscountPointsRec" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostalCodeInfo" EntityType="Self.PostalCodeInfo" Schema="dbo" store:Type="Tables" />
@@ -881,6 +905,10 @@
     <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent">
       <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvent" />
       <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiscountPointsRec_DiscountPointsEvent" Association="Self.FK_DiscountPointsRec_DiscountPointsEvent">
+      <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvent" />
+      <End Role="DiscountPointsRec" EntitySet="DiscountPointsRec" />
     </AssociationSet>
     <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
       <End Role="Orders" EntitySet="Orders" />

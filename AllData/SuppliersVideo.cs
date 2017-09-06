@@ -16,7 +16,7 @@ namespace AllData
     {
         public int SuppliersVideoID { get; set; }
         public int SuppliersID { get; set; }
-        public string SuppliersStoryTitle { get; set; }
+        public string SuppliersVideoTitle { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public byte[] VideoFile { get; set; }
@@ -26,8 +26,5 @@ namespace AllData
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> LastUpdateUserID { get; set; }
         public Nullable<System.DateTime> LastUpdateDate { get; set; }
-        public string SuppliersVideoTitle { get; set; }
-    
-        public virtual Supplier Supplier { get; set; }
     }
 }
