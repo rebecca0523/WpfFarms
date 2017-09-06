@@ -1,4 +1,4 @@
-﻿C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\EntityFramework.dll
@@ -174,3 +174,5 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeIma
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml
+D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
