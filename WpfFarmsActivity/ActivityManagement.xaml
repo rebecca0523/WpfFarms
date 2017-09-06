@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WpfFarmsActivity"
         xmlns:meterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ActivityManagement" Height="823" Width="1106.6">
+        Title="ActivityManagement" Height="823" Width="1106.6" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
         <WrapPanel x:Name="ListWrapPanel" HorizontalAlignment="Left" Height="588" Margin="55,88,0,0" VerticalAlignment="Top" Width="1015">
             <meterialDesign:Card meterialDesign:ShadowAssist.ShadowDepth="Depth4" Height="268.648" Width="240.689" Margin="5,5,15,15">
                 <Border BorderBrush="Black" BorderThickness="1">
                     <DockPanel VerticalAlignment="Top" DockPanel.Dock="Top" Height="46" Margin="58,94,57,0">
-                        <Button x:Name="AddTable" Content="新增場次" Height="44" VerticalAlignment="Bottom" Width="90" Margin="6,0,7,1" HorizontalAlignment="Center" Click="Button_Click"/>
+                        <Button x:Name="AddTable" Content="新增活動" Height="44" VerticalAlignment="Bottom" Width="90" Margin="6,0,7,1" HorizontalAlignment="Center" Click="Button_Click"/>
                     </DockPanel>
                 </Border>
             </meterialDesign:Card>

@@ -14,7 +14,7 @@
                 <DatePicker Margin="10,9,0,9" Width="168" HorizontalAlignment="Left" FontSize="16"/>
                 <Label Content="Label"/>
             </StackPanel>
-            <Button x:Name="Add" HorizontalAlignment="Left" Margin="332,18,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28">
+            <Button x:Name="Edit" HorizontalAlignment="Left" Margin="332,18,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28">
                 <meterialDesign:PackIcon Kind="Pencil" />
             </Button>
             <Button x:Name="Delete" HorizontalAlignment="Left" Margin="332,62,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28" Background="Red" BorderBrush="Red">
