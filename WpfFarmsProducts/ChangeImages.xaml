@@ -8,10 +8,12 @@
         Title="ChangeImages" Height="400" Width="500" Loaded="Window_Loaded">
     <Grid>
         <ScrollViewer Margin="20,50" Height="269" VerticalScrollBarVisibility="Auto">
-            <WrapPanel x:Name="wpanelChangeImages"/>
+            <WrapPanel x:Name="wpanelChangeImages">
+
+            </WrapPanel>
         </ScrollViewer>
         <Button x:Name="cmdChangeImages" Content="更新圖片" Margin="20,12,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Style="{DynamicResource ShinyBlueButtonStyle}" FontSize="18" HorizontalAlignment="Left" Width="75" Click="cmdChangeImages_Click"/>
-        <Button Content="確定" Margin="208,0,208,10" VerticalAlignment="Bottom" Foreground="White" FontWeight="Bold" Style="{DynamicResource ShinyBlueButtonStyle}" FontSize="16"/>
-        <Button Content="取消" Margin="0,0,20,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Foreground="White" FontWeight="Bold" Style="{DynamicResource ShinyBlueButtonStyle}" FontSize="16"/>
+        <Button Content="確定" Margin="208,0,208,10" VerticalAlignment="Bottom" Foreground="White" FontWeight="Bold" Style="{DynamicResource ShinyBlueButtonStyle}" FontSize="16" Click="Button_Click" IsDefault="True"/>
+        <Button Content="取消" Margin="0,0,20,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Foreground="White" FontWeight="Bold" Style="{DynamicResource ShinyBlueButtonStyle}" FontSize="16" IsCancel="True"/>
     </Grid>
 </Window>

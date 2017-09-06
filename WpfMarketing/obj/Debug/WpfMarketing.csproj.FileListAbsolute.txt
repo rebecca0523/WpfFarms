@@ -111,3 +111,4 @@ C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache
