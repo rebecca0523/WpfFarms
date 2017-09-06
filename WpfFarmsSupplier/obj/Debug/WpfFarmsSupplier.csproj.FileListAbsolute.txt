@@ -154,8 +154,13 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pd
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml
+<<<<<<< HEAD
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.baml
+=======
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml
+>>>>>>> 9c5a3e6605aafa71f73adaee0f23d6d3f6f7d411
