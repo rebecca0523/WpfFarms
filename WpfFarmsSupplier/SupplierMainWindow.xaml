@@ -12,8 +12,8 @@
             <MenuItem x:Name="MenuItemfarmsCRUDMulti" Header="維護小農基本資料-多筆-系統管理員" Click="MenuItemfarmsCRUDMulti_Click" ></MenuItem>
             <MenuItem x:Name="MenuItemfarmsCRUD" Header="維護小農基本資料" Click="MenuItemfarmsCRUD_Click" ></MenuItem>
             <MenuItem x:Name="MenuItemVedioCRUD" Header="維護小農Vedio資料" Click="MenuItemVedioCRUD_Click"  ></MenuItem>
-                <MenuItem x:Name="MenuItemVedioCRUDMulti" Header="維護小農Vedio資料Multi" Click="MenuItemVedioCRUDMulti_Click"  ></MenuItem>
-            </MenuItem>
+            <MenuItem x:Name="MenuItemVedioCRUDMulti" Header="維護小農Vedio資料Multi" Click="MenuItemVedioCRUDMulti_Click"  ></MenuItem>
+        </MenuItem>
         </Menu>
 
 

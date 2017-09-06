@@ -6,49 +6,83 @@
         xmlns:local="clr-namespace:WpfFarmsSupplier"
         xmlns:AllData="clr-namespace:AllData;assembly=AllData" x:Class="WpfFarmsSupplier.SuppliersVedioCRUDMulti"
         mc:Ignorable="d"
-        Title="SuppliersVedioCRUDMulti" Height="800" Width="800" Loaded="Window_Loaded">
+        Title="SuppliersVedioCRUDMulti" Height="772" Width="1089" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="suppliersVideoViewSource" d:DesignSource="{d:DesignInstance {x:Type AllData:SuppliersVideo}, CreateList=True}"/>
+        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type AllData:Supplier}, CreateList=True}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource suppliersVideoViewSource}">
-        <DataGrid x:Name="suppliersVideoDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,42,544" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="createdDateColumn" Header="Created Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding CreatedDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="createdUserIDColumn" Binding="{Binding CreatedUserID}" Header="Created User ID" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="endDateColumn" Header="End Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding EndDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="lastUpdateDateColumn" Header="Last Update Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding LastUpdateDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="lastUpdateUserIDColumn" Binding="{Binding LastUpdateUserID}" Header="Last Update User ID" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="startDateColumn" Header="Start Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="suppliersIDColumn" Binding="{Binding SuppliersID}" Header="Suppliers ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="suppliersVideoIDColumn" Binding="{Binding SuppliersVideoID}" Header="Suppliers Video ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="suppliersVideoTitleColumn" Binding="{Binding SuppliersVideoTitle}" Header="Suppliers Video Title" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="videomimeTypeColumn" Binding="{Binding VideomimeType}" Header="Videomime Type" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="videoNameColumn" Binding="{Binding VideoName}" Header="Video Name" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    <Canvas>
+
+        <Grid x:Name="grid1" DataContext="{StaticResource supplierViewSource}" HorizontalAlignment="Left" Canvas.Left="54" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Supplier Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="supplierNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding SupplierName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+
+
+
+        <Grid DataContext="{StaticResource suppliersVideoViewSource}" Height="560" Canvas.Top="60">
+            <DataGrid x:Name="suppliersVideoDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="suppliersVideoDataGrid_SelectionChanged">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn x:Name="suppliersIDColumn" Binding="{Binding SuppliersID}" Header="Suppliers ID" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="suppliersVideoIDColumn" Binding="{Binding SuppliersVideoID}" Header="Suppliers Video ID" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="suppliersVideoTitleColumn" Binding="{Binding SuppliersVideoTitle}" Header="Suppliers Video Title" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="videomimeTypeColumn" Binding="{Binding VideomimeType}" Header="Videomime Type" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="videoNameColumn" Binding="{Binding VideoName}" Header="Video Name" Width="SizeToHeader"/>
+
+                    <DataGridTemplateColumn x:Name="startDateColumn" Header="Start Date" Width="SizeToHeader">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn x:Name="endDateColumn" Header="End Date" Width="SizeToHeader">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding EndDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTextColumn x:Name="createdUserIDColumn" Binding="{Binding CreatedUserID}" Header="Created User ID" Width="SizeToHeader"/>
+
+                    <DataGridTemplateColumn x:Name="createdDateColumn" Header="Created Date" Width="SizeToHeader">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding CreatedDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn x:Name="lastUpdateUserIDColumn" Binding="{Binding LastUpdateUserID}" Header="Last Update User ID" Width="SizeToHeader"/>
+
+                    <DataGridTemplateColumn x:Name="lastUpdateDateColumn" Header="Last Update Date" Width="SizeToHeader">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding LastUpdateDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+
+                </DataGrid.Columns>
+                
+            </DataGrid>
+        </Grid>
+
+    </Canvas>
 </Window>
