@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("customerinfomodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("customerinfomodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmdbactivitymodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmdbactivitymodel.tt")]
 
 

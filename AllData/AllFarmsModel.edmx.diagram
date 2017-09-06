@@ -15,9 +15,9 @@
         <EntityTypeShape EntityType="farmsDBModel.Browse" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.ChatLog" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.CustomerInfo" Width="1.5" PointX="0.75" PointY="33.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.CustomerLoginlog" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerLoginlog" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.CustomerRefund" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="farmsDBModel.CustomerReturn" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="farmsDBModel.CustomerReturn" Width="1.5" PointX="5.5" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.CustomerSubscription" Width="1.5" PointX="3" PointY="31.25" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.DiscountPointsEvent" Width="1.5" PointX="5.75" PointY="54.875" IsExpanded="true" />
         <EntityTypeShape EntityType="farmsDBModel.DiscountPointsEventDetail" Width="1.5" PointX="8" PointY="36.125" IsExpanded="true" />

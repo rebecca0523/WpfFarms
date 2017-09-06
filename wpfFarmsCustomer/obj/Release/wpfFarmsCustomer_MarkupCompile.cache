@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\99GitHub\WpfFarms\wpfFarmsCustomer\obj\Release\
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\obj\Release\
 wpfFarmsCustomer
 none
 false
 TRACE
-D:\99GitHub\WpfFarms\wpfFarmsCustomer\App.xaml
-6-1058377651
-21777353246
-14409134373
-23-272419217
-CustomerAccount.xaml;CustomerRegister.xaml;DeleteCustomer.xaml;EditCustomer.xaml;ForgetPassword.xaml;MainWindow.xaml;
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\wpfFarmsCustomer\App.xaml
+7-1123783276
+
+11845326527
+27-365107402
+CustomerAccount.xaml;CustomerRegister.xaml;DeleteCustomer.xaml;EditCustomer.xaml;ForgetPassword.xaml;LoginAndRegister.xaml;MainWindow.xaml;
 
 True
 
