@@ -22,5 +22,35 @@ namespace WpfFarmsSupplier.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Northwind;Integrated Security=True")]
+        public string NorthwindConnectionString {
+            get {
+                return ((string)(this["NorthwindConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=farmsDB;Integrated Security=True")]
+        public string farmsDBConnectionString {
+            get {
+                return ((string)(this["farmsDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.152.55;Initial Catalog=farmsDB;Integrated Security=True")]
+        public string farmsDBConnectionString1 {
+            get {
+                return ((string)(this["farmsDBConnectionString1"]));
+            }
+        }
     }
 }

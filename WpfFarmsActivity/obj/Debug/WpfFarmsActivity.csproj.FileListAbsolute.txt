@@ -147,3 +147,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.c
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_Content.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.baml
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_Content.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.baml

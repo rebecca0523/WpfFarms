@@ -61,10 +61,19 @@ namespace wpfFarmsCustomer
 
         private void MenuItemfarmsCRUD_Click(object sender, RoutedEventArgs e)
         {
-            SuppliersRegister suppRegister = new SuppliersRegister();
+            SuppliersMainCRUD suppRegisterM = new SuppliersMainCRUD();
 
-            suppRegister.Show();
+            suppRegisterM.Show();
         }
+
+        private void MenuItemfarmsCRUD_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            SuppliersRegister suppRegisterM = new SuppliersRegister();
+
+            suppRegisterM.Show();
+        }
+
 
         private void MenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
         {
@@ -78,5 +87,7 @@ namespace wpfFarmsCustomer
             MainWindowProducts mainWindowProducts = new MainWindowProducts();
             mainWindowProducts.ShowDialog();
         }
+
+        
     }
 }

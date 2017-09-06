@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsSupplier"
+        xmlns:AllData="clr-namespace:AllData;assembly=AllData" 
         mc:Ignorable="d"
         Title="SuppliersRegister" Height="873" Width="899" Loaded="Window_Loaded" FontSize="18">
     <Window.Resources>
-        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Supplier}, CreateList=True}"/>
+        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type AllData:Supplier}, CreateList=True}"/>
     </Window.Resources>
     <StackPanel Margin="0,36,2,-6">
         <Canvas HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="390" Margin="165,0,0,0">

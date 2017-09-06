@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFarmsSupplier"
+        xmlns:AllData="clr-namespace:AllData;assembly=AllData" 
         mc:Ignorable="d"
-        Title="SuppliersMainCRUD" Height="506.666" Width="902.667" Loaded="Window_Loaded">
+        Title="SuppliersMainCRUD" Height="506.666" Width="902.667" Loaded="Window_Loaded" FontSize="18">
+
     <Window.Resources>
-        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Supplier}, CreateList=True}"/>
+
+        <CollectionViewSource x:Key="supplierViewSource" d:DesignSource="{d:DesignInstance {x:Type AllData:Supplier}, CreateList=True}"/>
     </Window.Resources>
 
 
@@ -51,36 +54,36 @@
         </DataGrid>
         <!--<Grid DataContext="{StaticResource supplierViewSource}" Height="48"/>-->
 
-        <Canvas HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="527">
-            <Button x:Name="cmdSave" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdAdd_Click"/>
-            <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="196" Click="Button_Click"/>
-            <Button Content="delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="94" Click="Button_Click_1"/>
-            <Button Content="foward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="321"/>
-            <Button Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="452"/>
-        </Canvas>
-        <Canvas Height="247" Margin="0" VerticalAlignment="Top">
+        <WrapPanel  HorizontalAlignment="Left" Height="43" VerticalAlignment="Top" Width="885">
+            <Button x:Name="cmdSave" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Click="cmdAdd_Click" Canvas.Top="17" Height="27"/>
+            <Button Content="edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Canvas.Left="196" Click="Button_Click" Canvas.Top="17" Height="27"/>
+            <Button Content="delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Canvas.Left="94" Click="Button_Click_1" Canvas.Top="17" Height="27"/>
+            <Button Content="foward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Canvas.Left="321" Canvas.Top="17" Height="27"/>
+            <Button Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Canvas.Left="452" Canvas.Top="17"/>
+        </WrapPanel>
+        <Canvas Margin="0" VerticalAlignment="Top" Height="235">
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
 
             </Canvas.Background>
-            <Label Content="Supplier ID:" Canvas.Left="6" Canvas.Top="48" Height="25" Width="75"/>
-            <TextBox x:Name="supplierIDTextBox" Height="17" Width="106" Canvas.Left="117" Canvas.Top="55" />
-            <Label Content="Supplier Name:" Canvas.Left="261" Canvas.Top="55" />
-            <TextBox x:Name="supplierNameTextBox" Width="106" Canvas.Left="390" Canvas.Top="55" />
-            <Label Content="email 1:" Canvas.Left="12" Canvas.Top="120" Height="25" Width="55" />
-            <TextBox x:Name="email1TextBox" Canvas.Left="117" Canvas.Top="120" Width="106" Height="17" />
-            <Label Content="Contact Name 1:" Canvas.Left="6" Canvas.Top="91" Height="25" Width="111" />
-            <TextBox x:Name="contactName1TextBox" Width="106" Canvas.Left="117" Canvas.Top="91" Height="17" />
-            <Label Content="Contact Name 2:" Canvas.Left="254" Canvas.Top="91" />
-            <TextBox x:Name="contactName2TextBox" Width="106" Canvas.Left="390" Canvas.Top="91" Height="17" />
-            <Label Content="email 2:" Canvas.Left="305" Canvas.Top="120" />
-            <TextBox x:Name="emai21TextBox" Canvas.Left="390" Canvas.Top="120" Width="106" Height="17" />
-            <Label Content="Line ID:" Canvas.Left="12" Canvas.Top="149" Height="25" Width="55" />
-            <TextBox x:Name="lineIDTextBox" Canvas.Left="117" Canvas.Top="149" Width="106" Height="17" />
-            <Label Content="Postal Code:" Canvas.Left="6" Canvas.Top="178" Width="90" />
-            <TextBox x:Name="postalCodeTextBox"  Canvas.Left="117" Canvas.Top="178" Width="106" Height="17" />
-            <Label Content="Address:" Canvas.Left="237" Canvas.Top="178" />
-            <TextBox x:Name="addressTextBox" Canvas.Left="295" Canvas.Top="178" Width="206" Height="17" />
+            <Label Content="Supplier ID:" Canvas.Left="6" Canvas.Top="48" Height="32" Width="106"/>
+            <TextBox x:Name="supplierIDTextBox" Height="25" Width="116" Canvas.Left="133" Canvas.Top="55" />
+            <Label Content="Supplier Name:" Canvas.Left="261" Canvas.Top="55" Height="32" Width="150" />
+            <TextBox x:Name="supplierNameTextBox" Width="116" Canvas.Left="418" Canvas.Top="55" Height="25" />
+            <Label Content="email 1:" Canvas.Left="12" Canvas.Top="120" Height="32" Width="106" />
+            <TextBox x:Name="email1TextBox" Canvas.Left="133" Canvas.Top="120" Width="116" Height="25" />
+            <Label Content="Contact Name 1:" Canvas.Left="6" Canvas.Top="91" Height="32" Width="106" />
+            <TextBox x:Name="contactName1TextBox" Width="116" Canvas.Left="133" Canvas.Top="91" Height="25" />
+            <Label Content="Contact Name 2:" Canvas.Left="261" Canvas.Top="91" Height="32" Width="150" />
+            <TextBox x:Name="contactName2TextBox" Width="116" Canvas.Left="418" Canvas.Top="91" Height="25" />
+            <Label Content="email 2:" Canvas.Left="261" Canvas.Top="120" Height="32" Width="150" />
+            <TextBox x:Name="emai21TextBox" Canvas.Left="418" Canvas.Top="120" Width="116" Height="25" />
+            <Label Content="Line ID:" Canvas.Left="12" Canvas.Top="149" Height="32" Width="106" />
+            <TextBox x:Name="lineIDTextBox" Canvas.Left="133" Canvas.Top="149" Width="116" Height="25" />
+            <Label Content="Postal Code:" Canvas.Left="6" Canvas.Top="178" Width="106" Height="32" />
+            <TextBox x:Name="postalCodeTextBox"  Canvas.Left="133" Canvas.Top="178" Width="116" Height="25" />
+            <Label Content="Address:" Canvas.Left="261" Canvas.Top="178" Height="32" Width="150" />
+            <TextBox x:Name="addressTextBox" Canvas.Left="418" Canvas.Top="178" Width="116" Height="25" />
 
 
 
