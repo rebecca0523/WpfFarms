@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpfFarmsCustomer;
-using AllData;
 using static AllData.CustomerClass;
 
 namespace wpfFarmsCustomer
@@ -63,7 +62,7 @@ namespace wpfFarmsCustomer
                              where p.Email == txtEmail.Text
                              select p.CustomerID;
             loginCustomerID = CustomerID.FirstOrDefault();
-            MessageBox.Show(loginCustomerID.ToString());
+            //MessageBox.Show(loginCustomerID.ToString());
 
             //取小農代號
             var SupplierID = from q in db.CustomerInfoes
@@ -71,7 +70,7 @@ namespace wpfFarmsCustomer
                              select q.SupplierID;
             if(SupplierID!=null)
             loginSupplierID = Convert.ToInt32( SupplierID.FirstOrDefault());
-            MessageBox.Show(loginSupplierID.ToString());
+            //MessageBox.Show(loginSupplierID.ToString());
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -103,7 +102,8 @@ namespace wpfFarmsCustomer
 
         private void btndelete_Click(object sender, RoutedEventArgs e)
         {
-
+            DeleteCustomer deleteCustomer = new DeleteCustomer();
+            deleteCustomer.ShowDialog();
         }
     }
 }

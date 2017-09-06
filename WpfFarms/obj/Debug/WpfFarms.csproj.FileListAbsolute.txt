@@ -96,8 +96,6 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.g.resour
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.Properties.Resources.resources
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.GenerateResource.Cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
-C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.g.cs
-C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\obj\Debug\LoginAndRegister.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.pdb
@@ -206,3 +204,14 @@ D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignColors.pdb
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll

@@ -30,5 +30,10 @@ namespace wpfFarmsCustomer
             AllFarmsDBEntities dc = new AllFarmsDBEntities();
             customerInfoDataGrid.ItemsSource = dc.CustomerInfoes.ToList();
         }
+
+        private void customerInfoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

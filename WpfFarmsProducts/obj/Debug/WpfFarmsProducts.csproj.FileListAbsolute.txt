@@ -163,6 +163,14 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
->>>>>>> b65babdea57b637a33210e8b05ee590e423e0012
+b65babdea57b637a33210e8b05ee590e423e0012
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
+C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml

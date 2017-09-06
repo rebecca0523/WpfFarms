@@ -61,7 +61,7 @@ namespace wpfFarmsCustomer
                        select p.Name;
             loginName = Name.FirstOrDefault();
             labUser.Content = loginName.ToString();
-            MessageBox.Show(loginName.ToString());
+            //MessageBox.Show(loginName.ToString());
             //labUser.Content = n.ToString();
         }
 
