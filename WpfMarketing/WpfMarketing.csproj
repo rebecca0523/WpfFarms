@@ -80,6 +80,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdvertisingButton.xaml.cs">
+      <DependentUpon>AdvertisingButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="simpleAdminLogin.xaml.cs">
+      <DependentUpon>simpleAdminLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowMarketing.xaml.cs">
       <DependentUpon>WindowMarketing.xaml</DependentUpon>
     </Compile>
@@ -87,7 +96,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WindowSaleEventNow.xaml.cs">
+      <DependentUpon>WindowSaleEventNow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AdvertisingButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="simpleAdminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowMarketing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowSaleEventNow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

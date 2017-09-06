@@ -69,12 +69,9 @@ C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\EntityFramework.Sq
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\zh-Hant\EntityFramework.resources.dll
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csprojResolveAssemblyReference.cache
-C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSalEvent.g.cs
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\App.g.cs
-C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_Content.g.cs
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_MarkupCompile.cache
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing_MarkupCompile.lref
-C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSalEvent.baml
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.g.resources
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.Properties.Resources.resources
 C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.GenerateResource.Cache
@@ -136,3 +133,14 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfMarketing\obj\Debug\WpfMar
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.pdb
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.pdb
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll.config
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.g.cs
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.baml
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.g.cs
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.baml
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.g.cs
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.baml
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Window1.g.cs
+C:\Users\XungYen\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Window1.baml

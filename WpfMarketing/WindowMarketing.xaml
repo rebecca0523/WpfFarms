@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMarketing"
         mc:Ignorable="d"
-        Title="WindowMarketing" Height="900" Width="1702.189" Loaded="Window_Loaded">
+        Title="WindowMarketing" Height="900" Width="1721.208" Loaded="Window_Loaded">
     <Window.Resources>
 
         <!--名稱日期TEMP-->
@@ -64,8 +64,8 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl Margin="0" TabStripPlacement="Left">
-            <TabItem Header="特賣設定" FontSize="20" Height="33" VerticalAlignment="Top">
+        <TabControl x:Name="TabControlMarketing" Margin="0,0,10.415,0.34" TabStripPlacement="Left" SelectionChanged="TabControlMarketing_SelectionChanged">
+            <TabItem x:Name="TabItemSE" Header="特賣設定" FontSize="20" Height="33" VerticalAlignment="Top">
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="101*"/>
@@ -246,7 +246,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="廣告設定" FontSize="20">
+            <TabItem x:Name="TabItemAD" Header="廣告設定" FontSize="20">
                 <Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -271,30 +271,32 @@
                                 <RowDefinition Height="39*"/>
                                 <RowDefinition Height="35*"/>
                                 <RowDefinition Height="363*"/>
-                                <RowDefinition Height="199*"/>
+                                <RowDefinition Height="43*"/>
+                                <RowDefinition Height="47*"/>
+                                <RowDefinition Height="110*"/>
                             </Grid.RowDefinitions>
-                            <Grid Margin="0,0,-0.113,3.491" Background="#FFEFD8F5">
+                            <Grid Margin="0,0,-0.113,3.585" Background="#FFEFD8F5">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="18*"/>
-                                    <RowDefinition Height="55*"/>
+                                    <RowDefinition Height="37*"/>
+                                    <RowDefinition Height="69*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Margin="0,0,-0.113,2.226" TextWrapping="Wrap" Text="廣告標題" TextAlignment="Center"/>
-                                <TextBox x:Name="txtADTitle" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="請輸入標題" KeyDown="txtADTitle_KeyDown"/>
+                                <TextBlock Margin="0,0,0,2.132" TextWrapping="Wrap" Text="廣告標題" TextAlignment="Center" Background="#FFEFFAD8" FontSize="24"/>
+                                <TextBox x:Name="txtADTitle" Margin="0,0.868,0,-0.038" Grid.Row="1" TextWrapping="Wrap" Text="請輸入標題" KeyDown="txtADTitle_KeyDown"/>
 
                             </Grid>
-                            <UniformGrid Margin="0,0.509,-0.113,8" Grid.Row="1" Background="#FFF3E3E3" Rows="2" Columns="2">
+                            <UniformGrid Margin="0,0.415,-0.113,8" Grid.Row="1" Background="#FFF3E3E3" Rows="2" Columns="2">
                                 <Border BorderThickness="1" BorderBrush="Black">
-                                    <TextBlock Text="開始日期" TextAlignment="Center"  />
+                                    <TextBlock Text="開始日期" TextAlignment="Center" FontSize="24" Background="#FFD0EAC7"  />
                                 </Border>
                                 <Border BorderThickness="1" BorderBrush="Black">
-                                    <TextBlock Text="結束日期" TextAlignment="Center" />
+                                    <TextBlock Text="結束日期" TextAlignment="Center" Background="#FFCFF3BC" />
                                 </Border>
                                 <DatePicker x:Name="dtpADStart"/>
                                 <DatePicker x:Name="dtpADEnd"/>
                             </UniformGrid>
-                            <TextBlock Margin="0,0,-0.113,2.038" Grid.Row="2" TextWrapping="Wrap" Text="廣告圖片" Background="#FFEEE5E5" TextAlignment="Center"/>
+                            <TextBlock Margin="0,81.415,-0.113,2.038" Grid.Row="1" TextWrapping="Wrap" Text="廣告圖片" Background="#FFE0FFC3" TextAlignment="Center" Grid.RowSpan="2"/>
 
-                            <Grid Margin="0,1,-0.113,3.491" Grid.Row="3"  Background="#FFF3D8D8">
+                            <Grid Margin="0,0.962,-0.113,3.981" Grid.Row="3"  Background="#FFF3D8D8">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="269*"/>
                                     <ColumnDefinition Width="82*"/>
@@ -305,6 +307,14 @@
 
                             <TextBlock Margin="0,0.019,-0.113,359.472" Grid.Row="4" TextWrapping="Wrap" Text="廣告內容" TextAlignment="Center" Grid.RowSpan="2"/>
                             <TextBox x:Name="txtADContent" Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="請輸入廣告內容" KeyDown="txtADContent_KeyDown"/>
+                            <TextBlock Margin="0,0.528,-0.113,0.038" Grid.Row="6" TextWrapping="Wrap" Text="連結商品" Background="#FFD9F6D7" TextAlignment="Center"/>
+                            <ComboBox x:Name="cboADProduct" Margin="0" Grid.Row="7" SelectionChanged="cboADProduct_SelectionChanged" />
+                            <UniformGrid Margin="0" Grid.Row="8" Columns="3">
+                                <Button x:Name="btnNewAD" Content="新增" Margin="0" Grid.Row="1" Click="btnNewAD_Click"/>
+                                <Button x:Name="btnAlter" Content="修改" Margin="0" Grid.Row="1" Click="btnAlter_Click"/>
+                                <Button x:Name="btnDelete" Content="刪除" Margin="0" Grid.Row="1" Click="btnDelete_Click"/>
+
+                            </UniformGrid>
 
                         </Grid>
                         <Grid Grid.Column="2" Margin="0,3,0,0" Background="#FFE5EBF7">
@@ -312,11 +322,9 @@
                                 <RowDefinition Height="537*"/>
                                 <RowDefinition Height="323*"/>
                             </Grid.RowDefinitions>
-                            <Button x:Name="btnNewAD" Content="新增" HorizontalAlignment="Left" Margin="237,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnNewAD_Click"/>
-                            <Button x:Name="btnAlter" Content="修改" HorizontalAlignment="Left" Margin="373,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnAlter_Click"/>
-                            <Button x:Name="btnDelete" Content="刪除" HorizontalAlignment="Left" Margin="519,176,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
-                            <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}" Stretch="UniformToFill" />
-                            <TextBlock x:Name="txkADID" HorizontalAlignment="Left" Margin="162,121,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+                              <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}" Stretch="UniformToFill" />
+                            <TextBlock x:Name="txkADID" Margin="30,287.038,624.245,10.189" Grid.Row="1" />
+                            <TextBlock x:Name="txkADPID" Text="0" Margin="53,354.038,594.245,-65.811" Grid.Row="1"/>
                             <TextBlock x:Name="txkADTitleOnImage" HorizontalAlignment="Left" Margin="30,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="77" Width="262" FontSize="36"/>
                             <TextBlock x:Name="txkADContentOnImage" HorizontalAlignment="Left" Margin="30,269,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="191" Width="516" FontSize="24"/>
                         </Grid>
@@ -326,7 +334,17 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="訂閱" Margin="-2,-2,0,-5" >
+            <TabItem x:Name="TabItemSEManager"  FontSize="20" RenderTransformOrigin="0.501,0.504">
+                <TabItem.Header>
+                    <Label x:Name="SEManager" Content="特賣管理" />
+                </TabItem.Header>
+                <UniformGrid Rows="4">
+                    <DataGrid x:Name="DataGridSaleEvent"/>
+                    <DataGrid  x:Name="DataGridSaleEventQuota"/>
+                    <DataGrid x:Name="DataGridSaleSingle"/>
+                    <DataGrid x:Name="DataGridSaleComb"/>
+                </UniformGrid>
+
 
             </TabItem>
 
@@ -334,7 +352,8 @@
 
 
 
-        </TabControl>
 
+
+        </TabControl>
     </Grid>
 </Window>

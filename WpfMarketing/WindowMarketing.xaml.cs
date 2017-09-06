@@ -43,10 +43,29 @@ namespace WpfMarketing
             cboProducts.ItemsSource = p.ToArray();
             cboAProduct.ItemsSource = p.ToArray();
             cboBProduct.ItemsSource = p.ToArray();
-
+            cboADProduct.ItemsSource= p.ToArray();
             //廣告
 
             LoadAdvertisingList();
+            var se = from t in db.SaleEvents
+                     join s in db.Suppliers on t.SupplierID equals s.SupplierID
+                     select new {t.SupplierID,s.SupplierName, t.SaleEventID,t.SaleEventTitle,t.SaleEventContent ,t.SaleEventStart,t.SaleEventEnd };
+            var seq = from t in db.SaleEventQuotas
+                      select new {t.SaleEventQuotaID,t.SaleEventID,t.Quota,t.Discount,t.Active,t.EdditTime };
+            var sesp = from t in db.SaleEventSingleProducts
+                       join pd in db.Products on t.ProductID equals pd.ProductID
+                       select new {t.SaleEventSingleProductID,t.SaleEventID,t.ProductID, pd.ProductName,pd.UnitPrice,t.Discount,t.Active,t.EdditTime};
+            var secp = from t in db.SaleEventComboes.AsEnumerable()
+                       join pd1 in db.Products on t.AProductID equals pd1.ProductID
+                       join pd2 in db.Products on t.BProductID equals pd2.ProductID
+                       select new { t.SaleEventComboID, t.SaleEventID, t.AProductID, A商品 = pd1.ProductName, t.BProductID, B商品 = pd2.ProductName, t.Discount,t.Active,t.EdditTime};
+
+            //DATAGRID
+            DataGridSaleEvent.ItemsSource = se.ToArray();
+            DataGridSaleEventQuota.ItemsSource = seq.ToArray();
+            DataGridSaleSingle.ItemsSource = sesp.ToArray();
+            DataGridSaleComb.ItemsSource = secp.ToArray();
+
         }
         //listbox加入登入賣家的特賣會
         private void LoadSaleEventListBox()
@@ -699,6 +718,7 @@ namespace WpfMarketing
                 AdvertisingIContent = txtADContent.Text,
                 AdvertisingStartTime = dtpADStart.SelectedDate,
                 AdvertisingEndTime=dtpADEnd.SelectedDate,
+                AdvertisingLink=txkADPID.Text,
                 AdvertisingPhoto=buffer,
                 EdditTime =DateTime.Now,
                 Active=true
@@ -764,6 +784,7 @@ namespace WpfMarketing
                       select t).FirstOrDefault();
             AD.AdvertisingITitle = txtADTitle.Text;
             AD.AdvertisingIContent = txtADContent.Text;
+            AD.AdvertisingLink = txkADPID.Text;
             AD.Active = true;
 
             //修改圖檔
@@ -783,6 +804,22 @@ namespace WpfMarketing
             LoadAdvertisingList();
             
         }
+
+        //AD 商品combobox
+        private void cboADProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int n = cboADProduct.SelectedIndex;
+            if (n < 0) return;
+
+            var q = (from t in db.Products
+                     where t.DeleteProduct == false
+                     orderby t.ProductID
+                     select t).Skip(n).FirstOrDefault();
+
+            txkADPID.Text = q.ProductID.ToString();
+        }
+
+        //AD 對應商品預覽
         private void LoadText()
         {
             txkADTitleOnImage.Text = txtADTitle.Text;
@@ -798,6 +835,31 @@ namespace WpfMarketing
         {
             LoadText();
         }
+
+
+     
+        //簡易密碼鎖
+
+        private void TabControlMarketing_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            simpleAdminLogin sa = new simpleAdminLogin();
+            if (simpleAdminLogin.simpleadmin == true) return;
+            if (TabControlMarketing.SelectedIndex == 2)
+            {
+                sa.ShowDialog();
+                {
+                    if (simpleAdminLogin.simpleadmin == false)
+                    {
+                        TabControlMarketing.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        TabControlMarketing.SelectedIndex = 2;
+                    }
+                }
+            }
+        }
+     
     }
 
     
