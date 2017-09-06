@@ -55,12 +55,12 @@
             <Label Content="Supplier Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,13,0,13" Grid.Row="1" VerticalAlignment="Center"/>
             <TextBox x:Name="supplierNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,14,0,14" Grid.Row="1" Text="{Binding SupplierName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="Contact Name 1:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox x:Name="contactName1TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,4,0,4" Grid.Row="2" Text="{Binding ContactName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="contactName1TextBox"  IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,4,0,4" Grid.Row="2" Text="{Binding ContactName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
 
             <Label Content="Contact Name 2:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
             <TextBox x:Name="contactName2TextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,4,0,4" Grid.Row="3" Text="{Binding ContactName2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
 
-            <Label Content="email 1(必填):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Width="140">
+            <Label Content="email 1(系統自動帶):" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Width="207">
                 <Label.Background>
                     <SolidColorBrush Color="#FFFF0034"/>
                 </Label.Background>
