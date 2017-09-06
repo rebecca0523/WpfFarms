@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpfFarmsCustomer;
+using AllData;
+using static AllData.CustomerClass;
 
 namespace wpfFarmsCustomer
 {
@@ -27,15 +30,18 @@ namespace wpfFarmsCustomer
         {
             InitializeComponent();
         }
-
+        AllData.AllFarmsDBEntities db = new AllFarmsDBEntities();
         private void btnregister_Click(object sender, RoutedEventArgs e)
         {
             CustomerRegister CustomerRegister = new CustomerRegister();
             CustomerRegister.Show();
         }
 
-        public static string loginEmail;
-        public static string loginPassword;
+        //public static string loginEmail;
+        //public static string loginPassword;
+        //public static int loginSupplierID;
+        //public static int loginCustomerID;
+
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             string strConn = ConfigurationManager.ConnectionStrings["farmsDB"].ConnectionString;
@@ -51,6 +57,21 @@ namespace wpfFarmsCustomer
             SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.Int);
             pReturnValue.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(pReturnValue);
+
+            //取客戶代號
+            var CustomerID = from p in db.CustomerInfoes
+                             where p.Email == txtEmail.Text
+                             select p.CustomerID;
+            loginCustomerID = CustomerID.FirstOrDefault();
+            MessageBox.Show(loginCustomerID.ToString());
+
+            //取小農代號
+            var SupplierID = from q in db.CustomerInfoes
+                             where q.Email == txtEmail.Text
+                             select q.SupplierID;
+            if(SupplierID!=null)
+            loginSupplierID = Convert.ToInt32( SupplierID.FirstOrDefault());
+            MessageBox.Show(loginSupplierID.ToString());
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -71,7 +92,6 @@ namespace wpfFarmsCustomer
             }
             conn.Close();
             conn.Dispose();
-            
         }
 
         private void btnforget_Click(object sender, RoutedEventArgs e)

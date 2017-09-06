@@ -19,7 +19,7 @@ using wpfFarmsCustomer;
 using WpfFarmsActivity;
 using WpfFarmsProducts;
 using WpfMarketing;
-using static wpfFarmsCustomer.LoginAndRegister;
+using static AllData.CustomerClass;
 
 namespace wpfFarmsCustomer
 {
@@ -42,7 +42,7 @@ namespace wpfFarmsCustomer
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Email", loginEmail);
-            cmd.Parameters.AddWithValue("@Password", LoginAndRegister.loginPassword);
+            cmd.Parameters.AddWithValue("@Password", loginPassword);
 
             //SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.NChar, 10);
             //pReturnValue.Direction = ParameterDirection.ReturnValue;
@@ -55,7 +55,7 @@ namespace wpfFarmsCustomer
             //var q = from p in CI.Name
             //        where 
             //        select s;
-            labUser.Content = LoginAndRegister.loginEmail;
+            labUser.Content = loginEmail;
             //labUser.Content = n.ToString();
         }
 

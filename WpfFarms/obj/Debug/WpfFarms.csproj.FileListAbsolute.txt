@@ -206,3 +206,6 @@ C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\AllData.dll.config
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.pdb
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.pdb
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarms\bin\Debug\WpfFarmsProducts.exe.config

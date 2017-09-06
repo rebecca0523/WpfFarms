@@ -92,6 +92,7 @@
     <Compile Include="ChatLog.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerClass.cs" />
     <Compile Include="CustomerInfo.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>

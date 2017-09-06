@@ -35,3 +35,4 @@ D:\99GitHub\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.ca
 D:\99GitHub\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\AllData\obj\Debug\AllData.dll
 D:\99GitHub\WpfFarms\AllData\obj\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
