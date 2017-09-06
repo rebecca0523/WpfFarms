@@ -18,7 +18,6 @@ namespace AllData
         public Supplier()
         {
             this.ActivityFarmers = new HashSet<ActivityFarmer>();
-            this.Advertisings = new HashSet<Advertising>();
             this.CustomerSubscriptions = new HashSet<CustomerSubscription>();
             this.Products = new HashSet<Product>();
             this.SaleEvents = new HashSet<SaleEvent>();
@@ -27,6 +26,7 @@ namespace AllData
             this.SuppliersStoryMasters = new HashSet<SuppliersStoryMaster>();
             this.SuppliersVideos = new HashSet<SuppliersVideo>();
             this.SystemToSuppliersInfoes = new HashSet<SystemToSuppliersInfo>();
+            this.Advertisings = new HashSet<Advertising>();
         }
     
         public int SupplierID { get; set; }
@@ -48,8 +48,6 @@ namespace AllData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivityFarmer> ActivityFarmers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Advertising> Advertisings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerSubscription> CustomerSubscriptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
@@ -65,5 +63,7 @@ namespace AllData
         public virtual ICollection<SuppliersVideo> SuppliersVideos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Advertising> Advertisings { get; set; }
     }
 }
