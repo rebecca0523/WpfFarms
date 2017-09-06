@@ -14,13 +14,11 @@ C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFr
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.g.cs
-C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\MainWindow.g.cs
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\App.g.cs
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_MarkupCompile.cache
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_MarkupCompile.lref
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\App.baml
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.baml
-C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\MainWindow.baml
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.g.resources
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.Properties.Resources.resources
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.GenerateResource.Cache
@@ -233,3 +231,13 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\obj\Debug\Wp
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.pdb
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll.config
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.g.cs
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.g.cs
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.g.cs
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_Content.g.cs
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.baml
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
+C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml

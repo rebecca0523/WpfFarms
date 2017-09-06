@@ -141,7 +141,8 @@ namespace WpfFarmsActivity
             Activity();
             MessageBox.Show("活動編號" + addActivity.ActivityFarmerID + "新增成功!");
             x[count] = new UserControl1();
-            x[count].Name = addActivity.ActivityFarmerID;
+            string s = addActivity.ActivityFarmerID.ToString();
+            x[count].Name = s;
             x[count].addActivity.Click += new RoutedEventHandler(AddActivity_Click);
             x[count].EditActivity.Click += new RoutedEventHandler(EditActivity_Click);
             x[count].ActivityName.Name = "ActivityName" + addActivity.ActivityFarmerID;
@@ -200,7 +201,13 @@ namespace WpfFarmsActivity
         private void AddActivity_Click(object sender, RoutedEventArgs e)
         {
             ActivityList activity = new ActivityList();
+            activity.AddListbtn.Click += new RoutedEventHandler(AddListbtn_Click);
             activity.Show();
+        }
+
+        private void AddListbtn_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
