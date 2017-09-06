@@ -35,7 +35,6 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\CreateProduct.g.c
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\MainWindowProducts.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ShinyBlueDictionary.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\App.g.cs
-C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_Content.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.cache
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts_MarkupCompile.lref
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\App.baml
@@ -153,6 +152,17 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+<<<<<<< HEAD
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.g.cs
+C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ProductDescription.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
+=======
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
+>>>>>>> b65babdea57b637a33210e8b05ee590e423e0012

@@ -9,21 +9,12 @@ WpfFarmsSupplier
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-D:\99GitHub\WpfFarms\WpfFarmsSupplier\App.xaml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\App.xaml
 51151677937
 
 13-2122469696
-20-75198936
-SupplierMainWindow.xaml;SuppliersMainCRUD.xaml;SuppliersRegister.xaml;SuppliersVedioCRUD.xaml;SuppliersVedioCRUDMulti.xaml;
-=======
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\App.xaml
-4-1245198224
-
-12-130699643
 20-1462828125
-SupplierMainWindow.xaml;SuppliersMainCRUD.xaml;SuppliersRegister.xaml;SuppliersVedioCRUD.xaml;
->>>>>>> 9c5a3e6605aafa71f73adaee0f23d6d3f6f7d411
+SupplierMainWindow.xaml;SuppliersMainCRUD.xaml;SuppliersRegister.xaml;SuppliersVedioCRUD.xaml;SuppliersVedioCRUDMulti.xaml;
 
-False
+True
 

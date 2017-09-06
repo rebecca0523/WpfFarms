@@ -95,7 +95,8 @@ namespace WpfFarmsProducts
 
         private void cmdChangeImages_Click(object sender, RoutedEventArgs e)
         {
-
+            ChangeImages changeImages = new ChangeImages();
+            changeImages.ShowDialog();
         }
     }
 }

@@ -58,18 +58,23 @@ namespace WpfFarmsProducts
 
             this.allFarmsDBEntities.Products.Add(product);
             this.allFarmsDBEntities.SaveChanges();
+            
 
-            foreach (string i in allowableFileTypes)
+            foreach (string i in openFileDialog.SafeFileNames)
             {
-                FileStream fileStream = new FileStream(i, FileMode.Open);
-                byte[] ImageByte = new byte[fileStream.Length];
-                fileStream.Read(ImageByte, 0, ImageByte.Length);
-                fileStream.Close();
+                //FileStream fileStream = new FileStream(i, FileMode.Open);
+                //byte[] ImageByte = new byte[fileStream.Length];
+                //fileStream.Read(ImageByte, 0, ImageByte.Length);
+                //fileStream.Close();
+                
+                string dest = System.IO.Path.Combine("C:/Users/III/Source/Repos/WpfFarms/WpfFarmsProducts/Productimages", i);
+                File.Copy(openFileDialog.FileName, dest);
+
                 ProductImage productImage = new ProductImage
                 {
                     ProductImageID = allFarmsDBEntities.ProductImages.ToList().LastOrDefault().ProductImageID + 1,
                     ProductID = product.ProductID,
-                    ProductImage1 = ImageByte
+                    ProductImagePath = i
                 };
                 this.allFarmsDBEntities.ProductImages.Add(productImage);
                 this.allFarmsDBEntities.SaveChanges();
@@ -89,24 +94,20 @@ namespace WpfFarmsProducts
         {
             
         }
-
-        List<string> allowableFileTypes = new List<string>();
+       
+        System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
 
         private void cmdInsertImages_Click(object sender, RoutedEventArgs e)
         {
-            allowableFileTypes.Clear();
             //this.FishEyePanel.Children.Clear();
             this.wpanelInsertImage.Children.Clear();
 
-            System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
             openFileDialog.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
-            openFileDialog.Multiselect = true;
+            openFileDialog.Multiselect = true;            
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                allowableFileTypes.AddRange(openFileDialog.FileNames);//把選取的檔案名子放進allowableFileTypes
-                
-                foreach (string i in allowableFileTypes)
+            {                             
+                foreach (string i in openFileDialog.FileNames)//選取的檔案名子  
                 {
                     BitmapImage bitmapImage = new BitmapImage();
                     Image image = new Image();
@@ -117,6 +118,7 @@ namespace WpfFarmsProducts
                     bitmapImage.EndInit();
                     image.Source = bitmapImage;
                     this.wpanelInsertImage.Children.Add(image);
+                    //Console.WriteLine(i);
                     //this.FishEyePanel.RenderTransformOrigin = new Point(0.5, 0.5);
                     //this.FishEyePanel.RenderTransform = new RotateTransform(90);                                     
                     //this.FishEyePanel.Children.Add(image);                        

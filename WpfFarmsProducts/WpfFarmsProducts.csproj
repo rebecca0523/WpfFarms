@@ -69,12 +69,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangeImages.xaml.cs">
+      <DependentUpon>ChangeImages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateProduct.xaml.cs">
       <DependentUpon>CreateProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProductDescription.xaml.cs">
       <DependentUpon>ProductDescription.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChangeImages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +146,10 @@
       <Project>{9356f87e-285f-4b74-92f9-41a463bcf380}</Project>
       <Name>AllData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Productimages\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
