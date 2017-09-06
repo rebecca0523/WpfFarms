@@ -49,3 +49,16 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\AllData\obj\Debug\AllData.csprojReso
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\AllData\obj\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\AllData\obj\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\EntityFramework.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\EntityFramework.xml
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.dll
+C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.pdb

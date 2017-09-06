@@ -16,8 +16,14 @@
             <GradientStop Color="#FF6D98FF" Offset="0.851"/>
         </LinearGradientBrush>
     </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCDCFF3" Offset="0"/>
+            <GradientStop Color="#FFF5F7C9" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid Margin="0,10,0.2,2.4">
-        <StackPanel HorizontalAlignment="Left" Margin="10,35,0,10" Width="100" Height="261" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Left" Margin="10,35,0,10" Width="100" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="100">
                 <Image Height="111" Source="Custimage/000.PNG" OpacityMask="#FFCACACA"/>
                 <Label x:Name="labUser" Content="label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" />
@@ -62,7 +68,6 @@
                 <MenuItem x:Name="MenuItemfarmsCRUDMulti" Header="維護小農基本資料-多筆-系統管理員" Click="MenuItemfarmsCRUDMulti_Click" ></MenuItem>
                 <MenuItem x:Name="MenuItemfarmsCRUD" Header="維護小農基本資料" Click="MenuItemfarmsCRUD_Click" ></MenuItem>
                 <MenuItem x:Name="MenuItemVedioCRUD" Header="維護小農Vedio資料" Click="MenuItemVedioCRUD_Click"  ></MenuItem>
-                <MenuItem x:Name="MenuItemVedioCRUDMulti" Header="維護小農Vedio資料Multi" Click="MenuItemVedioCRUDMulti_Click"  ></MenuItem>
             </MenuItem>
             <MenuItem Header="活動專區" FontSize="20" />
             <MenuItem Header="商品專區" FontSize="20" Click="MenuItem_Click"/>

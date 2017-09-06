@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfFarmsCustomer"
         mc:Ignorable="d"
-        Title="LoginAndRegister" Height="400" Width="600">
+        Title="LoginAndRegister" Height="400" Width="600" Background="#FFC4ADC9">
     <Grid>
         <TextBlock Margin="0" TextWrapping="Wrap" Text="會員登入" VerticalAlignment="Top" Background="#FFFDCECE"/>
         <StackPanel HorizontalAlignment="Center" Height="250" Margin="10,30,0,0" VerticalAlignment="Center" Width="495">
