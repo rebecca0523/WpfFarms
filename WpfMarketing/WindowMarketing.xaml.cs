@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AllData;
 using Microsoft.Win32;
 using System.IO;
+using System.Drawing;
 
 namespace WpfMarketing
 {
@@ -632,37 +633,42 @@ namespace WpfMarketing
             CaculateComboDiscount();
         }
 
+        
         //AD 載入既有廣告
         private void LoadAdvertisingList()
         {
             
             var ad = from t in db.Advertisings.AsEnumerable()
                      where t.SupplierID == loginSupplierID
+                     where t.Active==true
                      select new { AdvertisingITitle =t.AdvertisingITitle,
                           AdvertisingStartTime ="開始時間"+$"{t.AdvertisingStartTime:d}",
                           AdvertisingEndTime = "結束時間"+$"{t.AdvertisingEndTime:d}"
                      };
             lstAdvertising.ItemsSource = ad.ToList();
         }
-        
+
         //AD.開啟廣告圖片
+
+       
         private void btnOpenDialog_Click(object sender, RoutedEventArgs e)
         {
 
             Stream myStream = null;
-            System.Windows.Forms.OpenFileDialog op = new System.Windows.Forms.OpenFileDialog();
-            op.InitialDirectory = "c:\\";
-            op.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
-           
+            System.Windows.Forms.OpenFileDialog dlg = new System.Windows.Forms.OpenFileDialog();
+            dlg.InitialDirectory = "c:\\";
+            dlg.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
 
-            if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
-                    if ((myStream = op.OpenFile()) != null)
+                    if ((myStream = dlg.OpenFile()) != null)
                     {
-                        imgAD.Source = new BitmapImage(new Uri(op.FileName));
-                        txtFileName.Text = op.FileName;
+                        imgAD.Source = new BitmapImage(new Uri(dlg.FileName));
+                      
+                        txtFileName.Text = dlg.FileName;
                     }
                 }
                 catch (Exception ex)
@@ -675,17 +681,32 @@ namespace WpfMarketing
         //AD 新增廣告
         private void btnNewAD_Click(object sender, RoutedEventArgs e)
         {
-            
-           var End = dtpADEnd.SelectedDate;
+            //圖片
+            byte[] buffer;
+            var bitmap = imgAD.Source as BitmapSource;
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmap));
+
+            using (var stream = new MemoryStream())
+            {
+                encoder.Save(stream);
+                buffer = stream.ToArray();
+            }
+
             Advertising ADDB = new Advertising {
                 SupplierID = loginSupplierID,
                 AdvertisingITitle = txtADTitle.Text,
                 AdvertisingIContent = txtADContent.Text,
                 AdvertisingStartTime = dtpADStart.SelectedDate,
                 AdvertisingEndTime=dtpADEnd.SelectedDate,
-                EdditTime =DateTime.Now
+                AdvertisingPhoto=buffer,
+                EdditTime =DateTime.Now,
+                Active=true
 
-            };   
+            };
+            this.db.Advertisings.Add(ADDB);
+            this.db.SaveChanges();
+            LoadAdvertisingList();
 
         }
         //AD 選取LISTBOX項目
@@ -702,16 +723,82 @@ namespace WpfMarketing
             txkADID.Text = ADID.ToString();
 
             var AD = (from t in db.Advertisings
-                      where t.SupplierID == loginSupplierID
+                      where t.AdvertisingID== ADID
                       select t).FirstOrDefault();
+            
             txtADTitle.Text = AD.AdvertisingITitle;
             dtpADStart.SelectedDate = AD.AdvertisingStartTime;
             dtpADEnd.SelectedDate = AD.AdvertisingEndTime;
             txtADContent.Text = AD.AdvertisingIContent;
 
+            //讀取圖檔
+            Stream S = new MemoryStream(AD.AdvertisingPhoto);
+            BitmapImage B = new BitmapImage();
+            B.BeginInit();
+            B.StreamSource = S;
+            B.EndInit();
+            this.imgAD.Source = B;
 
+            LoadText();
+        }
+        //AD 刪除
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int ADID = int.Parse(txkADID.Text);
+            if (ADID <= 0) return;
+
+            var AD = (from t in db.Advertisings
+                      where t.SupplierID == loginSupplierID
+                      select t).FirstOrDefault();
+            AD.Active = true;
+            LoadAdvertisingList();
+        }
+        //AD 修改
+        private void btnAlter_Click(object sender, RoutedEventArgs e)
+        {
+            int ADID = int.Parse(txkADID.Text);
+            if (ADID <= 0) return;
+
+            var AD = (from t in db.Advertisings
+                      where t.AdvertisingID == ADID
+                      select t).FirstOrDefault();
+            AD.AdvertisingITitle = txtADTitle.Text;
+            AD.AdvertisingIContent = txtADContent.Text;
+            AD.Active = true;
+
+            //修改圖檔
+            byte[] buffer;
+            var bitmap = imgAD.Source as BitmapSource;
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmap));
+
+            using(var stream = new MemoryStream())
+            {
+                encoder.Save(stream);
+                buffer = stream.ToArray();
+            }
+            AD.AdvertisingPhoto = buffer;
+
+            this.db.SaveChanges();
+            LoadAdvertisingList();
+            
+        }
+        private void LoadText()
+        {
+            txkADTitleOnImage.Text = txtADTitle.Text;
+            txkADContentOnImage.Text = txtADContent.Text;
         }
 
-    
+        private void txtADTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            LoadText();
+        }
+
+        private void txtADContent_KeyDown(object sender, KeyEventArgs e)
+        {
+            LoadText();
+        }
     }
+
+    
 }
