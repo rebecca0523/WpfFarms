@@ -44,25 +44,12 @@ namespace wpfFarmsCustomer
             cmd.Parameters.AddWithValue("@Email", loginEmail);
             cmd.Parameters.AddWithValue("@Password", loginPassword);
 
-            //SqlParameter pReturnValue = new SqlParameter("@Return_Values", SqlDbType.NChar, 10);
-            //pReturnValue.Direction = ParameterDirection.ReturnValue;
-            //cmd.Parameters.Add(pReturnValue);
-
-            //conn.Open();
-            //cmd.ExecuteScalar();
-            //string n = Convert.ToString(cmd.Parameters["@Return_Values"].Value);
-            //CustomerInfo CI = new CustomerInfo();
-            //var q = from p in CI.Name
-            //        where 
-            //        select s;
             AllData.AllFarmsDBEntities db = new AllData.AllFarmsDBEntities();
             var Name = from p in db.CustomerInfoes
                        where p.Email == loginEmail
                        select p.Name;
             loginName = Name.FirstOrDefault();
             labUser.Content = loginName.ToString();
-            //MessageBox.Show(loginName.ToString());
-            //labUser.Content = n.ToString();
         }
 
 
@@ -85,13 +72,6 @@ namespace wpfFarmsCustomer
         private void MenuItemVedioCRUD_Click(object sender, RoutedEventArgs e)
         {
             SuppliersVideoCRUD vedioCRUD = new SuppliersVideoCRUD();
-
-            vedioCRUD.Show();
-        }
-
-        private void MenuItemVedioCRUDMulti_Click(object sender, RoutedEventArgs e)
-        {
-            SuppliersVedioCRUDMulti vedioCRUD = new SuppliersVedioCRUDMulti();
 
             vedioCRUD.Show();
         }
