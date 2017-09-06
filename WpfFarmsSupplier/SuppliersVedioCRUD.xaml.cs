@@ -120,7 +120,7 @@ namespace WpfFarmsSupplier
 
 
                 SuppVideo.SuppliersID = 5;
-                SuppVideo.SuppliersStoryTitle = "小農5號影片";
+                SuppVideo.SuppliersVideoTitle = "小農5號影片";
                 SuppVideo.VideoFile = binaryReader.ReadBytes((Int32)byteLength);  //This data u can save in table
 
                 fs.Close();

@@ -35,7 +35,6 @@
     <EntitySet Name="SuppliersFarms" EntityType="farmsDBModel.SuppliersFarm" />
     <EntitySet Name="SuppliersStoryDetails" EntityType="farmsDBModel.SuppliersStoryDetail" />
     <EntitySet Name="SuppliersStoryMasters" EntityType="farmsDBModel.SuppliersStoryMaster" />
-    <EntitySet Name="SuppliersVideos" EntityType="farmsDBModel.SuppliersVideo" />
     <EntitySet Name="sysdiagrams" EntityType="farmsDBModel.sysdiagram" />
     <EntitySet Name="SystemToSuppliersInfoes" EntityType="farmsDBModel.SystemToSuppliersInfo" />
     <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="farmsDBModel.FK_ActivityFarmer_ActivityCity">
@@ -150,6 +149,7 @@
       <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
       <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
     </AssociationSet>
+    <EntitySet Name="SuppliersVideos" EntityType="farmsDBModel.SuppliersVideo" />
   </EntityContainer>
   <EntityType Name="ActivityCity">
     <Key>
@@ -658,23 +658,6 @@
     <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SuppliersStoryMaster_Suppliers" FromRole="SuppliersStoryMaster" ToRole="Supplier" />
     <NavigationProperty Name="SuppliersStoryDetails" Relationship="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryMaster" ToRole="SuppliersStoryDetail" />
   </EntityType>
-  <EntityType Name="SuppliersVideo">
-    <Key>
-      <PropertyRef Name="SuppliersVideoID" />
-    </Key>
-    <Property Name="SuppliersVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
-    <Property Name="SuppliersVideoTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="StartDate" Type="DateTime" Precision="0" />
-    <Property Name="EndDate" Type="DateTime" Precision="0" />
-    <Property Name="VideoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="VideomimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="VideoName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="CreatedUserID" Type="Int32" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="LastUpdateUserID" Type="Int32" />
-    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -1035,4 +1018,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="SuppliersVideo">
+    <Key>
+      <PropertyRef Name="SuppliersVideoID" />
+    </Key>
+    <Property Name="SuppliersVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+    <Property Name="SuppliersVideoTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="VideoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="VideomimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VideoName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedUserID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserID" Type="Int32" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

@@ -482,24 +482,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SuppliersVideos">
-      <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
-        <MappingFragment StoreEntitySet="SuppliersVideo">
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
-          <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
-          <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
-          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-          <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="farmsDBModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -522,6 +504,24 @@
           <ScalarProperty Name="infoMessageDesc" ColumnName="infoMessageDesc" />
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
           <ScalarProperty Name="infoMessageID" ColumnName="infoMessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersVideos">
+      <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
+        <MappingFragment StoreEntitySet="SuppliersVideo">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="VideoName" ColumnName="VideoName" />
+          <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
+          <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

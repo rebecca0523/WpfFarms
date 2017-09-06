@@ -157,3 +157,5 @@ D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.g.cs
 C:\Users\III\Source\Repos\NewRepo\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.baml
