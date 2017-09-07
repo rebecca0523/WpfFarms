@@ -33,11 +33,12 @@ namespace WpfFarmsSupplier
         }
 
         AllFarmsDBEntities context = new AllFarmsDBEntities();
+        System.Windows.Data.CollectionViewSource suppliersVideoViewSource;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            System.Windows.Data.CollectionViewSource suppliersVideoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("suppliersVideoViewSource")));
+            suppliersVideoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("suppliersVideoViewSource")));
             // 透過設定 CollectionViewSource.Source 屬性載入資料: 
             suppliersVideoViewSource.Source = context.SuppliersVideos.Where(s=>s.SuppliersID==AllData.CustomerClass.loginSupplierID ).ToList();
             System.Windows.Data.CollectionViewSource supplierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("supplierViewSource")));
@@ -98,6 +99,7 @@ namespace WpfFarmsSupplier
         private void cmdStop_Click(object sender, RoutedEventArgs e)
         {
             mediaElement1.Stop();
+            mediaElement1.Close();
         }
 
         private void sliderVol_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -147,6 +149,7 @@ namespace WpfFarmsSupplier
                 context.SuppliersVideos.Add(SuppVideo);
                 context.SaveChanges();
 
+                suppliersVideoViewSource.Source = context.SuppliersVideos.Where(s => s.SuppliersID == AllData.CustomerClass.loginSupplierID).ToList();
                 MessageBox.Show("存檔成功");
 
             }
@@ -159,28 +162,19 @@ namespace WpfFarmsSupplier
         private void cmdRead_Click(object sender, RoutedEventArgs e)
         {
 
+
             SuppVideo = new SuppliersVideo();
-            SuppVideo = context.SuppliersVideos.Where(c => c.SuppliersVideoID == AllData.CustomerClass.loginSupplierID).FirstOrDefault();
+            SuppVideo = context.SuppliersVideos.Where(c => c.SuppliersVideoID == 8 ).FirstOrDefault();
 
             Byte[] video = SuppVideo.VideoFile;
 
-
-
-
             System.IO.File.WriteAllBytes("temp1.wmv", video);
             mediaElement1.Source = new Uri("temp1.wmv", UriKind.Relative);
-
-
 
             mediaElement1.LoadedBehavior = MediaState.Manual;
             mediaElement1.UnloadedBehavior = MediaState.Manual;
             mediaElement1.Volume = (double)sliderVol.Value;
             mediaElement1.Play();
-
-
-
-
-
 
 
         }
