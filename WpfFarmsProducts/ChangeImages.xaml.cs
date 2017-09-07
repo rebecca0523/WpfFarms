@@ -94,9 +94,9 @@ namespace WpfFarmsProducts
             ((Image)sender).Width = 100;
         }
 
-        string path = new DirectoryInfo(new DirectoryInfo(System.Windows.Forms.Application.StartupPath).Parent.FullName).Parent.FullName;
+        string path = new DirectoryInfo(new DirectoryInfo(System.IO.Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void cmdSaveImages_Click(object sender, RoutedEventArgs e)
         {
             foreach (string i in openFileDialog.FileNames)
             {

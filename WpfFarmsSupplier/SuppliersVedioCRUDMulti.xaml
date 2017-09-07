@@ -93,7 +93,7 @@
                     </LinearGradientBrush>
                 </MediaElement.OpacityMask>
             </MediaElement>
-            <Button x:Name="cmdPlay" Content="Play" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdPlay_Click" Canvas.Left="61" Canvas.Top="592" FontSize="18"/>
+            <Button x:Name="cmdPlay" Content="Play" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdPlay_Click" Canvas.Left="81" Canvas.Top="592" FontSize="18"/>
             <Button x:Name="cmdPause" Content="Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdPause_Click" Canvas.Left="182" Canvas.Top="592" FontSize="18"/>
             <Button x:Name="cmdStop" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cmdStop_Click" Canvas.Left="305" Canvas.Top="592" FontSize="18"/>
             <Slider x:Name="sliderSeek" Canvas.Left="61" Canvas.Top="643" Width="629" ValueChanged="sliderSeek_ValueChanged"/>

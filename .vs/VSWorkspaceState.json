@@ -3,11 +3,8 @@
     "",
     "\\WpfCustomer",
     "\\WpfCustomer\\WpfFarmsSupplier",
-    "\\WpfCustomer\\WpfFarmsSupplier\\obj",
-    "\\WpfCustomer\\WpfFarmsSupplier\\obj\\Debug",
-    "\\WpfCustomer\\WpfFarmsSupplier\\obj\\Release",
     "\\WpfFarmsSupplier"
   ],
-  "SelectedNode": "\\WpfFarmsSupplier\\SuppliersVedioCRUDMulti.xaml",
+  "SelectedNode": "\\WpfFarms.sln",
   "PreviewInSolutionExplorer": false
 }
