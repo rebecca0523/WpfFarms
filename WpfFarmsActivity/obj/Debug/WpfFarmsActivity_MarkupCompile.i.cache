@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Farms\WpfFarms\WpfFarmsActivity\obj\Debug\
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\
 WpfFarmsActivity
 none
 false
 DEBUG;TRACE
-D:\Farms\WpfFarms\WpfFarmsActivity\App.xaml
+D:\99GitHub\WpfFarms\WpfFarmsActivity\App.xaml
 7-722889568
 2-1734359599
 5846953958
-22-1735010468
+22-671447064
 ActivityList.xaml;ActivityListItem.xaml;ActivityManagement.xaml;ActivityWeb.xaml;FarmActivity.xaml;UserControl1.xaml;ViewPicture.xaml;
 
 True
