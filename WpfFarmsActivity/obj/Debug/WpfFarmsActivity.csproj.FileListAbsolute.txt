@@ -85,7 +85,6 @@ D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityList.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityListItem.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.g.cs
-D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\UserControl1.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\App.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity_MarkupCompile.cache
@@ -95,7 +94,6 @@ D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityList.baml
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityListItem.baml
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityManagement.baml
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
-D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.baml
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\UserControl1.baml
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.g.resources
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.Properties.Resources.resources
@@ -241,3 +239,8 @@ C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ActivityWeb.baml
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
 C:\Users\admin\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml
+D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll
+D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.pdb
+D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll.config
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.g.cs
+D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml

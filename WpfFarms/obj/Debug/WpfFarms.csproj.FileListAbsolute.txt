@@ -263,3 +263,6 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\obj\Debug\WpfFarms.c
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\obj\Debug\WpfFarms.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\obj\Debug\WpfFarms.pdb
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.pdb
+D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe.config

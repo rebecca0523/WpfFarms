@@ -103,10 +103,18 @@ namespace WpfFarmsSupplier
             context.Suppliers.Add(SupplierTable);
             context.SaveChanges();
 
+
             count = context.Suppliers.Where(s => s.email1 == Email).Count();
 
             if (count > 0)
             {
+
+                AllData.CustomerClass.loginSupplierID = context.Suppliers.Where(s => s.email1 == Email).Select(s => s.SupplierID).FirstOrDefault();
+
+                custInfo = new CustomerInfo();
+                custInfo = context.CustomerInfoes.Where(c => c.CustomerID == AllData.CustomerClass.loginCustomerID).FirstOrDefault();
+                custInfo.SupplierID = AllData.CustomerClass.loginSupplierID;
+                context.SaveChanges();
                 supplierViewSource.Source = context.Suppliers.Where(s => s.email1 == Email).ToList();
                 MessageBox.Show("註冊成功");
                 cmdSave.IsEnabled = false;
