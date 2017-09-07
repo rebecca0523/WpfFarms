@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\wpfFarmsCustomer"
+    "\\WpfCustomer",
+    "\\WpfCustomer\\WpfFarmsSupplier",
+    "\\WpfCustomer\\WpfFarmsSupplier\\obj",
+    "\\WpfCustomer\\WpfFarmsSupplier\\obj\\Debug",
+    "\\WpfCustomer\\WpfFarmsSupplier\\obj\\Release",
+    "\\WpfFarmsSupplier"
   ],
-  "SelectedNode": "\\WpfFarms.sln",
+  "SelectedNode": "\\WpfFarmsSupplier\\SuppliersVedioCRUDMulti.xaml",
   "PreviewInSolutionExplorer": false
 }

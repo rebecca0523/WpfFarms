@@ -87,5 +87,12 @@ namespace wpfFarmsCustomer
             WindowMarketing wm = new WindowMarketing();
             wm.Show();
         }
+
+        private void MenuItemVedioCRUDMulti_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliersVedioCRUDMulti vedioCRUD = new SuppliersVedioCRUDMulti();
+
+            vedioCRUD.Show();
+        }
     }
 }

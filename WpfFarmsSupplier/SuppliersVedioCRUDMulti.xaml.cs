@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AllData;
 using System.Windows.Threading;
+using System.Threading;
 
 namespace WpfFarmsSupplier
 {
@@ -60,7 +61,9 @@ namespace WpfFarmsSupplier
             mediaElement1.LoadedBehavior = MediaState.Manual;
             mediaElement1.UnloadedBehavior = MediaState.Manual;
             mediaElement1.Volume = (double)sliderVol.Value;
-         //   mediaElement1.Play();
+            mediaElement1.Play();
+            //Thread.Sleep(100);
+            //mediaElement1.Pause();
 
 
 
