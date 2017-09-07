@@ -129,7 +129,13 @@ namespace WpfFarmsProducts
             {
                 ChangeImages changeImages = new ChangeImages();
                 changeImages.ShowDialog();
+                (this.allFarmsDBEntities.Products.Where(n => n.ProductID == GetSelectProductID).FirstOrDefault()).LastUpdateDate = DateTime.Now;
+                this.allFarmsDBEntities.SaveChanges();
+                this.ProductsDataGrid.ItemsSource = null;
+                this.ProductsDataGrid.ItemsSource = allFarmsDBEntities.Products.Where(n => n.SupplierID == loginCustomerID && n.DeleteProduct == false).ToList();
             }
+
+
         }
     }
 }

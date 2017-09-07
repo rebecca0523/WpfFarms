@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Release\
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Release\
 WpfFarmsActivity
 none
 false
 TRACE
-D:\99GitHub\WpfFarms\WpfFarmsActivity\App.xaml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\App.xaml
 7-722889568
 2-1734359599
 541289649306
-22-1045412258
+22628038912
 ActivityList.xaml;ActivityListItem.xaml;ActivityManagement.xaml;ActivityWeb.xaml;FarmActivity.xaml;UserControl1.xaml;ViewPicture.xaml;
 
 True
