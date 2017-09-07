@@ -62,14 +62,14 @@ namespace WpfFarmsActivity
             addActivity.CreatedDate = System.DateTime.Now;
             addActivity.LastUpdateDate = System.DateTime.Now;
             addActivity.SupplierID = 1;
-            string rtfText; //string to save to db
-            TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
-            using (MemoryStream ms = new MemoryStream())
-            {
-                tr.Save(ms, DataFormats.Rtf);
-                rtfText = Encoding.ASCII.GetString(ms.ToArray());
-            }
-            addActivity.ActivityContent = rtfText;
+            //string rtfText; //string to save to db
+            //TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    tr.Save(ms, DataFormats.Rtf);
+            //    rtfText = Encoding.ASCII.GetString(ms.ToArray());
+            //}
+            //addActivity.ActivityContent = rtfText;
             DB.ActivityFarmers.Add(addActivity);
             DB.SaveChanges();
         }
@@ -177,13 +177,13 @@ namespace WpfFarmsActivity
                     FA.EmailInput.Text = activityfarm.Email;
                     FA.ATMBankInput.Text = activityfarm.ATMBank;
                     FA.ATMAccountInput.Text = activityfarm.ATMAccount;
-                    string rtfText = activityfarm.ActivityContent;
-                    byte[] byteArray = Encoding.ASCII.GetBytes(rtfText);
-                    using (MemoryStream ms = new MemoryStream(byteArray))
-                    {
-                        TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
-                        tr.Load(ms, DataFormats.Rtf);
-                    }
+                    //string rtfText = activityfarm.ActivityContent;
+                    //byte[] byteArray = Encoding.ASCII.GetBytes(rtfText);
+                    //using (MemoryStream ms = new MemoryStream(byteArray))
+                    //{
+                    //    TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
+                    //    tr.Load(ms, DataFormats.Rtf);
+                    //}
                     //DB.SaveChanges();
                     FA.Show();
                 }

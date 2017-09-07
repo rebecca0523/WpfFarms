@@ -62,3 +62,15 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.csp
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.dll
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\AllData\obj\Debug\AllData.pdb
+D:\Farms\WpfFarms\AllData\bin\Debug\AllData.dll.config
+D:\Farms\WpfFarms\AllData\bin\Debug\AllData.dll
+D:\Farms\WpfFarms\AllData\bin\Debug\AllData.pdb
+D:\Farms\WpfFarms\AllData\bin\Debug\EntityFramework.dll
+D:\Farms\WpfFarms\AllData\bin\Debug\EntityFramework.SqlServer.dll
+D:\Farms\WpfFarms\AllData\bin\Debug\EntityFramework.xml
+D:\Farms\WpfFarms\AllData\bin\Debug\EntityFramework.SqlServer.xml
+D:\Farms\WpfFarms\AllData\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Farms\WpfFarms\AllData\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Farms\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
+D:\Farms\WpfFarms\AllData\obj\Debug\AllData.dll
+D:\Farms\WpfFarms\AllData\obj\Debug\AllData.pdb
