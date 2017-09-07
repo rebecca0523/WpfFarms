@@ -16,7 +16,7 @@
         <Button Content="搜尋" HorizontalAlignment="Left" Margin="467,47,0,0" VerticalAlignment="Top" Width="50" Height="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
         <Button Content="分類" HorizontalAlignment="Left" Margin="530,47,0,0" VerticalAlignment="Top" Width="50" Height="20" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
         <Button Content="當季產品" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Width="70" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
-        <Button Content="特價產品" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="70" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
+        <Button x:Name="btnDiscountProduct" Content="特價產品" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="70" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White" Click="btnDiscountProduct_Click"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="70" Style="{DynamicResource ShinyBlueButtonStyle}" Foreground="White"/>
 
         <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="images/f7900047b50593447dc.jpg" Width="80"/>

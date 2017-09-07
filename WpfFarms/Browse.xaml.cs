@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfFarmsActivity;
 using wpfFarmsCustomer;
+using WpfMarketing;
 
 namespace WpfFarms
 {
@@ -36,6 +37,12 @@ namespace WpfFarms
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void btnDiscountProduct_Click(object sender, RoutedEventArgs e)
+        {
+            WindowSaleEventNow WSE = new WindowSaleEventNow();
+            WSE.Show();
         }
     }
 }

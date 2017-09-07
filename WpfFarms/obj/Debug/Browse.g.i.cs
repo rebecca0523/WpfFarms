@@ -40,6 +40,14 @@ namespace WpfFarms {
     /// </summary>
     public partial class Browse : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 19 "..\..\Browse.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnDiscountProduct;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -82,6 +90,15 @@ namespace WpfFarms {
             
             #line 14 "..\..\Browse.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            
+            #line default
+            #line hidden
+            return;
+            case 3:
+            this.btnDiscountProduct = ((System.Windows.Controls.Button)(target));
+            
+            #line 19 "..\..\Browse.xaml"
+            this.btnDiscountProduct.Click += new System.Windows.RoutedEventHandler(this.btnDiscountProduct_Click);
             
             #line default
             #line hidden

@@ -146,6 +146,10 @@
       <Project>{163A032F-360D-48B3-A26F-E2D537F7FFE5}</Project>
       <Name>WpfFarmsSupplier</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WpfMarketing\WpfMarketing.csproj">
+      <Project>{69ac41bf-95ab-48b0-b5c3-809d9be9fb26}</Project>
+      <Name>WpfMarketing</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\f7900047b50593447dc.jpg" />

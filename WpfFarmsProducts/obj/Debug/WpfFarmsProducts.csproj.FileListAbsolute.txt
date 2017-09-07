@@ -164,8 +164,6 @@ D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.pdb
 D:\99GitHub\WpfFarms\WpfFarmsProducts\bin\Debug\AllData.dll.config
 b65babdea57b637a33210e8b05ee590e423e0012
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe.config
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFarmsProducts.pdb

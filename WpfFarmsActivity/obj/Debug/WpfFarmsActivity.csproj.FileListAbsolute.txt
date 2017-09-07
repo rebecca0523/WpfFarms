@@ -63,8 +63,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.e
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivity.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.g.cs
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\FarmActivityEdit.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe.config
 D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe
@@ -188,7 +186,6 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsA
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csprojResolveAssemblyReference.cache
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe.config
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsActivity\bin\Debug\WpfFarmsActivity.pdb
@@ -244,3 +241,8 @@ D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.pdb
 D:\99GitHub\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll.config
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\bin\Debug\AllData.dll.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml

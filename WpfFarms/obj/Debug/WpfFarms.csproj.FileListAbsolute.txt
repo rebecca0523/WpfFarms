@@ -215,7 +215,6 @@ C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\MaterialDesignThe
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\AllData.dll.config
 C:\Users\III\Source\Repos\NewRepo2\WpfFarms\WpfFarms\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarms\obj\Debug\WpfFarms.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\bin\Debug\WpfFarms.exe.config
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\bin\Debug\WpfFarms.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\bin\Debug\WpfFarms.pdb
@@ -266,3 +265,6 @@ C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarms\obj\Debug\WpfFarms.p
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.pdb
 D:\99GitHub\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe.config
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarms\bin\Debug\WpfMarketing.exe.config

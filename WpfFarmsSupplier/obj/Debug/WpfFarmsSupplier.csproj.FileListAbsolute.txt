@@ -170,7 +170,6 @@ C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SupplierMainWindow.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\SuppliersVedioCRUDMulti.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe.config
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.exe
 C:\Users\III\Source\Repos\NewRepo09062135\WpfFarms\WpfFarmsSupplier\bin\Debug\WpfFarmsSupplier.pdb
