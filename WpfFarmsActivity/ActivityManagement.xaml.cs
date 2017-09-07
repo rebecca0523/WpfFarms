@@ -70,8 +70,8 @@ namespace WpfFarmsActivity
             //    rtfText = Encoding.ASCII.GetString(ms.ToArray());
             //}
             //addActivity.ActivityContent = rtfText;
-            //DB.ActivityFarmers.Add(addActivity);
-            //DB.SaveChanges();
+            DB.ActivityFarmers.Add(addActivity);
+            DB.SaveChanges();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
