@@ -26,7 +26,7 @@
           <Property Name="GroupQuantity" Type="int" />
           <Property Name="Price" Type="money" />
           <Property Name="ActivityDate" Type="datetime" />
-          <Property Name="ActivityContent" Type="varbinary(max)" />
+          <Property Name="ActivityContent" Type="varchar(max)" />
           <Property Name="Phone" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="ATMBank" Type="nvarchar" MaxLength="10" />
@@ -1965,7 +1965,7 @@
           <Property Name="GroupQuantity" Type="Int32" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ActivityDate" Type="DateTime" Precision="3" />
-          <Property Name="ActivityContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ActivityContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />

@@ -70,7 +70,7 @@
         <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" />
         <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_Suppliers" />
         <AssociationConnector Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

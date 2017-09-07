@@ -9,29 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ActivityFarmers">
-      <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
-        <MappingFragment StoreEntitySet="ActivityFarmer">
-          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
-          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
-          <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
-          <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
-          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-          <ScalarProperty Name="CityID" ColumnName="CityID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
-          <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ActivityOrders">
       <EntityTypeMapping TypeName="farmsDBModel.ActivityOrder">
         <MappingFragment StoreEntitySet="ActivityOrder">
@@ -523,6 +500,29 @@
           <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
           <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityFarmers">
+      <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
+        <MappingFragment StoreEntitySet="ActivityFarmer">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+          <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
+          <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+          <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
+          <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
