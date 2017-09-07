@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="1c5efda06294420fb1daed96b221e38b" Name="Diagram1" ZoomLevel="87">
         <EntityTypeShape EntityType="farmsDBModel.ActivityCity" Width="1.5" PointX="3.75" PointY="8.5" />
-        <EntityTypeShape EntityType="farmsDBModel.ActivityFarmer" Width="1.5" PointX="6" PointY="24.625" />
         <EntityTypeShape EntityType="farmsDBModel.ActivityOrder" Width="1.5" PointX="8.25" PointY="25.375" />
         <EntityTypeShape EntityType="farmsDBModel.ActivityPhoto" Width="1.5" PointX="3.75" PointY="21.125" />
         <EntityTypeShape EntityType="farmsDBModel.AddressInfo" Width="1.5" PointX="5.75" PointY="0.75" />
@@ -40,10 +39,6 @@
         <EntityTypeShape EntityType="farmsDBModel.SuppliersStoryMaster" Width="1.5" PointX="3" PointY="34.875" />
         <EntityTypeShape EntityType="farmsDBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="4.75" />
         <EntityTypeShape EntityType="farmsDBModel.SystemToSuppliersInfo" Width="1.5" PointX="3" PointY="27.875" />
-        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityCity" />
-        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" />
-        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_Suppliers" />
-        <AssociationConnector Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer" />
         <AssociationConnector Association="farmsDBModel.FK_Browse_Products" />
         <AssociationConnector Association="farmsDBModel.FK_CustomerSubscription_CustomerInfo" />
         <AssociationConnector Association="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo" />
@@ -70,6 +65,11 @@
         <EntityTypeShape EntityType="farmsDBModel.SuppliersVideo" Width="1.5" PointX="10.375" PointY="0.75" />
         <EntityTypeShape EntityType="farmsDBModel.Advertising" Width="1.5" PointX="3" PointY="52.5" />
         <AssociationConnector Association="farmsDBModel.FK_Advertising_Suppliers" />
+        <EntityTypeShape EntityType="farmsDBModel.ActivityFarmer" Width="1.5" PointX="6" PointY="19.75" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityCity" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityFarmer_Suppliers" />
+        <AssociationConnector Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

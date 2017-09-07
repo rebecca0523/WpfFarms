@@ -991,7 +991,6 @@
       <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AllFarmsDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ActivityCities" EntityType="farmsDBModel.ActivityCity" />
-          <EntitySet Name="ActivityFarmers" EntityType="farmsDBModel.ActivityFarmer" />
           <EntitySet Name="ActivityOrders" EntityType="farmsDBModel.ActivityOrder" />
           <EntitySet Name="ActivityPhotoes" EntityType="farmsDBModel.ActivityPhoto" />
           <EntitySet Name="AddressInfoes" EntityType="farmsDBModel.AddressInfo" />
@@ -1025,22 +1024,6 @@
           <EntitySet Name="SuppliersStoryMasters" EntityType="farmsDBModel.SuppliersStoryMaster" />
           <EntitySet Name="sysdiagrams" EntityType="farmsDBModel.sysdiagram" />
           <EntitySet Name="SystemToSuppliersInfoes" EntityType="farmsDBModel.SystemToSuppliersInfo" />
-          <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="farmsDBModel.FK_ActivityFarmer_ActivityCity">
-            <End Role="ActivityCity" EntitySet="ActivityCities" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto">
-            <End Role="ActivityPhoto" EntitySet="ActivityPhotoes" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="farmsDBModel.FK_ActivityFarmer_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer">
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-            <End Role="ActivityOrder" EntitySet="ActivityOrders" />
-          </AssociationSet>
           <AssociationSet Name="FK_Browse_Products" Association="farmsDBModel.FK_Browse_Products">
             <End Role="Product" EntitySet="Products" />
             <End Role="Browse" EntitySet="Browses" />
@@ -1139,6 +1122,23 @@
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Advertising" EntitySet="Advertisings" />
           </AssociationSet>
+          <EntitySet Name="ActivityFarmers" EntityType="farmsDBModel.ActivityFarmer" />
+          <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="farmsDBModel.FK_ActivityFarmer_ActivityCity">
+            <End Role="ActivityCity" EntitySet="ActivityCities" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto">
+            <End Role="ActivityPhoto" EntitySet="ActivityPhotoes" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="farmsDBModel.FK_ActivityFarmer_Suppliers">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer">
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+            <End Role="ActivityOrder" EntitySet="ActivityOrders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ActivityCity">
           <Key>
@@ -1147,32 +1147,6 @@
           <Property Name="CityID" Type="Int32" Nullable="false" />
           <Property Name="CityName" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityCity" FromRole="ActivityCity" ToRole="ActivityFarmer" />
-        </EntityType>
-        <EntityType Name="ActivityFarmer">
-          <Key>
-            <PropertyRef Name="ActivityFarmerID" />
-          </Key>
-          <Property Name="ActivityFarmerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ActivityPhotoID" Type="Int32" />
-          <Property Name="SupplierID" Type="Int32" Nullable="false" />
-          <Property Name="CityID" Type="Int32" />
-          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ActivityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaxQuantity" Type="Int32" />
-          <Property Name="GroupQuantity" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="ActivityDate" Type="DateTime" Precision="3" />
-          <Property Name="ActivityContent" Type="String" MaxLength="Max" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ActivityCity" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityCity" FromRole="ActivityFarmer" ToRole="ActivityCity" />
-          <NavigationProperty Name="ActivityPhoto" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityFarmer" ToRole="ActivityPhoto" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="ActivityFarmer" ToRole="Supplier" />
-          <NavigationProperty Name="ActivityOrders" Relationship="farmsDBModel.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityFarmer" ToRole="ActivityOrder" />
         </EntityType>
         <EntityType Name="ActivityOrder">
           <Key>
@@ -1556,7 +1530,6 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="Supplier" ToRole="ActivityFarmer" />
           <NavigationProperty Name="CustomerSubscriptions" Relationship="farmsDBModel.FK_CustomerSubscription_Suppliers" FromRole="Supplier" ToRole="CustomerSubscription" />
           <NavigationProperty Name="Products" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
           <NavigationProperty Name="SaleEvents" Relationship="farmsDBModel.FK_SaleEvent_Suppliers" FromRole="Supplier" ToRole="SaleEvent" />
@@ -1565,6 +1538,7 @@
           <NavigationProperty Name="SuppliersStoryMasters" Relationship="farmsDBModel.FK_SuppliersStoryMaster_Suppliers" FromRole="Supplier" ToRole="SuppliersStoryMaster" />
           <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" FromRole="Supplier" ToRole="SystemToSuppliersInfo" />
           <NavigationProperty Name="Advertisings" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Supplier" ToRole="Advertising" />
+          <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="Supplier" ToRole="ActivityFarmer" />
         </EntityType>
         <EntityType Name="SuppliersBulletinBoard">
           <Key>
@@ -1655,54 +1629,6 @@
           <Property Name="LastUpdateUserID" Type="Int32" />
           <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" FromRole="SystemToSuppliersInfo" ToRole="Supplier" />
         </EntityType>
-        <Association Name="FK_ActivityFarmer_ActivityCity">
-          <End Type="farmsDBModel.ActivityCity" Role="ActivityCity" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ActivityCity">
-              <PropertyRef Name="CityID" />
-            </Principal>
-            <Dependent Role="ActivityFarmer">
-              <PropertyRef Name="CityID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ActivityFarmer_ActivityPhoto">
-          <End Type="farmsDBModel.ActivityPhoto" Role="ActivityPhoto" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ActivityPhoto">
-              <PropertyRef Name="ActivityPhotoID" />
-            </Principal>
-            <Dependent Role="ActivityFarmer">
-              <PropertyRef Name="ActivityPhotoID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ActivityFarmer_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="ActivityFarmer">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ActivityOrder_ActivityFarmer">
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityOrder" Role="ActivityOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ActivityFarmer">
-              <PropertyRef Name="ActivityFarmerID" />
-            </Principal>
-            <Dependent Role="ActivityOrder">
-              <PropertyRef Name="ActivityFarmerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Browse_Products">
           <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
           <End Type="farmsDBModel.Browse" Role="Browse" Multiplicity="*" />
@@ -2025,6 +1951,80 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ActivityFarmer">
+          <Key>
+            <PropertyRef Name="ActivityFarmerID" />
+          </Key>
+          <Property Name="ActivityFarmerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityPhotoID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaxQuantity" Type="Int32" />
+          <Property Name="GroupQuantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ActivityDate" Type="DateTime" Precision="3" />
+          <Property Name="ActivityContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ActivityCity" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityCity" FromRole="ActivityFarmer" ToRole="ActivityCity" />
+          <NavigationProperty Name="ActivityPhoto" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityFarmer" ToRole="ActivityPhoto" />
+          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="ActivityFarmer" ToRole="Supplier" />
+          <NavigationProperty Name="ActivityOrders" Relationship="farmsDBModel.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityFarmer" ToRole="ActivityOrder" />
+        </EntityType>
+        <Association Name="FK_ActivityFarmer_ActivityCity">
+          <End Type="farmsDBModel.ActivityCity" Role="ActivityCity" Multiplicity="0..1" />
+          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivityCity">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="ActivityFarmer">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityFarmer_ActivityPhoto">
+          <End Type="farmsDBModel.ActivityPhoto" Role="ActivityPhoto" Multiplicity="0..1" />
+          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivityPhoto">
+              <PropertyRef Name="ActivityPhotoID" />
+            </Principal>
+            <Dependent Role="ActivityFarmer">
+              <PropertyRef Name="ActivityPhotoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityFarmer_Suppliers">
+          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="ActivityFarmer">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityOrder_ActivityFarmer">
+          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="0..1" />
+          <End Type="farmsDBModel.ActivityOrder" Role="ActivityOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivityFarmer">
+              <PropertyRef Name="ActivityFarmerID" />
+            </Principal>
+            <Dependent Role="ActivityOrder">
+              <PropertyRef Name="ActivityFarmerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2036,29 +2036,6 @@
               <MappingFragment StoreEntitySet="ActivityCity">
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ActivityFarmers">
-            <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
-              <MappingFragment StoreEntitySet="ActivityFarmer">
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
-                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
-                <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
-                <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
-                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
-                <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2553,6 +2530,29 @@
                 <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
                 <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivityFarmers">
+            <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
+              <MappingFragment StoreEntitySet="ActivityFarmer">
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
+                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
+                <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+                <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
+                <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -30,7 +30,7 @@ namespace AllData
         public Nullable<int> GroupQuantity { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<System.DateTime> ActivityDate { get; set; }
-        public string ActivityContent { get; set; }
+        public byte[] ActivityContent { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string ATMBank { get; set; }

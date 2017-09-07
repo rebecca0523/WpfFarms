@@ -26,7 +26,6 @@ namespace AllData
         }
     
         public virtual DbSet<ActivityCity> ActivityCities { get; set; }
-        public virtual DbSet<ActivityFarmer> ActivityFarmers { get; set; }
         public virtual DbSet<ActivityOrder> ActivityOrders { get; set; }
         public virtual DbSet<ActivityPhoto> ActivityPhotoes { get; set; }
         public virtual DbSet<AddressInfo> AddressInfoes { get; set; }
@@ -62,5 +61,6 @@ namespace AllData
         public virtual DbSet<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
         public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
         public virtual DbSet<Advertising> Advertisings { get; set; }
+        public virtual DbSet<ActivityFarmer> ActivityFarmers { get; set; }
     }
 }
