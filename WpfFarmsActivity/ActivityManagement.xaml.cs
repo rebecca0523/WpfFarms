@@ -33,8 +33,9 @@ namespace WpfFarmsActivity
 
         AllFarmsDBEntities DB = new AllFarmsDBEntities();
         AllData.ActivityFarmer addActivity = new AllData.ActivityFarmer();
+        ActivityList activity = new ActivityList();
         global::WpfFarmsActivity.UserControl1[] x = new UserControl1[50];
-        global::WpfFarmsActivity.ActivityListItem y = new ActivityListItem();
+        global::WpfFarmsActivity.ActivityListItem[] y = new ActivityListItem[50];
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -62,16 +63,16 @@ namespace WpfFarmsActivity
             addActivity.CreatedDate = System.DateTime.Now;
             addActivity.LastUpdateDate = System.DateTime.Now;
             addActivity.SupplierID = 1;
-            //string rtfText; //string to save to db
-            //TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
-            //using (MemoryStream ms = new MemoryStream())
-            //{
-            //    tr.Save(ms, DataFormats.Rtf);
-            //    rtfText = Encoding.ASCII.GetString(ms.ToArray());
-            //}
-            //addActivity.ActivityContent = rtfText;
+            string rtfText; //string to save to db
+            TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                tr.Save(ms, DataFormats.Rtf);
+                rtfText = Encoding.ASCII.GetString(ms.ToArray());
+            }
+            addActivity.ActivityContent = rtfText;
             DB.ActivityFarmers.Add(addActivity);
-            DB.SaveChanges();
+            //DB.SaveChanges();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -141,8 +142,7 @@ namespace WpfFarmsActivity
             Activity();
             MessageBox.Show("活動編號" + addActivity.ActivityFarmerID + "新增成功!");
             x[count] = new UserControl1();
-            string s = addActivity.ActivityFarmerID.ToString();
-            x[count].Name = s;
+            x[count].Name = "addActivity"+ addActivity.ActivityFarmerID;
             x[count].addActivity.Click += new RoutedEventHandler(AddActivity_Click);
             x[count].EditActivity.Click += new RoutedEventHandler(EditActivity_Click);
             x[count].ActivityName.Name = "ActivityName" + addActivity.ActivityFarmerID;
@@ -157,36 +157,38 @@ namespace WpfFarmsActivity
             var query = from q in DB.ActivityFarmers select q;
             foreach (var activityfarm in query)
             {
-                addActivity.ActivityName = FA.ActivityNameInput.Text;
-                if (int.Parse(this.x[count].Name) == activityfarm.ActivityFarmerID)
+                FA.ActivityNameInput.Text=activityfarm.ActivityName;
+                var city = from q in DB.ActivityCities select q;
+                foreach (var selectcity in city)
                 {
-                    var city = from q in DB.ActivityCities select q;
-                    foreach (var selectcity in city)
+                    if (activityfarm.CityID == selectcity.CityID)
                     {
-                        if(activityfarm.CityID==selectcity.CityID)
-                        {
-                            FA.CityComboBox.SelectedItem = selectcity.CityName;
-                        }
+                        FA.CityComboBox.SelectedItem = selectcity.CityName;
                     }
-                    FA.MaxQuantityInput.Text = activityfarm.MaxQuantity.Value.ToString();
-                    FA.GroupQuantityInput.Text = activityfarm.GroupQuantity.Value.ToString();
-                    FA.PriceInput.Text = activityfarm.Price.Value.ToString();
-                    FA.ActivityDate.SelectedDate = activityfarm.ActivityDate;
-                    FA.ActivityAddressInput.Text = activityfarm.ActivityAddress;
-                    FA.PhoneInput.Text = activityfarm.Phone;
-                    FA.EmailInput.Text = activityfarm.Email;
-                    FA.ATMBankInput.Text = activityfarm.ATMBank;
-                    FA.ATMAccountInput.Text = activityfarm.ATMAccount;
-                    //string rtfText = activityfarm.ActivityContent;
-                    //byte[] byteArray = Encoding.ASCII.GetBytes(rtfText);
-                    //using (MemoryStream ms = new MemoryStream(byteArray))
-                    //{
-                    //    TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
-                    //    tr.Load(ms, DataFormats.Rtf);
-                    //}
-                    //DB.SaveChanges();
-                    FA.Show();
                 }
+                FA.MaxQuantityInput.Text = activityfarm.MaxQuantity.Value.ToString();
+                FA.GroupQuantityInput.Text = activityfarm.GroupQuantity.Value.ToString();
+                FA.PriceInput.Text = activityfarm.Price.Value.ToString();
+                FA.ActivityDate.SelectedDate = activityfarm.ActivityDate;
+                FA.ActivityAddressInput.Text = activityfarm.ActivityAddress;
+                FA.PhoneInput.Text = activityfarm.Phone;
+                FA.EmailInput.Text = activityfarm.Email;
+                FA.ATMBankInput.Text = activityfarm.ATMBank;
+                FA.ATMAccountInput.Text = activityfarm.ATMAccount;
+                string rtfText = activityfarm.ActivityContent;
+                byte[] byteArray = Encoding.ASCII.GetBytes(rtfText);
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    TextRange tr = new TextRange(FA.RichTextBox1.Document.ContentStart, FA.RichTextBox1.Document.ContentEnd);
+                    tr.Load(ms, DataFormats.Rtf);
+                }
+                
+                //DB.SaveChanges();
+                FA.Show();
+                //if (int.Parse(this.x[count].Name) == activityfarm.ActivityFarmerID)
+                //{
+                    
+                //}
             }
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -200,14 +202,25 @@ namespace WpfFarmsActivity
         }
         private void AddActivity_Click(object sender, RoutedEventArgs e)
         {
-            ActivityList activity = new ActivityList();
-            activity.AddListbtn.Click += new RoutedEventHandler(AddListbtn_Click);
+            click=1;
+            activity = new ActivityList();
+            y[click].Name = "addActivityList" + click;
+            y[click].ActivityName.Content = FA.ActivityNameInput;
+            y[click].ActivityDate.SelectedDate = FA.ActivityDate.SelectedDate;
+            y[click].QtyLabel.Content = FA.MaxQuantityInput;
+            activity.AddListbtn.Click += AddListbtn_Click;
+            activity.ListPanel.Children.Add(y[click]);
             activity.Show();
         }
-
+        int click;
         private void AddListbtn_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            y[click].Name = "addActivityList" + click;
+            y[click].ActivityName.Content = FA.ActivityNameInput;
+            y[click].ActivityDate.SelectedDate = FA.ActivityDate.SelectedDate;
+            y[click].QtyLabel.Content = FA.MaxQuantityInput;
+            activity.ListPanel.Children.Add(y[click]);
+            click++;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

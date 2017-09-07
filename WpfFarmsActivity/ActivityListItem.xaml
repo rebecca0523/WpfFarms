@@ -10,9 +10,9 @@
         <Grid Margin="10">
             <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
             <StackPanel HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top">
-                <Label Content="Label"/>
-                <DatePicker Margin="10,9,0,9" Width="168" HorizontalAlignment="Left" FontSize="16"/>
-                <Label Content="Label"/>
+                <Label x:Name="ActivityName" Content="Label"/>
+                <DatePicker x:Name="ActivityDate" Margin="10,9,0,9" Width="168" HorizontalAlignment="Left" FontSize="16"/>
+                <Label x:Name="QtyLabel" Content="Label"/>
             </StackPanel>
             <Button x:Name="Edit" HorizontalAlignment="Left" Margin="332,18,0,0" VerticalAlignment="Top" Width="51" FontSize="12" Height="28">
                 <meterialDesign:PackIcon Kind="Pencil" />

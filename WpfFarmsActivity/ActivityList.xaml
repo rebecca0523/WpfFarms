@@ -7,11 +7,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="ActivityList" Height="1127.039" Width="876.344">
-    <Grid>
-        <Button x:Name="AddListbtn" Style="{StaticResource MaterialDesignFloatingActionDarkButton}"  Margin="747,968,78.6,83.6" Height="46" Width="44" RenderTransformOrigin="0.5,0.5">
-            <materialDesign:PackIcon Kind="Plus" />
-        </Button>
-        <WrapPanel x:Name="ListPanel" HorizontalAlignment="Left" Height="903" Margin="220,137,0,0" VerticalAlignment="Top" Width="595"/>
 
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.488" Margin="720,42,108,1014">
+            <Button x:Name="AddListbtn" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Height="40" Width="40" RenderTransformOrigin="0.511,0.554" Margin="0" Panel.ZIndex="100">
+                <materialDesign:PackIcon Kind="Plus" />
+            </Button>
+        </StackPanel>
+        <WrapPanel x:Name="ListPanel" HorizontalAlignment="Left" Height="903" Margin="220,137,0,0" VerticalAlignment="Top" Width="595"/>
     </Grid>
 </Window>
