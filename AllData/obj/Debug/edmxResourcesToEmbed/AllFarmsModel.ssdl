@@ -21,7 +21,7 @@
     <Property Name="GroupQuantity" Type="int" />
     <Property Name="Price" Type="money" />
     <Property Name="ActivityDate" Type="datetime" />
-    <Property Name="ActivityContent" Type="nvarchar(max)" />
+    <Property Name="ActivityContent" Type="varbinary(max)" />
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="ATMBank" Type="nvarchar" MaxLength="10" />
@@ -76,6 +76,7 @@
     <Property Name="AlreadyPaid" Type="bit" />
     <Property Name="AdvertisingLink" Type="nvarchar(max)" />
     <Property Name="EdditTime" Type="datetime" />
+    <Property Name="Active" Type="bit" />
   </EntityType>
   <EntityType Name="BlackListInfo">
     <Key>
@@ -292,7 +293,7 @@
     </Key>
     <Property Name="ProductImageID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="ProductImagePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductImagePath" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Products">
     <Key>

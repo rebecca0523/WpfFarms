@@ -68,22 +68,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Advertisings">
-      <EntityTypeMapping TypeName="farmsDBModel.Advertising">
-        <MappingFragment StoreEntitySet="Advertising">
-          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-          <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
-          <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
-          <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
-          <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
-          <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
-          <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
-          <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
-          <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="BlackListInfoes">
       <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
         <MappingFragment StoreEntitySet="BlackListInfo">
@@ -522,6 +506,23 @@
           <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
           <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
           <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisings">
+      <EntityTypeMapping TypeName="farmsDBModel.Advertising">
+        <MappingFragment StoreEntitySet="Advertising">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+          <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
+          <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
+          <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
+          <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
+          <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
+          <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
+          <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
+          <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
