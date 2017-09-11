@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using wpfFarmsCustomer;
 
 namespace WpfFarms
 {
@@ -26,8 +27,13 @@ namespace WpfFarms
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BGmediaElement.Play();
+            TableItemLoginAndRegister.Content = new Frame
+            {
+                Content = new PageLoginAndRegister()
+            };
         }
 
+        //重複播放
         private void BGmediaElement_MediaEnded(object sender, RoutedEventArgs e)
         {
             BGmediaElement.Stop();

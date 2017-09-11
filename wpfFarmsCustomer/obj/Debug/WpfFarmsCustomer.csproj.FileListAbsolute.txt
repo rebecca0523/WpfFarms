@@ -563,3 +563,7 @@ D:\Farms\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.Properties.Resourc
 D:\Farms\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.GenerateResource.Cache
 D:\Farms\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.exe
 D:\Farms\WpfFarms\wpfFarmsCustomer\obj\Debug\wpfFarmsCustomer.pdb
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageLoginAndRegister.g.cs
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageLoginAndRegister.baml
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageCustomerAccount.g.cs
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageCustomerAccount.baml

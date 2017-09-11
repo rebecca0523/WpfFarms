@@ -202,5 +202,3 @@ C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
 C:\Users\chan\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.g.cs
 D:\99GitHub\WpfFarms\WpfFarmsProducts\obj\Debug\ChangeImages.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\bin\Debug\WpfFishEyeControl.dll
-C:\Users\III\Source\Repos\WpfFarms\WpfFarmsProducts\obj\Debug\WpfFarmsProducts.csproj.CoreCompileInputs.cache

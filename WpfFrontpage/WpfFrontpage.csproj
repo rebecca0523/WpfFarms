@@ -54,15 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="TestPage1.xaml.cs">
-      <DependentUpon>TestPage1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TestPage2.xaml.cs">
-      <DependentUpon>TestPage2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TestPage3.xaml.cs">
-      <DependentUpon>TestPage3.xaml</DependentUpon>
-    </Compile>
     <Page Include="FrontpageWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,18 +65,6 @@
     <Compile Include="FrontpageWindow.xaml.cs">
       <DependentUpon>FrontpageWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="TestPage1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestPage2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestPage3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -121,6 +100,32 @@
     <Resource Include="media\市.png" />
     <Resource Include="media\農.png" />
     <Resource Include="media\集.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AllData\AllData.csproj">
+      <Project>{9356f87e-285f-4b74-92f9-41a463bcf380}</Project>
+      <Name>AllData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfFarmsActivity\WpfFarmsActivity.csproj">
+      <Project>{28e180f5-5062-4bd2-acd2-0b60cb919eaa}</Project>
+      <Name>WpfFarmsActivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wpfFarmsCustomer\WpfFarmsCustomer.csproj">
+      <Project>{b09c11c1-ed84-430f-85a1-8d3aa6dc2417}</Project>
+      <Name>WpfFarmsCustomer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfFarmsProducts\WpfFarmsProducts.csproj">
+      <Project>{1678d205-7bb2-4c52-9dbf-9ed61ebac5f5}</Project>
+      <Name>WpfFarmsProducts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfFarmsSupplier\WpfFarmsSupplier.csproj">
+      <Project>{163a032f-360d-48b3-a26f-e2d537f7ffe5}</Project>
+      <Name>WpfFarmsSupplier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfMarketing\WpfMarketing.csproj">
+      <Project>{69ac41bf-95ab-48b0-b5c3-809d9be9fb26}</Project>
+      <Name>WpfMarketing</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

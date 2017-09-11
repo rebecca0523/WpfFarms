@@ -33,7 +33,9 @@ namespace WpfMarketing
         AllFarmsDBEntities db = new AllFarmsDBEntities();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadSaleEventListBox();
+            try
+            {
+                LoadSaleEventListBox();
 
             //登入者既有商品
             var p = from t in db.Products
@@ -59,12 +61,14 @@ namespace WpfMarketing
                        join pd1 in db.Products on t.AProductID equals pd1.ProductID
                        join pd2 in db.Products on t.BProductID equals pd2.ProductID
                        select new { t.SaleEventComboID, t.SaleEventID, t.AProductID, A商品 = pd1.ProductName, t.BProductID, B商品 = pd2.ProductName, t.Discount,t.Active,t.EdditTime};
-
+     
             //DATAGRID
             DataGridSaleEvent.ItemsSource = se.ToArray();
             DataGridSaleEventQuota.ItemsSource = seq.ToArray();
             DataGridSaleSingle.ItemsSource = sesp.ToArray();
             DataGridSaleComb.ItemsSource = secp.ToArray();
+            }
+            catch { };
 
         }
         //listbox加入登入賣家的特賣會

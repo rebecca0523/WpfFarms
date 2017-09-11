@@ -33,14 +33,15 @@
         <StatusBar Margin="0" Grid.Row="1" Background="#FFD4CECE" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
 
         <TabControl Grid.Column="1" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <TabItem x:Name="TableItemIndex"  Header="首頁" FontSize="50" FontWeight="Bold"/>
             <TabItem Header="小農介紹" FontSize="50
                      " FontWeight="Bold">
                 <Grid/>
             </TabItem >
-            <TabItem Header="活動" FontSize="50" FontWeight="Bold"/>
+            <TabItem x:Name="TableItem" Header="活動" FontSize="50" FontWeight="Bold"/>
             <TabItem Header="當季產品" FontSize="50" FontWeight="Bold"/>
             <TabItem Header="特價產品" FontSize="50"  FontWeight="Bold"/>
-            <TabItem  Header="會員登入註冊" FontSize="50"  FontWeight="Bold"/>
+            <TabItem x:Name="TableItemLoginAndRegister"  Header="會員登入註冊" FontSize="50"  FontWeight="Bold"/>
             <TabItem Header="關於我們" FontSize="50" FontWeight="Bold">
                 <Grid/>
             </TabItem>
