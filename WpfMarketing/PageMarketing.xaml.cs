@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfMarketing
 {
     /// <summary>
-    /// Window1.xaml 的互動邏輯
+    /// PageMarketing.xaml 的互動邏輯
     /// </summary>
-    public partial class Window1 : Window
+    public partial class PageMarketing : Page
     {
-        public Window1()
+        public PageMarketing()
         {
             InitializeComponent();
         }

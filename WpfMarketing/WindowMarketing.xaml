@@ -64,7 +64,7 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl x:Name="TabControlMarketing" Margin="0,0,10.415,0.34" TabStripPlacement="Left" SelectionChanged="TabControlMarketing_SelectionChanged">
+        <TabControl x:Name="TabControlMarketing" Margin="0,0,10.415,0.34" SelectionChanged="TabControlMarketing_SelectionChanged">
             <TabItem x:Name="TabItemSE" Header="特賣設定" FontSize="20" Height="33" VerticalAlignment="Top">
                 <Grid >
                     <Grid.ColumnDefinitions>

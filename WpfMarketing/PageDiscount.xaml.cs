@@ -10,68 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AllData;
-using Microsoft.Win32;
-using System.IO;
-using System.Drawing;
 
 namespace WpfMarketing
 {
     /// <summary>
-    /// WindowMarketing.xaml 的互動邏輯
+    /// PageDiscount.xaml 的互動邏輯
     /// </summary>
-    public partial class WindowMarketing : Window
+    public partial class PageDiscount : Page
     {
-        public WindowMarketing()
+        public PageDiscount()
         {
             InitializeComponent();
         }
+        AllFarmsDBEntities db = new AllFarmsDBEntities();
         //測試用supplierID
         int loginSupplierID = 1;
-
-        AllFarmsDBEntities db = new AllFarmsDBEntities();
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                LoadSaleEventListBox();
-
-            //登入者既有商品
-            var p = from t in db.Products
-                    where t.SupplierID == loginSupplierID
-                    where t.DeleteProduct == false
-                    select t.ProductName;
-            cboProducts.ItemsSource = p.ToArray();
-            cboAProduct.ItemsSource = p.ToArray();
-            cboBProduct.ItemsSource = p.ToArray();
-            cboADProduct.ItemsSource= p.ToArray();
-            //廣告
-
-            LoadAdvertisingList();
-            var se = from t in db.SaleEvents
-                     join s in db.Suppliers on t.SupplierID equals s.SupplierID
-                     select new {t.SupplierID,s.SupplierName, t.SaleEventID,t.SaleEventTitle,t.SaleEventContent ,t.SaleEventStart,t.SaleEventEnd };
-            var seq = from t in db.SaleEventQuotas
-                      select new {t.SaleEventQuotaID,t.SaleEventID,t.Quota,t.Discount,t.Active,t.EdditTime };
-            var sesp = from t in db.SaleEventSingleProducts
-                       join pd in db.Products on t.ProductID equals pd.ProductID
-                       select new {t.SaleEventSingleProductID,t.SaleEventID,t.ProductID, pd.ProductName,pd.UnitPrice,t.Discount,t.Active,t.EdditTime};
-            var secp = from t in db.SaleEventComboes.AsEnumerable()
-                       join pd1 in db.Products on t.AProductID equals pd1.ProductID
-                       join pd2 in db.Products on t.BProductID equals pd2.ProductID
-                       select new { t.SaleEventComboID, t.SaleEventID, t.AProductID, A商品 = pd1.ProductName, t.BProductID, B商品 = pd2.ProductName, t.Discount,t.Active,t.EdditTime};
-     
-            //DATAGRID
-            DataGridSaleEvent.ItemsSource = se.ToArray();
-            DataGridSaleEventQuota.ItemsSource = seq.ToArray();
-            DataGridSaleSingle.ItemsSource = sesp.ToArray();
-            DataGridSaleComb.ItemsSource = secp.ToArray();
-            }
-            catch { };
-
-        }
-        //listbox加入登入賣家的特賣會
         private void LoadSaleEventListBox()
         {
             var t = from d in db.SaleEvents.AsEnumerable()
@@ -655,214 +611,5 @@ namespace WpfMarketing
         {
             CaculateComboDiscount();
         }
-        //AD 載入既有廣告
-        private void LoadAdvertisingList()
-        {
-            
-            var ad = from t in db.Advertisings.AsEnumerable()
-                     where t.SupplierID == loginSupplierID
-                     where t.Active==true
-                     select new { AdvertisingITitle =t.AdvertisingITitle,
-                          AdvertisingStartTime ="開始時間"+$"{t.AdvertisingStartTime:d}",
-                          AdvertisingEndTime = "結束時間"+$"{t.AdvertisingEndTime:d}"
-                     };
-            lstAdvertising.ItemsSource = ad.ToList();
-        }
-
-        //AD.開啟廣告圖片
-
-       
-        private void btnOpenDialog_Click(object sender, RoutedEventArgs e)
-        {
-
-            Stream myStream = null;
-            System.Windows.Forms.OpenFileDialog dlg = new System.Windows.Forms.OpenFileDialog();
-            dlg.InitialDirectory = "c:\\";
-            dlg.Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
-
-            
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    if ((myStream = dlg.OpenFile()) != null)
-                    {
-                        imgAD.Source = new BitmapImage(new Uri(dlg.FileName));
-                      
-                        txtFileName.Text = dlg.FileName;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
-                }
-            }
-
-        }
-        //AD 新增廣告
-        private void btnNewAD_Click(object sender, RoutedEventArgs e)
-        {
-            //圖片
-            byte[] buffer;
-            var bitmap = imgAD.Source as BitmapSource;
-            var encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmap));
-
-            using (var stream = new MemoryStream())
-            {
-                encoder.Save(stream);
-                buffer = stream.ToArray();
-            }
-
-            Advertising ADDB = new Advertising {
-                SupplierID = loginSupplierID,
-                AdvertisingITitle = txtADTitle.Text,
-                AdvertisingIContent = txtADContent.Text,
-                AdvertisingStartTime = dtpADStart.SelectedDate,
-                AdvertisingEndTime=dtpADEnd.SelectedDate,
-                AdvertisingLink=txkADPID.Text,
-                AdvertisingPhoto=buffer,
-                EdditTime =DateTime.Now,
-                Active=true
-
-            };
-            this.db.Advertisings.Add(ADDB);
-            this.db.SaveChanges();
-            LoadAdvertisingList();
-
-        }
-        //AD 選取LISTBOX項目
-        private void lstAdvertising_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int n = lstAdvertising.SelectedIndex;
-            if (n < 0) return;
-
-            var ADID = (from t in db.Advertisings
-                        where t.SupplierID == loginSupplierID
-                        orderby t.AdvertisingID
-                        select t.AdvertisingID).Skip(n).FirstOrDefault();
-
-            txkADID.Text = ADID.ToString();
-
-            var AD = (from t in db.Advertisings
-                      where t.AdvertisingID== ADID
-                      select t).FirstOrDefault();
-            
-            txtADTitle.Text = AD.AdvertisingITitle;
-            dtpADStart.SelectedDate = AD.AdvertisingStartTime;
-            dtpADEnd.SelectedDate = AD.AdvertisingEndTime;
-            txtADContent.Text = AD.AdvertisingIContent;
-
-            //讀取圖檔
-            Stream S = new MemoryStream(AD.AdvertisingPhoto);
-            BitmapImage B = new BitmapImage();
-            B.BeginInit();
-            B.StreamSource = S;
-            B.EndInit();
-            this.imgAD.Source = B;
-
-            LoadText();
-        }
-        //AD 刪除
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            int ADID = int.Parse(txkADID.Text);
-            if (ADID <= 0) return;
-
-            var AD = (from t in db.Advertisings
-                      where t.SupplierID == loginSupplierID
-                      select t).FirstOrDefault();
-            AD.Active = true;
-            LoadAdvertisingList();
-        }
-        //AD 修改
-        private void btnAlter_Click(object sender, RoutedEventArgs e)
-        {
-            int ADID = int.Parse(txkADID.Text);
-            if (ADID <= 0) return;
-
-            var AD = (from t in db.Advertisings
-                      where t.AdvertisingID == ADID
-                      select t).FirstOrDefault();
-            AD.AdvertisingITitle = txtADTitle.Text;
-            AD.AdvertisingIContent = txtADContent.Text;
-            AD.AdvertisingLink = txkADPID.Text;
-            AD.Active = true;
-
-            //修改圖檔
-            byte[] buffer;
-            var bitmap = imgAD.Source as BitmapSource;
-            var encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmap));
-
-            using(var stream = new MemoryStream())
-            {
-                encoder.Save(stream);
-                buffer = stream.ToArray();
-            }
-            AD.AdvertisingPhoto = buffer;
-
-            this.db.SaveChanges();
-            LoadAdvertisingList();
-            
-        }
-
-        //AD 商品combobox
-        private void cboADProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int n = cboADProduct.SelectedIndex;
-            if (n < 0) return;
-
-            var q = (from t in db.Products
-                     where t.DeleteProduct == false
-                     orderby t.ProductID
-                     select t).Skip(n).FirstOrDefault();
-
-            txkADPID.Text = q.ProductID.ToString();
-        }
-
-        //AD 對應商品預覽
-        private void LoadText()
-        {
-            txkADTitleOnImage.Text = txtADTitle.Text;
-            txkADContentOnImage.Text = txtADContent.Text;
-        }
-
-        private void txtADTitle_KeyDown(object sender, KeyEventArgs e)
-        {
-            LoadText();
-        }
-
-        private void txtADContent_KeyDown(object sender, KeyEventArgs e)
-        {
-            LoadText();
-        }
-
-
-     
-        //簡易密碼鎖
-
-        private void TabControlMarketing_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            simpleAdminLogin sa = new simpleAdminLogin();
-            if (simpleAdminLogin.simpleadmin == true) return;
-            if (TabControlMarketing.SelectedIndex == 2)
-            {
-                sa.ShowDialog();
-                {
-                    if (simpleAdminLogin.simpleadmin == false)
-                    {
-                        TabControlMarketing.SelectedIndex = 0;
-                    }
-                    else
-                    {
-                        TabControlMarketing.SelectedIndex = 2;
-                    }
-                }
-            }
-        }
-     
     }
-
-    
 }

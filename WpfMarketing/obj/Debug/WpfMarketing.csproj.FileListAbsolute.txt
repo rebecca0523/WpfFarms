@@ -153,11 +153,9 @@ D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\Window1.baml
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.g.cs
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Window1.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Window1.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.baml
 D:\Farms\WpfFarms\WpfMarketing\bin\Debug\WpfMarketing.exe.config
 D:\Farms\WpfFarms\WpfMarketing\bin\Debug\WpfMarketing.exe
@@ -190,3 +188,7 @@ D:\Farms\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.Properties.Resources.resou
 D:\Farms\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.GenerateResource.Cache
 D:\Farms\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.exe
 D:\Farms\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageMarketing.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageMarketing.baml
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageDiscount.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageDiscount.baml

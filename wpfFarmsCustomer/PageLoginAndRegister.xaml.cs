@@ -79,11 +79,9 @@ namespace wpfFarmsCustomer
             //    loginEmail = txtEmail.Text;
             //    loginPassword = txtPassword.Text;
             //    MessageBox.Show("登入成功！");
-          
 
-            GridPageLoginAndRegister.Children.Add(new Frame { Content=new PageCustomerAccount()}
-
-                );
+            GridPageLoginAndRegister.Children.Clear();
+            GridPageLoginAndRegister.Children.Add(new Frame { Content=new PageCustomerAccount()} );
            
 
             //    this.Close();

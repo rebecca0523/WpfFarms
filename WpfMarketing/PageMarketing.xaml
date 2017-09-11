@@ -1,0 +1,18 @@
+﻿<Page x:Class="WpfMarketing.PageMarketing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfMarketing"
+      mc:Ignorable="d"
+      Title="PageMarketing" Height="632" Width="1074">
+
+    <Grid>
+        <TabControl x:Name="TabControlMarketing" >
+            <TabItem x:Name="TabItemSE" Header="特賣設定" FontSize="40" />
+            <TabItem x:Name="TabItemAD" Header="廣告設定" FontSize="40" />
+            <TabItem x:Name="TabItemSEMgr" Header="特賣管理" FontSize="40" />
+            <TabItem x:Name="TabItemADMgr" Header="廣告管理" FontSize="40" />
+        </TabControl>
+    </Grid>
+</Page>

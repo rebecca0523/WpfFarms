@@ -83,11 +83,14 @@
     <Compile Include="AdvertisingButton.xaml.cs">
       <DependentUpon>AdvertisingButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageDiscount.xaml.cs">
+      <DependentUpon>PageDiscount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMarketing.xaml.cs">
+      <DependentUpon>PageMarketing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="simpleAdminLogin.xaml.cs">
       <DependentUpon>simpleAdminLogin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowMarketing.xaml.cs">
       <DependentUpon>WindowMarketing.xaml</DependentUpon>
@@ -103,11 +106,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="simpleAdminLogin.xaml">
+    <Page Include="PageDiscount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="PageMarketing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="simpleAdminLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
