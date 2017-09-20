@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfMarketing"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000"
-      Title="PageDiscount">
+      Title="PageDiscount" Loaded="Page_Loaded">
     <Page.Resources>
 
         <!--名稱日期TEMP-->
@@ -216,7 +216,7 @@
                 </Grid>
             </UniformGrid>
 
-            <UniformGrid Rows="3" Columns="4" Width="120" Height="71" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Margin="0,-20,-161.321,0">
+            <UniformGrid Rows="3" Columns="4" Width="120" Height="71" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,503,60,0">
                 <TextBlock x:Name="txkEVID" Canvas.Left="292" TextWrapping="Wrap" Canvas.Top="533" Background="#FFF1CFBB" Text="0"/>
                 <TextBlock x:Name="txkQID" Background="#FFF0F3A2" Canvas.Left="317" Canvas.Top="533" Text="0" />
                 <TextBlock x:Name="txkcboPID"  Background="#FF4CB01C" Canvas.Left="342" Canvas.Top="533" Text="0" />

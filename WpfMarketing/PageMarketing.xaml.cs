@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace WpfMarketing
         public PageMarketing()
         {
             InitializeComponent();
+        }
+        AllFarmsDBEntities db = new AllFarmsDBEntities();
+        
+        int loginSupplierID = 1;
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            TabItemSE.Content = new Frame
+            {
+                Source = new Uri("PageDiscount.xaml", UriKind.RelativeOrAbsolute)
+            };
+            TabItemAD.Content = new Frame
+            {
+                Source = new Uri("PageAD.xaml", UriKind.RelativeOrAbsolute)
+            };
         }
     }
 }

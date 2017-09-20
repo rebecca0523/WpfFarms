@@ -25,9 +25,28 @@ namespace WpfMarketing
         {
             InitializeComponent();
         }
+
         AllFarmsDBEntities db = new AllFarmsDBEntities();
         //測試用supplierID
         int loginSupplierID = 1;
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //賣家有的特賣會
+            LoadSaleEventListBox();
+
+            //擁有商品加入combobox的選項
+            var p = from t in db.Products
+                    where t.SupplierID == loginSupplierID
+                    where t.DeleteProduct == false
+                    select t.ProductName;
+            cboProducts.ItemsSource = p.ToArray();
+            cboAProduct.ItemsSource = p.ToArray();
+            cboBProduct.ItemsSource = p.ToArray();
+       
+        }
+
+        //賣家有的特賣會
         private void LoadSaleEventListBox()
         {
             var t = from d in db.SaleEvents.AsEnumerable()
@@ -47,6 +66,7 @@ namespace WpfMarketing
                      select new { Quota = $"{ t.Quota:C}", Discount = $"{t.Discount:N2}" };
             lstSaleEventQuota.ItemsSource = qu.ToList();
         }
+
         //C2.顯示既有的單品折扣
         private void LoadSingleListBox()
         {
@@ -611,5 +631,7 @@ namespace WpfMarketing
         {
             CaculateComboDiscount();
         }
+
+      
     }
 }
