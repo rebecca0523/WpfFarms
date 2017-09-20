@@ -193,3 +193,5 @@ C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageMarketing.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageDiscount.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageDiscount.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageAD.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\PageAD.baml
