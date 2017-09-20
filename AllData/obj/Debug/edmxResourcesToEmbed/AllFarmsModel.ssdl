@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="AllFarmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ActivityCity">
     <Key>
       <PropertyRef Name="CityID" />
@@ -470,16 +470,6 @@
     <Property Name="LastUpdateUserID" Type="int" />
     <Property Name="LastUpdateDate" Type="datetime" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="SystemToSuppliersInfo">
     <Key>
       <PropertyRef Name="infoMessageID" />
@@ -829,7 +819,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="farmsDBModelStoreContainer">
+  <EntityContainer Name="AllFarmsModelStoreContainer">
     <EntitySet Name="ActivityCity" EntityType="Self.ActivityCity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActivityFarmer" EntityType="Self.ActivityFarmer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActivityOrder" EntityType="Self.ActivityOrder" Schema="dbo" store:Type="Tables" />
@@ -865,7 +855,6 @@
     <EntitySet Name="SuppliersStoryDetail" EntityType="Self.SuppliersStoryDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SuppliersStoryMaster" EntityType="Self.SuppliersStoryMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SuppliersVideo" EntityType="Self.SuppliersVideo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SystemToSuppliersInfo" EntityType="Self.SystemToSuppliersInfo" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="Self.FK_ActivityFarmer_ActivityCity">
       <End Role="ActivityCity" EntitySet="ActivityCity" />

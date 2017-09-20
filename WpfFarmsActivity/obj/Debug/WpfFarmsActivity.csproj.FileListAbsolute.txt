@@ -288,3 +288,4 @@ D:\Farms\WpfFarms\WpfFarmsActivity\obj\Debug\ViewPicture.baml
 D:\Farms\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.g.resources
 D:\Farms\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.Properties.Resources.resources
 D:\Farms\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.GenerateResource.Cache
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsActivity\obj\Debug\WpfFarmsActivity.csproj.CoreCompileInputs.cache

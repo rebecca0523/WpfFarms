@@ -172,9 +172,6 @@
     <Compile Include="SuppliersVideo.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>AllFarmsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="SystemToSuppliersInfo.cs">
       <DependentUpon>AllFarmsModel.tt</DependentUpon>
     </Compile>
@@ -184,8 +181,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AllFarmsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="AllFarmsModel.edmx.diagram">
       <DependentUpon>AllFarmsModel.edmx</DependentUpon>
     </None>
@@ -193,19 +188,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="AllFarmsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AllFarmsModel.Context.cs</LastGenOutput>
       <DependentUpon>AllFarmsModel.edmx</DependentUpon>
+      <LastGenOutput>AllFarmsModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="AllFarmsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AllFarmsModel.edmx</DependentUpon>
       <LastGenOutput>AllFarmsModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

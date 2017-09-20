@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="farmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AllFarmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityCity">
           <Key>
             <PropertyRef Name="CityID" />
@@ -475,16 +475,6 @@
           <Property Name="LastUpdateUserID" Type="int" />
           <Property Name="LastUpdateDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="SystemToSuppliersInfo">
           <Key>
             <PropertyRef Name="infoMessageID" />
@@ -834,7 +824,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="farmsDBModelStoreContainer">
+        <EntityContainer Name="AllFarmsModelStoreContainer">
           <EntitySet Name="ActivityCity" EntityType="Self.ActivityCity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActivityFarmer" EntityType="Self.ActivityFarmer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActivityOrder" EntityType="Self.ActivityOrder" Schema="dbo" store:Type="Tables" />
@@ -870,7 +860,6 @@
           <EntitySet Name="SuppliersStoryDetail" EntityType="Self.SuppliersStoryDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SuppliersStoryMaster" EntityType="Self.SuppliersStoryMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SuppliersVideo" EntityType="Self.SuppliersVideo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemToSuppliersInfo" EntityType="Self.SystemToSuppliersInfo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="Self.FK_ActivityFarmer_ActivityCity">
             <End Role="ActivityCity" EntitySet="ActivityCity" />
@@ -985,168 +974,44 @@
             <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="farmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="AllFarmsDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ActivityCities" EntityType="farmsDBModel.ActivityCity" />
-          <EntitySet Name="ActivityOrders" EntityType="farmsDBModel.ActivityOrder" />
-          <EntitySet Name="ActivityPhotoes" EntityType="farmsDBModel.ActivityPhoto" />
-          <EntitySet Name="AddressInfoes" EntityType="farmsDBModel.AddressInfo" />
-          <EntitySet Name="BlackListInfoes" EntityType="farmsDBModel.BlackListInfo" />
-          <EntitySet Name="Browses" EntityType="farmsDBModel.Browse" />
-          <EntitySet Name="ChatLogs" EntityType="farmsDBModel.ChatLog" />
-          <EntitySet Name="CustomerInfoes" EntityType="farmsDBModel.CustomerInfo" />
-          <EntitySet Name="CustomerLoginlogs" EntityType="farmsDBModel.CustomerLoginlog" />
-          <EntitySet Name="CustomerRefunds" EntityType="farmsDBModel.CustomerRefund" />
-          <EntitySet Name="CustomerReturns" EntityType="farmsDBModel.CustomerReturn" />
-          <EntitySet Name="CustomerSubscriptions" EntityType="farmsDBModel.CustomerSubscription" />
-          <EntitySet Name="DiscountPointsEvents" EntityType="farmsDBModel.DiscountPointsEvent" />
-          <EntitySet Name="DiscountPointsEventDetails" EntityType="farmsDBModel.DiscountPointsEventDetail" />
-          <EntitySet Name="DiscountPointsRecs" EntityType="farmsDBModel.DiscountPointsRec" />
-          <EntitySet Name="OrderDetails" EntityType="farmsDBModel.OrderDetail" />
-          <EntitySet Name="Orders" EntityType="farmsDBModel.Order" />
-          <EntitySet Name="PostalCodeInfoes" EntityType="farmsDBModel.PostalCodeInfo" />
-          <EntitySet Name="ProductGrowPlanDetails" EntityType="farmsDBModel.ProductGrowPlanDetail" />
-          <EntitySet Name="ProductGrowPlanMasters" EntityType="farmsDBModel.ProductGrowPlanMaster" />
-          <EntitySet Name="ProductImages" EntityType="farmsDBModel.ProductImage" />
-          <EntitySet Name="Products" EntityType="farmsDBModel.Product" />
-          <EntitySet Name="SaleEvents" EntityType="farmsDBModel.SaleEvent" />
-          <EntitySet Name="SaleEventComboes" EntityType="farmsDBModel.SaleEventCombo" />
-          <EntitySet Name="SaleEventQuotas" EntityType="farmsDBModel.SaleEventQuota" />
-          <EntitySet Name="SaleEventSingleProducts" EntityType="farmsDBModel.SaleEventSingleProduct" />
-          <EntitySet Name="ShoppingCarts" EntityType="farmsDBModel.ShoppingCart" />
-          <EntitySet Name="Suppliers" EntityType="farmsDBModel.Supplier" />
-          <EntitySet Name="SuppliersBulletinBoards" EntityType="farmsDBModel.SuppliersBulletinBoard" />
-          <EntitySet Name="SuppliersFarms" EntityType="farmsDBModel.SuppliersFarm" />
-          <EntitySet Name="SuppliersStoryDetails" EntityType="farmsDBModel.SuppliersStoryDetail" />
-          <EntitySet Name="SuppliersStoryMasters" EntityType="farmsDBModel.SuppliersStoryMaster" />
-          <EntitySet Name="sysdiagrams" EntityType="farmsDBModel.sysdiagram" />
-          <EntitySet Name="SystemToSuppliersInfoes" EntityType="farmsDBModel.SystemToSuppliersInfo" />
-          <AssociationSet Name="FK_Browse_Products" Association="farmsDBModel.FK_Browse_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Browse" EntitySet="Browses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CustomerSubscription_CustomerInfo" Association="farmsDBModel.FK_CustomerSubscription_CustomerInfo">
-            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
-            <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DiscountPointsEventDetail_CustomerInfo" Association="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo">
-            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
-            <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CustomerSubscription_Suppliers" Association="farmsDBModel.FK_CustomerSubscription_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="farmsDBModel.FK_DiscountPointsEventDetail_DiscountPointsEvent">
-            <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvents" />
-            <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DiscountPointsRec_DiscountPointsEvent" Association="farmsDBModel.FK_DiscountPointsRec_DiscountPointsEvent">
-            <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvents" />
-            <End Role="DiscountPointsRec" EntitySet="DiscountPointsRecs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_Orders" Association="farmsDBModel.FK_OrderDetails_Orders">
-            <End Role="Order" EntitySet="Orders" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_Products" Association="farmsDBModel.FK_OrderDetails_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster" Association="farmsDBModel.FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
-            <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
-            <End Role="ProductGrowPlanDetail" EntitySet="ProductGrowPlanDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductGrowPlanMaster_SuppliersFarm" Association="farmsDBModel.FK_ProductGrowPlanMaster_SuppliersFarm">
-            <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
-            <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductImages_Products" Association="farmsDBModel.FK_ProductImages_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="ProductImage" EntitySet="ProductImages" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Products_Suppliers" Association="farmsDBModel.FK_Products_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventProduct_Products" Association="farmsDBModel.FK_SaleEventProduct_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShoppingCart_Products" Association="farmsDBModel.FK_ShoppingCart_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEvent_Suppliers" Association="farmsDBModel.FK_SaleEvent_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventA_B_SaleEvent" Association="farmsDBModel.FK_SaleEventA_B_SaleEvent">
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventProduct_SaleEvent" Association="farmsDBModel.FK_SaleEventProduct_SaleEvent">
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-            <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="farmsDBModel.FK_SaleEventQuota_SaleEvent">
-            <End Role="SaleEvent" EntitySet="SaleEvents" />
-            <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SuppliersBulletinBoard_Suppliers" Association="farmsDBModel.FK_SuppliersBulletinBoard_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SuppliersBulletinBoard" EntitySet="SuppliersBulletinBoards" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SuppliersFarm_Suppliers" Association="farmsDBModel.FK_SuppliersFarm_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SuppliersStoryMaster_Suppliers" Association="farmsDBModel.FK_SuppliersStoryMaster_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemToSuppliersInfo_Suppliers" Association="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SuppliersStoryDetail_SuppliersStoryMaster" Association="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster">
-            <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
-            <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
-          </AssociationSet>
-          <EntitySet Name="SuppliersVideos" EntityType="farmsDBModel.SuppliersVideo" />
-          <EntitySet Name="Advertisings" EntityType="farmsDBModel.Advertising" />
-          <AssociationSet Name="FK_Advertising_Suppliers" Association="farmsDBModel.FK_Advertising_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="Advertising" EntitySet="Advertisings" />
-          </AssociationSet>
-          <EntitySet Name="ActivityFarmers" EntityType="farmsDBModel.ActivityFarmer" />
-          <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="farmsDBModel.FK_ActivityFarmer_ActivityCity">
-            <End Role="ActivityCity" EntitySet="ActivityCities" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="farmsDBModel.FK_ActivityFarmer_ActivityPhoto">
-            <End Role="ActivityPhoto" EntitySet="ActivityPhotoes" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="farmsDBModel.FK_ActivityFarmer_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="farmsDBModel.FK_ActivityOrder_ActivityFarmer">
-            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
-            <End Role="ActivityOrder" EntitySet="ActivityOrders" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="AllFarmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ActivityCity">
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
           <Property Name="CityID" Type="Int32" Nullable="false" />
           <Property Name="CityName" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityCity" FromRole="ActivityCity" ToRole="ActivityFarmer" />
+          <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_ActivityCity" FromRole="ActivityCity" ToRole="ActivityFarmer" />
+        </EntityType>
+        <EntityType Name="ActivityFarmer">
+          <Key>
+            <PropertyRef Name="ActivityFarmerID" />
+          </Key>
+          <Property Name="ActivityFarmerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityPhotoID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaxQuantity" Type="Int32" />
+          <Property Name="GroupQuantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ActivityDate" Type="DateTime" Precision="3" />
+          <Property Name="ActivityContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ActivityCity" Relationship="Self.FK_ActivityFarmer_ActivityCity" FromRole="ActivityFarmer" ToRole="ActivityCity" />
+          <NavigationProperty Name="ActivityPhoto" Relationship="Self.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityFarmer" ToRole="ActivityPhoto" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_ActivityFarmer_Suppliers" FromRole="ActivityFarmer" ToRole="Suppliers" />
+          <NavigationProperty Name="ActivityOrders" Relationship="Self.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityFarmer" ToRole="ActivityOrder" />
         </EntityType>
         <EntityType Name="ActivityOrder">
           <Key>
@@ -1164,7 +1029,7 @@
           <Property Name="GroupConfirm" Type="Boolean" />
           <Property Name="PaymentConfirm" Type="Boolean" />
           <Property Name="ReceivedConfirm" Type="Boolean" />
-          <NavigationProperty Name="ActivityFarmer" Relationship="farmsDBModel.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityOrder" ToRole="ActivityFarmer" />
+          <NavigationProperty Name="ActivityFarmer" Relationship="Self.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityOrder" ToRole="ActivityFarmer" />
         </EntityType>
         <EntityType Name="ActivityPhoto">
           <Key>
@@ -1172,16 +1037,33 @@
           </Key>
           <Property Name="ActivityPhotoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ActivityPhoto1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityPhoto" ToRole="ActivityFarmer" />
+          <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityPhoto" ToRole="ActivityFarmer" />
         </EntityType>
         <EntityType Name="AddressInfo">
           <Key>
             <PropertyRef Name="AddressID" />
           </Key>
-          <Property Name="AddressID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AddressID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
-          <Property Name="PostalCodeID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Advertising">
+          <Key>
+            <PropertyRef Name="AdvertisingID" />
+          </Key>
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="AdvertisingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdvertisingStartTime" Type="DateTime" Precision="3" />
+          <Property Name="AdvertisingEndTime" Type="DateTime" Precision="3" />
+          <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AlreadyPaid" Type="Boolean" />
+          <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EdditTime" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="BlackListInfo">
           <Key>
@@ -1190,7 +1072,7 @@
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="SupplierID" Type="Int32" Nullable="false" />
-          <Property Name="BlackListReason" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BlackListReason" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BlackListDate" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Browse">
@@ -1199,7 +1081,7 @@
           </Key>
           <Property Name="BrowseID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_Browse_Products" FromRole="Browse" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Browse_Products" FromRole="Browse" ToRole="Products" />
         </EntityType>
         <EntityType Name="ChatLog">
           <Key>
@@ -1210,7 +1092,7 @@
           <Property Name="SupplierID" Type="Int32" Nullable="false" />
           <Property Name="ChatDatetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChatPic" Type="Guid" Nullable="false" />
-          <Property Name="ChatRecording" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChatRecording" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreationDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CustomerInfo">
@@ -1219,21 +1101,21 @@
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SupplierID" Type="Int32" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Evaluation" Type="Int32" />
-          <Property Name="AddressID" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Useridentity" Type="Int32" Nullable="false" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LastUpdate" Type="DateTime" Precision="3" />
           <Property Name="Interestied" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="InterestiedPic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CustomerSubscriptions" Relationship="farmsDBModel.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerInfo" ToRole="CustomerSubscription" />
-          <NavigationProperty Name="DiscountPointsEventDetails" Relationship="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="CustomerInfo" ToRole="DiscountPointsEventDetail" />
+          <NavigationProperty Name="CustomerSubscriptions" Relationship="Self.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerInfo" ToRole="CustomerSubscription" />
+          <NavigationProperty Name="DiscountPointsEventDetails" Relationship="Self.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="CustomerInfo" ToRole="DiscountPointsEventDetail" />
         </EntityType>
         <EntityType Name="CustomerLoginlog">
           <Key>
@@ -1284,15 +1166,15 @@
           <Property Name="SuppliersID" Type="Int32" Nullable="false" />
           <Property Name="SubscriptionDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="AllowMail" Type="Boolean" />
-          <NavigationProperty Name="CustomerInfo" Relationship="farmsDBModel.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerSubscription" ToRole="CustomerInfo" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_CustomerSubscription_Suppliers" FromRole="CustomerSubscription" ToRole="Supplier" />
+          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_CustomerSubscription_CustomerInfo" FromRole="CustomerSubscription" ToRole="CustomerInfo" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_CustomerSubscription_Suppliers" FromRole="CustomerSubscription" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="DiscountPointsEvent">
           <Key>
             <PropertyRef Name="DiscountPointsEventID" />
           </Key>
           <Property Name="DiscountPointsEventID" Type="Int32" Nullable="false" />
-          <Property Name="DiscountPointsEventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiscountPointsEventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DiscountPointsEvenContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DiscountPointsEventStart" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DiscountPointsEventEnd" Type="DateTime" Nullable="false" Precision="3" />
@@ -1302,8 +1184,8 @@
           <Property Name="Quota" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="QuotaPoint" Type="Int32" />
           <Property Name="QPointToOneNTD" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DiscountPointsEventDetails" Relationship="farmsDBModel.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsEventDetail" />
-          <NavigationProperty Name="DiscountPointsRecs" Relationship="farmsDBModel.FK_DiscountPointsRec_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsRec" />
+          <NavigationProperty Name="DiscountPointsEventDetails" Relationship="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsEventDetail" />
+          <NavigationProperty Name="DiscountPointsRecs" Relationship="Self.FK_DiscountPointsRec_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsRec" />
         </EntityType>
         <EntityType Name="DiscountPointsEventDetail">
           <Key>
@@ -1317,8 +1199,8 @@
           <Property Name="getSharePoint" Type="Int32" />
           <Property Name="getQuotaPoint" Type="Int32" />
           <Property Name="usedPoint" Type="Int32" />
-          <NavigationProperty Name="CustomerInfo" Relationship="farmsDBModel.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="DiscountPointsEventDetail" ToRole="CustomerInfo" />
-          <NavigationProperty Name="DiscountPointsEvent" Relationship="farmsDBModel.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEventDetail" ToRole="DiscountPointsEvent" />
+          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_DiscountPointsEventDetail_CustomerInfo" FromRole="DiscountPointsEventDetail" ToRole="CustomerInfo" />
+          <NavigationProperty Name="DiscountPointsEvent" Relationship="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEventDetail" ToRole="DiscountPointsEvent" />
         </EntityType>
         <EntityType Name="DiscountPointsRec">
           <Key>
@@ -1330,7 +1212,7 @@
           <Property Name="sendPoint" Type="Int32" />
           <Property Name="sendReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sendTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="DiscountPointsEvent" Relationship="farmsDBModel.FK_DiscountPointsRec_DiscountPointsEvent" FromRole="DiscountPointsRec" ToRole="DiscountPointsEvent" />
+          <NavigationProperty Name="DiscountPointsEvent" Relationship="Self.FK_DiscountPointsRec_DiscountPointsEvent" FromRole="DiscountPointsRec" ToRole="DiscountPointsEvent" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -1347,8 +1229,8 @@
           <Property Name="ShipmentStatus" Type="Boolean" />
           <Property Name="MakeCollectionsStatus" Type="Boolean" />
           <Property Name="PaymentStatus" Type="Boolean" />
-          <NavigationProperty Name="Order" Relationship="farmsDBModel.FK_OrderDetails_Orders" FromRole="OrderDetail" ToRole="Order" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_OrderDetails_Products" FromRole="OrderDetail" ToRole="Product" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_OrderDetails_Products" FromRole="OrderDetails" ToRole="Products" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -1364,13 +1246,13 @@
           <Property Name="CellPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="OrderStatus" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="CustomerDemand" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrderDetails" Relationship="farmsDBModel.FK_OrderDetails_Orders" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
         </EntityType>
         <EntityType Name="PostalCodeInfo">
           <Key>
             <PropertyRef Name="PostalCodeID" />
           </Key>
-          <Property Name="PostalCodeID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PostalCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
           <Property Name="PostalCodeName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="FloorNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -1388,7 +1270,7 @@
           <Property Name="CreatedDateUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="ProductGrowPlanMaster" Relationship="farmsDBModel.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanDetail" ToRole="ProductGrowPlanMaster" />
+          <NavigationProperty Name="ProductGrowPlanMaster" Relationship="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanDetail" ToRole="ProductGrowPlanMaster" />
         </EntityType>
         <EntityType Name="ProductGrowPlanMaster">
           <Key>
@@ -1405,8 +1287,8 @@
           <Property Name="CreatedDateUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="ProductGrowPlanDetail" Relationship="farmsDBModel.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanMaster" ToRole="ProductGrowPlanDetail" />
-          <NavigationProperty Name="SuppliersFarm" Relationship="farmsDBModel.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="ProductGrowPlanMaster" ToRole="SuppliersFarm" />
+          <NavigationProperty Name="ProductGrowPlanDetail" Relationship="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster" FromRole="ProductGrowPlanMaster" ToRole="ProductGrowPlanDetail" />
+          <NavigationProperty Name="SuppliersFarm" Relationship="Self.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="ProductGrowPlanMaster" ToRole="SuppliersFarm" />
         </EntityType>
         <EntityType Name="ProductImage">
           <Key>
@@ -1415,7 +1297,7 @@
           <Property Name="ProductImageID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="ProductImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="ProductImage" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductImages_Products" FromRole="ProductImages" ToRole="Products" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -1441,12 +1323,12 @@
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="DeleteProduct" Type="Boolean" />
-          <NavigationProperty Name="Browses" Relationship="farmsDBModel.FK_Browse_Products" FromRole="Product" ToRole="Browse" />
-          <NavigationProperty Name="OrderDetails" Relationship="farmsDBModel.FK_OrderDetails_Products" FromRole="Product" ToRole="OrderDetail" />
-          <NavigationProperty Name="ProductImages" Relationship="farmsDBModel.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImage" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
-          <NavigationProperty Name="SaleEventSingleProducts" Relationship="farmsDBModel.FK_SaleEventProduct_Products" FromRole="Product" ToRole="SaleEventSingleProduct" />
-          <NavigationProperty Name="ShoppingCarts" Relationship="farmsDBModel.FK_ShoppingCart_Products" FromRole="Product" ToRole="ShoppingCart" />
+          <NavigationProperty Name="Browses" Relationship="Self.FK_Browse_Products" FromRole="Products" ToRole="Browse" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Products" FromRole="Products" ToRole="OrderDetails" />
+          <NavigationProperty Name="ProductImages" Relationship="Self.FK_ProductImages_Products" FromRole="Products" ToRole="ProductImages" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_Products_Suppliers" FromRole="Products" ToRole="Suppliers" />
+          <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_Products" FromRole="Products" ToRole="SaleEventSingleProduct" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCart_Products" FromRole="Products" ToRole="ShoppingCart" />
         </EntityType>
         <EntityType Name="SaleEvent">
           <Key>
@@ -1459,10 +1341,10 @@
           <Property Name="SaleEventStart" Type="DateTime" Precision="3" />
           <Property Name="SaleEventEnd" Type="DateTime" Precision="3" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SaleEvent_Suppliers" FromRole="SaleEvent" ToRole="Supplier" />
-          <NavigationProperty Name="SaleEventComboes" Relationship="farmsDBModel.FK_SaleEventA_B_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventCombo" />
-          <NavigationProperty Name="SaleEventSingleProducts" Relationship="farmsDBModel.FK_SaleEventProduct_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventSingleProduct" />
-          <NavigationProperty Name="SaleEventQuotas" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SaleEvent_Suppliers" FromRole="SaleEvent" ToRole="Suppliers" />
+          <NavigationProperty Name="SaleEventComboes" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventCombo" />
+          <NavigationProperty Name="SaleEventSingleProducts" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventSingleProduct" />
+          <NavigationProperty Name="SaleEventQuotas" Relationship="Self.FK_SaleEventQuota_SaleEvent" FromRole="SaleEvent" ToRole="SaleEventQuota" />
         </EntityType>
         <EntityType Name="SaleEventCombo">
           <Key>
@@ -1475,7 +1357,7 @@
           <Property Name="Discount" Type="Single" />
           <Property Name="Active" Type="Boolean" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SaleEvent" Relationship="farmsDBModel.FK_SaleEventA_B_SaleEvent" FromRole="SaleEventCombo" ToRole="SaleEvent" />
+          <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventA_B_SaleEvent" FromRole="SaleEventCombo" ToRole="SaleEvent" />
         </EntityType>
         <EntityType Name="SaleEventQuota">
           <Key>
@@ -1487,7 +1369,7 @@
           <Property Name="Discount" Type="Single" />
           <Property Name="Active" Type="Boolean" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SaleEvent" Relationship="farmsDBModel.FK_SaleEventQuota_SaleEvent" FromRole="SaleEventQuota" ToRole="SaleEvent" />
+          <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventQuota_SaleEvent" FromRole="SaleEventQuota" ToRole="SaleEvent" />
         </EntityType>
         <EntityType Name="SaleEventSingleProduct">
           <Key>
@@ -1499,8 +1381,8 @@
           <Property Name="Discount" Type="Single" />
           <Property Name="Active" Type="Boolean" />
           <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_SaleEventProduct_Products" FromRole="SaleEventSingleProduct" ToRole="Product" />
-          <NavigationProperty Name="SaleEvent" Relationship="farmsDBModel.FK_SaleEventProduct_SaleEvent" FromRole="SaleEventSingleProduct" ToRole="SaleEvent" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_SaleEventProduct_Products" FromRole="SaleEventSingleProduct" ToRole="Products" />
+          <NavigationProperty Name="SaleEvent" Relationship="Self.FK_SaleEventProduct_SaleEvent" FromRole="SaleEventSingleProduct" ToRole="SaleEvent" />
         </EntityType>
         <EntityType Name="ShoppingCart">
           <Key>
@@ -1509,7 +1391,7 @@
           <Property Name="CartID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" />
           <Property Name="Quantity" Type="Int32" />
-          <NavigationProperty Name="Product" Relationship="farmsDBModel.FK_ShoppingCart_Products" FromRole="ShoppingCart" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ShoppingCart_Products" FromRole="ShoppingCart" ToRole="Products" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -1522,7 +1404,7 @@
           <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="email1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1530,15 +1412,15 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="CustomerSubscriptions" Relationship="farmsDBModel.FK_CustomerSubscription_Suppliers" FromRole="Supplier" ToRole="CustomerSubscription" />
-          <NavigationProperty Name="Products" Relationship="farmsDBModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
-          <NavigationProperty Name="SaleEvents" Relationship="farmsDBModel.FK_SaleEvent_Suppliers" FromRole="Supplier" ToRole="SaleEvent" />
-          <NavigationProperty Name="SuppliersBulletinBoards" Relationship="farmsDBModel.FK_SuppliersBulletinBoard_Suppliers" FromRole="Supplier" ToRole="SuppliersBulletinBoard" />
-          <NavigationProperty Name="SuppliersFarms" Relationship="farmsDBModel.FK_SuppliersFarm_Suppliers" FromRole="Supplier" ToRole="SuppliersFarm" />
-          <NavigationProperty Name="SuppliersStoryMasters" Relationship="farmsDBModel.FK_SuppliersStoryMaster_Suppliers" FromRole="Supplier" ToRole="SuppliersStoryMaster" />
-          <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" FromRole="Supplier" ToRole="SystemToSuppliersInfo" />
-          <NavigationProperty Name="Advertisings" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Supplier" ToRole="Advertising" />
-          <NavigationProperty Name="ActivityFarmers" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="Supplier" ToRole="ActivityFarmer" />
+          <NavigationProperty Name="ActivityFarmers" Relationship="Self.FK_ActivityFarmer_Suppliers" FromRole="Suppliers" ToRole="ActivityFarmer" />
+          <NavigationProperty Name="Advertisings" Relationship="Self.FK_Advertising_Suppliers" FromRole="Suppliers" ToRole="Advertising" />
+          <NavigationProperty Name="CustomerSubscriptions" Relationship="Self.FK_CustomerSubscription_Suppliers" FromRole="Suppliers" ToRole="CustomerSubscription" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_Suppliers" FromRole="Suppliers" ToRole="Products" />
+          <NavigationProperty Name="SaleEvents" Relationship="Self.FK_SaleEvent_Suppliers" FromRole="Suppliers" ToRole="SaleEvent" />
+          <NavigationProperty Name="SuppliersBulletinBoards" Relationship="Self.FK_SuppliersBulletinBoard_Suppliers" FromRole="Suppliers" ToRole="SuppliersBulletinBoard" />
+          <NavigationProperty Name="SuppliersFarms" Relationship="Self.FK_SuppliersFarm_Suppliers" FromRole="Suppliers" ToRole="SuppliersFarm" />
+          <NavigationProperty Name="SuppliersStoryMasters" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="Suppliers" ToRole="SuppliersStoryMaster" />
+          <NavigationProperty Name="SystemToSuppliersInfoes" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="Suppliers" ToRole="SystemToSuppliersInfo" />
         </EntityType>
         <EntityType Name="SuppliersBulletinBoard">
           <Key>
@@ -1553,7 +1435,7 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SuppliersBulletinBoard_Suppliers" FromRole="SuppliersBulletinBoard" ToRole="Supplier" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersBulletinBoard_Suppliers" FromRole="SuppliersBulletinBoard" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="SuppliersFarm">
           <Key>
@@ -1568,8 +1450,8 @@
           <Property Name="CreatedDateUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="ProductGrowPlanMasters" Relationship="farmsDBModel.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="SuppliersFarm" ToRole="ProductGrowPlanMaster" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SuppliersFarm_Suppliers" FromRole="SuppliersFarm" ToRole="Supplier" />
+          <NavigationProperty Name="ProductGrowPlanMasters" Relationship="Self.FK_ProductGrowPlanMaster_SuppliersFarm" FromRole="SuppliersFarm" ToRole="ProductGrowPlanMaster" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersFarm_Suppliers" FromRole="SuppliersFarm" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="SuppliersStoryDetail">
           <Key>
@@ -1586,7 +1468,7 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="SuppliersStoryMaster" Relationship="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryDetail" ToRole="SuppliersStoryMaster" />
+          <NavigationProperty Name="SuppliersStoryMaster" Relationship="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryDetail" ToRole="SuppliersStoryMaster" />
         </EntityType>
         <EntityType Name="SuppliersStoryMaster">
           <Key>
@@ -1602,18 +1484,25 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SuppliersStoryMaster_Suppliers" FromRole="SuppliersStoryMaster" ToRole="Supplier" />
-          <NavigationProperty Name="SuppliersStoryDetails" Relationship="farmsDBModel.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryMaster" ToRole="SuppliersStoryDetail" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SuppliersStoryMaster_Suppliers" FromRole="SuppliersStoryMaster" ToRole="Suppliers" />
+          <NavigationProperty Name="SuppliersStoryDetails" Relationship="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster" FromRole="SuppliersStoryMaster" ToRole="SuppliersStoryDetail" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="SuppliersVideo">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="SuppliersVideoID" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SuppliersVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuppliersID" Type="Int32" Nullable="false" />
+          <Property Name="SuppliersVideoTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="VideoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="VideomimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VideoName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateUserID" Type="Int32" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="SystemToSuppliersInfo">
           <Key>
@@ -1627,359 +1516,11 @@
           <Property Name="CreatedUserID" Type="Int32" />
           <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_SystemToSuppliersInfo_Suppliers" FromRole="SystemToSuppliersInfo" ToRole="Supplier" />
-        </EntityType>
-        <Association Name="FK_Browse_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="farmsDBModel.Browse" Role="Browse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="Browse">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CustomerSubscription_CustomerInfo">
-          <End Type="farmsDBModel.CustomerInfo" Role="CustomerInfo" Multiplicity="1" />
-          <End Type="farmsDBModel.CustomerSubscription" Role="CustomerSubscription" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CustomerInfo">
-              <PropertyRef Name="CustomerID" />
-            </Principal>
-            <Dependent Role="CustomerSubscription">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DiscountPointsEventDetail_CustomerInfo">
-          <End Type="farmsDBModel.CustomerInfo" Role="CustomerInfo" Multiplicity="1" />
-          <End Type="farmsDBModel.DiscountPointsEventDetail" Role="DiscountPointsEventDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CustomerInfo">
-              <PropertyRef Name="CustomerID" />
-            </Principal>
-            <Dependent Role="DiscountPointsEventDetail">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CustomerSubscription_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.CustomerSubscription" Role="CustomerSubscription" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="CustomerSubscription">
-              <PropertyRef Name="SuppliersID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DiscountPointsEventDetail_DiscountPointsEvent">
-          <End Type="farmsDBModel.DiscountPointsEvent" Role="DiscountPointsEvent" Multiplicity="1" />
-          <End Type="farmsDBModel.DiscountPointsEventDetail" Role="DiscountPointsEventDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DiscountPointsEvent">
-              <PropertyRef Name="DiscountPointsEventID" />
-            </Principal>
-            <Dependent Role="DiscountPointsEventDetail">
-              <PropertyRef Name="DiscountPointsEventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DiscountPointsRec_DiscountPointsEvent">
-          <End Type="farmsDBModel.DiscountPointsEvent" Role="DiscountPointsEvent" Multiplicity="0..1" />
-          <End Type="farmsDBModel.DiscountPointsRec" Role="DiscountPointsRec" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DiscountPointsEvent">
-              <PropertyRef Name="DiscountPointsEventID" />
-            </Principal>
-            <Dependent Role="DiscountPointsRec">
-              <PropertyRef Name="DiscountPointsEventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrderDetails_Orders">
-          <End Type="farmsDBModel.Order" Role="Order" Multiplicity="0..1" />
-          <End Type="farmsDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="OrderID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrderDetails_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="farmsDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
-          <End Type="farmsDBModel.ProductGrowPlanMaster" Role="ProductGrowPlanMaster" Multiplicity="1" />
-          <End Type="farmsDBModel.ProductGrowPlanDetail" Role="ProductGrowPlanDetail" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="ProductGrowPlanMaster">
-              <PropertyRef Name="ProductGrowID" />
-            </Principal>
-            <Dependent Role="ProductGrowPlanDetail">
-              <PropertyRef Name="ProductGrowID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductGrowPlanMaster_SuppliersFarm">
-          <End Type="farmsDBModel.SuppliersFarm" Role="SuppliersFarm" Multiplicity="1" />
-          <End Type="farmsDBModel.ProductGrowPlanMaster" Role="ProductGrowPlanMaster" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SuppliersFarm">
-              <PropertyRef Name="SupplierFarmID" />
-            </Principal>
-            <Dependent Role="ProductGrowPlanMaster">
-              <PropertyRef Name="SupplierFarmID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductImages_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="farmsDBModel.ProductImage" Role="ProductImage" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="ProductImage">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Products_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventProduct_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SaleEventSingleProduct" Role="SaleEventSingleProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="SaleEventSingleProduct">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ShoppingCart_Products">
-          <End Type="farmsDBModel.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ShoppingCart" Role="ShoppingCart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="ShoppingCart">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEvent_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="SaleEvent">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventA_B_SaleEvent">
-          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SaleEventCombo" Role="SaleEventCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SaleEvent">
-              <PropertyRef Name="SaleEventID" />
-            </Principal>
-            <Dependent Role="SaleEventCombo">
-              <PropertyRef Name="SaleEventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventProduct_SaleEvent">
-          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SaleEventSingleProduct" Role="SaleEventSingleProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SaleEvent">
-              <PropertyRef Name="SaleEventID" />
-            </Principal>
-            <Dependent Role="SaleEventSingleProduct">
-              <PropertyRef Name="SaleEventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SaleEventQuota_SaleEvent">
-          <End Type="farmsDBModel.SaleEvent" Role="SaleEvent" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SaleEventQuota" Role="SaleEventQuota" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SaleEvent">
-              <PropertyRef Name="SaleEventID" />
-            </Principal>
-            <Dependent Role="SaleEventQuota">
-              <PropertyRef Name="SaleEventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SuppliersBulletinBoard_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
-          <End Type="farmsDBModel.SuppliersBulletinBoard" Role="SuppliersBulletinBoard" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="SuppliersBulletinBoard">
-              <PropertyRef Name="SupplierD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SuppliersFarm_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.SuppliersFarm" Role="SuppliersFarm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="SuppliersFarm">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SuppliersStoryMaster_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.SuppliersStoryMaster" Role="SuppliersStoryMaster" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="SuppliersStoryMaster">
-              <PropertyRef Name="SuppliersID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SystemToSuppliersInfo_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.SystemToSuppliersInfo" Role="SystemToSuppliersInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="SystemToSuppliersInfo">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SuppliersStoryDetail_SuppliersStoryMaster">
-          <End Type="farmsDBModel.SuppliersStoryMaster" Role="SuppliersStoryMaster" Multiplicity="1" />
-          <End Type="farmsDBModel.SuppliersStoryDetail" Role="SuppliersStoryDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SuppliersStoryMaster">
-              <PropertyRef Name="SuppliersStoryID" />
-            </Principal>
-            <Dependent Role="SuppliersStoryDetail">
-              <PropertyRef Name="SuppliersStoryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="SuppliersVideo">
-          <Key>
-            <PropertyRef Name="SuppliersVideoID" />
-          </Key>
-          <Property Name="SuppliersVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SuppliersID" Type="Int32" Nullable="false" />
-          <Property Name="SuppliersVideoTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="VideoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="VideomimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VideoName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="CreatedUserID" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdateUserID" Type="Int32" />
-          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="Advertising">
-          <Key>
-            <PropertyRef Name="AdvertisingID" />
-          </Key>
-          <Property Name="SupplierID" Type="Int32" />
-          <Property Name="AdvertisingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AdvertisingITitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="AdvertisingIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AdvertisingStartTime" Type="DateTime" Precision="3" />
-          <Property Name="AdvertisingEndTime" Type="DateTime" Precision="3" />
-          <Property Name="AdvertisingPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="AlreadyPaid" Type="Boolean" />
-          <Property Name="AdvertisingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="EdditTime" Type="DateTime" Precision="3" />
-          <Property Name="Active" Type="Boolean" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_Advertising_Suppliers" FromRole="Advertising" ToRole="Supplier" />
-        </EntityType>
-        <Association Name="FK_Advertising_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="0..1" />
-          <End Type="farmsDBModel.Advertising" Role="Advertising" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="Advertising">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="ActivityFarmer">
-          <Key>
-            <PropertyRef Name="ActivityFarmerID" />
-          </Key>
-          <Property Name="ActivityFarmerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ActivityPhotoID" Type="Int32" />
-          <Property Name="SupplierID" Type="Int32" Nullable="false" />
-          <Property Name="CityID" Type="Int32" />
-          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ActivityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaxQuantity" Type="Int32" />
-          <Property Name="GroupQuantity" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="ActivityDate" Type="DateTime" Precision="3" />
-          <Property Name="ActivityContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ATMBank" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ATMAccount" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ActivityCity" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityCity" FromRole="ActivityFarmer" ToRole="ActivityCity" />
-          <NavigationProperty Name="ActivityPhoto" Relationship="farmsDBModel.FK_ActivityFarmer_ActivityPhoto" FromRole="ActivityFarmer" ToRole="ActivityPhoto" />
-          <NavigationProperty Name="Supplier" Relationship="farmsDBModel.FK_ActivityFarmer_Suppliers" FromRole="ActivityFarmer" ToRole="Supplier" />
-          <NavigationProperty Name="ActivityOrders" Relationship="farmsDBModel.FK_ActivityOrder_ActivityFarmer" FromRole="ActivityFarmer" ToRole="ActivityOrder" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SystemToSuppliersInfo_Suppliers" FromRole="SystemToSuppliersInfo" ToRole="Suppliers" />
         </EntityType>
         <Association Name="FK_ActivityFarmer_ActivityCity">
-          <End Type="farmsDBModel.ActivityCity" Role="ActivityCity" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <End Role="ActivityCity" Type="Self.ActivityCity" Multiplicity="0..1" />
+          <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ActivityCity">
               <PropertyRef Name="CityID" />
@@ -1990,8 +1531,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ActivityFarmer_ActivityPhoto">
-          <End Type="farmsDBModel.ActivityPhoto" Role="ActivityPhoto" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <End Role="ActivityPhoto" Type="Self.ActivityPhoto" Multiplicity="0..1" />
+          <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ActivityPhoto">
               <PropertyRef Name="ActivityPhotoID" />
@@ -2002,10 +1543,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ActivityFarmer_Suppliers">
-          <End Type="farmsDBModel.Supplier" Role="Supplier" Multiplicity="1" />
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="*" />
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Supplier">
+            <Principal Role="Suppliers">
               <PropertyRef Name="SupplierID" />
             </Principal>
             <Dependent Role="ActivityFarmer">
@@ -2014,8 +1555,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ActivityOrder_ActivityFarmer">
-          <End Type="farmsDBModel.ActivityFarmer" Role="ActivityFarmer" Multiplicity="0..1" />
-          <End Type="farmsDBModel.ActivityOrder" Role="ActivityOrder" Multiplicity="*" />
+          <End Role="ActivityFarmer" Type="Self.ActivityFarmer" Multiplicity="0..1" />
+          <End Role="ActivityOrder" Type="Self.ActivityOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ActivityFarmer">
               <PropertyRef Name="ActivityFarmerID" />
@@ -2025,534 +1566,961 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Advertising_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Advertising" Type="Self.Advertising" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Advertising">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Browse_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Browse" Type="Self.Browse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Browse">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerSubscription_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="CustomerSubscription">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPointsEventDetail_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="DiscountPointsEventDetail">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerSubscription_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="CustomerSubscription" Type="Self.CustomerSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="CustomerSubscription">
+              <PropertyRef Name="SuppliersID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPointsEventDetail_DiscountPointsEvent">
+          <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="1" />
+          <End Role="DiscountPointsEventDetail" Type="Self.DiscountPointsEventDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPointsEvent">
+              <PropertyRef Name="DiscountPointsEventID" />
+            </Principal>
+            <Dependent Role="DiscountPointsEventDetail">
+              <PropertyRef Name="DiscountPointsEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPointsRec_DiscountPointsEvent">
+          <End Role="DiscountPointsEvent" Type="Self.DiscountPointsEvent" Multiplicity="0..1" />
+          <End Role="DiscountPointsRec" Type="Self.DiscountPointsRec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPointsEvent">
+              <PropertyRef Name="DiscountPointsEventID" />
+            </Principal>
+            <Dependent Role="DiscountPointsRec">
+              <PropertyRef Name="DiscountPointsEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_Orders">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+          <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="1" />
+          <End Role="ProductGrowPlanDetail" Type="Self.ProductGrowPlanDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGrowPlanMaster">
+              <PropertyRef Name="ProductGrowID" />
+            </Principal>
+            <Dependent Role="ProductGrowPlanDetail">
+              <PropertyRef Name="ProductGrowID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGrowPlanMaster_SuppliersFarm">
+          <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="1" />
+          <End Role="ProductGrowPlanMaster" Type="Self.ProductGrowPlanMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuppliersFarm">
+              <PropertyRef Name="SupplierFarmID" />
+            </Principal>
+            <Dependent Role="ProductGrowPlanMaster">
+              <PropertyRef Name="SupplierFarmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImages_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductImages" Type="Self.ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductImages">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventProduct_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="SaleEventSingleProduct">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEvent_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="SaleEvent">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventA_B_SaleEvent">
+          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+          <End Role="SaleEventCombo" Type="Self.SaleEventCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventCombo">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventProduct_SaleEvent">
+          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+          <End Role="SaleEventSingleProduct" Type="Self.SaleEventSingleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventSingleProduct">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleEventQuota_SaleEvent">
+          <End Role="SaleEvent" Type="Self.SaleEvent" Multiplicity="0..1" />
+          <End Role="SaleEventQuota" Type="Self.SaleEventQuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleEvent">
+              <PropertyRef Name="SaleEventID" />
+            </Principal>
+            <Dependent Role="SaleEventQuota">
+              <PropertyRef Name="SaleEventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuppliersBulletinBoard_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="SuppliersBulletinBoard" Type="Self.SuppliersBulletinBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="SuppliersBulletinBoard">
+              <PropertyRef Name="SupplierD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuppliersFarm_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SuppliersFarm" Type="Self.SuppliersFarm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="SuppliersFarm">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuppliersStoryMaster_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="SuppliersStoryMaster">
+              <PropertyRef Name="SuppliersID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemToSuppliersInfo_Suppliers">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SystemToSuppliersInfo" Type="Self.SystemToSuppliersInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="SystemToSuppliersInfo">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuppliersStoryDetail_SuppliersStoryMaster">
+          <End Role="SuppliersStoryMaster" Type="Self.SuppliersStoryMaster" Multiplicity="1" />
+          <End Role="SuppliersStoryDetail" Type="Self.SuppliersStoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuppliersStoryMaster">
+              <PropertyRef Name="SuppliersStoryID" />
+            </Principal>
+            <Dependent Role="SuppliersStoryDetail">
+              <PropertyRef Name="SuppliersStoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AllFarmsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActivityCities" EntityType="Self.ActivityCity" />
+          <EntitySet Name="ActivityFarmers" EntityType="Self.ActivityFarmer" />
+          <EntitySet Name="ActivityOrders" EntityType="Self.ActivityOrder" />
+          <EntitySet Name="ActivityPhotoes" EntityType="Self.ActivityPhoto" />
+          <EntitySet Name="AddressInfoes" EntityType="Self.AddressInfo" />
+          <EntitySet Name="Advertisings" EntityType="Self.Advertising" />
+          <EntitySet Name="BlackListInfoes" EntityType="Self.BlackListInfo" />
+          <EntitySet Name="Browses" EntityType="Self.Browse" />
+          <EntitySet Name="ChatLogs" EntityType="Self.ChatLog" />
+          <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
+          <EntitySet Name="CustomerLoginlogs" EntityType="Self.CustomerLoginlog" />
+          <EntitySet Name="CustomerRefunds" EntityType="Self.CustomerRefund" />
+          <EntitySet Name="CustomerReturns" EntityType="Self.CustomerReturn" />
+          <EntitySet Name="CustomerSubscriptions" EntityType="Self.CustomerSubscription" />
+          <EntitySet Name="DiscountPointsEvents" EntityType="Self.DiscountPointsEvent" />
+          <EntitySet Name="DiscountPointsEventDetails" EntityType="Self.DiscountPointsEventDetail" />
+          <EntitySet Name="DiscountPointsRecs" EntityType="Self.DiscountPointsRec" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="PostalCodeInfoes" EntityType="Self.PostalCodeInfo" />
+          <EntitySet Name="ProductGrowPlanDetails" EntityType="Self.ProductGrowPlanDetail" />
+          <EntitySet Name="ProductGrowPlanMasters" EntityType="Self.ProductGrowPlanMaster" />
+          <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="SaleEvents" EntityType="Self.SaleEvent" />
+          <EntitySet Name="SaleEventComboes" EntityType="Self.SaleEventCombo" />
+          <EntitySet Name="SaleEventQuotas" EntityType="Self.SaleEventQuota" />
+          <EntitySet Name="SaleEventSingleProducts" EntityType="Self.SaleEventSingleProduct" />
+          <EntitySet Name="ShoppingCarts" EntityType="Self.ShoppingCart" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="SuppliersBulletinBoards" EntityType="Self.SuppliersBulletinBoard" />
+          <EntitySet Name="SuppliersFarms" EntityType="Self.SuppliersFarm" />
+          <EntitySet Name="SuppliersStoryDetails" EntityType="Self.SuppliersStoryDetail" />
+          <EntitySet Name="SuppliersStoryMasters" EntityType="Self.SuppliersStoryMaster" />
+          <EntitySet Name="SuppliersVideos" EntityType="Self.SuppliersVideo" />
+          <EntitySet Name="SystemToSuppliersInfoes" EntityType="Self.SystemToSuppliersInfo" />
+          <AssociationSet Name="FK_ActivityFarmer_ActivityCity" Association="Self.FK_ActivityFarmer_ActivityCity">
+            <End Role="ActivityCity" EntitySet="ActivityCities" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityFarmer_ActivityPhoto" Association="Self.FK_ActivityFarmer_ActivityPhoto">
+            <End Role="ActivityPhoto" EntitySet="ActivityPhotoes" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityFarmer_Suppliers" Association="Self.FK_ActivityFarmer_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityOrder_ActivityFarmer" Association="Self.FK_ActivityOrder_ActivityFarmer">
+            <End Role="ActivityFarmer" EntitySet="ActivityFarmers" />
+            <End Role="ActivityOrder" EntitySet="ActivityOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertising_Suppliers" Association="Self.FK_Advertising_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Advertising" EntitySet="Advertisings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Browse_Products" Association="Self.FK_Browse_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Browse" EntitySet="Browses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerSubscription_CustomerInfo" Association="Self.FK_CustomerSubscription_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+            <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPointsEventDetail_CustomerInfo" Association="Self.FK_DiscountPointsEventDetail_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+            <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerSubscription_Suppliers" Association="Self.FK_CustomerSubscription_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="CustomerSubscription" EntitySet="CustomerSubscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPointsEventDetail_DiscountPointsEvent" Association="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent">
+            <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvents" />
+            <End Role="DiscountPointsEventDetail" EntitySet="DiscountPointsEventDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPointsRec_DiscountPointsEvent" Association="Self.FK_DiscountPointsRec_DiscountPointsEvent">
+            <End Role="DiscountPointsEvent" EntitySet="DiscountPointsEvents" />
+            <End Role="DiscountPointsRec" EntitySet="DiscountPointsRecs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGrowPlanDetail_ProductGrowPlanMaster" Association="Self.FK_ProductGrowPlanDetail_ProductGrowPlanMaster">
+            <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
+            <End Role="ProductGrowPlanDetail" EntitySet="ProductGrowPlanDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGrowPlanMaster_SuppliersFarm" Association="Self.FK_ProductGrowPlanMaster_SuppliersFarm">
+            <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
+            <End Role="ProductGrowPlanMaster" EntitySet="ProductGrowPlanMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImages_Products" Association="Self.FK_ProductImages_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductImages" EntitySet="ProductImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Suppliers" Association="Self.FK_Products_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventProduct_Products" Association="Self.FK_SaleEventProduct_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_Products" Association="Self.FK_ShoppingCart_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEvent_Suppliers" Association="Self.FK_SaleEvent_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventA_B_SaleEvent" Association="Self.FK_SaleEventA_B_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+            <End Role="SaleEventCombo" EntitySet="SaleEventComboes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventProduct_SaleEvent" Association="Self.FK_SaleEventProduct_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+            <End Role="SaleEventSingleProduct" EntitySet="SaleEventSingleProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleEventQuota_SaleEvent" Association="Self.FK_SaleEventQuota_SaleEvent">
+            <End Role="SaleEvent" EntitySet="SaleEvents" />
+            <End Role="SaleEventQuota" EntitySet="SaleEventQuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuppliersBulletinBoard_Suppliers" Association="Self.FK_SuppliersBulletinBoard_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="SuppliersBulletinBoard" EntitySet="SuppliersBulletinBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuppliersFarm_Suppliers" Association="Self.FK_SuppliersFarm_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="SuppliersFarm" EntitySet="SuppliersFarms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuppliersStoryMaster_Suppliers" Association="Self.FK_SuppliersStoryMaster_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemToSuppliersInfo_Suppliers" Association="Self.FK_SystemToSuppliersInfo_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuppliersStoryDetail_SuppliersStoryMaster" Association="Self.FK_SuppliersStoryDetail_SuppliersStoryMaster">
+            <End Role="SuppliersStoryMaster" EntitySet="SuppliersStoryMasters" />
+            <End Role="SuppliersStoryDetail" EntitySet="SuppliersStoryDetails" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="farmsDBModelStoreContainer" CdmEntityContainer="AllFarmsDBEntities">
+        <EntityContainerMapping StorageEntityContainer="AllFarmsModelStoreContainer" CdmEntityContainer="AllFarmsDBEntities">
           <EntitySetMapping Name="ActivityCities">
-            <EntityTypeMapping TypeName="farmsDBModel.ActivityCity">
+            <EntityTypeMapping TypeName="AllFarmsModel.ActivityCity">
               <MappingFragment StoreEntitySet="ActivityCity">
-                <ScalarProperty Name="CityName" ColumnName="CityName" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ActivityOrders">
-            <EntityTypeMapping TypeName="farmsDBModel.ActivityOrder">
-              <MappingFragment StoreEntitySet="ActivityOrder">
-                <ScalarProperty Name="ReceivedConfirm" ColumnName="ReceivedConfirm" />
-                <ScalarProperty Name="PaymentConfirm" ColumnName="PaymentConfirm" />
-                <ScalarProperty Name="GroupConfirm" ColumnName="GroupConfirm" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
-                <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ActivityPhotoes">
-            <EntityTypeMapping TypeName="farmsDBModel.ActivityPhoto">
-              <MappingFragment StoreEntitySet="ActivityPhoto">
-                <ScalarProperty Name="ActivityPhoto1" ColumnName="ActivityPhoto" />
-                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AddressInfoes">
-            <EntityTypeMapping TypeName="farmsDBModel.AddressInfo">
-              <MappingFragment StoreEntitySet="AddressInfo">
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BlackListInfoes">
-            <EntityTypeMapping TypeName="farmsDBModel.BlackListInfo">
-              <MappingFragment StoreEntitySet="BlackListInfo">
-                <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
-                <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Browses">
-            <EntityTypeMapping TypeName="farmsDBModel.Browse">
-              <MappingFragment StoreEntitySet="Browse">
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="BrowseID" ColumnName="BrowseID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChatLogs">
-            <EntityTypeMapping TypeName="farmsDBModel.ChatLog">
-              <MappingFragment StoreEntitySet="ChatLog">
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
-                <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
-                <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerInfoes">
-            <EntityTypeMapping TypeName="farmsDBModel.CustomerInfo">
-              <MappingFragment StoreEntitySet="CustomerInfo">
-                <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
-                <ScalarProperty Name="Interestied" ColumnName="Interestied" />
-                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="Useridentity" ColumnName="Useridentity" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-                <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerLoginlogs">
-            <EntityTypeMapping TypeName="farmsDBModel.CustomerLoginlog">
-              <MappingFragment StoreEntitySet="CustomerLoginlog">
-                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-                <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
-                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerRefunds">
-            <EntityTypeMapping TypeName="farmsDBModel.CustomerRefund">
-              <MappingFragment StoreEntitySet="CustomerRefund">
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="RefundReason" ColumnName="RefundReason" />
-                <ScalarProperty Name="Cash" ColumnName="Cash" />
-                <ScalarProperty Name="RefundAgree" ColumnName="RefundAgree" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="RefundID" ColumnName="RefundID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerReturns">
-            <EntityTypeMapping TypeName="farmsDBModel.CustomerReturn">
-              <MappingFragment StoreEntitySet="CustomerReturn">
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Cash" ColumnName="Cash" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ReturnReason" ColumnName="ReturnReason" />
-                <ScalarProperty Name="ReturnOrder" ColumnName="ReturnOrder" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerSubscriptions">
-            <EntityTypeMapping TypeName="farmsDBModel.CustomerSubscription">
-              <MappingFragment StoreEntitySet="CustomerSubscription">
-                <ScalarProperty Name="AllowMail" ColumnName="AllowMail" />
-                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
-                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DiscountPointsEvents">
-            <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEvent">
-              <MappingFragment StoreEntitySet="DiscountPointsEvent">
-                <ScalarProperty Name="QPointToOneNTD" ColumnName="QPointToOneNTD" />
-                <ScalarProperty Name="QuotaPoint" ColumnName="QuotaPoint" />
-                <ScalarProperty Name="Quota" ColumnName="Quota" />
-                <ScalarProperty Name="SharePoint" ColumnName="SharePoint" />
-                <ScalarProperty Name="LoginPoint" ColumnName="LoginPoint" />
-                <ScalarProperty Name="BirthdayPoint" ColumnName="BirthdayPoint" />
-                <ScalarProperty Name="DiscountPointsEventEnd" ColumnName="DiscountPointsEventEnd" />
-                <ScalarProperty Name="DiscountPointsEventStart" ColumnName="DiscountPointsEventStart" />
-                <ScalarProperty Name="DiscountPointsEvenContent" ColumnName="DiscountPointsEvenContent" />
-                <ScalarProperty Name="DiscountPointsEventName" ColumnName="DiscountPointsEventName" />
-                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DiscountPointsEventDetails">
-            <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsEventDetail">
-              <MappingFragment StoreEntitySet="DiscountPointsEventDetail">
-                <ScalarProperty Name="usedPoint" ColumnName="usedPoint" />
-                <ScalarProperty Name="getQuotaPoint" ColumnName="getQuotaPoint" />
-                <ScalarProperty Name="getSharePoint" ColumnName="getSharePoint" />
-                <ScalarProperty Name="getLoginPoint" ColumnName="getLoginPoint" />
-                <ScalarProperty Name="getBirthdayPoint" ColumnName="getBirthdayPoint" />
-                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DiscountPointsRecs">
-            <EntityTypeMapping TypeName="farmsDBModel.DiscountPointsRec">
-              <MappingFragment StoreEntitySet="DiscountPointsRec">
-                <ScalarProperty Name="sendTime" ColumnName="sendTime" />
-                <ScalarProperty Name="sendReason" ColumnName="sendReason" />
-                <ScalarProperty Name="sendPoint" ColumnName="sendPoint" />
-                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="DiscountPointsRecID" ColumnName="DiscountPointsRecID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="farmsDBModel.OrderDetail">
-              <MappingFragment StoreEntitySet="OrderDetails">
-                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
-                <ScalarProperty Name="MakeCollectionsStatus" ColumnName="MakeCollectionsStatus" />
-                <ScalarProperty Name="ShipmentStatus" ColumnName="ShipmentStatus" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="DiscountPoint" ColumnName="DiscountPoint" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="farmsDBModel.Order">
-              <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="CustomerDemand" ColumnName="CustomerDemand" />
-                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
-                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Consignee" ColumnName="Consignee" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PostalCodeInfoes">
-            <EntityTypeMapping TypeName="farmsDBModel.PostalCodeInfo">
-              <MappingFragment StoreEntitySet="PostalCodeInfo">
-                <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
-                <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductGrowPlanDetails">
-            <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanDetail">
-              <MappingFragment StoreEntitySet="ProductGrowPlanDetail">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="StatusDatae" ColumnName="StatusDatae" />
-                <ScalarProperty Name="Cost" ColumnName="Cost" />
-                <ScalarProperty Name="StepItemDESC" ColumnName="StepItemDESC" />
-                <ScalarProperty Name="StepItemID" ColumnName="StepItemID" />
-                <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductGrowPlanMasters">
-            <EntityTypeMapping TypeName="farmsDBModel.ProductGrowPlanMaster">
-              <MappingFragment StoreEntitySet="ProductGrowPlanMaster">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ActuallyarvestQTY" ColumnName="ActuallyarvestQTY" />
-                <ScalarProperty Name="PlanHarvestQTY" ColumnName="PlanHarvestQTY" />
-                <ScalarProperty Name="PlanHarvestDate" ColumnName="PlanHarvestDate" />
-                <ScalarProperty Name="Planting" ColumnName="Planting" />
-                <ScalarProperty Name="ProductKind" ColumnName="ProductKind" />
-                <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
-                <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductImages">
-            <EntityTypeMapping TypeName="farmsDBModel.ProductImage">
-              <MappingFragment StoreEntitySet="ProductImages">
-                <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="farmsDBModel.Product">
-              <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
-                <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
-                <ScalarProperty Name="Discounted" ColumnName="Discounted" />
-                <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
-                <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
-                <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
-                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-                <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
-                <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
-                <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SaleEvents">
-            <EntityTypeMapping TypeName="farmsDBModel.SaleEvent">
-              <MappingFragment StoreEntitySet="SaleEvent">
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-                <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
-                <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
-                <ScalarProperty Name="SaleEventContent" ColumnName="SaleEventContent" />
-                <ScalarProperty Name="SaleEventTitle" ColumnName="SaleEventTitle" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SaleEventComboes">
-            <EntityTypeMapping TypeName="farmsDBModel.SaleEventCombo">
-              <MappingFragment StoreEntitySet="SaleEventCombo">
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="BProductID" ColumnName="BProductID" />
-                <ScalarProperty Name="AProductID" ColumnName="AProductID" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SaleEventQuotas">
-            <EntityTypeMapping TypeName="farmsDBModel.SaleEventQuota">
-              <MappingFragment StoreEntitySet="SaleEventQuota">
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Quota" ColumnName="Quota" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SaleEventSingleProducts">
-            <EntityTypeMapping TypeName="farmsDBModel.SaleEventSingleProduct">
-              <MappingFragment StoreEntitySet="SaleEventSingleProduct">
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
-                <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ShoppingCarts">
-            <EntityTypeMapping TypeName="farmsDBModel.ShoppingCart">
-              <MappingFragment StoreEntitySet="ShoppingCart">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="CartID" ColumnName="CartID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="farmsDBModel.Supplier">
-              <MappingFragment StoreEntitySet="Suppliers">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="email2" ColumnName="email2" />
-                <ScalarProperty Name="email1" ColumnName="email1" />
-                <ScalarProperty Name="LineID" ColumnName="LineID" />
-                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
-                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
-                <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
-                <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SuppliersBulletinBoards">
-            <EntityTypeMapping TypeName="farmsDBModel.SuppliersBulletinBoard">
-              <MappingFragment StoreEntitySet="SuppliersBulletinBoard">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="EndData" ColumnName="EndData" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="seqID" ColumnName="seqID" />
-                <ScalarProperty Name="SupplierD" ColumnName="SupplierD" />
-                <ScalarProperty Name="BoardID" ColumnName="BoardID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SuppliersFarms">
-            <EntityTypeMapping TypeName="farmsDBModel.SuppliersFarm">
-              <MappingFragment StoreEntitySet="SuppliersFarm">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="FarmSoilRange" ColumnName="FarmSoilRange" />
-                <ScalarProperty Name="FarmSoilKind" ColumnName="FarmSoilKind" />
-                <ScalarProperty Name="SupplierFarmDESC" ColumnName="SupplierFarmDESC" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SuppliersStoryDetails">
-            <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryDetail">
-              <MappingFragment StoreEntitySet="SuppliersStoryDetail">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="StoryItemStatus" ColumnName="StoryItemStatus" />
-                <ScalarProperty Name="StoryItemSEQ" ColumnName="StoryItemSEQ" />
-                <ScalarProperty Name="StoryItemPhoto" ColumnName="StoryItemPhoto" />
-                <ScalarProperty Name="StoryItemDesc" ColumnName="StoryItemDesc" />
-                <ScalarProperty Name="StoryItemID" ColumnName="StoryItemID" />
-                <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SuppliersStoryMasters">
-            <EntityTypeMapping TypeName="farmsDBModel.SuppliersStoryMaster">
-              <MappingFragment StoreEntitySet="SuppliersStoryMaster">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="OrderByKind" ColumnName="OrderByKind" />
-                <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
-                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-                <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="farmsDBModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SystemToSuppliersInfoes">
-            <EntityTypeMapping TypeName="farmsDBModel.SystemToSuppliersInfo">
-              <MappingFragment StoreEntitySet="SystemToSuppliersInfo">
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="isread" ColumnName="isread" />
-                <ScalarProperty Name="infoMessageDesc" ColumnName="infoMessageDesc" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="infoMessageID" ColumnName="infoMessageID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SuppliersVideos">
-            <EntityTypeMapping TypeName="farmsDBModel.SuppliersVideo">
-              <MappingFragment StoreEntitySet="SuppliersVideo">
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
-                <ScalarProperty Name="VideoName" ColumnName="VideoName" />
-                <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
-                <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
-                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
-                <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Advertisings">
-            <EntityTypeMapping TypeName="farmsDBModel.Advertising">
-              <MappingFragment StoreEntitySet="Advertising">
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
-                <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
-                <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
-                <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
-                <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
-                <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
-                <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
-                <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
-                <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ActivityFarmers">
-            <EntityTypeMapping TypeName="farmsDBModel.ActivityFarmer">
+            <EntityTypeMapping TypeName="AllFarmsModel.ActivityFarmer">
               <MappingFragment StoreEntitySet="ActivityFarmer">
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
-                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
-                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
-                <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
-                <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
-                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
                 <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
+                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="ActivityAddress" ColumnName="ActivityAddress" />
+                <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+                <ScalarProperty Name="GroupQuantity" ColumnName="GroupQuantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+                <ScalarProperty Name="ActivityContent" ColumnName="ActivityContent" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivityOrders">
+            <EntityTypeMapping TypeName="AllFarmsModel.ActivityOrder">
+              <MappingFragment StoreEntitySet="ActivityOrder">
+                <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
+                <ScalarProperty Name="ActivityFarmerID" ColumnName="ActivityFarmerID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="ATMBank" ColumnName="ATMBank" />
+                <ScalarProperty Name="ATMAccount" ColumnName="ATMAccount" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="GroupConfirm" ColumnName="GroupConfirm" />
+                <ScalarProperty Name="PaymentConfirm" ColumnName="PaymentConfirm" />
+                <ScalarProperty Name="ReceivedConfirm" ColumnName="ReceivedConfirm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivityPhotoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.ActivityPhoto">
+              <MappingFragment StoreEntitySet="ActivityPhoto">
+                <ScalarProperty Name="ActivityPhotoID" ColumnName="ActivityPhotoID" />
+                <ScalarProperty Name="ActivityPhoto1" ColumnName="ActivityPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressInfoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.AddressInfo">
+              <MappingFragment StoreEntitySet="AddressInfo">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisings">
+            <EntityTypeMapping TypeName="AllFarmsModel.Advertising">
+              <MappingFragment StoreEntitySet="Advertising">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="AdvertisingID" ColumnName="AdvertisingID" />
+                <ScalarProperty Name="AdvertisingITitle" ColumnName="AdvertisingITitle" />
+                <ScalarProperty Name="AdvertisingIContent" ColumnName="AdvertisingIContent" />
+                <ScalarProperty Name="AdvertisingStartTime" ColumnName="AdvertisingStartTime" />
+                <ScalarProperty Name="AdvertisingEndTime" ColumnName="AdvertisingEndTime" />
+                <ScalarProperty Name="AdvertisingPhoto" ColumnName="AdvertisingPhoto" />
+                <ScalarProperty Name="AlreadyPaid" ColumnName="AlreadyPaid" />
+                <ScalarProperty Name="AdvertisingLink" ColumnName="AdvertisingLink" />
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlackListInfoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.BlackListInfo">
+              <MappingFragment StoreEntitySet="BlackListInfo">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="BlackListReason" ColumnName="BlackListReason" />
+                <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Browses">
+            <EntityTypeMapping TypeName="AllFarmsModel.Browse">
+              <MappingFragment StoreEntitySet="Browse">
+                <ScalarProperty Name="BrowseID" ColumnName="BrowseID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatLogs">
+            <EntityTypeMapping TypeName="AllFarmsModel.ChatLog">
+              <MappingFragment StoreEntitySet="ChatLog">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ChatDatetime" ColumnName="ChatDatetime" />
+                <ScalarProperty Name="ChatPic" ColumnName="ChatPic" />
+                <ScalarProperty Name="ChatRecording" ColumnName="ChatRecording" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerInfoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.CustomerInfo">
+              <MappingFragment StoreEntitySet="CustomerInfo">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Useridentity" ColumnName="Useridentity" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="Interestied" ColumnName="Interestied" />
+                <ScalarProperty Name="InterestiedPic" ColumnName="InterestiedPic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerLoginlogs">
+            <EntityTypeMapping TypeName="AllFarmsModel.CustomerLoginlog">
+              <MappingFragment StoreEntitySet="CustomerLoginlog">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerRefunds">
+            <EntityTypeMapping TypeName="AllFarmsModel.CustomerRefund">
+              <MappingFragment StoreEntitySet="CustomerRefund">
+                <ScalarProperty Name="RefundID" ColumnName="RefundID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="RefundAgree" ColumnName="RefundAgree" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="RefundReason" ColumnName="RefundReason" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ActivityOrderID" ColumnName="ActivityOrderID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerReturns">
+            <EntityTypeMapping TypeName="AllFarmsModel.CustomerReturn">
+              <MappingFragment StoreEntitySet="CustomerReturn">
+                <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ReturnOrder" ColumnName="ReturnOrder" />
+                <ScalarProperty Name="ReturnReason" ColumnName="ReturnReason" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerSubscriptions">
+            <EntityTypeMapping TypeName="AllFarmsModel.CustomerSubscription">
+              <MappingFragment StoreEntitySet="CustomerSubscription">
+                <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+                <ScalarProperty Name="AllowMail" ColumnName="AllowMail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscountPointsEvents">
+            <EntityTypeMapping TypeName="AllFarmsModel.DiscountPointsEvent">
+              <MappingFragment StoreEntitySet="DiscountPointsEvent">
+                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+                <ScalarProperty Name="DiscountPointsEventName" ColumnName="DiscountPointsEventName" />
+                <ScalarProperty Name="DiscountPointsEvenContent" ColumnName="DiscountPointsEvenContent" />
+                <ScalarProperty Name="DiscountPointsEventStart" ColumnName="DiscountPointsEventStart" />
+                <ScalarProperty Name="DiscountPointsEventEnd" ColumnName="DiscountPointsEventEnd" />
+                <ScalarProperty Name="BirthdayPoint" ColumnName="BirthdayPoint" />
+                <ScalarProperty Name="LoginPoint" ColumnName="LoginPoint" />
+                <ScalarProperty Name="SharePoint" ColumnName="SharePoint" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+                <ScalarProperty Name="QuotaPoint" ColumnName="QuotaPoint" />
+                <ScalarProperty Name="QPointToOneNTD" ColumnName="QPointToOneNTD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscountPointsEventDetails">
+            <EntityTypeMapping TypeName="AllFarmsModel.DiscountPointsEventDetail">
+              <MappingFragment StoreEntitySet="DiscountPointsEventDetail">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+                <ScalarProperty Name="getBirthdayPoint" ColumnName="getBirthdayPoint" />
+                <ScalarProperty Name="getLoginPoint" ColumnName="getLoginPoint" />
+                <ScalarProperty Name="getSharePoint" ColumnName="getSharePoint" />
+                <ScalarProperty Name="getQuotaPoint" ColumnName="getQuotaPoint" />
+                <ScalarProperty Name="usedPoint" ColumnName="usedPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscountPointsRecs">
+            <EntityTypeMapping TypeName="AllFarmsModel.DiscountPointsRec">
+              <MappingFragment StoreEntitySet="DiscountPointsRec">
+                <ScalarProperty Name="DiscountPointsRecID" ColumnName="DiscountPointsRecID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
+                <ScalarProperty Name="sendPoint" ColumnName="sendPoint" />
+                <ScalarProperty Name="sendReason" ColumnName="sendReason" />
+                <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="AllFarmsModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="DiscountPoint" ColumnName="DiscountPoint" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="ShipmentStatus" ColumnName="ShipmentStatus" />
+                <ScalarProperty Name="MakeCollectionsStatus" ColumnName="MakeCollectionsStatus" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="AllFarmsModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="CustomerDemand" ColumnName="CustomerDemand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostalCodeInfoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.PostalCodeInfo">
+              <MappingFragment StoreEntitySet="PostalCodeInfo">
+                <ScalarProperty Name="PostalCodeID" ColumnName="PostalCodeID" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="PostalCodeName" ColumnName="PostalCodeName" />
+                <ScalarProperty Name="FloorNumber" ColumnName="FloorNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductGrowPlanDetails">
+            <EntityTypeMapping TypeName="AllFarmsModel.ProductGrowPlanDetail">
+              <MappingFragment StoreEntitySet="ProductGrowPlanDetail">
+                <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
+                <ScalarProperty Name="StepItemID" ColumnName="StepItemID" />
+                <ScalarProperty Name="StepItemDESC" ColumnName="StepItemDESC" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="StatusDatae" ColumnName="StatusDatae" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductGrowPlanMasters">
+            <EntityTypeMapping TypeName="AllFarmsModel.ProductGrowPlanMaster">
+              <MappingFragment StoreEntitySet="ProductGrowPlanMaster">
+                <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
+                <ScalarProperty Name="ProductGrowID" ColumnName="ProductGrowID" />
+                <ScalarProperty Name="ProductKind" ColumnName="ProductKind" />
+                <ScalarProperty Name="Planting" ColumnName="Planting" />
+                <ScalarProperty Name="PlanHarvestDate" ColumnName="PlanHarvestDate" />
+                <ScalarProperty Name="PlanHarvestQTY" ColumnName="PlanHarvestQTY" />
+                <ScalarProperty Name="ActuallyarvestQTY" ColumnName="ActuallyarvestQTY" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductImages">
+            <EntityTypeMapping TypeName="AllFarmsModel.ProductImage">
+              <MappingFragment StoreEntitySet="ProductImages">
+                <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="AllFarmsModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
+                <ScalarProperty Name="SellEndDate" ColumnName="SellEndDate" />
+                <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="PreOrder" ColumnName="PreOrder" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="TotalQTY" ColumnName="TotalQTY" />
+                <ScalarProperty Name="CanSaleQTY" ColumnName="CanSaleQTY" />
+                <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
+                <ScalarProperty Name="Discounted" ColumnName="Discounted" />
+                <ScalarProperty Name="DiscountedCombo" ColumnName="DiscountedCombo" />
+                <ScalarProperty Name="DiscountedPoint" ColumnName="DiscountedPoint" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEvents">
+            <EntityTypeMapping TypeName="AllFarmsModel.SaleEvent">
+              <MappingFragment StoreEntitySet="SaleEvent">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="SaleEventTitle" ColumnName="SaleEventTitle" />
+                <ScalarProperty Name="SaleEventContent" ColumnName="SaleEventContent" />
+                <ScalarProperty Name="SaleEventStart" ColumnName="SaleEventStart" />
+                <ScalarProperty Name="SaleEventEnd" ColumnName="SaleEventEnd" />
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEventComboes">
+            <EntityTypeMapping TypeName="AllFarmsModel.SaleEventCombo">
+              <MappingFragment StoreEntitySet="SaleEventCombo">
+                <ScalarProperty Name="SaleEventComboID" ColumnName="SaleEventComboID" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="AProductID" ColumnName="AProductID" />
+                <ScalarProperty Name="BProductID" ColumnName="BProductID" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEventQuotas">
+            <EntityTypeMapping TypeName="AllFarmsModel.SaleEventQuota">
+              <MappingFragment StoreEntitySet="SaleEventQuota">
+                <ScalarProperty Name="SaleEventQuotaID" ColumnName="SaleEventQuotaID" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleEventSingleProducts">
+            <EntityTypeMapping TypeName="AllFarmsModel.SaleEventSingleProduct">
+              <MappingFragment StoreEntitySet="SaleEventSingleProduct">
+                <ScalarProperty Name="SaleEventSingleProductID" ColumnName="SaleEventSingleProductID" />
+                <ScalarProperty Name="SaleEventID" ColumnName="SaleEventID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCarts">
+            <EntityTypeMapping TypeName="AllFarmsModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="AllFarmsModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
+                <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuppliersBulletinBoards">
+            <EntityTypeMapping TypeName="AllFarmsModel.SuppliersBulletinBoard">
+              <MappingFragment StoreEntitySet="SuppliersBulletinBoard">
+                <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+                <ScalarProperty Name="SupplierD" ColumnName="SupplierD" />
+                <ScalarProperty Name="seqID" ColumnName="seqID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndData" ColumnName="EndData" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuppliersFarms">
+            <EntityTypeMapping TypeName="AllFarmsModel.SuppliersFarm">
+              <MappingFragment StoreEntitySet="SuppliersFarm">
+                <ScalarProperty Name="SupplierFarmID" ColumnName="SupplierFarmID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierFarmDESC" ColumnName="SupplierFarmDESC" />
+                <ScalarProperty Name="FarmSoilKind" ColumnName="FarmSoilKind" />
+                <ScalarProperty Name="FarmSoilRange" ColumnName="FarmSoilRange" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedDateUserID" ColumnName="CreatedDateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuppliersStoryDetails">
+            <EntityTypeMapping TypeName="AllFarmsModel.SuppliersStoryDetail">
+              <MappingFragment StoreEntitySet="SuppliersStoryDetail">
+                <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
+                <ScalarProperty Name="StoryItemID" ColumnName="StoryItemID" />
+                <ScalarProperty Name="StoryItemDesc" ColumnName="StoryItemDesc" />
+                <ScalarProperty Name="StoryItemPhoto" ColumnName="StoryItemPhoto" />
+                <ScalarProperty Name="StoryItemSEQ" ColumnName="StoryItemSEQ" />
+                <ScalarProperty Name="StoryItemStatus" ColumnName="StoryItemStatus" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuppliersStoryMasters">
+            <EntityTypeMapping TypeName="AllFarmsModel.SuppliersStoryMaster">
+              <MappingFragment StoreEntitySet="SuppliersStoryMaster">
+                <ScalarProperty Name="SuppliersStoryID" ColumnName="SuppliersStoryID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="SuppliersStoryTitle" ColumnName="SuppliersStoryTitle" />
+                <ScalarProperty Name="OrderByKind" ColumnName="OrderByKind" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuppliersVideos">
+            <EntityTypeMapping TypeName="AllFarmsModel.SuppliersVideo">
+              <MappingFragment StoreEntitySet="SuppliersVideo">
+                <ScalarProperty Name="SuppliersVideoID" ColumnName="SuppliersVideoID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="SuppliersVideoTitle" ColumnName="SuppliersVideoTitle" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
+                <ScalarProperty Name="VideomimeType" ColumnName="VideomimeType" />
+                <ScalarProperty Name="VideoName" ColumnName="VideoName" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemToSuppliersInfoes">
+            <EntityTypeMapping TypeName="AllFarmsModel.SystemToSuppliersInfo">
+              <MappingFragment StoreEntitySet="SystemToSuppliersInfo">
+                <ScalarProperty Name="infoMessageID" ColumnName="infoMessageID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="infoMessageDesc" ColumnName="infoMessageDesc" />
+                <ScalarProperty Name="isread" ColumnName="isread" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

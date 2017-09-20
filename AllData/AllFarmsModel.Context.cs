@@ -26,9 +26,11 @@ namespace AllData
         }
     
         public virtual DbSet<ActivityCity> ActivityCities { get; set; }
+        public virtual DbSet<ActivityFarmer> ActivityFarmers { get; set; }
         public virtual DbSet<ActivityOrder> ActivityOrders { get; set; }
         public virtual DbSet<ActivityPhoto> ActivityPhotoes { get; set; }
         public virtual DbSet<AddressInfo> AddressInfoes { get; set; }
+        public virtual DbSet<Advertising> Advertisings { get; set; }
         public virtual DbSet<BlackListInfo> BlackListInfoes { get; set; }
         public virtual DbSet<Browse> Browses { get; set; }
         public virtual DbSet<ChatLog> ChatLogs { get; set; }
@@ -57,10 +59,7 @@ namespace AllData
         public virtual DbSet<SuppliersFarm> SuppliersFarms { get; set; }
         public virtual DbSet<SuppliersStoryDetail> SuppliersStoryDetails { get; set; }
         public virtual DbSet<SuppliersStoryMaster> SuppliersStoryMasters { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
         public virtual DbSet<SuppliersVideo> SuppliersVideos { get; set; }
-        public virtual DbSet<Advertising> Advertisings { get; set; }
-        public virtual DbSet<ActivityFarmer> ActivityFarmers { get; set; }
+        public virtual DbSet<SystemToSuppliersInfo> SystemToSuppliersInfoes { get; set; }
     }
 }

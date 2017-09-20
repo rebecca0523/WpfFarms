@@ -71,6 +71,7 @@ namespace WpfMarketing
             catch { };
 
         }
+
         //listbox加入登入賣家的特賣會
         private void LoadSaleEventListBox()
         {
