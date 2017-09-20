@@ -73,5 +73,4 @@ D:\Farms\WpfFarms\AllData\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.
 D:\Farms\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
 D:\Farms\WpfFarms\AllData\obj\Debug\AllData.dll
 D:\Farms\WpfFarms\AllData\obj\Debug\AllData.pdb
-C:\Users\III\Source\Repos\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
 C:\Users\III\Source\Repos\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache

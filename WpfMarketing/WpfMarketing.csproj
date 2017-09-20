@@ -83,6 +83,9 @@
     <Compile Include="AdvertisingButton.xaml.cs">
       <DependentUpon>AdvertisingButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageAD.xaml.cs">
+      <DependentUpon>PageAD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageDiscount.xaml.cs">
       <DependentUpon>PageDiscount.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <DependentUpon>WindowSaleEventNow.xaml</DependentUpon>
     </Compile>
     <Page Include="AdvertisingButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageAD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
