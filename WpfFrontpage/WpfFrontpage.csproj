@@ -65,8 +65,22 @@
     <Compile Include="FrontpageWindow.xaml.cs">
       <DependentUpon>FrontpageWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="PageIndex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageIndex.xaml.cs">
+      <DependentUpon>PageIndex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductButton.xaml.cs">
+      <DependentUpon>ProductButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +110,7 @@
     <Content Include="media\background.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="sample.png" />
     <Resource Include="media\小.png" />
     <Resource Include="media\市.png" />
     <Resource Include="media\農.png" />
