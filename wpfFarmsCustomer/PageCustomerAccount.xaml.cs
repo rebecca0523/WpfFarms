@@ -60,8 +60,7 @@ namespace wpfFarmsCustomer
 
         private void MenuItemMarketing_Click(object sender, RoutedEventArgs e)
         {
-            WindowMarketing wm = new WindowMarketing();
-            wm.Show();
+          
         }
 
         private void MenuItemVedioCRUDMulti_Click(object sender, RoutedEventArgs e)

@@ -74,3 +74,4 @@ D:\Farms\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache
 D:\Farms\WpfFarms\AllData\obj\Debug\AllData.dll
 D:\Farms\WpfFarms\AllData\obj\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\AllData\obj\Debug\AllData.csproj.CoreCompileInputs.cache
+C:\Users\III\Source\Repos\WpfFarms\AllData\obj\Debug\AllData.csprojResolveAssemblyReference.cache

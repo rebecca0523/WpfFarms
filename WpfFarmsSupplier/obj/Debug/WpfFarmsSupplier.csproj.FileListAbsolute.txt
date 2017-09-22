@@ -233,3 +233,4 @@ D:\Farms\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.Properties.Resourc
 D:\Farms\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.GenerateResource.Cache
 D:\Farms\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.exe
 D:\Farms\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfFarmsSupplier\obj\Debug\WpfFarmsSupplier.csproj.CoreCompileInputs.cache

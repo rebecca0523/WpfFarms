@@ -567,3 +567,4 @@ C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageLoginAndRegist
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageLoginAndRegister.baml
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageCustomerAccount.g.cs
 C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\PageCustomerAccount.baml
+C:\Users\III\Source\Repos\WpfFarms\wpfFarmsCustomer\obj\Debug\WpfFarmsCustomer.csproj.CoreCompileInputs.cache

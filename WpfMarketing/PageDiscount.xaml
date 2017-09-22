@@ -55,8 +55,6 @@
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
 
-
-
             <!--活動列表-->
 
             <UniformGrid Rows="5" RenderTransformOrigin="9.16,5.7" Background="#FFE8E6E6" Margin="7,10,10.528,9.698">
@@ -76,7 +74,7 @@
                         <RowDefinition Height="13*"/>
                     </Grid.RowDefinitions>
                     <UniformGrid Columns="5" Margin="0">
-                        <TextBox x:Name="txtTitle" TextWrapping="Wrap"/>
+                        <TextBox x:Name="txtTitle" TextWrapping="Wrap" FontSize="20"/>
                         <DatePicker x:Name="dtpSEStart" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="20"/>
                         <DatePicker x:Name="dtpSEEnd" VerticalContentAlignment="Stretch" FontSize="20"/>
                         <Button x:Name="btnNewSaleEvent" Content="新增活動" Click="btnNewSaleEvent_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
@@ -91,7 +89,7 @@
                         <RowDefinition Height="109*"/>
                     </Grid.RowDefinitions>
                     <UniformGrid Columns="6" Margin="0,0,0,2">
-                        <TextBlock TextWrapping="Wrap" Text="滿額折扣" FontSize="20"/>
+                        <TextBlock TextWrapping="Wrap" Text="滿額折扣" FontSize="36"/>
                         <DockPanel>
                             <TextBlock Text="每滿" FontSize="20"/>
                             <TextBox x:Name="txtQuota" TextAlignment="Right"/>
@@ -103,7 +101,7 @@
                         </DockPanel>
                         <Button x:Name="btnAlterQuota" Content="修改" Click="btnAlterQuota_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
                         <Button x:Name="btnNewQuota" Content="新增" Click="btnNewQuota_Click" FontSize="20" />
-                        <Button x:Name="btnOffQuota" Content="刪除" Click="btnOffQuota_Click" />
+                        <Button x:Name="btnOffQuota" Content="刪除" Click="btnOffQuota_Click" FontSize="20" />
                     </UniformGrid>
                     <ListBox x:Name="lstSaleEventQuota" ItemTemplate="{DynamicResource SEQuotaTemplate}" Margin="0" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventQuota_SelectionChanged"   Grid.Row="1" Background="#FFBDBDBD"/>
                 </Grid>
@@ -114,7 +112,7 @@
                         <RowDefinition Height="53*"/>
                     </Grid.RowDefinitions>
                     <UniformGrid Columns="8">
-                        <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0" HorizontalAlignment="Left" FontSize="20"/>
+                        <TextBlock TextWrapping="Wrap" Text="單品折扣" Margin="0" HorizontalAlignment="Left" FontSize="36"/>
                         <ComboBox x:Name="cboProducts" SelectionChanged="cboProducts_SelectionChanged" />
                         <DockPanel>
                             <TextBlock Text="原價:" FontSize="20" />
@@ -131,14 +129,7 @@
                         <Button x:Name="btnNewSingle" Content="新增" Click="btnNewSingle_Click" FontSize="20"  />
                         <Button x:Name="btnOffSingle" Content="刪除" Click="btnOffSingle_Click" FontSize="20"  />
                     </UniformGrid>
-                    <ListBox x:Name="lstSaleEventSingle" ItemTemplate="{DynamicResource SESingleTemplate}" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventSingle_SelectionChanged" IsSynchronizedWithCurrentItem="True" Grid.Row="1">
-                        <ListBox.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="White" Offset="0"/>
-                                <GradientStop Color="#FFDCFFDD" Offset="1"/>
-                            </LinearGradientBrush>
-                        </ListBox.Background>
-                    </ListBox>
+                    <ListBox x:Name="lstSaleEventSingle" ItemTemplate="{DynamicResource SESingleTemplate}" VerticalContentAlignment="Stretch" SelectionChanged="lstSaleEventSingle_SelectionChanged" IsSynchronizedWithCurrentItem="True" Grid.Row="1" Background="{x:Null}"/>
                 </Grid>
                 <!--組合-->
                 <Grid>
@@ -147,11 +138,11 @@
                         <RowDefinition Height="27*"/>
                     </Grid.RowDefinitions>
                     <UniformGrid Columns="12" Grid.Row="0" Margin="0">
-                        <TextBlock TextWrapping="Wrap" Margin="0" FontSize="20"><Run Text="組合折扣"/></TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0" FontSize="36"><Run Text="組合折扣"/></TextBlock>
                         <ComboBox x:Name="cboAProduct" SelectionChanged="cboAProduct_SelectionChanged" Margin="0" FontSize="20"/>
                         <DockPanel>
                             <TextBlock Text="原價" FontSize="20"/>
-                            <TextBlock x:Name="txkAProductPrice" Margin="0"/>
+                            <TextBlock x:Name="txkAProductPrice" Margin="0" FontSize="20"/>
                         </DockPanel>
 
                         <ComboBox x:Name="cboBProduct" SelectionChanged="cboBProduct_SelectionChanged" Margin="0"/>
@@ -174,18 +165,11 @@
 
 
                         <Button x:Name="btnAlterCombo" Content="修改" Click="btnAlterCombo_Click" Margin="0" FontSize="20"/>
-                        <Button x:Name="btnNewCombo" Content="新增" Click="btnNewCombo_Click" Margin="0"/>
-                        <Button x:Name="btnDeleteCombo" Content="刪除" Click="btnDeleteCombo_Click" Margin="0"/>
+                        <Button x:Name="btnNewCombo" Content="新增" Click="btnNewCombo_Click" Margin="0" FontSize="20"/>
+                        <Button x:Name="btnDeleteCombo" Content="刪除" Click="btnDeleteCombo_Click" Margin="0" FontSize="20"/>
 
                     </UniformGrid>
-                    <ListBox x:Name="lstSaleEventCombo" ItemTemplate="{DynamicResource SEComboTemplate}" SelectionChanged="lstSaleEventCombo_SelectionChanged" Margin="0" Grid.Row="1" VerticalContentAlignment="Top" >
-                        <ListBox.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="White"/>
-                                <GradientStop Color="#FFCCFBFF" Offset="1"/>
-                            </LinearGradientBrush>
-                        </ListBox.Background>
-                    </ListBox>
+                    <ListBox x:Name="lstSaleEventCombo" ItemTemplate="{DynamicResource SEComboTemplate}" SelectionChanged="lstSaleEventCombo_SelectionChanged" Margin="0" Grid.Row="1" VerticalContentAlignment="Top" Background="{x:Null}" />
                 </Grid>
             </UniformGrid>
 

@@ -100,8 +100,6 @@ D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.GenerateResource
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.exe
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WpfMarketing.pdb
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.g.cs
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowMarketing.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.pdb
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\bin\Debug\AllData.dll.config
@@ -151,12 +149,8 @@ D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.baml
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.baml
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\Window1.baml
 D:\99GitHub\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.g.cs
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.g.cs
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.g.cs
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\AdvertisingButton.baml
 C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\simpleAdminLogin.baml
-C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\WindowSaleEventNow.baml
 D:\Farms\WpfFarms\WpfMarketing\bin\Debug\WpfMarketing.exe.config
 D:\Farms\WpfFarms\WpfMarketing\bin\Debug\WpfMarketing.exe
 D:\Farms\WpfFarms\WpfMarketing\bin\Debug\WpfMarketing.pdb
@@ -231,3 +225,5 @@ C:\Users\XungYen\Source\Workspaces\WpfTfsFarms\BuildProcessTemplates\WpfMarketin
 C:\Users\XungYen\Source\Workspaces\WpfTfsFarms\BuildProcessTemplates\WpfMarketing\obj\Debug\WpfMarketing.csproj.CoreCompileInputs.cache
 C:\Users\XungYen\Source\Workspaces\WpfTfsFarms\BuildProcessTemplates\WpfMarketing\obj\Debug\WpfMarketing.exe
 C:\Users\XungYen\Source\Workspaces\WpfTfsFarms\BuildProcessTemplates\WpfMarketing\obj\Debug\WpfMarketing.pdb
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Page1.g.cs
+C:\Users\III\Source\Repos\WpfFarms\WpfMarketing\obj\Debug\Page1.baml
