@@ -30,6 +30,7 @@ namespace WpfMarketing
         //測試用supplierID
         int loginSupplierID = 1;
 
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             //賣家有的特賣會
@@ -43,7 +44,8 @@ namespace WpfMarketing
             cboProducts.ItemsSource = p.ToArray();
             cboAProduct.ItemsSource = p.ToArray();
             cboBProduct.ItemsSource = p.ToArray();
-       
+
+          
         }
 
         //賣家有的特賣會

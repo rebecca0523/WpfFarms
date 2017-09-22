@@ -8,7 +8,7 @@
       Title="PageMarketing" Height="632" Width="1074" Loaded="Page_Loaded">
 
     <Grid>
-        <TabControl x:Name="TabControlMarketing" >
+        <TabControl x:Name="TabControlMarketing" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" >
             <TabItem x:Name="TabItemSE" Header="特賣設定" FontSize="40" />
             <TabItem x:Name="TabItemAD" Header="廣告設定" FontSize="40" />
             <TabItem x:Name="TabItemSEMgr" Header="特賣管理" FontSize="40" />

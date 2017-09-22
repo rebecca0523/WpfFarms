@@ -29,6 +29,10 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
+    <SccProjectName>%24/WpfTfsFarms/BuildProcessTemplates/WpfMarketing</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://rebecca0523.visualstudio.com</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -80,9 +84,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdvertisingButton.xaml.cs">
-      <DependentUpon>AdvertisingButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PageAD.xaml.cs">
       <DependentUpon>PageAD.xaml</DependentUpon>
     </Compile>
@@ -95,20 +96,10 @@
     <Compile Include="simpleAdminLogin.xaml.cs">
       <DependentUpon>simpleAdminLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowMarketing.xaml.cs">
-      <DependentUpon>WindowMarketing.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WindowSaleEventNow.xaml.cs">
-      <DependentUpon>WindowSaleEventNow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AdvertisingButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageAD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,14 +113,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="simpleAdminLogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowMarketing.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowSaleEventNow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
