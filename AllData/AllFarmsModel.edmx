@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AllFarmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AllFarmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityCity">
           <Key>
             <PropertyRef Name="CityID" />
@@ -197,6 +197,7 @@
           <Property Name="Quota" Type="money" />
           <Property Name="QuotaPoint" Type="int" />
           <Property Name="QPointToOneNTD" Type="int" Nullable="false" />
+          <Property Name="EdditTime" Type="datetime" />
         </EntityType>
         <EntityType Name="DiscountPointsEventDetail">
           <Key>
@@ -974,8 +975,7 @@
             <End Role="SystemToSuppliersInfo" EntitySet="SystemToSuppliersInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AllFarmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1186,6 +1186,7 @@
           <Property Name="QPointToOneNTD" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DiscountPointsEventDetails" Relationship="Self.FK_DiscountPointsEventDetail_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsEventDetail" />
           <NavigationProperty Name="DiscountPointsRecs" Relationship="Self.FK_DiscountPointsRec_DiscountPointsEvent" FromRole="DiscountPointsEvent" ToRole="DiscountPointsRec" />
+          <Property Name="EdditTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="DiscountPointsEventDetail">
           <Key>
@@ -2201,6 +2202,7 @@
           <EntitySetMapping Name="DiscountPointsEvents">
             <EntityTypeMapping TypeName="AllFarmsModel.DiscountPointsEvent">
               <MappingFragment StoreEntitySet="DiscountPointsEvent">
+                <ScalarProperty Name="EdditTime" ColumnName="EdditTime" />
                 <ScalarProperty Name="DiscountPointsEventID" ColumnName="DiscountPointsEventID" />
                 <ScalarProperty Name="DiscountPointsEventName" ColumnName="DiscountPointsEventName" />
                 <ScalarProperty Name="DiscountPointsEvenContent" ColumnName="DiscountPointsEvenContent" />

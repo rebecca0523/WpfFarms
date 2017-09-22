@@ -32,6 +32,7 @@ namespace AllData
         public Nullable<decimal> Quota { get; set; }
         public Nullable<int> QuotaPoint { get; set; }
         public int QPointToOneNTD { get; set; }
+        public Nullable<System.DateTime> EdditTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiscountPointsEventDetail> DiscountPointsEventDetails { get; set; }
