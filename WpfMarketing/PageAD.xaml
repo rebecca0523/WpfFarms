@@ -99,10 +99,10 @@
                     <RowDefinition Height="323*"/>
                 </Grid.RowDefinitions>
                 <Image x:Name="imgAD" Margin="0" Source="{Binding Mode=OneWay}" Stretch="UniformToFill" />
-                <TextBlock x:Name="txkADID" Margin="30,287.038,624.245,10.189" Grid.Row="1" />
-                <TextBlock x:Name="txkADPID" Text="0" Margin="53,354.038,594.245,-65.811" Grid.Row="1"/>
+                <TextBlock x:Name="txkADID"  Grid.Row="1" />
+                <TextBlock x:Name="txkADPID" Text="0"  Grid.Row="1"/>
                 <TextBlock x:Name="txkADTitleOnImage" HorizontalAlignment="Left" Margin="30,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="77" Width="262" FontSize="36"/>
-                <TextBlock x:Name="txkADContentOnImage" HorizontalAlignment="Left" Margin="30,269,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="191" Width="386" FontSize="24"/>
+                <TextBlock x:Name="txkADContentOnImage" HorizontalAlignment="Left" Margin="274,83,-56,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="113" Width="198" FontSize="24" Grid.RowSpan="2"/>
             </Grid>
 
 
