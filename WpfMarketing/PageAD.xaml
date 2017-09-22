@@ -5,28 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfMarketing"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1000"
+     
       Title="PageAD">
+
+    <Page.Resources>
+        <!--廣告TEMP-->
+        <DataTemplate x:Key="ADDataTemplate" >
+            <UniformGrid Rows="3">
+                <TextBlock Text="{Binding AdvertisingITitle,Mode=OneWay}" DockPanel.Dock="Left" />
+                <TextBlock Text="{Binding AdvertisingStartTime,Mode=OneWay}" DockPanel.Dock="Left"  />
+                <TextBlock Text="{Binding AdvertisingEndTime,Mode=OneWay}" DockPanel.Dock="Left" />
+
+            </UniformGrid>
+        </DataTemplate>
+    </Page.Resources>
     <ScrollViewer>
-    <Grid>
 
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="215*"/>
-                <ColumnDefinition Width="702*"/>
-                <ColumnDefinition Width="680*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Margin="0" >
+
+        <Grid Height="1288">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="329*"/>
+                <RowDefinition Height="674*"/>
+                <RowDefinition Height="286*"/>
+            </Grid.RowDefinitions>
+
+            <Grid  >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="36*"/>
-                    <RowDefinition Height="827*"/>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="297*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Margin="0" TextWrapping="Wrap" Text="廣告名稱" Background="#FFF8F8F8" TextAlignment="Center"/>
+                <TextBlock Margin="0" TextWrapping="Wrap" Text="廣告名稱" Background="#FFF8F8F8" TextAlignment="Center" FontSize="24"/>
                 <ListBox x:Name="lstAdvertising"  Margin="0,2,0,0" Grid.Row="1" ItemTemplate="{DynamicResource ADDataTemplate}" SelectionChanged="lstAdvertising_SelectionChanged"/>
 
             </Grid>
-            <Grid Grid.Column="1" Margin="0" Background="#FFD0FCC6" Height="867">
+            <Grid  Background="#FFD0FCC6"  Grid.Row="1" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="110*"/>
                     <RowDefinition Height="82*"/>
@@ -38,7 +51,7 @@
                     <RowDefinition Height="47*"/>
                     <RowDefinition Height="110*"/>
                 </Grid.RowDefinitions>
-                <Grid Margin="0,0,-0.113,3.585" Background="#FFEFD8F5">
+                <Grid  Background="#FFEFD8F5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="37*"/>
                         <RowDefinition Height="69*"/>
@@ -52,12 +65,12 @@
                         <TextBlock Text="開始日期" TextAlignment="Center" FontSize="24" Background="#FFD0EAC7"  />
                     </Border>
                     <Border BorderThickness="1" BorderBrush="Black">
-                        <TextBlock Text="結束日期" TextAlignment="Center" Background="#FFCFF3BC" />
+                        <TextBlock Text="結束日期" TextAlignment="Center" Background="#FFCFF3BC" FontSize="24" />
                     </Border>
                     <DatePicker x:Name="dtpADStart"/>
                     <DatePicker x:Name="dtpADEnd"/>
                 </UniformGrid>
-                <TextBlock Margin="0,81.415,-0.113,2.038" Grid.Row="1" TextWrapping="Wrap" Text="廣告圖片" Background="#FFE0FFC3" TextAlignment="Center" Grid.RowSpan="2"/>
+                <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="廣告圖片" Background="#FFE0FFC3" TextAlignment="Center" Grid.RowSpan="2" Margin="0" FontSize="24"/>
 
                 <Grid Margin="0,0.962,-0.113,3.981" Grid.Row="3"  Background="#FFF3D8D8">
                     <Grid.ColumnDefinitions>
@@ -70,7 +83,7 @@
 
                 <TextBlock Margin="0,0.019,-0.113,359.472" Grid.Row="4" TextWrapping="Wrap" Text="廣告內容" TextAlignment="Center" Grid.RowSpan="2"/>
                 <TextBox x:Name="txtADContent" Margin="0,5.698,-0.113,0.472" Grid.Row="5" TextWrapping="Wrap" Text="請輸入廣告內容" KeyDown="txtADContent_KeyDown"/>
-                <TextBlock Margin="0,0.528,-0.113,0.038" Grid.Row="6" TextWrapping="Wrap" Text="連結商品" Background="#FFD9F6D7" TextAlignment="Center"/>
+                <TextBlock Margin="0,0.528,-0.113,0.038" Grid.Row="6" TextWrapping="Wrap" Text="連結商品" Background="#FFD9F6D7" TextAlignment="Center" FontSize="24"/>
                 <ComboBox x:Name="cboADProduct" Margin="0" Grid.Row="7" SelectionChanged="cboADProduct_SelectionChanged" />
                 <UniformGrid Margin="0" Grid.Row="8" Columns="3">
                     <Button x:Name="btnNewAD" Content="新增" Margin="0" Grid.Row="1" Click="btnNewAD_Click"/>
@@ -80,7 +93,7 @@
                 </UniformGrid>
 
             </Grid>
-            <Grid Grid.Column="2" Margin="0,3,0,0" Background="#FFE5EBF7">
+            <Grid  Background="#FFE5EBF7"  Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="537*"/>
                     <RowDefinition Height="323*"/>
@@ -95,7 +108,7 @@
 
 
         </Grid>
-    </Grid>
+
     </ScrollViewer>
 
 
